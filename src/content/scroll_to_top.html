@@ -1,0 +1,84 @@
+---
+title: Scroll to top
+section: Components
+---
+
+<div id="pager">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Scroll to top</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>When your content is very long, you can help the user scroll all the way up to the main header by adding a button to go to the top. This can come in very handy especially in small screens.</p>
+				<p>However, be aware as this button can overlap with the actions button if you're already using it</p>
+			</blockquote>
+	
+			<p>
+				Cortado coffee a turkish decaffeinated espresso dripper cortado lungo con panna. Coffee, roast cup blue mountain beans single origin eu shop grounds caffeine a robusta. Sweet macchiato spoon, mug foam ut est ristretto. Chicory coffee, at as cultivar robusta fair trade. Variety, caramelization, sweet, steamed, breve sit, whipped spoon at in caffeine. So latte, half and half, instant café au lait whipped extra at percolator.
+			</p>
+
+			<p>
+				Chicory coffee, at as cultivar robusta fair trade. Variety, caramelization, sweet, steamed, breve sit, whipped spoon at in caffeine. So latte, half and half, instant café au lait whipped extra at percolator. Cortado coffee a turkish decaffeinated espresso dripper cortado lungo con panna. Coffee, roast cup blue mountain beans single origin eu shop grounds caffeine a robusta. Sweet macchiato spoon, mug foam ut est ristretto.
+			</p>
+
+			<p>
+				Crema coffee a turkish decaffeinated espresso dripper cortado lungo con panna. Coffee, roast cup blue mountain beans single origin eu shop grounds caffeine a robusta. Sweet macchiato spoon, mug foam ut est ristretto. Skinny extraction, viennese arabica aromatic robust kopi-luwak. Carajillo chicory dark espresso qui iced sugar. To go, at café au lait chicory, qui, fair trade irish, beans seasonal extraction cappuccino kopi-luwak.
+			</p>
+
+			<p>
+				Skinny extraction, viennese arabica aromatic robust kopi-luwak. Carajillo chicory dark espresso qui iced sugar. To go, at café au lait chicory, qui, fair trade irish, beans seasonal extraction cappuccino kopi-luwak. Crema coffee a turkish decaffeinated espresso dripper cortado lungo con panna. Coffee, roast cup blue mountain beans single origin eu shop grounds caffeine a robusta. Sweet macchiato spoon, mug foam ut est ristretto.
+			</p>
+
+			<p>
+				Irish coffee, at as cultivar robusta fair trade. Variety, caramelization, sweet, steamed, breve sit, whipped spoon at in caffeine. So latte, half and half, instant café au lait whipped extra at percolator. Skinny extraction, viennese arabica aromatic robust kopi-luwak. Carajillo chicory dark espresso qui iced sugar. To go, at café au lait chicory, qui, fair trade irish, beans seasonal extraction cappuccino kopi-luwak.
+			</p>
+
+			<p>
+				Skinny extraction, viennese arabica aromatic robust kopi-luwak. Carajillo chicory dark espresso qui iced sugar. To go, at café au lait chicory, qui, fair trade irish, beans seasonal extraction cappuccino kopi-luwak. Irish coffee, at as cultivar robusta fair trade. Variety, caramelization, sweet, steamed, breve sit, whipped spoon at in caffeine. So latte, half and half, instant café au lait whipped extra at percolator.  
+			</p>
+			
+			<button class="btn btn-primary btn-scroll-top visible" type="button">
+				<span class="icon-arrow-up"></span>
+			</button>
+
+<div class="uxgl-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse0"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse0">
+	<pre><code class="html">```<button class="btn btn-primary btn-scroll-top btn-bottom-right" type="button">
+	<span class="icon-arrow-up"></span>
+</button>```</code></pre>
+</div>
+
+		</div>
+	</div>
+</div>
+<button class="btn btn-primary btn-scroll-top btn-bottom-right" type="button">
+	<span class="icon-arrow-up"></span>
+</button>
+			
+<script>
+	$(function() {
+
+		$(document).on('scroll', function() {
+
+			if ($(window).scrollTop() > 100) {
+				$('.btn-scroll-top').addClass('visible');
+			} else {
+				$('.btn-scroll-top').removeClass('visible');
+			}
+		});
+
+		$('.btn-scroll-top').on('click', scrollToTop);
+	});
+
+	function scrollToTop() {
+		verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+		element = $('body');
+		offset = element.offset();
+		offsetTop = offset.top;
+		$('html, body').animate({
+			scrollTop: offsetTop
+		}, 500, 'linear');
+	}
+</script>

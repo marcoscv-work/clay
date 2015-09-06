@@ -1,0 +1,13 @@
+.btn-scroll-top {
+	cursor:pointer;
+	opacity: 0;
+	z-index: 99999999;
+	visibility: hidden;
+}
+.btn-scroll-top.visible:hover {
+	opacity: 1;
+}
+.btn-scroll-top.visible {
+	opacity: 0.8;
+	visibility: visible;
+}
