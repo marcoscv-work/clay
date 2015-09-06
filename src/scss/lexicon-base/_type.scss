@@ -133,3 +133,19 @@ mark,
 .blockquote-warning {
 	@include color-blockquote ($brand-warning);
 }
+
+// Danger color to <del> tag
+
+del {
+	background-image: linear-gradient(transparent 0.69em, $brand-danger 0.7em, $brand-danger 0.75em, transparent 0.78em);
+	text-decoration: none;
+}
+
+// Success color to <ins> tag
+
+ins {
+	background-image: linear-gradient(transparent 1.1em, $brand-success  1.2em, $brand-success 1.25em, transparent 1.25em);
+	text-decoration: none;
+}
+
+
