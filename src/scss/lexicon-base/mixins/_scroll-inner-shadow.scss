@@ -1,0 +1,11 @@
+@mixin scrolling-shadows($background-color: rgb(255, 255, 255), $mask-size: 40px, $shadow-color: rgb(0,0,0), $shadow-height: 6px, $shadow-opacity: 0.2) {
+	background:
+		linear-gradient($background-color 30%, rgba($background-color,0)),
+		linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%,
+		radial-gradient(farthest-side at 50% 0, rgba($shadow-color,$shadow-opacity), rgba($shadow-color, 0)),
+		radial-gradient(farthest-side at 50% 100%, rgba($shadow-color,$shadow-opacity), rgba($shadow-color, 0)) 0 100%;
+	background-attachment: local, local, scroll, scroll;
+	background-color: $background-color;
+	background-repeat: no-repeat;
+	background-size: 100% $mask-size, 100% $mask-size, 100% $shadow-height, 100% $shadow-height;
+}
