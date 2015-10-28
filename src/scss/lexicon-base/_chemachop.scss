@@ -1,0 +1,59 @@
+.chemachop {
+	.controls {
+		background-color: $chemachop-bg;
+		bottom: 0;
+		height: $chemachop-controls-height;
+		margin-left: $chemachop-negative-margin;
+		position: absolute;
+		width: 100%;
+
+		a {
+			color: $chemachop-text-color;
+		}
+
+		.filters {
+			background-color: $chemachop-bg;
+			bottom: $chemachop-controls-height;
+			height: 0;
+			overflow: hidden;
+			position: absolute;
+			width: 100%;
+
+			@include transition(height .6s $ease-out-quint);
+
+			.btn-space {
+				margin-top: $chemachop-btn-space;
+			}
+
+			.filters-list {
+				overflow: auto;
+				padding: 10px 0 0;
+
+				.list-table {
+					display: table;
+
+					li {
+						display: table-cell;
+						padding: 0 2px;
+					}
+
+					span {
+						display: block;
+						font-size: $chemachop-text-size;
+						line-height: $chemachop-text-line;
+					}
+				}
+			}
+		}
+
+		.open {
+			a {
+				color: $chemachop-link-color;
+			}
+
+			.filters {
+				height: $chemachop-filters-height;
+			}
+		}
+	}
+}
