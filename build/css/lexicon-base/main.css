@@ -14454,7 +14454,7 @@ mark:before,
 
 /** chema chop **/
 .chemachop .controls {
-  background-color: #000;
+  background-color: #111314;
   bottom: 0;
   height: 52px;
   margin-left: -24px;
@@ -14467,7 +14467,7 @@ mark:before,
 }
 
 .chemachop .controls .filters {
-  background-color: #000;
+  background-color: #111314;
   bottom: 52px;
   height: 0;
   overflow: hidden;
