@@ -26,7 +26,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-/** chemachop **/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -14468,6 +14467,12 @@ mark:before,
 }
 
 /** chema chop **/
+@media screen and (min-width: 768px) {
+  .chemachop.chemachop-lg {
+    bottom: 81.0px;
+  }
+}
+
 .chemachop .controls {
   background-color: #111314;
   bottom: 0;
@@ -14477,8 +14482,9 @@ mark:before,
   width: 100%;
 }
 
-.chemachop .controls a {
+.chemachop .controls .btn {
   color: #FFF;
+  padding: 8px 4px;
 }
 
 .chemachop .controls .filters {
@@ -14517,12 +14523,32 @@ mark:before,
   line-height: 2;
 }
 
-.chemachop .controls .open a {
-  color: #65B6F0;
+.chemachop .controls .open .btn {
+  color: #FFF;
 }
 
 .chemachop .controls .open .filters {
   height: 90px;
+  z-index: 1;
+}
+
+.chemachop .history-controls {
+  bottom: 64px;
+  position: absolute;
+}
+
+.chemachop .history-controls.history-left {
+  left: 32px;
+}
+
+.chemachop .history-controls.history-right {
+  right: 32px;
+}
+
+.chemachop .history-controls a.btn {
+  background-color: #3A4B57;
+  color: #FFF;
+  margin-left: 4px;
 }
 
 .alert {

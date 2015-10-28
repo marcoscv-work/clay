@@ -11,7 +11,6 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-/** chemachop **/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -14453,21 +14452,28 @@ mark:before,
 }
 
 /** chema chop **/
+@media screen and (min-width: 768px) {
+  .chemachop.chemachop-lg {
+    bottom: 76.0px;
+  }
+}
+
 .chemachop .controls {
-  background-color: #111314;
+  background-color: #222;
   bottom: 0;
   height: 52px;
-  margin-left: -24px;
+  margin-left: -15px;
   position: absolute;
   width: 100%;
 }
 
-.chemachop .controls a {
-  color: #FFF;
+.chemachop .controls .btn {
+  color: #9d9d9d;
+  padding: 8px 4px;
 }
 
 .chemachop .controls .filters {
-  background-color: #111314;
+  background-color: #222;
   bottom: 52px;
   height: 0;
   overflow: hidden;
@@ -14502,12 +14508,32 @@ mark:before,
   line-height: 2;
 }
 
-.chemachop .controls .open a {
+.chemachop .controls .open .btn {
   color: #337ab7;
 }
 
 .chemachop .controls .open .filters {
   height: 90px;
+  z-index: 1;
+}
+
+.chemachop .history-controls {
+  bottom: 64px;
+  position: absolute;
+}
+
+.chemachop .history-controls.history-left {
+  left: 24px;
+}
+
+.chemachop .history-controls.history-right {
+  right: 24px;
+}
+
+.chemachop .history-controls a.btn {
+  background-color: #3A4B57;
+  color: #9d9d9d;
+  margin-left: 4px;
 }
 
 /*# sourceMappingURL=lexicon-base.css.map */

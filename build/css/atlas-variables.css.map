@@ -36,6 +36,7 @@
 		"atlas-theme/variables/_toolbars.scss",
 		"atlas-theme/variables/_tooltips.scss",
 		"atlas-theme/variables/_user-icons.scss",
+		"atlas-theme/variables/_chemachop.scss",
 		"lexicon-base/_variables.scss",
 		"lexicon-base/variables/_badges.scss",
 		"lexicon-base/variables/_breadcrumbs.scss",
@@ -60,6 +61,6 @@
 		"lexicon-base/variables/_chemachop.scss"
 	],
 	"sourcesContent": [],
-	"mappings": "AAAA;;;;;;EAME;AOJF;uCACuC;AIkBvC;yCACyC;AuBDzC,iBAAiB",
+	"mappings": "AAAA;;;;;;EAME;AOJF;uCACuC;AIkBvC;yCACyC",
 	"names": []
 }

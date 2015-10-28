@@ -1,4 +1,12 @@
 .chemachop {
+
+	// If you are using lg buttons in modal-footer add this class//
+	&.chemachop-lg {
+		@media screen and (min-width: $screen-sm-min) {
+			bottom: $chemachop-lg-modal;
+		}
+	}
+
 	.controls {
 		background-color: $chemachop-bg;
 		bottom: 0;
@@ -7,8 +15,9 @@
 		position: absolute;
 		width: 100%;
 
-		a {
+		.btn {
 			color: $chemachop-text-color;
+			padding: $chemachop-btn-padding;
 		}
 
 		.filters {
@@ -47,13 +56,33 @@
 		}
 
 		.open {
-			a {
+			.btn {
 				color: $chemachop-link-color;
 			}
 
 			.filters {
 				height: $chemachop-filters-height;
+				z-index: 1;
 			}
+		}
+	}
+
+	.history-controls {
+		bottom: $chemachop-history-controls-bottom;
+		position: absolute;
+
+		&.history-left {
+			left: $chemachop-history-controls-side;
+		}
+
+		&.history-right {
+			right: $chemachop-history-controls-side;
+		}
+
+		a.btn {
+			background-color: #3A4B57;
+			color: $chemachop-text-color;
+			margin-left: 4px;
 		}
 	}
 }
