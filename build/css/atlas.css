@@ -14533,7 +14533,7 @@ mark:before,
 }
 
 .chemachop .history-controls {
-  bottom: 64px;
+  bottom: 62px;
   position: absolute;
 }
 
@@ -14548,7 +14548,7 @@ mark:before,
 .chemachop .history-controls a.btn {
   background-color: #3A4B57;
   color: #FFF;
-  margin-left: 4px;
+  margin: 0 2px;
 }
 
 .alert {

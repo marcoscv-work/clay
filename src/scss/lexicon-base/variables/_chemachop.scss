@@ -2,10 +2,9 @@ $chemachop-btn-padding: 8px 4px !default;
 $chemachop-btn-space: 24px !default;
 $chemachop-controls-height: 52px !default;
 $chemachop-filters-height: 90px !default;
-$chemachop-history-controls-bottom: $chemachop-controls-height + $font-size-small !default;
+$chemachop-history-controls-bottom: $chemachop-controls-height + 10 !default;
 $chemachop-history-controls-side: $chemachop-btn-space !default;
 $chemachop-lg-modal: $modal-footer-height + $font-size-small !default;
-$chemachop-link-color: $link-color !default;
 $chemachop-negative-margin: -$modal-inner-padding !default;
 $chemachop-text-line: 2 !default;
 $chemachop-text-size: $font-size-small !default;
@@ -13,4 +12,5 @@ $chemachop-text-size: $font-size-small !default;
 // Skin
 
 $chemachop-bg: $navbar-inverse-bg !default;
+$chemachop-link-color: $link-color !default;
 $chemachop-text-color: $navbar-inverse-color !default;
