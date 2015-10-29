@@ -27,6 +27,7 @@
 			overflow: hidden;
 			position: absolute;
 			width: 100%;
+			z-index: 1;
 
 			@include transition(height .6s $ease-out-quint);
 
@@ -56,13 +57,12 @@
 		}
 
 		.open {
-			.btn {
+			& > .btn {
 				color: $chemachop-link-color;
 			}
 
 			.filters {
 				height: $chemachop-filters-height;
-				z-index: 1;
 			}
 		}
 	}
@@ -80,7 +80,7 @@
 		}
 
 		a.btn {
-			background-color: #3A4B57;
+			background-color: $chemachop-history-controls-btn-color;
 			color: $chemachop-text-color;
 			margin: 0 2px;
 		}

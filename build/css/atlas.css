@@ -14494,6 +14494,7 @@ mark:before,
   overflow: hidden;
   position: absolute;
   width: 100%;
+  z-index: 1;
   -webkit-transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -14523,13 +14524,12 @@ mark:before,
   line-height: 2;
 }
 
-.chemachop .controls .open .btn {
-  color: #FFF;
+.chemachop .controls .open > .btn {
+  color: #65B6F0;
 }
 
 .chemachop .controls .open .filters {
   height: 90px;
-  z-index: 1;
 }
 
 .chemachop .history-controls {
@@ -14546,7 +14546,7 @@ mark:before,
 }
 
 .chemachop .history-controls a.btn {
-  background-color: #3A4B57;
+  background-color: #29353D;
   color: #FFF;
   margin: 0 2px;
 }

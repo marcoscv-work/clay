@@ -16519,7 +16519,7 @@ mark:before,
 }
 
 .chemachop .controls .btn {
-  color: #9d9d9d;
+  color: #fff;
   padding: 8px 4px;
 }
 
@@ -16530,6 +16530,7 @@ mark:before,
   overflow: hidden;
   position: absolute;
   width: 100%;
+  z-index: 1;
   -webkit-transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   -o-transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   transition: height 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -16559,13 +16560,12 @@ mark:before,
   line-height: 2;
 }
 
-.chemachop .controls .open .btn {
+.chemachop .controls .open > .btn {
   color: #337ab7;
 }
 
 .chemachop .controls .open .filters {
   height: 90px;
-  z-index: 1;
 }
 
 .chemachop .history-controls {
@@ -16582,8 +16582,8 @@ mark:before,
 }
 
 .chemachop .history-controls a.btn {
-  background-color: #3A4B57;
-  color: #9d9d9d;
+  background-color: #5bc0de;
+  color: #fff;
   margin: 0 2px;
 }
 
