@@ -1,0 +1,9 @@
+// Make disabled toggle switch more opaque
+
+input.toggle-switch {
+	&:disabled, &.disabled {
+		~ .toggle-switch-bar {
+			opacity: 0.9;
+		}
+	}
+}

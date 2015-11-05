@@ -1,0 +1,22 @@
+// Individual darkenings for panel states background */
+
+.panel-success {
+	& > .panel-heading , & > .panel-footer {
+		color: #2C4A1B;
+	}
+}
+.panel-info {
+	& > .panel-heading , & > .panel-footer {
+		color: #9A4A08;
+	}
+}
+
+.panel-danger {
+	& > .panel-heading , & > .panel-footer {
+		color: #903040;
+	}
+}
+
+
+
+

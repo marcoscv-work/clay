@@ -1,0 +1,13 @@
+
+.sidebar-inverse {
+	[class^="icon-"], [class*=" icon-"]{
+		color: #869CAD;
+	}
+}
+
+.sidebar-inverse {
+	a.list-group-heading, 
+	.list-group-heading[data-toggle="collapse"] {
+		color: #93A6B5;
+	}
+}

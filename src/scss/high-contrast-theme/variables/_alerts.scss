@@ -1,0 +1,8 @@
+// Darkening of alert texts
+
+$alert-default-text:   							  darken(#9698A4, $high-contrast-default-foreground);
+$alert-success-text:                              darken(#97C783, $high-contrast-success-foreground);
+$alert-info-text:                                 darken(#86BADA, $high-contrast-info-foreground);
+$alert-warning-text:                              darken(#D6B679, $high-contrast-warning-foreground);
+$alert-danger-text:                               darken(#D77C8A, $high-contrast-danger-foreground);
+

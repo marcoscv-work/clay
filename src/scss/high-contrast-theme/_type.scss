@@ -1,0 +1,7 @@
+// Individual changes for blockquote footers & small
+
+.blockquote-default {
+	& footer, & small, & .small {
+		color: #727272
+	}
+}
