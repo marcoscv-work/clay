@@ -6,9 +6,9 @@
 * MIT license
 */
  (function($) {
-	var REGEX_LINK = /(atlas|lexicon)(-font-awesome)?\.css$/;
+	var REGEX_LINK = /(dxp-cloud|lexicon)(-font-awesome)?\.css$/;
 	var REGEX_LEXICON_LINK = /(lexicon)(-font-awesome)?\.css$/;
-	var REGEX_ATLAS_LINK = /(atlas)(-font-awesome)?\.css$/;
+	var REGEX_ATLAS_LINK = /(dxp-cloud)(-font-awesome)?\.css$/;
 
 	var getLexiconLink = function () {
 		return $('link[href]').filter(function(i, n) {
@@ -28,7 +28,7 @@
 		if (REGEX_LINK.test(href)) {
 			href = href.replace(REGEX_LINK, function(str, m, suffix) {
 				console.log(arguments);
-				return (m === 'lexicon' ? 'atlas' : 'lexicon') + (suffix ? suffix : '') + '.css';
+				return (m === 'lexicon' ? 'dxp-cloud' : 'lexicon') + (suffix ? suffix : '') + '.css';
 			});
 
 			lexiconLink.prop('href', href);

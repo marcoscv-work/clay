@@ -11031,7 +11031,7 @@ button.modal-primary-action-button {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .nameplate-label-autofit-xs-max,
   .nameplate-label-autofit-xs-max .nameplate-label {
     margin-right: 0;
@@ -13920,7 +13920,6 @@ th {
 .table-list > tbody > tr > th,
 .table-list > tfoot > tr > td,
 .table-list > tfoot > tr > th {
-  background-color: #FFF;
   border-top-width: 0;
   vertical-align: middle;
 }

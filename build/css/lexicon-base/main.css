@@ -8925,6 +8925,10 @@ a .icon-monospaced,
   text-align: right;
 }
 
+.input-group-btn:first-child > .btn {
+  margin-right: -1px;
+}
+
 .input-group-btn:last-child > .btn {
   margin-left: -1px;
 }
@@ -10005,7 +10009,7 @@ button.modal-primary-action-button {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-max) {
   .nameplate-label-autofit-xs-max,
   .nameplate-label-autofit-xs-max .nameplate-label {
     margin-right: 0;
