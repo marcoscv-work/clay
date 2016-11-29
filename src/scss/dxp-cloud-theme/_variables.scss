@@ -5,14 +5,14 @@
 @import "variables/buttons";
 @import "variables/cards";
 @import "variables/dropdowns";
-@import "variables/figures";
+@import "variables/figures"; // it will not be modified
 @import "variables/forms";
-@import "variables/icons";
+@import "variables/icons"; // it will not be modified
 @import "variables/labels";
 @import "variables/badges"; // Badges inherit from Labels
 @import "variables/list-group";
 @import "variables/modals";
-@import "variables/nameplates";
+@import "variables/nameplates"; // it will not be modified
 @import "variables/navs";
 @import "variables/nav-pills";
 @import "variables/nav-tabs";
@@ -20,7 +20,7 @@
 @import "variables/management-bar"; // Management Bar inherits from Navbar
 @import "variables/pagination";
 @import "variables/pager"; // Pager inherits from Pagination
-@import "variables/panels";
+@import "variables/panels"; // it will not be modified
 @import "variables/popovers";
 @import "variables/progress-bars";
 @import "variables/stickers";

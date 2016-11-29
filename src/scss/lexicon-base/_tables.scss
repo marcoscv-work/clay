@@ -107,9 +107,7 @@ th {
 	> tbody > tr > th,
 	> tfoot > tr > td,
 	> tfoot > tr > th {
-		@if (variable-exists(atlas-theme)) {
-			background-color: $table-list-body-row-bg;
-		}
+
 
 		border-top-width: 0;
 		vertical-align: middle;

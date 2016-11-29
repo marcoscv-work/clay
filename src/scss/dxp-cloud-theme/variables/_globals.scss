@@ -62,7 +62,7 @@ $brand-default: #869CAD !default; // Atlas
 $brand-default-active: darken($brand-default, 12%) !default; // Atlas
 $brand-default-hover: darken($brand-default, 8%) !default; // Atlas
 
-$brand-primary: #65B6F0 !default;
+$brand-primary: #488FFF !default;
 $brand-primary-active: darken($brand-primary, 12%) !default; // Atlas
 $brand-primary-hover: darken($brand-primary, 8%) !default; // Atlas
 
@@ -84,7 +84,7 @@ $brand-danger-hover: darken($brand-danger, 8%) !default; // Atlas
 
 $link-color: $brand-primary !default;
 
-$text-color: #29353D !default;
+$text-color: #41444B !default;
 $text-muted: lighten($text-color, 55%) !default;
 
 // Global background color for active items (e.g., navs or dropdowns).

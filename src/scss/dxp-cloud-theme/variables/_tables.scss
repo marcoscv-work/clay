@@ -1,14 +1,17 @@
-$table-bg-accent: darken(#FCFEFF, 2%) !default;
-$table-bg-hover: #FCFEFF !default;
+$table-border-size: 1px !default;
 
-$table-header-color: $brand-default !default;
+$table-bg-accent: lighten($brand-primary, 34%) !default;
+$table-bg-hover: lighten($brand-primary, 30%) !default;
+
+$table-header-color: $text-color !default;
 $table-header-font-size: 14px !default;
 $table-header-font-weight: 500 !default;
+$table-header-height: 64px !default;
 
-$table-list-body-row-bg: #FFF !default;
+// $table-list-body-row-bg: #FFF !default;
 
-$table-list-row-active-border-bottom-width: 2px !default;
+$table-list-row-active-border-bottom-width: 1px !default;
 $table-list-row-active-border-color: $brand-primary !default;
-$table-list-row-height: 72px !default;
+$table-list-row-height: 56px !default;
 
 $table-list-link-color: $brand-default !default;
