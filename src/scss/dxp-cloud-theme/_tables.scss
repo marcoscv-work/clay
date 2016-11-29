@@ -102,7 +102,7 @@
 					height: 100%;
 					margin-bottom: 0;
 
-					li {
+					> li {
 						@extend .flex-item-center;
 
 						margin: 8px;
