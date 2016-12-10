@@ -1,0 +1,40 @@
+// Primary Colors
+
+@include colors(dxp-cta, $dxp-cta);
+@include colors(dxp-dark, $dxp-dark);
+@include colors(dxp-light-dark, $dxp-light-dark);
+@include colors(dxp-white, $dxp-white);
+
+// Secondary Colors sc-
+
+@include colors(sc-cta, $sc-cta);
+@include colors(sc-danger, $sc-danger);
+@include colors(sc-dark-gradient-a, $sc-dark-gradient-a);
+@include colors(sc-dark-gradient-b, $sc-dark-gradient-b);
+@include colors(sc-dark, $sc-dark);
+@include colors(sc-success, $sc-success);
+@include colors(sc-warning, $sc-warning);
+
+// Colors variants
+
+@include colors(dxp-cta-lighten, $dxp-cta-lighten);
+@include colors(dxp-cta-lighten-hard, $dxp-cta-lighten-hard);
+@include colors(dxp-cta-lighten-hight, $dxp-cta-lighten-hight);
+@include colors(dxp-cta-lighten-low, $dxp-cta-lighten-low);
+@include colors(dxp-cta-lighten-medium, $dxp-cta-lighten-medium);
+
+@include colors(dxp-dark-lighten, $dxp-dark-lighten);
+@include colors(dxp-dark-lighten-full, $dxp-dark-lighten-full);
+@include colors(dxp-dark-lighten-hard, $dxp-dark-lighten-hard);
+@include colors(dxp-dark-lighten-hight, $dxp-dark-lighten-hight);
+@include colors(dxp-dark-lighten-low, $dxp-dark-lighten-low);
+@include colors(dxp-dark-lighten-medium, $dxp-dark-lighten-medium);
+
+@include colors(sc-danger-lighten, $sc-danger-lighten);
+@include colors(sc-danger-lighten-hight, $sc-danger-lighten-hight);
+
+@include colors(sc-success-lighten, $sc-success-lighten);
+@include colors(sc-success-lighten-hight, $sc-success-lighten-hight);
+
+@include colors(sc-warning-lighten, $sc-warning-lighten);
+@include colors(sc-warning-lighten-hight, $sc-warning-lighten-hight);
