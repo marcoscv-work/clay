@@ -12,26 +12,26 @@ $dxp-light-dark: #F1F3F5;
 
 $sc-cta: #4172A9;
 $sc-danger: #FF6060;
+$sc-dark: #464A5E;
 $sc-dark-gradient-a: #555A72;
 $sc-dark-gradient-b: #323643;
-$sc-dark: #464A5E;
 $sc-success: #41A967;
 $sc-warning: #E77735;
 
 // Colors variants
 
+$dxp-cta-lighten: lighten($dxp-cta, 10%);
 $dxp-cta-lighten-hard: lighten($dxp-cta, 34%);
 $dxp-cta-lighten-hight: lighten($dxp-cta, 32%);
 $dxp-cta-lighten-low: lighten($dxp-cta, 18%);
 $dxp-cta-lighten-medium: lighten($dxp-cta, 30%);
-$dxp-cta-lighten: lighten($dxp-cta, 10%);
 
+$dxp-dark-lighten: lighten($dxp-dark, 15%);
 $dxp-dark-lighten-full: lighten($dxp-dark, 65%);
 $dxp-dark-lighten-hard: lighten($dxp-dark, 60%);
 $dxp-dark-lighten-hight: lighten(desaturate($dxp-dark, 3%), 50%);
 $dxp-dark-lighten-low: lighten($dxp-dark, 35%);
 $dxp-dark-lighten-medium: lighten(desaturate($dxp-dark, 4%), 40%);
-$dxp-dark-lighten: lighten($dxp-dark, 15%);
 
 $sc-danger-lighten: lighten($sc-danger, 12%);
 $sc-danger-lighten-hight: lighten($sc-danger, 28%);
