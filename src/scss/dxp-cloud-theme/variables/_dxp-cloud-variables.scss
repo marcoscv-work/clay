@@ -45,3 +45,31 @@ $sc-warning-lighten-hight: lighten($sc-warning, 42%);
 // Font
 
 $dxp-font-family-sans-serif: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+
+$dxp-base-font-large-size: 18px;
+$dxp-base-font-medium-size: 16px;
+
+$dxp-base-font-large-line-height: 28px;
+$dxp-base-font-medium-line-height: 24px;
+
+$dxp-font-size-h1: 56px;
+$dxp-font-size-h2: 40px;
+$dxp-font-size-h3: 32px;
+$dxp-font-size-h4: 24px;
+$dxp-font-size-h5: 20px;
+$dxp-font-size-h6: 18px;
+
+$dxp-font-line-height-h1: 64px;
+$dxp-font-line-height-h2: 48px;
+$dxp-font-line-height-h3: 40px;
+$dxp-font-line-height-h4: 32px;
+$dxp-font-line-height-h5: 28px;
+$dxp-font-line-height-h6: 28px;
+
+$dxp-font-data-big-size: $dxp-base-font-medium-size;
+$dxp-font-data-medium-size: 14px;
+$dxp-font-data-small-size: 12px;
+
+$dxp-font-data-big-line-height: $dxp-base-font-medium-line-height;
+$dxp-font-data-medium-line-height: 20px;
+$dxp-font-data-small-line-height: 16px;
