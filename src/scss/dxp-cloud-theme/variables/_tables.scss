@@ -1,7 +1,7 @@
 $table-border-size: 1px !default;
 
-$table-bg-accent: lighten($brand-primary, 34%) !default;
-$table-bg-hover: lighten($brand-primary, 30%) !default;
+$table-bg-accent: $dxp-cta-lighten-hard !default;
+$table-bg-hover: $dxp-cta-lighten-medium !default;
 
 $table-header-color: $text-color !default;
 $table-header-font-size: 14px !default;
