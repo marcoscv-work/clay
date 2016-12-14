@@ -59,32 +59,32 @@ $gray-light: lighten(#000, 46.7%) !default; // #777
 $gray-lighter: lighten(#000, 93.5%) !default; // #eee
 
 $brand-default: $dxp-dark !default;
-$brand-default-active: darken($brand-default, 12%) !default;
-$brand-default-hover: darken($brand-default, 8%) !default;
+$brand-default-active: darken($brand-default, 5%) !default;
+$brand-default-hover: darken($brand-default, 5%) !default;
 
 $brand-primary: $dxp-cta !default;
-$brand-primary-active: darken($brand-primary, 12%) !default;
-$brand-primary-hover: darken($brand-primary, 8%) !default;
+$brand-primary-active: darken($brand-primary, 5%) !default;
+$brand-primary-hover: darken($brand-primary, 5%) !default;
 
-$brand-success: #76BD4A !default;
-$brand-success-active: darken($brand-success, 12%) !default;
-$brand-success-hover: darken($brand-success, 8%) !default;
+$brand-success: $sc-success !default;
+$brand-success-active: darken($brand-success, 5%) !default;
+$brand-success-hover: darken($brand-success, 5%) !default;
 
-$brand-info: #1E5EC8 !default;
-$brand-info-active: darken($brand-info, 12%) !default;
-$brand-info-hover: darken($brand-info, 8%) !default;
+$brand-info: #4172A9 !default;
+$brand-info-active: darken($brand-info, 5%) !default;
+$brand-info-hover: darken($brand-info, 5%) !default;
 
-$brand-warning: #F5984C !default;
-$brand-warning-active: darken($brand-warning, 12%) !default;
-$brand-warning-hover: darken($brand-warning, 8%) !default;
+$brand-warning: $sc-warning !default;
+$brand-warning-active: darken($brand-warning, 5%) !default;
+$brand-warning-hover: darken($brand-warning, 5%) !default;
 
-$brand-danger: #CC6677 !default;
-$brand-danger-active: darken($brand-danger, 12%) !default;
-$brand-danger-hover: darken($brand-danger, 8%) !default;
+$brand-danger: $sc-danger !default;
+$brand-danger-active: darken($brand-danger, 5%) !default;
+$brand-danger-hover: darken($brand-danger, 5%) !default;
 
 $link-color: $brand-primary !default;
 
-$text-color: #41444B !default;
+$text-color: $dxp-dark !default;
 $text-muted: lighten($text-color, 55%) !default;
 
 // Global background color for active items (e.g., navs or dropdowns).
