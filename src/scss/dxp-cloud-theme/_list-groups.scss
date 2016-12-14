@@ -1,0 +1,58 @@
+// Tabular List Group
+
+.tabular-list-group {
+	a {
+		color: $dxp-dark;
+	}
+
+	.list-group-item {
+		.action-icons {
+			background-color: $dxp-cta-lighten-hard;
+			bottom: 0;
+			display: none;
+			position: absolute;
+			right: 48px;
+			top: 0;
+
+			ul.action-icon-list {
+				@include list-unstyled;
+
+				-ms-flex-wrap: nowrap;
+				display: -ms-flexbox;
+				display: flex;
+				flex-wrap: nowrap;
+				height: 100%;
+				margin-bottom: 0;
+
+				> li {
+					margin: 8px;
+
+					@media (min-width: $screen-md-min) {
+						margin: 16px 8px;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			background-color: $dxp-cta-lighten-hard;
+
+			.action-icons {
+				display: block;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.tabular-list-group {
+		.list-group-item-content,
+		.list-group-item-field {
+			padding: 16px 0 16px 16px;
+
+			&:last-child {
+				padding-right: 8px;
+			}
+		}
+	}
+}
