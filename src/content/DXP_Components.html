@@ -312,7 +312,130 @@ section: Aϟ DXP Cloud Components
 			<button class="btn btn-primary btn-sm" type="button">Small</button>
 		</div>
 
-		<!-- Tables -->
+		<!-- Lists -->
+
+		<h2>Lists</h2>
+
+		<h3>Tabular List</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Align content inside a list-group like a table with <code>.tabular-list-group</code>.</p>
+
+			<p><code>.list-group-item</code> behaves as a table row.</p>
+
+			<p>Use a combination of <code>.list-group-item-field</code> and <code>.list-group-item-content</code> to control the size of each cell. <code>.list-group-item-field</code> has width: 1% and will expand only as wide as its content as long as <code>.list-group-item-content</code> is present as a sibling.</p>
+
+			<p><code>.list-group-item-content</code> will expand to fill the remaining space.</p>
+		</blockquote>
+
+		<ul class="tabular-list-group">
+			<li class="list-group-item">
+				<div class="list-group-item-field">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" />
+						</label>
+					</div>
+				</div>
+
+				<div class="list-group-item-field">
+					<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
+						<svg class="lexicon-icon lexicon-icon-folder">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="list-group-item-content">
+					<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+					<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
+					<span class="truncate-text">Approved</span>
+				</div>
+
+				<div class="list-group-item-field">
+					<div class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+							<svg class="icon-monospaced lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-left-side">
+							<li class="dropdown-header">Dropdown Header</li>
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li><a href="#">Action 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="list-group-item-field">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" />
+						</label>
+					</div>
+				</div>
+
+				<div class="list-group-item-field">
+					<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-success sticker-static">
+						<svg class="dxp-black-color lexicon-icon lexicon-icon-folder">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+						</svg>
+					</div>
+				</div>
+
+				<div class="list-group-item-content">
+					<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+					<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
+					<span class="label label-default label-sm">ART</span>
+					<span class="label label-default label-sm">LABEL</span>
+					<span class="label label-default label-sm">DESIGN</span>
+				</div>
+
+				<div class="list-group-item-field">
+					<div class="action-icons">
+						<ul class="action-icon-list">
+							<li>
+								<a href="#1">
+									<svg class="icon-monospaced lexicon-icon lexicon-icon-logout">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#1">
+									<svg class="icon-monospaced lexicon-icon lexicon-icon-logout">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#1">
+									<svg class="icon-monospaced lexicon-icon lexicon-icon-logout">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+							<svg class="icon-monospaced lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-left-side">
+							<li class="dropdown-header">Dropdown Header</li>
+							<li><a href="#">Action 1</a></li>
+							<li><a href="#">Action 2</a></li>
+							<li><a href="#">Action 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
 
 		<h3>Table List</h3>
 
