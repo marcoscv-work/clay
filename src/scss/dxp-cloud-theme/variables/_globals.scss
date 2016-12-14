@@ -4,11 +4,11 @@ $atlas-theme: false !default;
 
 $font-size-base: $dxp-base-font-medium-size !default;
 $font-size-large: $dxp-base-font-large-size !default;
-$font-size-small: ceil(($font-size-base * 0.85)) !default;
+$font-size-small: $dxp-base-font-small-size !default;
 
 $font-size-desktop-base: $dxp-base-font-medium-size !default;
 $font-size-desktop-large: $dxp-base-font-large-size !default;
-$font-size-desktop-small: ceil(($font-size-desktop-base * 0.85)) !default;
+$font-size-desktop-small: $dxp-base-font-small-size !default;
 
 $font-size-h1: $dxp-font-size-h1;
 $font-size-h2: $dxp-font-size-h2;
