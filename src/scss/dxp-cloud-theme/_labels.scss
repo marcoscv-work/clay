@@ -1,0 +1,15 @@
+.label-default {
+	border: $label-border-size solid $label-default-border-color;
+	padding-bottom: ($label-padding-bottom - $label-border-size);
+	padding-top: ($label-padding-top - $label-border-size);
+
+	&.label-lg {
+		padding-bottom: ($label-lg-padding-bottom - $label-border-size);
+		padding-top: ($label-lg-padding-top - $label-border-size);
+	}
+
+	&.label-sm {
+		padding-bottom: ($label-sm-padding-bottom - $label-border-size);
+		padding-top: ($label-sm-padding-top - $label-border-size);
+	}
+}

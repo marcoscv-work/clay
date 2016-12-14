@@ -1,5 +1,6 @@
-$label-desktop-font-size: $font-size-base !default; // Atlas
-$label-font-size: ceil($font-size-base / 1.166667) !default; // Atlas
+$label-border-size: 1px !default;
+$label-desktop-font-size: $font-size-base !default;
+$label-font-size: ceil($font-size-base / 1.166667) !default;
 $label-font-weight: 500 !default;
 $label-lexicon-icon-height: 10px !default;
 $label-lexicon-icon-width: $label-lexicon-icon-height !default;
@@ -21,12 +22,13 @@ $label-sm-desktop-font-size: $dxp-base-font-extra-small-size !default;
 $label-sm-font-size: 10px !default;
 $label-sm-lexicon-icon-height: 6px !default;
 $label-sm-lexicon-icon-width: $label-sm-lexicon-icon-height !default;
-$label-sm-padding-bottom: 4px !default;
-$label-sm-padding-left: 10px !default;
-$label-sm-padding-right: 10px !default;
-$label-sm-padding-top: 4px !default;
+$label-sm-padding-bottom: 3px !default;
+$label-sm-padding-left: 8px !default;
+$label-sm-padding-right: 8px !default;
+$label-sm-padding-top: 3px !default;
 
 // Skin
 
-$label-default-bg: #E7F1F9 !default;
-$label-default-color: $brand-primary !default;
+$label-default-bg: $dxp-white !default;
+$label-default-border-color: $dxp-cta-lighten-medium !default;
+$label-default-color: $dxp-dark !default;
