@@ -30,6 +30,10 @@
 @include colors(dxp-dark-lighten-low, $dxp-dark-lighten-low);
 @include colors(dxp-dark-lighten-medium, $dxp-dark-lighten-medium);
 
+@include colors(sc-dark-lighten, $sc-dark-lighten);
+@include colors(sc-dark-lighten-low, $sc-dark-lighten-low);
+@include colors(sc-dark-lighten-medium, $sc-dark-lighten-medium);
+
 @include colors(sc-danger-lighten, $sc-danger-lighten);
 @include colors(sc-danger-lighten-hight, $sc-danger-lighten-hight);
 

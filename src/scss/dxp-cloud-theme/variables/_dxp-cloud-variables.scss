@@ -33,6 +33,10 @@ $dxp-dark-lighten-hight: lighten(desaturate($dxp-dark, 3%), 50%);
 $dxp-dark-lighten-low: lighten($dxp-dark, 35%);
 $dxp-dark-lighten-medium: lighten(desaturate($dxp-dark, 4%), 40%);
 
+$sc-dark-lighten: lighten($sc-dark, 6%);
+$sc-dark-lighten-low: lighten(desaturate($sc-dark, 3%), 18%);
+$sc-dark-lighten-medium: lighten($sc-dark, 38%);
+
 $sc-danger-lighten: lighten($sc-danger, 12%);
 $sc-danger-lighten-hight: lighten($sc-danger, 28%);
 
