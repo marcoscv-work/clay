@@ -3,7 +3,7 @@
 // When changing variables that affect the btn's height, make sure to match the
 // corresponding input-height with the button height.
 
-$btn-border-width: 2px !default;
+$btn-border-width: 1px !default;
 
 $btn-line-height: 24 - ($btn-border-width * 2) !default;
 
@@ -49,13 +49,13 @@ $btn-disabled-opacity: 0.5 !default;
 $btn-action-size: 52px !default;
 $btn-desktop-action-size: 64px !default;
 
-$btn-border-radius: 4px !default;
+$btn-border-radius: $dxp-border-radius-base-large !default;
 
 $btn-action-border-radius: $btn-border-radius !default;
 
 $btn-lg-border-radius: $btn-border-radius !default;
-$btn-sm-border-radius: round($btn-border-radius * 0.75) !default;
-$btn-xs-border-radius: round($btn-border-radius * 0.5) !default;
+$btn-sm-border-radius: $btn-border-radius !default;
+$btn-xs-border-radius: $dxp-border-radius-base-small !default;
 
 $btn-active-box-shadow: none !default;
 
