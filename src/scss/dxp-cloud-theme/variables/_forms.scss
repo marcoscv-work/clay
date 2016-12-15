@@ -1,27 +1,29 @@
 // Structure
 
-$input-font-size: 14px !default;
+$input-font-size: $dxp-base-font-medium-size !default;
 
-$input-desktop-font-size: 16px !default;
+$input-desktop-font-size: $dxp-base-font-medium-size !default;
 
-$input-label-font-size: 12px !default;
+$input-label-font-size: $dxp-base-font-small-size !default;
 
-$input-label-desktop-font-size: 14px !default;
+$input-label-desktop-font-size: $dxp-base-font-small-size !default;
+
+$input-label-padding-buttom: 6px !default;
 
 $input-label-reference-mark-spacer: 5px !default;
 $input-label-reference-mark-vertical-alignment: baseline !default;
 
-$input-border-bottom-width: 2px !default;
-$input-border-left-width: 0 !default;
-$input-border-right-width: 0 !default;
-$input-border-top-width: 0 !default;
+$input-border-bottom-width: 1px !default;
+$input-border-left-width: 1px !default;
+$input-border-right-width: 1px !default;
+$input-border-top-width: 1px !default;
 
-$input-padding-horizontal: 4px !default;
-$input-padding-vertical: 6px !default;
+$input-padding-horizontal: 16px !default;
+$input-padding-vertical: 8px !default;
 
-$input-font-size-base: 16px !default;
-$input-font-size-large: 18px !default;
-$input-font-size-small: 13px !default;
+$input-font-size-base: $dxp-base-font-medium-size !default;
+$input-font-size-large: $dxp-base-font-large-size !default;
+$input-font-size-small: $dxp-base-font-extra-small-size !default;
 
 // When changing input, make sure to match the corresponding
 // btn settings to the input height.
@@ -37,17 +39,18 @@ $form-group-margin-bottom: 20px !default;
 
 // Skin
 
-$input-border-radius: 0 !default;
+$input-border-radius: $border-radius-base !default;
 $input-border-radius-large: $input-border-radius !default;
 $input-border-radius-small: $input-border-radius !default;
 
-$input-bg: transparent !default;
+$input-bg: $dxp-light-dark !default;
 $input-bg-disabled: $input-bg !default;
+$input-bg-focus: $dxp-cta-lighten-hight !default;
 
 $input-color: $text-color !default;
-$input-color-focus: $brand-primary !default;
+$input-color-focus: $dxp-cta-lighten-low !default;
 
-$input-border: $brand-default !default;
+$input-border: $dxp-dark-lighten-full !default;
 $input-border-focus: $input-color-focus !default;
 
 $input-border-disabled: #CFD7DE !default;
@@ -55,7 +58,7 @@ $input-border-disabled: #CFD7DE !default;
 $input-box-shadow: none !default;
 $input-box-shadow-focus: none !default;
 
-$input-color-placeholder: darken(#E4E9EC, 12%) !default;
+$input-color-placeholder: $dxp-dark-lighten !default;
 $input-color-placeholder-focus: $input-border-focus !default;
 
 $input-label-color: $brand-default !default;
@@ -76,5 +79,8 @@ $input-group-default-addon-border-color: #DDD !default;
 $input-group-default-addon-color: #BBB !default;
 
 $input-danger: $brand-danger !default;
+$input-danger-bg: $state-danger-bg !default;
 $input-success: $brand-success !default;
+$input-success-bg: $state-success-bg !default;
 $input-warning: $brand-warning !default;
+$input-warning-bg: $state-warning-bg !default;

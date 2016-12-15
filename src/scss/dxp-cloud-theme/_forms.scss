@@ -1,0 +1,55 @@
+.form-control:focus {
+	background-color: $input-bg-focus;
+}
+
+label, .control-label {
+	font-weight: 600;
+	margin-bottom: $input-label-padding-buttom;
+}
+
+.help-block {
+	color: $dxp-dark-lighten;
+	font-weight: 600;
+	margin: 2px 0;
+
+	.reference-mark {
+		margin-right: 4px;
+		vertical-align: baseline;
+	}
+}
+
+.has-success {
+	@include form-control-validation($state-success-text, $state-success-border, $state-success-bg);
+
+	label, .control-label {
+		color: $text-color;
+	}
+
+	.form-control {
+		background-color: $input-success-bg;
+	}
+}
+
+.has-warning {
+	@include form-control-validation($state-warning-text, $state-warning-border, $state-warning-bg);
+
+	label, .control-label {
+		color: $text-color;
+	}
+
+	.form-control {
+		background-color: $input-warning-bg;
+	}
+}
+
+.has-error {
+	@include form-control-validation($state-danger-text, $state-danger-border, $state-danger-bg);
+
+	label, .control-label {
+		color: $text-color;
+	}
+
+	.form-control {
+		background-color: $input-danger-bg;
+	}
+}
