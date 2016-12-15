@@ -7,12 +7,12 @@ $btn-border-width: 1px !default;
 
 $btn-line-height: 24 - ($btn-border-width * 2) !default;
 
-$btn-font-size: $font-size !default;
+$btn-font-size: $font-size-base !default;
 $btn-font-weight: 600 !default;
 $btn-padding-vertical: 8px !default;
 $btn-padding-horizontal: round($btn-padding-vertical * 3) !default;
 
-$btn-lg-font-size: $font-size !default;
+$btn-lg-font-size: $font-size-large !default;
 $btn-lg-padding-vertical: 12px !default;
 $btn-lg-padding-horizontal: round($btn-lg-padding-vertical * 3) !default;
 
