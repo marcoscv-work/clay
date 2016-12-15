@@ -330,6 +330,151 @@ section: Aϟ DXP Cloud Components
 			<span class="label label-sm label-danger">DANGER</span>
 		</div>
 
+		<!-- Form Elements -->
+
+		<h2>Form Elements</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Add class <code>focus</code> on the label to change the color of the label.</p>
+		</blockquote>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<div class="uxgl-assorted-section">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label>
+							Default text input
+							<span class="reference-mark text-warning">
+								<svg class="lexicon-icon">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#asterisk" />
+								</svg>
+							</span>
+						</label>
+						<input class="form-control" placeholder="Placeholder" type="text">
+					</div>
+
+					<div class="form-group col-md-6">
+						<label>
+							Default text input
+						</label>
+						<input class="form-control" placeholder="Placeholder" type="text">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Password input</label>
+					<input class="form-control" placeholder="Enter password" type="password">
+				</div>
+
+				<div class="form-group">
+					<label>Textarea</label>
+					<textarea class="form-control" placeholder="Placeholder"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<h3>Input Validation States</h3>
+
+			<div class="uxgl-assorted-section">
+				<div class="form-group has-success">
+					<label class="control-label" for="inputSuccess1">
+						Input with success
+					</label>
+					<input class="form-control" id="successInput1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-success">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#check" />
+						</svg>
+						This input is a success!
+					</div>
+				</div>
+
+				<div class="form-group has-warning">
+					<label class="control-label" for="inputWarning1">
+						Input with warning
+					</label>
+					<input class="form-control" id="inputWarning1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-warning">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#exclamation-circle" />
+						</svg>
+						Warning this input is a warning!
+					</div>
+				</div>
+
+				<div class="form-group has-error">
+					<label class="control-label" for="inputError1">
+						Input with error
+					</label>
+					<input class="form-control" id="inputError1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-danger">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#exclamation-circle" />
+						</svg>
+						This input is invalid!
+					</div>
+				</div>
+
+				<div class="form-group has-error has-feedback">
+					<label class="control-label" for="inputError1">
+						Input with error
+					</label>
+					<input class="form-control" id="inputError1" type="text">
+					<span aria-hidden="true" class="form-control-feedback">
+						<svg class="lexicon-icon lexicon-icon-times dxp-dark-color">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
+						</svg>
+					</span>
+
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-danger">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#exclamation-circle" />
+						</svg>
+						This input is invalid!
+					</div>
+					<div class="dxp-dark-lighten-text small">
+						This input a help text!
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<h3>Toggles</h3>
+
+			<div class="row uxgl-assorted-section">
+				<div class="form-group col-md-6">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Required Text on Right</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="ON">
+							</span>
+						</span>
+
+						<span class="toggle-switch-text toggle-switch-text-right">Required *</span>
+					</label>
+				</div>
+
+				<div class="form-group col-md-6 text-right">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Required Text on Left</span>
+
+						<span class="toggle-switch-text toggle-switch-text-left">Required *</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="">
+							</span>
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
 		<!-- Lists -->
 
 		<h2>Lists</h2>
