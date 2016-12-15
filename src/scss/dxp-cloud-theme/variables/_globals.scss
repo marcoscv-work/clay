@@ -47,7 +47,7 @@ $font-family-sans-serif: $dxp-font-family-sans-serif;
 
 // Border Radius
 // Defines global border-radius
-$border-radius-base: 4px !default;
+$border-radius-base: $dxp-border-radius-base !default;
 $border-radius-large: $border-radius-base * 1.5 !default;
 $border-radius-small: $border-radius-base * 0.75 !default;
 
@@ -105,20 +105,20 @@ $state-primary-bg: lighten($state-primary-text, 12%) !default;
 $state-primary-border: $state-primary-text !default;
 
 $state-success-text: $brand-success !default;
-$state-success-bg: lighten($state-success-text, 34%) !default;
-$state-success-border: $state-success-text !default;
+$state-success-bg: $sc-success-lighten-hight !default;
+$state-success-border: $sc-success-lighten !default;
 
 $state-info-text: $brand-info !default;
 $state-info-bg: lighten($state-info-text, 34%) !default;
 $state-info-border: $state-info-text !default;
 
 $state-warning-text: $brand-warning !default;
-$state-warning-bg: #F8F4D5 !default;
-$state-warning-border: $state-warning-text !default;
+$state-warning-bg: $sc-warning-lighten-hight !default;
+$state-warning-border: $sc-warning-lighten !default;
 
 $state-danger-text: $brand-danger !default;
-$state-danger-bg: lighten($state-danger-text, 34%) !default;
-$state-danger-border: $state-danger-text !default;
+$state-danger-bg: $sc-danger-lighten-hight !default;
+$state-danger-border: $sc-danger-lighten !default;
 
 // Inverse Colors
 
