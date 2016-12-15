@@ -7,11 +7,11 @@ $toggle-switch-button-width: 16px !default; // Shared
 $toggle-switch-bar-height: 20px !default; // Shared
 $toggle-switch-bar-width: 40px !default; // Shared // width of switch bar
 
-$toggle-switch-bar-desktop-padding: 3px !default; // Atlas // space between button and bar, can be negative value
-$toggle-switch-button-desktop-width: 14px !default; // Atlas
+$toggle-switch-bar-desktop-padding: 3px !default; // space between button and bar, can be negative value
+$toggle-switch-button-desktop-width: 14px !default;
 
-$toggle-switch-bar-desktop-height: ($toggle-switch-bar-desktop-padding * 2) + $toggle-switch-button-desktop-width !default; // Atlas
-$toggle-switch-bar-desktop-width: 40px !default; // Atlas // width of switch bar
+$toggle-switch-bar-desktop-height: ($toggle-switch-bar-desktop-padding * 2) + $toggle-switch-button-desktop-width !default;
+$toggle-switch-bar-desktop-width: 40px !default; // width of switch bar
 // must all be same units--end
 
 $toggle-switch-bar-border-radius: ($toggle-switch-bar-desktop-height / 2) !default; // Shared
@@ -21,8 +21,8 @@ $toggle-switch-bar-font-size: $font-size-small !default; // Shared
 $toggle-switch-button-border-width: 0 !default; // Shared
 $toggle-switch-button-font-size: $toggle-switch-bar-font-size !default; // Shared
 
-$toggle-switch-bar-desktop-font-size: 10px !default; // Atlas
-$toggle-switch-button-desktop-font-size: $toggle-switch-bar-desktop-font-size !default; // Atlas
+$toggle-switch-bar-desktop-font-size: 10px !default;
+$toggle-switch-button-desktop-font-size: $toggle-switch-bar-desktop-font-size !default;
 
 $toggle-switch-text-margin: 4px;
 
