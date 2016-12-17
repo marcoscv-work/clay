@@ -1,10 +1,45 @@
-.form-control:focus {
-	background-color: $input-bg-focus;
+.form-control {
+	box-shadow: $input-box-shadow;
+	font-size: $input-font-size;
+	height: $input-mobile-height-base;
+	padding: $input-padding-vertical $input-padding-horizontal;
+
+	@media (min-width: $grid-float-breakpoint) {
+		font-size: $input-desktop-font-size;
+		height: $input-height-base;
+	}
+
+	&:focus {
+		background-color: $input-bg-focus;
+		box-shadow: $input-box-shadow-focus;
+
+		@include placeholder($input-color-placeholder-focus);
+	}
+
+	fieldset[disabled] &,
+	&[disabled],
+	&select[disabled] {
+		border-color: $input-border-disabled;
+		color: $input-border;
+		opacity: 0.5;
+
+		@include placeholder;
+	}
 }
 
 label, .control-label {
 	font-weight: 600;
 	margin-bottom: $input-label-padding-buttom;
+}
+
+fieldset[disabled] label {
+	opacity: 0.5;
+}
+
+select[disabled].form-control > option {
+	@media (-webkit-min-device-pixel-ratio: 0) { // Webkit only
+		color: $input-border;
+	}
 }
 
 .help-block {
