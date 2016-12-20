@@ -6,12 +6,16 @@
 	}
 
 	.list-group-item {
+		.dropdown ~ .action-icons {
+			right: 48px;
+		}
+
 		.action-icons {
 			background-color: $dxp-cta-lighten-hard;
 			bottom: 0;
 			display: none;
 			position: absolute;
-			right: 48px;
+			right: 0;
 			top: 0;
 
 			ul.action-icon-list {
@@ -40,8 +44,10 @@
 				background-color: $dxp-cta-lighten-hard;
 			}
 
-			.action-icons {
-				display: block;
+			@media (min-width: $screen-md-min) {
+				.action-icons {
+					display: block;
+				}
 			}
 		}
 	}
