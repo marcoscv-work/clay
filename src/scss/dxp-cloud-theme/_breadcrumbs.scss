@@ -1,0 +1,34 @@
+.breadcrumb {
+	border-radius: 0;
+	line-height: $breadcrumb-line-height;
+
+ 	> .active {
+ 		font-weight: $dxp-font-weight-base-big;
+ 	}
+
+	> li {
+		display: inline-block;
+
+		&:first-child {
+			margin-right: 0;
+		}
+
+		+ li:before {
+			left: -$breadcrumb-padding-horizontal;
+			margin-top: -$breadcrumb-padding-horizontal;
+		}
+	}
+}
+
+.breadcrumb-inverted {
+	background-color: $breadcrumb-bg-inverted;
+	color: $breadcrumb-color-inverted;
+
+	a, .active {
+		color: $breadcrumb-color-inverted;
+	}
+
+	li + li:before {
+		background-image: $breadcrumb-separator-svg-icon-inverted;
+	}
+}
