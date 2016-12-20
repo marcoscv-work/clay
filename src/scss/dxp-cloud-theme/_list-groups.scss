@@ -35,7 +35,10 @@
 		}
 
 		&:hover {
-			background-color: $dxp-cta-lighten-hard;
+			.list-group-item-content,
+			.list-group-item-field {
+				background-color: $dxp-cta-lighten-hard;
+			}
 
 			.action-icons {
 				display: block;
