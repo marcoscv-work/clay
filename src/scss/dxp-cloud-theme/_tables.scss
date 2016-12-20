@@ -58,9 +58,11 @@
 	}
 }
 
-.table-list tr:hover {
-	.action-icons {
-		display: block;
+@media (min-width: $screen-md-min) {
+	.table-list tr:hover {
+		.action-icons {
+			display: block;
+		}
 	}
 }
 
