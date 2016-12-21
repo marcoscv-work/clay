@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-* Lexicon 1.0.12
+* Lexicon 1.0.14
 *
 * Copyright 2016, Liferay, Inc.
 * All rights reserved.
@@ -2727,12 +2727,12 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddee1;
 }
 
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #dddee1;
 }
 
 .table > caption + thead > tr:first-child > th,
@@ -2745,7 +2745,7 @@ th {
 }
 
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #dddee1;
 }
 
 .table .table {
@@ -2762,7 +2762,7 @@ th {
 }
 
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #dddee1;
 }
 
 .table-bordered > thead > tr > th,
@@ -2771,7 +2771,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #dddee1;
 }
 
 .table-bordered > thead > tr > th,
@@ -2926,7 +2926,7 @@ table th[class*="col-"] {
     margin-bottom: 16.5px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    border: 1px solid #dddee1;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -5390,7 +5390,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .breadcrumb {
-  padding: 4px 4px;
+  padding: 3px 3px;
   margin-bottom: 22px;
   list-style: none;
   background-color: #FFF;
@@ -5453,8 +5453,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:focus {
   z-index: 3;
   color: #41444B;
-  background-color: transparent;
-  border-color: transparent;
+  background-color: #e1edff;
+  border-color: #e1edff;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -5463,7 +5463,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #41444B;
-  background-color: #8b8f9a;
+  background-color: #e1edff;
   border-color: #41444B;
   cursor: default;
 }
@@ -5550,7 +5550,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: transparent;
+  background-color: #e1edff;
 }
 
 .pager .next > a,
@@ -6437,7 +6437,7 @@ button.list-group-item-danger.active:focus {
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddee1;
 }
 
 .panel > .table > tbody:first-child > tr:first-child th,
@@ -10433,7 +10433,7 @@ button.list-group-heading {
 .pagination-sm .pagination > li > a,
 .pagination-sm .pagination > li > span {
   line-height: 24px;
-  padding: 0 0 0 0;
+  padding: 0 10px 0 10px;
 }
 
 .pagination-sm .pagination > li:first-child > a,
@@ -10463,7 +10463,7 @@ button.list-group-heading {
 .pagination-lg .pagination > li > a,
 .pagination-lg .pagination > li > span {
   line-height: 44px;
-  padding: 0 0 0 0;
+  padding: 0 12px 0 12px;
 }
 
 .pagination-lg .pagination > li:first-child > a,
@@ -11309,12 +11309,12 @@ th {
 
 .table-list > tbody td,
 .table-list > tfoot td {
-  box-shadow: inset 0 -1px #ddd;
+  box-shadow: inset 0 -1px #dddee1;
 }
 
 .table-list > tbody > tr:hover td,
 .table-list > tfoot > tr:hover td {
-  box-shadow: inset 0 -1px #ddd;
+  box-shadow: inset 0 -1px #dddee1;
 }
 
 .table-list > tbody > tr.active td,
@@ -14191,12 +14191,13 @@ button.loading > .linear.loading-animation {
   display: inline-block;
 }
 
-.breadcrumb > li:first-child {
+.breadcrumb > li.breadcrumb-ellipsis {
   margin-right: 0;
+  overflow: visible;
 }
 
 .breadcrumb > li + li:before {
-  left: -4px;
+  left: -3px;
   margin-top: -4px;
 }
 
@@ -14995,6 +14996,35 @@ fieldset[disabled] label {
   vertical-align: top;
 }
 
+.pagination > li > a, .pagination > li > span {
+  border-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 4px;
+  text-align: center;
+  width: 32px;
+}
+
+.pagination-items-per-page {
+  line-height: 1;
+}
+
+.pagination-bar {
+  background-color: #FFF;
+  padding: 16px;
+}
+
+.pagination-bar-bordered {
+  border: 1px solid #dddee1;
+  padding: 15px 16px;
+}
+
+.pagination-bar-table-fixed {
+  border-top-width: 0;
+  margin-bottom: 22px;
+  margin-top: -22px;
+}
+
 .table-list {
   background-color: #FFF;
 }
@@ -15089,7 +15119,7 @@ fieldset[disabled] label {
 }
 
 .table-out-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #dddee1;
 }
 
 .table-out-bordered > thead > tr > th,
@@ -15125,6 +15155,14 @@ fieldset[disabled] label {
 .table-checkbox tr > th:nth-child(2),
 .table-checkbox tr > td:nth-child(2) {
   padding-left: 0;
+}
+
+.table-responsive {
+  margin-bottom: 22px;
+}
+
+.table-responsive .table {
+  margin-bottom: 0;
 }
 
 .table-responsive.table-fixed {
