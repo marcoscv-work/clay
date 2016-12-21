@@ -9,13 +9,14 @@
 	> li {
 		display: inline-block;
 
-		&:first-child {
+		&.breadcrumb-ellipsis {
 			margin-right: 0;
+			overflow: visible;
 		}
 
 		+ li:before {
 			left: -$breadcrumb-padding-horizontal;
-			margin-top: -$breadcrumb-padding-horizontal;
+			margin-top: -($breadcrumb-separator-svg-icon-height/3);
 		}
 	}
 }
