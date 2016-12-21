@@ -1,3 +1,27 @@
+### v1.0.14 - December 09, 2016
+* Fix: Nameplates interpolate $screen-xs-max variable inside mixin nameplate-label-autofit
+* Fix: Tabular-list-group and tabular-list-group-unstyled should fill its container width
+* Fix: Long text in badges and labels should break to new line and be constrained to its container
+* Update: Panels in card styles
+* Update: Sidebar adjust data-list spacing and break-word sidebar-block
+* Update: Add clearfix to sidebar-header
+* Site: Add Panel in Card example to Test Assorted page
+* Site: Add example of badge with long text in test assorted
+* Site: Update sidebar dl examples
+
+### v1.0.13 - December 01, 2016
+* New: Tabular-list-group-unstyled
+* New: Added `.sidebar-actions`, `.sidebar-title`, `.sidebar-caption`, `.sidebar-block` classes to Sidebar
+* Fix: #290 table-striped and table-hover should work with table-list
+* Update: Change toggle-switch-bar min-height to height
+* Update: #289 Add nowrap in toggle label
+* Update: Toggle Switch remove uneeded margin-left on :checked .toggle-switch-handle:after
+* Update: Move deprecated list-group styles to list-group-deprecated
+* Update: Add styles for case `.sidebar-actions > li > span > a`
+* Update: Add styles for  a.sidebar-title case
+* Site: Update list-group docs with tabular-list-group-unstyled and add tabular-list-group-unstyled to sidebar
+* Site: Update pages with Sidebar demos
+
 ### v1.0.12 - November 21, 2016
 * Breaking: Nameplates move some hard coded css values to variables, remove selectors .nameplate-content h# and .nameplate-content small, move auto fitting nameplates to .nameplate-label-autofit-xs-max
 * Breaking: Remove unused slider component from Atlas
