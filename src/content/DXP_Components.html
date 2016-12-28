@@ -939,7 +939,472 @@ section: Aϟ DXP Cloud Components
 			</div>
 		</div>
 
-		<!-- Lists -->
+		<!-- Toolbars -->
+
+		<h2>Toolbar</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Toolbar make easy creating toolbars, it has three diferent states, "normal", inverse <code>.toolbar-inverse</code> and active <code>.toolbar-active</code></p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<h3>Simple Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Quick example about what you can create with toolbars</p>
+			</blockquote>
+
+			<div class="toolbar">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#bold" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-italic">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#italic" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-underline">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#underline" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-left">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#align-left" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-center">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#align-center" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-right">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#align-right" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-indent-more">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#indent-more" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-indent-less">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#indent-less" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-list">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar inverse using <code>toolbar-inverse</code></p>
+			</blockquote>
+
+			<div class="toolbar toolbar-inverse">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#bold" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-list">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar selected using <code>toolbar-selected</code></p>
+			</blockquote>
+
+			<div class="toolbar toolbar-selected">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#bold" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-list">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<h3>Management Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-management</code> to use Management Toolbar</p>
+			</blockquote>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".toolbar-management #searchOpen01Icon").on("click", function() {
+						$("#searchOpen01").css("display","table");
+						$("#searchOpen01 .form-control").focus();
+					});
+
+					$(".toolbar-management .JS-table a").on("click", function() {
+						if ($(this).hasClass("JS-table-view")) {
+							$(".toolbar-management .JS-table-view-icon").removeClass("hide");
+						} else {
+							$(".toolbar-management .JS-table-view-icon").addClass("hide");
+						}
+
+						$(".toolbar-management .JS-table a").removeClass("active");
+
+						$(this).addClass("active");
+					});
+
+					$(".a-z").each(function() {
+						$(this).on("click", function(e) {
+							$(this).toggleClass("a-z z-a");
+						});
+					});
+				});
+			</script>
+
+			<div class="toolbar toolbar-management">
+				<div class="toolbar-group">
+
+					<!-- checkbox -->
+
+					<div class="toolbar-group-content">
+						<input type="checkbox">
+					</div>
+
+					<!-- checkbox end-->
+
+					<div class="toolbar-group-content">
+						<a class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" href="#1">Filter and Order <span class="icon-caret-down"></span></a>
+						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced hidden-md hidden-lg">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#control-panel" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#1">Date</a></li>
+							<li><a href="#1">Time</a></li>
+							<li><a href="#1">Status</a></li>
+						</ul>
+					</div>
+					<div class="toolbar-group-content">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced a-z">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#import-export" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- View right controls -->
+
+				<div class="toolbar-group-right">
+					<div class="toolbar-group-content hidden-md hidden-lg">
+						<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content JS-table-view-icon">
+						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#hidden" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li>
+								<form>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input type="checkbox" value=""> Name row
+										</label>
+									</div>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input type="checkbox" value=""> Date row
+										</label>
+									</div>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input checked type="checkbox" value=""> File row
+										</label>
+									</div>
+								</form>
+							</li>
+						</ul>
+					</div>
+
+					<div class="toolbar-group-content hidden-md hidden-lg">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active"  data-toggle="dropdown">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#table" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right dropdown-menu-icons JS-table">
+							<li>
+								<a href="#1" class="active JS-table-view">
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#table" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#1">
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#1">
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="toolbar-group-content btn-group hidden-xs hidden-sm JS-table">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced JS-table-view active">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#table" />
+							</svg>
+						</a>
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
+							</svg>
+						</a>
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- View controls end -->
+
+				<!-- Search -->
+
+				<div id="searchOpen01" class="toolbar-group-expand toolbar-search">
+					<div class="toolbar-group-content has-feedback">
+						<form>
+							<input class="form-control" type="text">
+							<a href="#searchOpen01" class="form-control-feedback icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
+								</svg>
+							</a>
+						</form>
+					</div>
+				</div>
+
+				<!-- Search end -->
+			</div>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-selected</code> to use Management Toolbar selected state</p>
+			</blockquote>
+
+			<div class="toolbar toolbar-selected toolbar-management">
+				<div class="toolbar-group">
+
+					<!-- checkbox -->
+
+					<div class="toolbar-group-content">
+						<input type="checkbox">
+					</div>
+
+					<!-- checkbox end-->
+
+					<div class="toolbar-group-content">
+						<span>5 of 20 <span class="hidden-xs hidden-sm">items selected</span></span>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#"><u>Select all</u></a>
+					</div>
+				</div>
+
+				<div class="toolbar-group-right">
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<!-- For mobile -->
+							<li class="hidden-md hidden-lg"><a href="#1">Remove</a></li>
+							<li class="hidden-md hidden-lg"><a href="#1">Download</a></li>
+							<li class="hidden-md hidden-lg"><a href="#1">File info</a></li>
+							<!---->
+							<li><a href="#1">Date</a></li>
+							<li><a href="#1">Time</a></li>
+							<li><a href="#1">Status</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar useful classes:</p>
+				<p><code>.toolbar-marginless</code></p>
+			</blockquote>
+		</div>
+
+		<!-- Toolbars -->
 
 		<h2>Lists</h2>
 
