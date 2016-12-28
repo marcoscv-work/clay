@@ -1,0 +1,105 @@
+.toolbar {
+	background-color: $toolbar-default-bg;
+	min-height: $toolbar-group-height;
+	padding: $toolbar-padding-vertical $toolbar-padding-horizontal;
+
+	@media (min-width: $grid-float-breakpoint) {
+		min-height: $toolbar-group-desktop-height;
+		padding: $toolbar-desktop-padding-vertical $toolbar-desktop-padding-horizontal;
+	}
+
+	a {
+		color: $toolbar-default-link-color;
+
+		&:hover, &:active, &.active {
+			background-color: $toolbar-default-link-hover-bg;
+			color: $toolbar-default-link-hover-color;
+			text-decoration: none;
+		}
+	}
+
+	 // Mobile exception for forms
+
+	.form-control {
+		@media (max-width: $grid-float-breakpoint-max) {
+			height: 32px;
+			padding: 4px 16px;
+		}
+	}
+}
+
+.toolbar-inverse {
+	background-color: $dxp-dark;
+
+	&, a:hover, a:focus, a:active, a.active {
+		color: $dxp-white;
+	}
+}
+
+.toolbar-selected {
+	background-color: $dxp-cta;
+
+	&, a, a:hover, a:focus, a:focus:active, a:active, a.active {
+		color: $dxp-white;
+	}
+}
+
+.toolbar-management {
+	.toolbar-group-content {
+		padding-left: $toolbar-group-content-padding-horizontal;
+		padding-right: $toolbar-group-content-padding-horizontal;
+	}
+
+	> .toolbar-group .toolbar-group-content:first-of-type {
+		padding-left: ($toolbar-group-content-padding-horizontal * 2);
+	}
+
+	.form-control-feedback {
+		right: ($toolbar-group-content-padding-horizontal * 2);
+		top: $toolbar-group-content-padding-horizontal;
+	}
+
+	.toolbar-search {
+		@media (max-width: $grid-float-breakpoint-max) {
+			display: none;
+			position: absolute;
+		}
+	}
+
+	.btn {
+		&, &:hover, &:focus, &:active, &.active {
+			background-color: transparent;
+			border-width: 0;
+		}
+	}
+
+	.btn-group {
+		.btn:not(:first-child) {
+			border-left: 1px solid $dxp-dark-lighten-full;
+		}
+	}
+
+	.a-z .lexicon-icon-outline {
+		&:first-of-type {
+			color: $dxp-dark;
+		}
+
+		&:last-of-type {
+			color: $toolbar-default-link-color;
+		}
+	}
+
+	.z-a .lexicon-icon-outline {
+		&:first-of-type {
+			color: $toolbar-default-link-color;
+		}
+
+		&:last-of-type {
+			color: $dxp-dark;
+		}
+	}
+}
+
+.toolbar-marginless {
+	margin: 0;
+}

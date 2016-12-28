@@ -2,11 +2,19 @@
 
 $toolbar-group-height: 48px !default;
 
+$toolbar-padding-horizontal: 0 !default;
+$toolbar-padding-vertical: 0 !default;
+
+$toolbar-group-content-padding-horizontal: 8px;
+
 $toolbar-group-desktop-height: 64px !default;
+
+$toolbar-desktop-padding-horizontal: 8px !default;
+$toolbar-desktop-padding-vertical: 8px !default;
 
 $header-toolbar-height: $toolbar-group-height !default;
 
-$header-toolbar-desktop-height: 64px !default;
+$header-toolbar-desktop-height: $toolbar-group-desktop-height !default;
 
 $header-toolbar-default-border-width: 0 !default;
 
@@ -20,3 +28,10 @@ $header-toolbar-default-divider-width: 1px !default;
 $header-toolbar-default-link-color: #FFF !default;
 $header-toolbar-default-link-hover-bg: transparent !default;
 $header-toolbar-default-link-hover-color: $header-toolbar-default-link-color !default;
+
+$toolbar-default-bg: $dxp-white !default;
+$toolbar-default-color: $dxp-dark-lighten-low !default;
+
+$toolbar-default-link-color: $dxp-dark-lighten-low !default;
+$toolbar-default-link-hover-bg: transparent !default;
+$toolbar-default-link-hover-color: $dxp-dark !default;
