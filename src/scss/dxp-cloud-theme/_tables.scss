@@ -60,8 +60,8 @@
 
 @media (min-width: $screen-md-min) {
 	.table-list tr:hover {
-		.action-icons {
-			display: block;
+		.action-icons, .action-dropdown {
+			display: flex;
 		}
 	}
 }
@@ -85,33 +85,48 @@
 					padding: 0;
 					position: relative;
 					width: 1px;
+
+					.action-dropdown {
+						margin-right: 0;
+					}
 				}
 			}
 
-			.action-icons {
+			.action-dropdown ~ .action-icons {
+				right: 48px;
+			}
+
+			.action-icons, .action-dropdown {
 				background-color: lighten($brand-primary, 30%);
 				bottom: 0;
 				display: none;
 				position: absolute;
 				right: 0;
 				top: 0;
+			}
 
-				ul.action-icon-list {
-					@include list-unstyled;
+			ul.action-icon-list {
+				@include list-unstyled;
 
-					-ms-flex-wrap: nowrap;
-					display: -ms-flexbox;
-					display: flex;
-					flex-wrap: nowrap;
-					height: 100%;
-					margin-bottom: 0;
+				-ms-flex-wrap: nowrap;
+				display: -ms-flexbox;
+				display: flex;
+				flex-wrap: nowrap;
+				height: 100%;
+				margin-bottom: 0;
 
-					> li {
-						@extend .flex-item-center;
+				> li {
+					@extend .flex-item-center;
 
-						margin: 8px;
-					}
+					margin: 8px;
 				}
+			}
+
+			.action-dropdown > a {
+				@extend .flex-item-center;
+
+				display: list-item;
+				margin: 8px;
 			}
 		}
 	}
