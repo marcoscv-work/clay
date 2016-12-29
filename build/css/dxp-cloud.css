@@ -7824,21 +7824,21 @@ button.close {
 
 .badge {
   border-radius: 100px;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 2px;
   margin-top: 2px;
   max-width: 100%;
-  padding-bottom: 9px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 9px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
   white-space: normal;
   word-wrap: break-word;
 }
 
 @media (min-width: 768px) {
   .badge {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -7858,10 +7858,10 @@ button.close {
 
 .badge-sm {
   font-size: 10px;
-  padding-bottom: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
 }
 
 @media (min-width: 768px) {
@@ -7871,9 +7871,9 @@ button.close {
 }
 
 .badge .lexicon-icon {
-  height: 10px;
+  height: 8px;
   margin-left: 2px;
-  width: 10px;
+  width: 8px;
 }
 
 .badge-lg .lexicon-icon {
@@ -7883,8 +7883,8 @@ button.close {
 }
 
 .badge-sm .lexicon-icon {
-  height: 6px;
-  width: 6px;
+  height: 5px;
+  width: 5px;
 }
 
 .badge a {
@@ -8912,22 +8912,22 @@ label .reference-mark,
 
 .label {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   margin-bottom: 2px;
   margin-top: 2px;
   max-width: 100%;
-  padding-bottom: 9px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 9px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
   white-space: normal;
   word-wrap: break-word;
 }
 
 @media (min-width: 768px) {
   .label {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -8956,10 +8956,10 @@ label .reference-mark,
 
 .label-sm {
   font-size: 10px;
-  padding-bottom: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
 }
 
 @media (min-width: 768px) {
@@ -8969,9 +8969,9 @@ label .reference-mark,
 }
 
 .label .lexicon-icon {
-  height: 10px;
+  height: 8px;
   margin-left: 2px;
-  width: 10px;
+  width: 8px;
 }
 
 .label-lg .lexicon-icon {
@@ -8981,13 +8981,13 @@ label .reference-mark,
 }
 
 .label-sm .lexicon-icon {
-  height: 6px;
-  width: 6px;
+  height: 5px;
+  width: 5px;
 }
 
 .label-default,
 .label-default a {
-  color: #41444B;
+  color: #656974;
 }
 
 .list-group-heading {
@@ -11079,7 +11079,7 @@ button.list-group-heading {
 .sticker {
   color: #fff;
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   left: 15px;
   height: 32px;
   line-height: 32px;
@@ -14016,7 +14016,7 @@ button.loading > .linear.loading-animation {
   align-self: flex-end;
 }
 
-.flex-item-center, .table-actions > tbody > tr .action-icons ul.action-icon-list > li {
+.flex-item-center, .table-actions > tbody > tr ul.action-icon-list > li, .table-actions > tbody > tr .action-dropdown > a {
   -ms-flex-item-align: center;
   align-self: center;
 }
@@ -14962,27 +14962,96 @@ fieldset[disabled] label {
   clear: both;
 }
 
-.label-default {
-  border: 1px solid #e1edff;
-  padding-bottom: 8px;
-  padding-top: 8px;
+.label {
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #FFF;
+  border-color: #dddee1;
+  color: #656974;
 }
 
-.label-default.label-lg {
-  padding-bottom: 13px;
-  padding-top: 13px;
+.label[href]:hover, .label[href]:focus {
+  background-color: #FFF;
+  color: #656974;
 }
 
-.label-default.label-sm {
+.label.label-sm {
   padding-bottom: 2px;
   padding-top: 2px;
+}
+
+.label-default {
+  background-color: transparent;
+  border-color: #dddee1;
+  color: #656974;
+}
+
+.label-default[href]:hover, .label-default[href]:focus {
+  background-color: transparent;
+  color: #656974;
+}
+
+.label-primary {
+  background-color: transparent;
+  border-color: #488FFF;
+  color: #488FFF;
+}
+
+.label-primary[href]:hover, .label-primary[href]:focus {
+  background-color: transparent;
+  color: #488FFF;
+}
+
+.label-success {
+  background-color: transparent;
+  border-color: #41A967;
+  color: #41A967;
+}
+
+.label-success[href]:hover, .label-success[href]:focus {
+  background-color: transparent;
+  color: #41A967;
+}
+
+.label-info {
+  background-color: transparent;
+  border-color: #4172A9;
+  color: #4172A9;
+}
+
+.label-info[href]:hover, .label-info[href]:focus {
+  background-color: transparent;
+  color: #4172A9;
+}
+
+.label-warning {
+  background-color: transparent;
+  border-color: #E77735;
+  color: #E77735;
+}
+
+.label-warning[href]:hover, .label-warning[href]:focus {
+  background-color: transparent;
+  color: #E77735;
+}
+
+.label-danger {
+  background-color: transparent;
+  border-color: #FF6060;
+  color: #FF6060;
+}
+
+.label-danger[href]:hover, .label-danger[href]:focus {
+  background-color: transparent;
+  color: #FF6060;
 }
 
 .tabular-list-group a {
   color: #41444B;
 }
 
-.tabular-list-group .list-group-item .dropdown ~ .action-icons {
+.tabular-list-group .list-group-item .action-dropdown ~ .action-icons {
   right: 48px;
 }
 
@@ -15125,8 +15194,8 @@ fieldset[disabled] label {
 }
 
 @media (min-width: 992px) {
-  .table-list tr:hover .action-icons {
-    display: block;
+  .table-list tr:hover .action-icons, .table-list tr:hover .action-dropdown {
+    display: flex;
   }
 }
 
@@ -15141,7 +15210,15 @@ fieldset[disabled] label {
   width: 1px;
 }
 
-.table-actions > tbody > tr .action-icons {
+.table-actions > tbody > tr > td:last-child .action-dropdown {
+  margin-right: 0;
+}
+
+.table-actions > tbody > tr .action-dropdown ~ .action-icons {
+  right: 48px;
+}
+
+.table-actions > tbody > tr .action-icons, .table-actions > tbody > tr .action-dropdown {
   background-color: #e1edff;
   bottom: 0;
   display: none;
@@ -15150,7 +15227,7 @@ fieldset[disabled] label {
   top: 0;
 }
 
-.table-actions > tbody > tr .action-icons ul.action-icon-list {
+.table-actions > tbody > tr ul.action-icon-list {
   padding-left: 0;
   list-style: none;
   -ms-flex-wrap: nowrap;
@@ -15161,7 +15238,12 @@ fieldset[disabled] label {
   margin-bottom: 0;
 }
 
-.table-actions > tbody > tr .action-icons ul.action-icon-list > li {
+.table-actions > tbody > tr ul.action-icon-list > li {
+  margin: 8px;
+}
+
+.table-actions > tbody > tr .action-dropdown > a {
+  display: list-item;
   margin: 8px;
 }
 
@@ -15295,6 +15377,19 @@ fieldset[disabled] label {
 
 .toolbar-selected, .toolbar-selected a, .toolbar-selected a:hover, .toolbar-selected a:focus, .toolbar-selected a:focus:active, .toolbar-selected a:active, .toolbar-selected a.active {
   color: #FFF;
+}
+
+.toolbar-labels {
+  background-color: #F1F3F5;
+  min-height: 40px;
+  padding: 0 0;
+}
+
+@media (min-width: 768px) {
+  .toolbar-labels {
+    min-height: 56px;
+    padding: 4px 4px;
+  }
 }
 
 .toolbar-management .toolbar-group-content {

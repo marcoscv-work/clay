@@ -28,9 +28,9 @@
 
 				<h4 class="title">
 					<a href="../..">DXP Cloud Skin</a>
-					<span class="label label-warning label-sm lexicon-version">v0.1.0</span>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
 					<span class="small"> | </span>
-					<span class="label label-info label-sm lexicon-version">by Lexicon</span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
 					<span class="label label-primary label-sm lexicon-version">v1.0.14</span>
 				</h4>
 
@@ -791,13 +791,78 @@
 			<p>We recomend use capital letters</p>
 		</blockquote>
 
-		<div class="container-fluid uxgl-assorted-section">
-			<span class="label label-sm label-default">DEFAULT</span>
-			<span class="label label-sm label-primary">PRIMARY</span>
-			<span class="label label-sm label-success">SUCESS</span>
-			<span class="label label-sm label-info">INFO</span>
-			<span class="label label-sm label-warning">WARNING</span>
-			<span class="label label-sm label-danger">DANGER</span>
+		<div class="container-fluid-800 uxgl-assorted-section dxp-white-bg text-center">
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label label-sm">LABEL</a>
+				<a href="#" class="label label-sm label-default">DEFAULT</a>
+				<a href="#" class="label label-sm label-primary">PRIMARY</a>
+				<a href="#" class="label label-sm label-success">SUCESS</a>
+				<a href="#" class="label label-sm label-info">INFO</a>
+				<a href="#" class="label label-sm label-warning">WARNING</a>
+				<a href="#" class="label label-sm label-danger">DANGER</a>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-full-bg">
+				<a href="#" class="label label-sm">LABEL</a>
+				<a href="#" class="label label-sm label-default">DEFAULT</a>
+				<a href="#" class="label">LABEL</a>
+				<a href="#" class="label label-default">DEFAULT</a>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label">LABEL</a>
+				<a href="#" class="label label-default">DEFAULT</a>
+				<a href="#" class="label label-primary">PRIMARY</a>
+				<a href="#" class="label label-success">SUCESS</a>
+				<a href="#" class="label label-info">INFO</a>
+				<a href="#" class="label label-warning">WARNING</a>
+				<a href="#" class="label label-danger">DANGER</a>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label">
+					LABEL
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-default">
+					DEFAULT
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-primary">
+					PRIMARY
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-success">
+					SUCESS
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-info">
+					INFO
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-warning">
+					WARNING
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-danger">
+					DANGER
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+			</div>
 		</div>
 
 		<!-- Form Elements -->
@@ -1350,13 +1415,6 @@
 
 				<div class="toolbar-group toolbar-group-right">
 					<div class="toolbar-group-content">
-						<a class="icon-monospaced" href="#1">
-							<svg class="lexicon-icon lexicon-icon-list">
-								<use xlink:href="../../images/icons/icons.svg#list">
-							</svg>
-						</a>
-					</div>
-					<div class="toolbar-group-content">
 						<div class="dropdown">
 							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
 								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
@@ -1635,6 +1693,28 @@
 			</blockquote>
 		</div>
 
+		<div class="uxgl-assorted-section">
+			<h3>Labels Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-labels</code> to use Labels Toolbar</p>
+			</blockquote>
+
+			<div class="toolbar toolbar-labels">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<a href="#" class="label">LABEL</a>
+						<a href="#" class="label label-default">DEFAULT</a>
+						<a href="#" class="label label-primary">PRIMARY</a>
+						<a href="#" class="label label-success">SUCESS</a>
+						<a href="#" class="label label-info">INFO</a>
+						<a href="#" class="label label-warning">WARNING</a>
+						<a href="#" class="label label-danger">DANGER</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Toolbars -->
 
 		<h2>Lists</h2>
@@ -1679,7 +1759,7 @@
 					</div>
 
 					<div class="list-group-item-field">
-						<div class="dropdown">
+						<div class="dropdown action-dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
 								<svg class="icon-monospaced lexicon-icon">
 									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
@@ -1746,7 +1826,7 @@
 					</div>
 
 					<div class="list-group-item-field">
-						<div class="dropdown">
+						<div class="dropdown action-dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
 								<svg class="icon-monospaced lexicon-icon">
 									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
@@ -1853,7 +1933,7 @@
 			</ul>
 		</div>
 
-		<h4>Table List Active line</h4>
+		<h4>Tabular List Active line</h4>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use <code>active</code> class in a <code>list-group-item-field</code> to make it the line as active.</p>
@@ -1886,7 +1966,7 @@
 					</div>
 
 					<div class="list-group-item-field">
-						<div class="dropdown">
+						<div class="dropdown action-dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
 								<svg class="icon-monospaced lexicon-icon">
 									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
@@ -1989,6 +2069,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2011,20 +2103,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2050,6 +2128,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2072,102 +2162,98 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
 							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>21149</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
-								<div class="action-icons">
-									<ul class="action-icon-list">
-										<li>
-											<a href="#1">
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="">
+											</label>
+										</div>
+									</td>
+									<td>21149</td>
+									<td class="table-cell-content">
+										<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+									</td>
+									<td>--</td>
+									<td>2 Hours Ago</td>
+									<td>--</td>
+									<td>Nelson</td>
+									<td>Folder</td>
+									<td>
+										<div class="dropdown action-dropdown">
+											<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
 												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#trash">
-												</svg>
+												<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+											</svg>
 											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#download">
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
-												</svg>
-											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
-										</li>
+											<ul class="dropdown-menu dropdown-menu-left-side">
+												<li><a href="#1">Move</a></li>
+												<li><a href="#1">Checkout</a></li>
+												<li><a href="#1">Permissions</a></li>
+											</ul>
+										</div>
+										<div class="action-icons">
+											<ul class="action-icon-list">
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#trash">
+														</svg>
+													</a>
+												</li>
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#download">
+														</svg>
+													</a>
+												</li>
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+														</svg>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="">
+											</label>
+										</div>
+									</td>
+									<td>21150</td>
+									<td class="table-cell-content">
+										<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+									</td>
+									<td>--</td>
+									<td>2 Hours Ago</td>
+									<td>--</td>
+									<td>Nelson</td>
+									<td>Folder</td>
+									<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
 									</ul>
 								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>21150</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2190,20 +2276,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2299,6 +2371,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2321,20 +2405,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2360,6 +2430,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2382,20 +2464,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2419,6 +2487,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2441,20 +2521,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2478,6 +2544,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2500,20 +2578,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2585,7 +2649,8 @@
 					if (tableW <= tableW2 && (tableW2-tableW-tableScrollPoint) >= 0) {
 						var tableD = (tableW2 - tableW - tableScrollPoint);
 
-						$("#table_02").find(".action-icons").css("right", tableD+"px");
+						$("#table_02").find(".action-icons").css("right", tableD+48+"px");
+						$("#table_02").find(".action-dropdown").css("right", tableD+"px");
 					}
 				}
 
@@ -2681,6 +2746,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2703,20 +2780,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2744,6 +2807,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2766,20 +2841,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2881,6 +2942,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2903,20 +2976,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -2942,6 +3001,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -2964,20 +3035,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3001,6 +3058,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3023,20 +3092,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3060,6 +3115,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3082,20 +3149,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3242,6 +3295,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3264,20 +3329,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3303,6 +3354,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3325,20 +3388,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3362,6 +3411,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3384,20 +3445,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
@@ -3421,6 +3468,18 @@
 							<td>Nelson</td>
 							<td>Folder</td>
 							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
 								<div class="action-icons">
 									<ul class="action-icon-list">
 										<li>
@@ -3443,20 +3502,6 @@
 													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 												</svg>
 											</a>
-										</li>
-										<li>
-											<div class="dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-													<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-												</svg>
-												</a>
-												<ul class="dropdown-menu dropdown-menu-left-side">
-													<li><a href="#1">Move</a></li>
-													<li><a href="#1">Checkout</a></li>
-													<li><a href="#1">Permissions</a></li>
-												</ul>
-											</div>
 										</li>
 									</ul>
 								</div>
