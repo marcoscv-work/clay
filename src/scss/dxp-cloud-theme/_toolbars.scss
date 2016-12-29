@@ -44,6 +44,17 @@
 	}
 }
 
+.toolbar-labels {
+	background-color: $dxp-light-dark;
+	min-height: $toolbar-labels-height;
+	padding: $toolbar-padding-vertical $toolbar-padding-horizontal;
+
+	@media (min-width: $grid-float-breakpoint) {
+		min-height: $toolbar-labels-desktop-height;
+		padding: ($toolbar-desktop-padding-vertical / 2) ($toolbar-desktop-padding-horizontal / 2);
+	}
+}
+
 .toolbar-management {
 	.toolbar-group-content {
 		padding-left: $toolbar-group-content-padding-horizontal;
