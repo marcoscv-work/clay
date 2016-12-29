@@ -1,0 +1,12 @@
+@mixin label-border-color($color, $text-color, $bg-color) {
+	background-color: $bg-color;
+	border-color: $color;
+	color: $text-color;
+
+	&[href] {
+		&:hover, &:focus {
+			background-color: $bg-color;
+			color: $text-color;
+		}
+	}
+}
