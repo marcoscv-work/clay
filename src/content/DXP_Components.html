@@ -560,13 +560,33 @@ section: Aϟ DXP Cloud Components
 			<p>We recomend use capital letters</p>
 		</blockquote>
 
-		<div class="container-fluid uxgl-assorted-section">
-			<span class="label label-sm label-default">DEFAULT</span>
-			<span class="label label-sm label-primary">PRIMARY</span>
-			<span class="label label-sm label-success">SUCESS</span>
-			<span class="label label-sm label-info">INFO</span>
-			<span class="label label-sm label-warning">WARNING</span>
-			<span class="label label-sm label-danger">DANGER</span>
+		<div class="container-fluid-800 uxgl-assorted-section dxp-white-bg text-center">
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label label-sm">LABEL</a>
+				<a href="#" class="label label-sm label-default">DEFAULT</a>
+				<a href="#" class="label label-sm label-primary">PRIMARY</a>
+				<a href="#" class="label label-sm label-success">SUCESS</a>
+				<a href="#" class="label label-sm label-info">INFO</a>
+				<a href="#" class="label label-sm label-warning">WARNING</a>
+				<a href="#" class="label label-sm label-danger">DANGER</a>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-full-bg">
+				<a href="#" class="label label-sm">LABEL</a>
+				<a href="#" class="label label-sm label-default">DEFAULT</a>
+				<a href="#" class="label">LABEL</a>
+				<a href="#" class="label label-default">DEFAULT</a>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label">LABEL</a>
+				<a href="#" class="label label-default">DEFAULT</a>
+				<a href="#" class="label label-primary">PRIMARY</a>
+				<a href="#" class="label label-success">SUCESS</a>
+				<a href="#" class="label label-info">INFO</a>
+				<a href="#" class="label label-warning">WARNING</a>
+				<a href="#" class="label label-danger">DANGER</span>
+			</div>
 		</div>
 
 		<!-- Form Elements -->
@@ -1119,13 +1139,6 @@ section: Aϟ DXP Cloud Components
 
 				<div class="toolbar-group toolbar-group-right">
 					<div class="toolbar-group-content">
-						<a class="icon-monospaced" href="#1">
-							<svg class="lexicon-icon lexicon-icon-list">
-								<use xlink:href="{{rootPath}}/images/icons/icons.svg#list" />
-							</svg>
-						</a>
-					</div>
-					<div class="toolbar-group-content">
 						<div class="dropdown">
 							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
 								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
@@ -1402,6 +1415,26 @@ section: Aϟ DXP Cloud Components
 				<p>Toolbar useful classes:</p>
 				<p><code>.toolbar-marginless</code></p>
 			</blockquote>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<h3>Labels Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-labels</code> to use Labels Toolbar</p>
+			</blockquote>
+
+			<div class="toolbar toolbar-labels">
+				<div class="toolbar-group-right">
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Toolbars -->
