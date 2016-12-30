@@ -1944,8 +1944,8 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .container:before, .container:after {
@@ -1959,27 +1959,27 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 752px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 972px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1172px;
   }
 }
 
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .container-fluid:before, .container-fluid:after {
@@ -1992,8 +1992,8 @@ pre code {
 }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .row:before, .row:after {
@@ -2008,8 +2008,8 @@ pre code {
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -3576,8 +3576,8 @@ select[multiple].input-lg,
 }
 
 .form-horizontal .form-group {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .form-horizontal .form-group:before, .form-horizontal .form-group:after {
@@ -3598,7 +3598,7 @@ select[multiple].input-lg,
 }
 
 .form-horizontal .has-feedback .form-control-feedback {
-  right: 15px;
+  right: 16px;
 }
 
 @media (min-width: 768px) {
@@ -8440,8 +8440,8 @@ button.close {
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .container-fluid-1280:before, .container-fluid-1280:after {
@@ -10956,8 +10956,8 @@ button.list-group-heading {
 }
 
 .container-fluid-1280.sidenav-container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .sidenav-container {
@@ -11080,14 +11080,14 @@ button.list-group-heading {
   color: #fff;
   display: inline-block;
   font-size: 12px;
-  left: 15px;
+  left: 16px;
   height: 32px;
   line-height: 32px;
   width: 32px;
   padding: 0;
   position: absolute;
   text-align: center;
-  top: 15px;
+  top: 16px;
 }
 
 .sticker .lexicon-icon {
@@ -11099,63 +11099,63 @@ button.list-group-heading {
 }
 
 .sticker-bottom-left {
-  bottom: 15px;
+  bottom: 16px;
   right: auto;
   top: auto;
 }
 
 .sticker-bottom-right {
-  bottom: 15px;
+  bottom: 16px;
   left: auto;
-  right: 15px;
+  right: 16px;
   top: auto;
 }
 
 .sticker-top-right {
   left: auto;
-  right: 15px;
+  right: 16px;
 }
 
 .sticker-bottom {
-  bottom: 15px;
+  bottom: 16px;
   top: auto;
 }
 
 .sticker-right {
   left: auto;
-  right: 15px;
+  right: 16px;
 }
 
 .sticker-outside {
-  left: -15px;
-  top: -15px;
+  left: -16px;
+  top: -16px;
 }
 
 .sticker-outside.sticker-bottom-left {
-  bottom: -15px;
+  bottom: -16px;
   top: auto;
 }
 
 .sticker-outside.sticker-bottom-right {
-  bottom: -15px;
+  bottom: -16px;
   left: auto;
-  right: -15px;
+  right: -16px;
   top: auto;
 }
 
 .sticker-outside.sticker-top-right {
   left: auto;
-  right: -15px;
+  right: -16px;
 }
 
 .sticker-outside.sticker-bottom {
-  bottom: -15px;
+  bottom: -16px;
   top: auto;
 }
 
 .sticker-outside.sticker-right {
   left: auto;
-  right: -15px;
+  right: -16px;
 }
 
 .sticker-sm {
@@ -11252,12 +11252,12 @@ th {
 
 .table tr td:first-child .clamp-container,
 .table tr th:first-child .clamp-container {
-  left: 15px;
+  left: 16px;
 }
 
 .table tr td:last-child .clamp-container,
 .table tr th:last-child .clamp-container {
-  right: 15px;
+  right: 16px;
 }
 
 .table .clamp-container {
@@ -13222,25 +13222,25 @@ button.modal-primary-action-button {
 
 .header-toolbar .toolbar-group {
   height: 48px;
-  margin-left: 15px;
+  margin-left: 16px;
   padding-right: 0;
 }
 
 .header-toolbar .toolbar-group:first-child .toolbar-group-content,
 .header-toolbar .toolbar-group:first-child .toolbar-group-field {
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .header-toolbar .toolbar-group:first-child .toolbar-group-content:first-child,
 .header-toolbar .toolbar-group:first-child .toolbar-group-field:first-child {
   padding-left: 0;
-  padding-right: 15px;
+  padding-right: 16px;
 }
 
 .header-toolbar .toolbar-group-right {
   height: 48px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 16px;
+  margin-right: 16px;
   padding-left: 0;
 }
 
@@ -13254,7 +13254,7 @@ button.modal-primary-action-button {
 
 .header-toolbar .toolbar-group-expand-text {
   line-height: 48px;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .header-toolbar .container-fluid-1280 .toolbar-group {
@@ -14957,8 +14957,8 @@ fieldset[disabled] label {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .container-fluid-800:before, .container-fluid-800:after {
@@ -14968,6 +14968,30 @@ fieldset[disabled] label {
 
 .container-fluid-800:after {
   clear: both;
+}
+
+.container-fluid {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.container-fluid .row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+@media (min-width: 768px) {
+  .container-fluid .row {
+    margin-left: -32px;
+    margin-right: -32px;
+  }
 }
 
 .label {
@@ -15408,8 +15432,8 @@ fieldset[disabled] label {
   }
 }
 
-.toolbar-labels a.sticker:hover, .toolbar-labels a.sticker:focus, .toolbar-labels a.sticker:active {
-  color: #FFF;
+.toolbar-labels .btn, .toolbar-labels .btn a, .toolbar-labels .btn a:hover, .toolbar-labels .btn a:focus, .toolbar-labels .btn a:focus:active, .toolbar-labels .btn a:active, .toolbar-labels .btn a.active {
+  color: #656974;
 }
 
 .toolbar-labels .toolbar-labels-container {
@@ -15417,9 +15441,8 @@ fieldset[disabled] label {
   padding: 6px;
 }
 
-.toolbar-labels .label {
-  margin-left: 6px;
-  margin-right: 6px;
+.toolbar-labels .label, .toolbar-labels .btn {
+  margin-right: 8px;
 }
 
 @media (min-width: 768px) {
