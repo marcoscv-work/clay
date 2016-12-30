@@ -7,7 +7,7 @@ section: Aϟ DXP Cloud Components
 	<div>
 		<!-- Header bar -->
 		<div class="toolbar toolbar-marginless toolbar-inverse">
-			<div class="container-fluid-1280">
+			<div class="container-fluid">
 				<div class="toolbar-group">
 					<div class="toolbar-group-content">
 						<svg class="lexicon-icon lexicon-icon-bold">
@@ -29,7 +29,7 @@ section: Aϟ DXP Cloud Components
 		<!-- Breadcrumb -->
 
 		<div class="breadcrumb-inverted">
-			<div class="container-fluid-1280">
+			<div class="container-fluid">
 				<ul class="breadcrumb breadcrumb-horizontal breadcrumb-inverted" style="margin-bottom: 0;">
 					<li class="breadcrumb-ellipsis">
 						<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
@@ -58,7 +58,7 @@ section: Aϟ DXP Cloud Components
 		<!-- Management bar -->
 
 		<div class="toolbar toolbar-marginless toolbar-management" id="managementA">
-			<div class="container-fluid-1280">
+			<div class="container-fluid">
 				<div class="toolbar-group">
 
 					<!-- checkbox -->
@@ -205,7 +205,7 @@ section: Aϟ DXP Cloud Components
 		<!-- Management bar state B -->
 
 		<div class="toolbar toolbar-marginless toolbar-selected toolbar-management hide" id="managementB">
-			<div class="container-fluid-1280">
+			<div class="container-fluid">
 				<div class="toolbar-group">
 
 					<!-- checkbox -->
@@ -274,13 +274,8 @@ section: Aϟ DXP Cloud Components
 		<!-- Label toolbar -->
 
 		<div class="toolbar-labels">
-			<div class="container-fluid-1280">
+			<div class="container-fluid">
 				<div class="toolbar-labels-container">
-					<a href="#" class="sticker sticker-sm sticker-circle sticker-static dxp-dark-lighten-low-bg dxp-white-color" data-toggle="tooltip" data-placement="top" title="Remove all labels">
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times"></use>
-						</svg>
-					</a>
 					<a href="#" class="label label-default">
 						<span>Approved</span>
 						<svg class="lexicon-icon">
@@ -305,555 +300,564 @@ section: Aϟ DXP Cloud Components
 							<use xlink:href="../../images/icons/icons.svg#times"></use>
 						</svg>
 					</a>
+					<a href="#" class="btn btn-sm btn-icon icon-monospaced" data-toggle="tooltip" data-placement="top" title="Remove all labels">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times-circle"></use>
+						</svg>
+					</a>
 				</div>
 			</div>
 		</div>
 
 		<!-- Tabular list -->
-		<div class="container-fluid-1280" id="tabularList">
-			<ul class="tabular-list-group">
-				<li class="list-group-item">
-					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" />
-							</label>
+		<div class="tabularList">
+			<div class="container-fluid" id="tabularList">
+				<ul class="tabular-list-group">
+					<li class="list-group-item">
+						<div class="list-group-item-field">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" />
+								</label>
+							</div>
 						</div>
-					</div>
 
-					<div class="list-group-item-field">
-						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
-							<svg class="lexicon-icon lexicon-icon-folder">
-								<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-							</svg>
-						</div>
-					</div>
-
-					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
-						<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
-						<span class="label label-default label-sm">ART</span>
-						<span class="label label-default label-sm">LABEL</span>
-						<span class="label label-default label-sm">DESIGN</span>
-					</div>
-
-					<div class="list-group-item-field">
-						<div class="dropdown action-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-								<svg class="icon-monospaced lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+						<div class="list-group-item-field">
+							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
+								<svg class="lexicon-icon lexicon-icon-folder">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
 								</svg>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-left-side">
-								<li class="dropdown-header">Dropdown Header</li>
-								<li><a href="#">Action 1</a></li>
-								<li><a href="#">Action 2</a></li>
-								<li><a href="#">Action 3</a></li>
-							</ul>
+							</div>
 						</div>
-						<div class="action-icons">
-							<ul class="action-icon-list">
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-										</svg>
-									</a>
-								</li>
-							</ul>
+
+						<div class="list-group-item-content">
+							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
+							<span class="label label-default label-sm">ART</span>
+							<span class="label label-default label-sm">LABEL</span>
+							<span class="label label-default label-sm">DESIGN</span>
 						</div>
-					</div>
-				</li>
 
-				<li class="list-group-item">
-					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" />
-							</label>
+						<div class="list-group-item-field">
+							<div class="dropdown action-dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-left-side">
+									<li class="dropdown-header">Dropdown Header</li>
+									<li><a href="#">Action 1</a></li>
+									<li><a href="#">Action 2</a></li>
+									<li><a href="#">Action 3</a></li>
+								</ul>
+							</div>
+							<div class="action-icons">
+								<ul class="action-icon-list">
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</div>
+					</li>
 
-					<div class="list-group-item-field">
-						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-success sticker-static">
-							<svg class="dxp-black-color lexicon-icon lexicon-icon-folder">
-								<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-							</svg>
+					<li class="list-group-item">
+						<div class="list-group-item-field">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" />
+								</label>
+							</div>
 						</div>
-					</div>
 
-					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
-						<p class="truncate-text small">State of CSS art</p>
-						<span class="label label-default label-sm">ART</span>
-						<span class="label label-default label-sm">LABEL</span>
-						<span class="label label-default label-sm">DESIGN</span>
-					</div>
-
-					<div class="list-group-item-field">
-						<div class="dropdown action-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-								<svg class="icon-monospaced lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+						<div class="list-group-item-field">
+							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-success sticker-static">
+								<svg class="dxp-black-color lexicon-icon lexicon-icon-folder">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
 								</svg>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-left-side">
-								<li class="dropdown-header">Dropdown Header</li>
-								<li><a href="#">Action 1</a></li>
-								<li><a href="#">Action 2</a></li>
-								<li><a href="#">Action 3</a></li>
-							</ul>
+							</div>
 						</div>
-						<div class="action-icons">
-							<ul class="action-icon-list">
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-										</svg>
-									</a>
-								</li>
-							</ul>
+
+						<div class="list-group-item-content">
+							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p class="truncate-text small">State of CSS art</p>
+							<span class="label label-default label-sm">ART</span>
+							<span class="label label-default label-sm">LABEL</span>
+							<span class="label label-default label-sm">DESIGN</span>
 						</div>
-					</div>
-				</li>
 
-				<li class="list-group-item">
-					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" />
-							</label>
+						<div class="list-group-item-field">
+							<div class="dropdown action-dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-left-side">
+									<li class="dropdown-header">Dropdown Header</li>
+									<li><a href="#">Action 1</a></li>
+									<li><a href="#">Action 2</a></li>
+									<li><a href="#">Action 3</a></li>
+								</ul>
+							</div>
+							<div class="action-icons">
+								<ul class="action-icon-list">
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</div>
+					</li>
 
-					<div class="list-group-item-field">
-						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
-							<svg class="lexicon-icon lexicon-icon-folder">
-								<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-							</svg>
+					<li class="list-group-item">
+						<div class="list-group-item-field">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" />
+								</label>
+							</div>
 						</div>
-					</div>
 
-					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
-						<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
-						<span class="label label-default label-sm">ART</span>
-						<span class="label label-default label-sm">LABEL</span>
-						<span class="label label-default label-sm">DESIGN</span>
-					</div>
-
-					<div class="list-group-item-field">
-						<div class="dropdown action-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-								<svg class="icon-monospaced lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+						<div class="list-group-item-field">
+							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
+								<svg class="lexicon-icon lexicon-icon-folder">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
 								</svg>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-left-side">
-								<li class="dropdown-header">Dropdown Header</li>
-								<li><a href="#">Action 1</a></li>
-								<li><a href="#">Action 2</a></li>
-								<li><a href="#">Action 3</a></li>
-							</ul>
+							</div>
 						</div>
-						<div class="action-icons">
-							<ul class="action-icon-list">
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-										</svg>
-									</a>
-								</li>
-								<li>
-									<a href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-											<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-										</svg>
-									</a>
-								</li>
-							</ul>
+
+						<div class="list-group-item-content">
+							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
+							<span class="label label-default label-sm">ART</span>
+							<span class="label label-default label-sm">LABEL</span>
+							<span class="label label-default label-sm">DESIGN</span>
 						</div>
-					</div>
-				</li>
-			</ul>
+
+						<div class="list-group-item-field">
+							<div class="dropdown action-dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-left-side">
+									<li class="dropdown-header">Dropdown Header</li>
+									<li><a href="#">Action 1</a></li>
+									<li><a href="#">Action 2</a></li>
+									<li><a href="#">Action 3</a></li>
+								</ul>
+							</div>
+							<div class="action-icons">
+								<ul class="action-icon-list">
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+											</svg>
+										</a>
+									</li>
+									<li>
+										<a href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 
 		<!-- Table list -->
-		<div class="container-fluid-1280 hide" id="tableList">
-			<div id="table_01b" class="table-responsive">
-				<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
-					<thead>
-						<tr>
-							<th></th>
-							<th>ID</th>
-							<th class="table-cell-content">
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								<span class="truncate-text" title="Description">Title</span>
-							</th>
-							<th>
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								Status
-								<svg class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
-								</svg>
-							</th>
-							<th>
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								Modified Date
-								<svg class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
-								</svg>
-							</th>
-							<th>
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								Display Date
-								<svg class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
-								</svg>
-							</th>
-							<th>
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								Author
-								<svg class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
-								</svg>
-							</th>
-							<th>
-								<svg class="lexicon-icon table-cell-draggable">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
-								</svg>
-								Type
-								<svg class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
-								</svg>
-							</th>
-							<th></th>
-						</tr>
-					</thead>
+		<div class="tableList">
+			<div class="container-fluid hide" id="tableList">
+				<div id="table_01b" class="table-responsive">
+					<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>ID</th>
+								<th class="table-cell-content">
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									<span class="truncate-text" title="Description">Title</span>
+								</th>
+								<th>
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									Status
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
+									</svg>
+								</th>
+								<th>
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									Modified Date
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
+									</svg>
+								</th>
+								<th>
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									Display Date
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
+									</svg>
+								</th>
+								<th>
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									Author
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
+									</svg>
+								</th>
+								<th>
+									<svg class="lexicon-icon table-cell-draggable">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#cards2" />
+									</svg>
+									Type
+									<svg class="lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-bottom" />
+									</svg>
+								</th>
+								<th></th>
+							</tr>
+						</thead>
 
-					<tbody>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>21146</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
-								<div class="dropdown action-dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-									</svg>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-left-side">
-										<li><a href="#1">Move</a></li>
-										<li><a href="#1">Checkout</a></li>
-										<li><a href="#1">Permissions</a></li>
-									</ul>
-								</div>
-								<div class="action-icons">
-									<ul class="action-icon-list">
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-												</svg>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>
-								21148
-							</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
-								<div class="dropdown action-dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-									</svg>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-left-side">
-										<li><a href="#1">Move</a></li>
-										<li><a href="#1">Checkout</a></li>
-										<li><a href="#1">Permissions</a></li>
-									</ul>
-								</div>
-								<div class="action-icons">
-									<ul class="action-icon-list">
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-												</svg>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>21149</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
-								<div class="dropdown action-dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-									</svg>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-left-side">
-										<li><a href="#1">Move</a></li>
-										<li><a href="#1">Checkout</a></li>
-										<li><a href="#1">Permissions</a></li>
-									</ul>
-								</div>
-								<div class="action-icons">
-									<ul class="action-icon-list">
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-												</svg>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td>21150</td>
-							<td class="table-cell-content">
-								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
-							</td>
-							<td>--</td>
-							<td>2 Hours Ago</td>
-							<td>--</td>
-							<td>Nelson</td>
-							<td>Folder</td>
-							<td>
-								<div class="dropdown action-dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-										<svg class="icon-monospaced lexicon-icon">
-										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-									</svg>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-left-side">
-										<li><a href="#1">Move</a></li>
-										<li><a href="#1">Checkout</a></li>
-										<li><a href="#1">Permissions</a></li>
-									</ul>
-								</div>
-								<div class="action-icons">
-									<ul class="action-icon-list">
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
-												</svg>
-											</a>
-										</li>
-										<li>
-											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
-													<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
-												</svg>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- Pagination -->
-			<div class="pagination-bar pagination-bar-bordered pagination-bar-table-fixed">
-				<div class="dropdown pagination-items-per-page">
-					<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#1">10 entries <span class="icon-sort"></span></button>
-					<ul class="dropdown-menu">
-						<li><a href="#1">5</a></li>
-						<li><a href="#1">10</a></li>
-						<li><a href="#1">20</a></li>
-						<li><a href="#1">30</a></li>
-						<li><a href="#1">50</a></li>
+						<tbody>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value="">
+										</label>
+									</div>
+								</td>
+								<td>21146</td>
+								<td class="table-cell-content">
+									<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+								</td>
+								<td>--</td>
+								<td>2 Hours Ago</td>
+								<td>--</td>
+								<td>Nelson</td>
+								<td>Folder</td>
+								<td>
+									<div class="dropdown action-dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+										</svg>
+										</a>
+										<ul class="dropdown-menu dropdown-menu-left-side">
+											<li><a href="#1">Move</a></li>
+											<li><a href="#1">Checkout</a></li>
+											<li><a href="#1">Permissions</a></li>
+										</ul>
+									</div>
+									<div class="action-icons">
+										<ul class="action-icon-list">
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value="">
+										</label>
+									</div>
+								</td>
+								<td>
+									21148
+								</td>
+								<td class="table-cell-content">
+									<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+								</td>
+								<td>--</td>
+								<td>2 Hours Ago</td>
+								<td>--</td>
+								<td>Nelson</td>
+								<td>Folder</td>
+								<td>
+									<div class="dropdown action-dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+										</svg>
+										</a>
+										<ul class="dropdown-menu dropdown-menu-left-side">
+											<li><a href="#1">Move</a></li>
+											<li><a href="#1">Checkout</a></li>
+											<li><a href="#1">Permissions</a></li>
+										</ul>
+									</div>
+									<div class="action-icons">
+										<ul class="action-icon-list">
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value="">
+										</label>
+									</div>
+								</td>
+								<td>21149</td>
+								<td class="table-cell-content">
+									<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+								</td>
+								<td>--</td>
+								<td>2 Hours Ago</td>
+								<td>--</td>
+								<td>Nelson</td>
+								<td>Folder</td>
+								<td>
+									<div class="dropdown action-dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+										</svg>
+										</a>
+										<ul class="dropdown-menu dropdown-menu-left-side">
+											<li><a href="#1">Move</a></li>
+											<li><a href="#1">Checkout</a></li>
+											<li><a href="#1">Permissions</a></li>
+										</ul>
+									</div>
+									<div class="action-icons">
+										<ul class="action-icon-list">
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" value="">
+										</label>
+									</div>
+								</td>
+								<td>21150</td>
+								<td class="table-cell-content">
+									<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+								</td>
+								<td>--</td>
+								<td>2 Hours Ago</td>
+								<td>--</td>
+								<td>Nelson</td>
+								<td>Folder</td>
+								<td>
+									<div class="dropdown action-dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+											<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+										</svg>
+										</a>
+										<ul class="dropdown-menu dropdown-menu-left-side">
+											<li><a href="#1">Move</a></li>
+											<li><a href="#1">Checkout</a></li>
+											<li><a href="#1">Permissions</a></li>
+										</ul>
+									</div>
+									<div class="action-icons">
+										<ul class="action-icon-list">
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#download" />
+													</svg>
+												</a>
+											</li>
+											<li>
+												<a href="#1">
+													<svg class="icon-monospaced lexicon-icon">
+														<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle-open" />
+													</svg>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- Pagination -->
+				<div class="pagination-bar pagination-bar-bordered pagination-bar-table-fixed">
+					<div class="dropdown pagination-items-per-page">
+						<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#1">10 entries <span class="icon-sort"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#1">5</a></li>
+							<li><a href="#1">10</a></li>
+							<li><a href="#1">20</a></li>
+							<li><a href="#1">30</a></li>
+							<li><a href="#1">50</a></li>
+						</ul>
+					</div>
+
+					<div class="pagination-results hidden-xs">Showing 1 to 20 of 203 entries.</div>
+
+					<ul class="pagination">
+						<li class="disabled"><a href="#1"><span class="icon-caret-left"></span></a></li>
+						<li class="active"><a href="#1">1</a></li>
+						<li><a href="#1">2</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">...</a>
+							<div class="dropdown-menu dropdown-menu-top-center">
+								<ul class="inline-scroller link-list">
+									<li><a href="#1">3</a></li>
+									<li><a href="#1">4</a></li>
+									<li><a href="#1">5</a></li>
+									<li><a href="#1">6</a></li>
+									<li><a href="#1">7</a></li>
+									<li><a href="#1">8</a></li>
+									<li><a href="#1">9</a></li>
+									<li><a href="#1">10</a></li>
+									<li><a href="#1">11</a></li>
+									<li><a href="#1">12</a></li>
+									<li><a href="#1">13</a></li>
+									<li><a href="#1">14</a></li>
+									<li><a href="#1">15</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#1">16</a></li>
+						<li><a href="#1"><span class="icon-caret-right"></span></a></li>
 					</ul>
 				</div>
-
-				<div class="pagination-results hidden-xs">Showing 1 to 20 of 203 entries.</div>
-
-				<ul class="pagination">
-					<li class="disabled"><a href="#1"><span class="icon-caret-left"></span></a></li>
-					<li class="active"><a href="#1">1</a></li>
-					<li><a href="#1">2</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#1">...</a>
-						<div class="dropdown-menu dropdown-menu-top-center">
-							<ul class="inline-scroller link-list">
-								<li><a href="#1">3</a></li>
-								<li><a href="#1">4</a></li>
-								<li><a href="#1">5</a></li>
-								<li><a href="#1">6</a></li>
-								<li><a href="#1">7</a></li>
-								<li><a href="#1">8</a></li>
-								<li><a href="#1">9</a></li>
-								<li><a href="#1">10</a></li>
-								<li><a href="#1">11</a></li>
-								<li><a href="#1">12</a></li>
-								<li><a href="#1">13</a></li>
-								<li><a href="#1">14</a></li>
-								<li><a href="#1">15</a></li>
-							</ul>
-						</div>
-					</li>
-					<li><a href="#1">16</a></li>
-					<li><a href="#1"><span class="icon-caret-right"></span></a></li>
-				</ul>
 			</div>
 		</div>
 	</div>
