@@ -3,10 +3,9 @@ title: Page sample
 section: Aϟ DXP Cloud Components
 ---
 
-<div class="row" id="pageSample">
-	<div class="col-md-12">
+<div id="pageSample">
+	<div>
 		<!-- Header bar -->
-
 		<div class="toolbar toolbar-marginless toolbar-inverse">
 			<div class="container-fluid-1280">
 				<div class="toolbar-group">
@@ -826,7 +825,7 @@ section: Aϟ DXP Cloud Components
 					</ul>
 				</div>
 
-				<div class="pagination-results">Showing 1 to 20 of 203 entries.</div>
+				<div class="pagination-results hidden-xs">Showing 1 to 20 of 203 entries.</div>
 
 				<ul class="pagination">
 					<li class="disabled"><a href="#1"><span class="icon-caret-left"></span></a></li>
@@ -923,32 +922,32 @@ section: Aϟ DXP Cloud Components
 
 	// management
 
-	$(".toolbar-management #searchOpen01Icon").on("click", function() {
-		$("#searchOpen01").css("display","table");
-		$("#searchOpen01 .form-control").focus();
+	$('.toolbar-management #searchOpen01Icon').on('click', function() {
+		$('#searchOpen01').css('display','table');
+		$('#searchOpen01 .form-control').focus();
 	});
 
-	$(".toolbar-management .JS-table a").on("click", function() {
-		if ($(this).hasClass("JS-table-view")) {
-			$(".toolbar-management .JS-table-view-icon").removeClass("hide");
+	$('.toolbar-management .JS-table a').on('click', function() {
+		if ($(this).hasClass('JS-table-view')) {
+			$('.toolbar-management .JS-table-view-icon').removeClass('hide');
 
-			$("#tabularList").addClass("hide");
-			$("#tableList").removeClass("hide");
+			$('#tabularList').addClass('hide');
+			$('#tableList').removeClass('hide');
 		} else {
-			$(".toolbar-management .JS-table-view-icon").addClass("hide");
+			$('.toolbar-management .JS-table-view-icon').addClass('hide');
 
-			$("#tabularList").removeClass("hide");
-			$("#tableList").addClass("hide");
+			$('#tabularList').removeClass('hide');
+			$('#tableList').addClass('hide');
 		}
 
-		$(".toolbar-management .JS-table a").removeClass("active");
+		$('.toolbar-management .JS-table a').removeClass('active');
 
-		$(this).addClass("active");
+		$(this).addClass('active');
 	});
 
-	$(".a-z").each(function() {
-		$(this).on("click", function(e) {
-			$(this).toggleClass("a-z z-a");
+	$('.a-z').each(function() {
+		$(this).on('click', function(e) {
+			$(this).toggleClass('a-z z-a');
 		});
 	});
 </script>
