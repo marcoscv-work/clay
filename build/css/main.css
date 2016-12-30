@@ -217,7 +217,7 @@ body.fixed {
 }
 
 .uxgl-fullscreen-fixed {
-  background-color: #F5F8FA;
+  background-color: #FFF;
   bottom: 0;
   left: 0;
   overflow: auto;

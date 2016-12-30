@@ -2728,12 +2728,12 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #dddee1;
+  border-top: 1px solid #eaebed;
 }
 
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #dddee1;
+  border-bottom: 2px solid #eaebed;
 }
 
 .table > caption + thead > tr:first-child > th,
@@ -2746,7 +2746,7 @@ th {
 }
 
 .table > tbody + tbody {
-  border-top: 2px solid #dddee1;
+  border-top: 2px solid #eaebed;
 }
 
 .table .table {
@@ -2763,7 +2763,7 @@ th {
 }
 
 .table-bordered {
-  border: 1px solid #dddee1;
+  border: 1px solid #eaebed;
 }
 
 .table-bordered > thead > tr > th,
@@ -2772,7 +2772,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #dddee1;
+  border: 1px solid #eaebed;
 }
 
 .table-bordered > thead > tr > th,
@@ -2927,7 +2927,7 @@ table th[class*="col-"] {
     margin-bottom: 16.5px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #dddee1;
+    border: 1px solid #eaebed;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -6438,7 +6438,7 @@ button.list-group-item-danger.active:focus {
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #dddee1;
+  border-top: 1px solid #eaebed;
 }
 
 .panel > .table > tbody:first-child > tr:first-child th,
@@ -11310,12 +11310,12 @@ th {
 
 .table-list > tbody td,
 .table-list > tfoot td {
-  box-shadow: inset 0 -1px #dddee1;
+  box-shadow: inset 0 -1px #eaebed;
 }
 
 .table-list > tbody > tr:hover td,
 .table-list > tfoot > tr:hover td {
-  box-shadow: inset 0 -1px #dddee1;
+  box-shadow: inset 0 -1px #eaebed;
 }
 
 .table-list > tbody > tr.active td,
@@ -14741,10 +14741,11 @@ fieldset[disabled] .btn {
 }
 
 .form-control {
-  box-shadow: none;
   font-size: 16px;
   height: 40px;
   padding: 8px 16px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {
@@ -14756,6 +14757,7 @@ fieldset[disabled] .btn {
 
 .form-control:focus {
   background-color: #ebf3ff;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -14856,8 +14858,10 @@ fieldset[disabled] label {
   color: #41444B;
 }
 
-.has-success .form-control {
+.has-success .form-control, .has-success .form-control:focus {
   background-color: #ecf8f0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .has-warning .help-block,
@@ -14899,8 +14903,10 @@ fieldset[disabled] label {
   color: #41444B;
 }
 
-.has-warning .form-control {
+.has-warning .form-control, .has-warning .form-control:focus {
   background-color: #fef8f4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .has-error .help-block,
@@ -14942,8 +14948,10 @@ fieldset[disabled] label {
   color: #41444B;
 }
 
-.has-error .form-control {
+.has-error .form-control, .has-error .form-control:focus {
   background-color: #ffefef;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .container-fluid-800 {
@@ -15249,7 +15257,7 @@ fieldset[disabled] label {
 }
 
 .table-out-bordered {
-  border: 1px solid #dddee1;
+  border: 1px solid #eaebed;
 }
 
 .table-out-bordered > thead > tr > th,
@@ -15382,14 +15390,38 @@ fieldset[disabled] label {
 
 .toolbar-labels {
   background-color: #F1F3F5;
+  margin-bottom: 10px;
   min-height: 40px;
-  padding: 0 0;
+  overflow-x: auto;
+  padding: 2px;
 }
 
 @media (min-width: 768px) {
   .toolbar-labels {
     min-height: 56px;
-    padding: 4px 4px;
+    padding: 8px;
+  }
+}
+
+.toolbar-labels a.sticker:hover, .toolbar-labels a.sticker:focus, .toolbar-labels a.sticker:active {
+  color: #FFF;
+}
+
+.toolbar-labels .toolbar-labels-container {
+  white-space: nowrap;
+  padding: 6px;
+}
+
+.toolbar-labels .label {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+@media (min-width: 768px) {
+  .toolbar-management {
+    position: relative;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.04);
   }
 }
 
@@ -15440,7 +15472,7 @@ fieldset[disabled] label {
 }
 
 .toolbar-marginless {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 h1, .h1 {
