@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - <%= title %></title>
+	<title>DXP Cloud Skin based on Lexicon - <%= title %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<%= rootPath %>/css/dxp-cloud-font-awesome.css" />
 	<link rel="stylesheet" href="<%= rootPath %>/scss/highlightjs/github.css" />
@@ -16,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -31,12 +31,12 @@
 					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
 					<span class="small"> | </span>
 					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
-					<span class="label label-primary label-sm lexicon-version">v<%= version %></span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v<%= version %></span>
 				</h4>
 
 				<% include site_config %>
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<% include navigation %>
