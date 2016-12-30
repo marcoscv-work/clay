@@ -56,9 +56,9 @@
 		padding: 8px;
 	}
 
-	a.sticker {
-		&:hover, &:focus, &:active {
-			color: $dxp-white;
+	.btn {
+		&, a, a:hover, a:focus, a:focus:active, a:active, a.active {
+			color: $dxp-dark-lighten;
 		}
 	}
 
@@ -67,9 +67,8 @@
 		padding: 6px;
 	}
 
-	.label {
-		margin-left: 6px;
-		margin-right: 6px;
+	.label, .btn {
+		margin-right: 8px;
 	}
 }
 
