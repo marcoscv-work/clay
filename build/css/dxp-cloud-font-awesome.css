@@ -15139,6 +15139,12 @@ fieldset[disabled] label {
   padding: 16px;
 }
 
+.pagination-bar .pagination {
+  float: right;
+  margin: 0;
+  width: auto;
+}
+
 .pagination-bar-bordered {
   border: 1px solid #dddee1;
   padding: 15px 16px;
