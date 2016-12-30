@@ -49,11 +49,11 @@
 	margin-bottom: 10px;
 	min-height: $toolbar-labels-height;
 	overflow-x: auto;
-	padding: 6px 16px;
+	padding: 2px;
 
 	@media (min-width: $grid-float-breakpoint) {
 		min-height: $toolbar-labels-desktop-height;
-		padding: 14px 24px;
+		padding: 8px;
 	}
 
 	a.sticker {
@@ -64,6 +64,7 @@
 
 	.toolbar-labels-container {
 		white-space: nowrap;
+		padding: 6px;
 	}
 
 	.label {
@@ -73,6 +74,12 @@
 }
 
 .toolbar-management {
+	@media (min-width: $grid-float-breakpoint) {
+		position: relative;
+
+		@include box-shadow(0 3px 3px rgba(0,0,0,.04));
+	}
+
 	.toolbar-group-content {
 		padding-left: $toolbar-group-content-padding-horizontal;
 		padding-right: $toolbar-group-content-padding-horizontal;
