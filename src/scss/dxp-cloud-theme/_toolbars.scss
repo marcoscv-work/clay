@@ -46,12 +46,29 @@
 
 .toolbar-labels {
 	background-color: $dxp-light-dark;
+	margin-bottom: 10px;
 	min-height: $toolbar-labels-height;
-	padding: $toolbar-padding-vertical $toolbar-padding-horizontal;
+	overflow-x: auto;
+	padding: 6px 16px;
 
 	@media (min-width: $grid-float-breakpoint) {
 		min-height: $toolbar-labels-desktop-height;
-		padding: ($toolbar-desktop-padding-vertical / 2) ($toolbar-desktop-padding-horizontal / 2);
+		padding: 14px 24px;
+	}
+
+	a.sticker {
+		&:hover, &:focus, &:active {
+			color: $dxp-white;
+		}
+	}
+
+	.toolbar-labels-container {
+		white-space: nowrap;
+	}
+
+	.label {
+		margin-left: 6px;
+		margin-right: 6px;
 	}
 }
 
