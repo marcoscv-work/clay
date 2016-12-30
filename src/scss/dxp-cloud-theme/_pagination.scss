@@ -16,6 +16,12 @@
 .pagination-bar {
 	background-color: $pagination-bar-bg;
 	padding: $pagination-bar-padding;
+
+	.pagination {
+		float: right;
+		margin: 0;
+		width: auto;
+	}
 }
 
 .pagination-bar-bordered {
