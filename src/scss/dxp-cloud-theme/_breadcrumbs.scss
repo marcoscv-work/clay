@@ -1,6 +1,12 @@
 .breadcrumb {
 	border-radius: 0;
 	line-height: $breadcrumb-line-height;
+	margin-bottom: 0;
+	padding: $breadcrumb-padding-vertical 0;
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+	}
 
  	> .active {
  		font-weight: $dxp-font-weight-base-big;
@@ -15,8 +21,8 @@
 		}
 
 		+ li:before {
-			left: -$breadcrumb-padding-horizontal;
-			margin-top: -($breadcrumb-separator-svg-icon-height/3);
+			left: -($breadcrumb-padding-horizontal / 4);
+			margin-top: -($breadcrumb-separator-svg-icon-height / 3);
 		}
 	}
 }
