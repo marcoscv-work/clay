@@ -5391,7 +5391,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .breadcrumb {
-  padding: 3px 3px;
+  padding: 3px 8px;
   margin-bottom: 22px;
   list-style: none;
   background-color: #FFF;
@@ -5545,7 +5545,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 5px 14px;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .pager li > a:hover,
@@ -5654,7 +5654,7 @@ a.label:hover, a.label:focus {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   color: #fff;
   line-height: 1;
   vertical-align: middle;
@@ -7837,12 +7837,6 @@ button.close {
   word-wrap: break-word;
 }
 
-@media (min-width: 768px) {
-  .badge {
-    font-size: 12px;
-  }
-}
-
 .badge-lg {
   font-size: 16px;
   padding-bottom: 14px;
@@ -7851,24 +7845,12 @@ button.close {
   padding-top: 14px;
 }
 
-@media (min-width: 768px) {
-  .badge-lg {
-    font-size: 18px;
-  }
-}
-
 .badge-sm {
   font-size: 10px;
   padding-bottom: 2px;
   padding-left: 6px;
   padding-right: 6px;
   padding-top: 2px;
-}
-
-@media (min-width: 768px) {
-  .badge-sm {
-    font-size: 10px;
-  }
 }
 
 .badge .lexicon-icon {
@@ -9941,8 +9923,8 @@ button.list-group-heading {
 .management-bar {
   border-color: transparent;
   border-style: solid;
-  border-width: 0 0 1px 0;
-  margin-bottom: 0;
+  border-width: 1px 1px 1px 1px;
+  margin-bottom: 22px;
   min-height: 48px;
   position: relative;
 }
@@ -9979,7 +9961,7 @@ button.list-group-heading {
 .management-bar-header-right > .btn,
 .management-bar-header > .dropdown,
 .management-bar-header-right > .dropdown {
-  margin: 6.5px 0 6.5px 15px;
+  margin: 6px 0 6px 15px;
   padding: 0;
 }
 
@@ -10022,10 +10004,10 @@ button.list-group-heading {
 .management-bar-nav > li > .checkbox,
 .management-bar-nav > li > .radio {
   float: left;
-  padding-bottom: 13.5px;
+  padding-bottom: 13px;
   padding-left: 15px;
   padding-right: 0;
-  padding-top: 13.5px;
+  padding-top: 13px;
 }
 
 .management-bar-header {
@@ -10050,13 +10032,13 @@ button.list-group-heading {
 .management-bar-header-right > span {
   display: block;
   float: left;
-  padding: 12.5px 15px;
+  padding: 12px 15px;
 }
 
 .management-bar-header-item {
   float: left;
   height: 48px;
-  padding: 12.5px 15px;
+  padding: 12px 15px;
 }
 
 .management-bar-header-item:hover, .management-bar-header-item:focus {
@@ -10123,7 +10105,7 @@ button.list-group-heading {
 
 .management-bar-toggle-link.management-bar-toggle {
   margin: 0;
-  padding: 12.5px 15px;
+  padding: 12px 15px;
 }
 
 .management-bar-toggle-link:focus, .management-bar-toggle-link:hover {
@@ -10159,11 +10141,11 @@ button.list-group-heading {
     background-color: #FFF;
     border-color: transparent;
     border-style: solid;
-    border-width: 0 0 1px 0;
+    border-width: 1px 1px 1px 1px;
     clear: both;
-    left: 0;
+    left: -1px;
     position: absolute;
-    right: 0;
+    right: -1px;
     top: 100%;
     z-index: 1001;
   }
@@ -10203,7 +10185,7 @@ button.list-group-heading {
 }
 
 .management-bar-nav {
-  margin: 6.25px -15px;
+  margin: 6px -15px;
 }
 
 @media (min-width: 768px) {
@@ -10222,7 +10204,7 @@ button.list-group-heading {
 .management-bar-nav > li > a,
 .management-bar-nav > li > span {
   display: block;
-  padding: 12.5px 15px;
+  padding: 12px 15px;
 }
 
 .management-bar-nav > li > .dropdown-menu {
@@ -10288,23 +10270,23 @@ button.list-group-heading {
 }
 
 .management-bar-default .management-bar-collapse {
-  border-color: #EDF0F2;
+  border-color: #E3E6E8;
 }
 
 @media (max-width: 767px) {
   .management-bar-default .management-bar-collapse {
-    background-color: #F5F8FA;
-    border-color: #EDF0F2;
+    background-color: #FCFEFF;
+    border-color: #E3E6E8;
   }
 }
 
 .management-bar-default .management-bar-toggle-left {
-  color: #488FFF;
+  color: #41444B;
 }
 
 .management-bar-default {
-  background-color: #F5F8FA;
-  border-color: #EDF0F2;
+  background-color: #FCFEFF;
+  border-color: #E3E6E8;
 }
 
 .management-bar-default a,
@@ -10326,7 +10308,7 @@ button.list-group-heading {
 .management-bar-default .management-bar-nav .open > a:focus,
 .management-bar-default .management-bar-nav .open > a:hover {
   background-color: transparent;
-  color: #488FFF;
+  color: #41444B;
 }
 
 .management-bar-default .management-bar-nav > .disabled > a, .management-bar-default .management-bar-nav > .disabled > a:focus, .management-bar-default .management-bar-nav > .disabled > a:hover {
@@ -10336,24 +10318,24 @@ button.list-group-heading {
 
 .management-bar-default .btn-default,
 .management-bar-default .nav > li > .btn-default {
-  background-color: transparent;
-  border-color: #E4E9EC;
+  background-color: #FCFEFF;
+  border-color: #E3E6E8;
   color: #41444B;
 }
 
 .management-bar-default .btn-default:focus, .management-bar-default .btn-default:hover,
 .management-bar-default .nav > li > .btn-default:focus,
 .management-bar-default .nav > li > .btn-default:hover {
-  background-color: transparent;
-  border-color: #E4E9EC;
+  background-color: #c9edff;
+  border-color: #c1c8cc;
   color: #41444B;
 }
 
 .management-bar-default .btn-default:active, .management-bar-default .btn-default.active,
 .management-bar-default .nav > li > .btn-default:active,
 .management-bar-default .nav > li > .btn-default.active {
-  background-color: #E4E9EC;
-  border-color: #E4E9EC;
+  background-color: #c9edff;
+  border-color: #c1c8cc;
   color: #41444B;
 }
 
@@ -11481,15 +11463,15 @@ th {
 
 .toggle-card-container {
   background-color: #F1F3F5;
-  border: 1px solid #DCE0E3;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  color: #869CAD;
+  border: 1px solid #eaebed;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #41444B;
   display: table;
-  height: 104px;
-  padding: 12px 12px;
+  height: 78px;
+  padding: 4px 4px;
   text-align: center;
-  width: 92px;
+  width: 69px;
 }
 
 .toggle-card-cell {
@@ -11500,7 +11482,7 @@ th {
 
 .toggle-card-icon {
   border-radius: 30px;
-  font-size: 24px;
+  font-size: 16px;
   height: 32px;
   margin: 0 auto;
   width: 32px;
@@ -11511,18 +11493,18 @@ th {
 }
 
 .toggle-card-label {
-  height: 58px;
+  height: 40px;
   line-height: 16px;
   overflow: hidden;
-  padding-top: 12px;
+  padding-top: 4px;
 }
 
 input.toggle-card {
-  height: 104px;
+  height: 78px;
   margin: 0;
   opacity: 0;
   position: absolute;
-  width: 92px;
+  width: 69px;
 }
 
 .toggle-card input.toggle-card {
@@ -11545,12 +11527,12 @@ input.toggle-card:empty ~ .toggle-card-container .toggle-card-icon [class*="icon
 
 input.toggle-card:checked ~ .toggle-card-container {
   background-color: #F1F3F5;
-  border: 2px solid #65B6F0;
-  color: #65B6F0;
-  padding-bottom: 11px;
-  padding-left: 11px;
-  padding-right: 11px;
-  padding-top: 11px;
+  border: 1px solid #488FFF;
+  color: #488FFF;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
 }
 
 input.toggle-card:checked ~ .toggle-card-container .toggle-card-off {
@@ -11563,7 +11545,7 @@ input.toggle-card:checked ~ .toggle-card-container .toggle-card-on {
 
 input.toggle-card:checked ~ .toggle-card-container .toggle-card-icon {
   background-color: transparent;
-  border: 0 solid #65B6F0;
+  border: 0 solid #488FFF;
 }
 
 input.toggle-card:checked ~ .toggle-card-container .toggle-card-icon [class*="icon-"] {
@@ -12671,7 +12653,7 @@ button.modal-primary-action-button {
 }
 
 .nameplate-subheading {
-  color: #41444B;
+  color: #777777;
   display: block;
 }
 
@@ -12770,7 +12752,7 @@ button.modal-primary-action-button {
 }
 
 .nameplate-label-default {
-  background-color: #E7F1F9;
+  background-color: #FCFEFF;
   color: #41444B;
 }
 
@@ -14182,6 +14164,14 @@ button.loading > .linear.loading-animation {
 .breadcrumb {
   border-radius: 0;
   line-height: 32px;
+  margin-bottom: 0;
+  padding: 3px 0;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb {
+    padding: 3px 8px;
+  }
 }
 
 .breadcrumb > .active {
@@ -14198,7 +14188,7 @@ button.loading > .linear.loading-animation {
 }
 
 .breadcrumb > li + li:before {
-  left: -3px;
+  left: -2px;
   margin-top: -4px;
 }
 
@@ -14958,8 +14948,6 @@ fieldset[disabled] label {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 .container-fluid-800:before, .container-fluid-800:after {
@@ -14971,27 +14959,27 @@ fieldset[disabled] label {
   clear: both;
 }
 
-.container-fluid {
+.container, .container-fluid, .container-fluid-1280, .container-fluid-800 {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 @media (min-width: 768px) {
-  .container-fluid {
+  .container, .container-fluid, .container-fluid-1280, .container-fluid-800 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
-.container-fluid .row {
-  margin-left: -8px;
-  margin-right: -8px;
+.container .row, .container-fluid .row, .container-fluid-1280 .row, .container-fluid-800 .row {
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
 @media (min-width: 768px) {
-  .container-fluid .row {
-    margin-left: -32px;
-    margin-right: -32px;
+  .container .row, .container-fluid .row, .container-fluid-1280 .row, .container-fluid-800 .row {
+    margin-left: -16px;
+    margin-right: -16px;
   }
 }
 
