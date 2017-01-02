@@ -104,3 +104,11 @@ $btn-icon-sm-padding-vertical: 0 !default;
 $btn-icon-sm-padding-horizontal: 0 !default;
 $btn-icon-sm-height-vertical: 32px !default;
 $btn-icon-sm-width-horizontal: 32px !default;
+
+// z-index
+
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;

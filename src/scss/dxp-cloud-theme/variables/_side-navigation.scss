@@ -1,0 +1,13 @@
+$sidenav-transition: all 0.5s ease !default;
+$sidenav-width: 320px !default;
+$zindex-sidenav: $zindex-navbar-fixed + 5 !default;
+
+// DXP semi-collapse nav
+
+$sidenav-semi-collapse-transition: all .2s cubic-bezier(0.230,  1.000, 0.320, 1.000) !default;
+
+$sidenav-semi-collapse-width-closed: 72px !default;
+$sidenav-semi-collapse-width: 240px !default;
+
+$sidenav-delays-transition: all .3s cubic-bezier(0.550,  0.085, 0.680, 0.530) !default;
+$sidenav-delays: 0.04s 0.08s 0.12s 0.16s 0.20s 0.24s !default;

@@ -1,0 +1,71 @@
+.has-sidenav-semi-collapse {
+	@media (min-width: $grid-float-breakpoint) {
+		margin-left: $sidenav-semi-collapse-width-closed;
+	}
+}
+
+.sidenav-semi-collapse {
+	// temporal:
+	.icon-monospaced {
+		font-size: 125%;
+	}
+
+	.user-icon {
+		display: inline-table;
+
+		~ span {
+			margin-left: 8px;
+		}
+	}
+
+	.nav > li > a, .sidenav-header {
+		padding: 16px;
+	}
+
+	.nav-sidenav {
+		margin-top: 64px;
+	}
+
+	> .sidenav-menu-slider {
+		background-color: $sc-dark;
+		color: $dxp-white;
+		overflow-x: hidden;
+		overflow-y: auto;
+		transition: $sidenav-semi-collapse-transition;
+		width: 0;
+
+		@media (min-width: $grid-float-breakpoint) {
+			width: $sidenav-semi-collapse-width-closed;
+		}
+
+		.delay-animation {
+			opacity: 0;
+			transition: $sidenav-semi-collapse-transition;
+		}
+
+		a, .btn {
+			color: $dxp-white;
+		}
+
+		&:hover, &.open {
+			width: $sidenav-semi-collapse-width;
+
+			.delay-animation {
+				opacity: 1;
+			}
+
+			@each $delay in $sidenav-delays {
+				$i: index($sidenav-delays, $delay);
+
+				.delay-#{$i} {
+					@include transition-delay($delay);
+				}
+			}
+		}
+
+		> .flex-container {
+			height: 100%;
+			white-space: nowrap;
+		}
+	}
+}
