@@ -3,16 +3,81 @@ title: Page sample
 section: Aϟ DXP Cloud Components
 ---
 
-<div id="pageSample">
+
+<div class="sidenav-fixed sidenav-semi-collapse">
+	<div class="sidenav-menu-slider" id="sidenavFixed">
+		<div class="sidenav-container flex-container">
+			<div class="flex-item flex-item-full flex-item-top">
+				<div class="sidenav-header">
+					<span class="icon-apple icon-monospaced" style="font-size: 175%;"></span>
+					<span class="sidenav-title delay-animation delay-1" style="font-size: 150%; vertical-align: middle;">DXP Cloud</span>
+				</div>
+				<ul class="nav hidden-xs">
+					<li>
+						<a href="#1">
+							<div class="user-icon user-icon-warning"><span>TT</span></div>
+							<span class="delay-animation delay-1">Marcos Castro Vallejo</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav nav-sidenav">
+					<li>
+						<a href="#1">
+							<span class="icon-home icon-monospaced"></span>
+							<span class="delay-animation delay-2">Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="#1">
+							<span class="icon-user icon-monospaced"></span>
+							<span class="delay-animation delay-2">Contacts</span>
+						</a>
+					</li>
+					<li>
+						<a href="#1">
+							<span class="icon-tags icon-monospaced"></span>
+							<span class="delay-animation delay-3">Assets</span>
+						</a>
+					</li>
+					<li>
+						<a href="#1">
+							<span class="icon-map-marker icon-monospaced"></span>
+							<span class="delay-animation delay-4">Touchpoints</span>
+						</a>
+					</li>
+					<li>
+						<a href="#1">
+							<span class="icon-bullseye icon-monospaced"></span>
+							<span class="delay-animation delay-5">Campains</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="nav flex-item-bottom flex-item-full">
+				<li>
+					<a href="#">
+						<span class="icon-cog icon-monospaced"></span>
+						<span class="delay-animation delay-6">Settings</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+    </li>
+	</div>
+</div>
+
+<div id="pageSample" class="has-sidenav-semi-collapse">
 	<div>
 		<!-- Header bar -->
 		<div class="toolbar toolbar-marginless toolbar-inverse">
 			<div class="container-fluid">
 				<div class="toolbar-group">
 					<div class="toolbar-group-content">
-						<svg class="lexicon-icon lexicon-icon-bold">
-							<use xlink:href="{{rootPath}}/images/icons/icons.svg#bars" />
-						</svg>
+						<a href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#bars" />
+							</svg>
+						</a>
 					</div>
 				</div>
 
