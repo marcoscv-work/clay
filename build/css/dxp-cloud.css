@@ -2,7 +2,7 @@
 /**
 * Lexicon 1.0.14
 *
-* Copyright 2016, Liferay, Inc.
+* Copyright 2017, Liferay, Inc.
 * All rights reserved.
 * MIT license
 */
@@ -15165,6 +15165,99 @@ fieldset[disabled] label {
   border-top-width: 0;
   margin-bottom: 22px;
   margin-top: -22px;
+}
+
+@media (min-width: 768px) {
+  .has-sidenav-semi-collapse {
+    margin-left: 72px;
+  }
+}
+
+.sidenav-semi-collapse .icon-monospaced {
+  font-size: 125%;
+}
+
+.sidenav-semi-collapse .user-icon {
+  display: inline-table;
+}
+
+.sidenav-semi-collapse .user-icon ~ span {
+  margin-left: 8px;
+}
+
+.sidenav-semi-collapse .nav > li > a, .sidenav-semi-collapse .sidenav-header {
+  padding: 16px;
+}
+
+.sidenav-semi-collapse .nav-sidenav {
+  margin-top: 64px;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider {
+  background-color: #464A5E;
+  color: #FFF;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 0;
+}
+
+@media (min-width: 768px) {
+  .sidenav-semi-collapse > .sidenav-menu-slider {
+    width: 72px;
+  }
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider .delay-animation {
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider a, .sidenav-semi-collapse > .sidenav-menu-slider .btn {
+  color: #FFF;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover, .sidenav-semi-collapse > .sidenav-menu-slider.open {
+  width: 240px;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-animation, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-animation {
+  opacity: 1;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-1, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-1 {
+  -webkit-transition-delay: 0.04s;
+  transition-delay: 0.04s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-2, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-2 {
+  -webkit-transition-delay: 0.08s;
+  transition-delay: 0.08s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-3, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-3 {
+  -webkit-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-4, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-4 {
+  -webkit-transition-delay: 0.16s;
+  transition-delay: 0.16s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-5, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-5 {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider:hover .delay-6, .sidenav-semi-collapse > .sidenav-menu-slider.open .delay-6 {
+  -webkit-transition-delay: 0.24s;
+  transition-delay: 0.24s;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider > .flex-container {
+  height: 100%;
+  white-space: nowrap;
 }
 
 .table-list {
