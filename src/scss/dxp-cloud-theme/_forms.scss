@@ -29,6 +29,7 @@
 }
 
 label, .control-label {
+	font-size: $input-label-font-size;
 	font-weight: 600;
 	margin-bottom: $input-label-padding-buttom;
 }
