@@ -737,7 +737,7 @@ section: Aϟ DXP Cloud Components
 						</svg>
 						This input is invalid!
 					</div>
-					<div class="dxp-dark-lighten-text small">
+					<div class="dxp-dark-lighten-low-color small">
 						This input a help text!
 					</div>
 
@@ -1002,6 +1002,58 @@ section: Aϟ DXP Cloud Components
 					<li><a href="#1"><span class="icon-caret-right"></span></a></li>
 				</ul>
 			</div>
+		</div>
+
+		<!-- navbar -->
+
+		<h2>Navbar</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Navbar <code>.navbar-main</code> is the class used to create the DXP main top navigation.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<nav class="navbar navbar-main navbar-inverse navbar-no-collapse">
+				<div class="navbar-header">
+					<a class="navbar-brand visible-xs-block navbar-align-left" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+						<svg class="lexicon-icon lexicon-icon-bold">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#bars" />
+						</svg>
+					</a>
+
+					<a class="navbar-brand" href="#">
+						<svg class="lexicon-icon hidden-xs">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#angle-left" />
+						</svg>
+						Home
+					</a>
+
+					<a class="navbar-brand visible-xs-block navbar-align-right" href="#1">
+						<div class="user-icon user-icon-warning"><span>MC</span></div>
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Dashboard</a></li>
+					<li><a href="#">List</a></li>
+				</ul>
+
+				<div class="navbar-form navbar-right btn-mobile-fix">
+					<button class="btn btn-primary btn-mobile-fix" type="button">
+						<span class="hidden-xs">Create</span>
+						<span class="visible-xs-block">
+							<svg class="icon-monospaced lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#plus" />
+							</svg>
+						</span>
+					</button>
+				</div>
+
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input class="form-control" placeholder="Search" type="text">
+					</div>
+				</form>
+			</nav>
 		</div>
 
 		<!-- Toolbars -->
@@ -1270,7 +1322,7 @@ section: Aϟ DXP Cloud Components
 				<!-- View right controls -->
 
 				<div class="toolbar-group-right">
-					<div class="toolbar-group-content hidden-md hidden-lg">
+					<div class="toolbar-group-content hidden-sm hidden-md hidden-lg">
 						<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
