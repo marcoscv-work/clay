@@ -15173,10 +15173,6 @@ fieldset[disabled] label {
   }
 }
 
-.sidenav-semi-collapse .icon-monospaced {
-  font-size: 125%;
-}
-
 .sidenav-semi-collapse .user-icon {
   display: inline-table;
 }
@@ -15186,11 +15182,13 @@ fieldset[disabled] label {
 }
 
 .sidenav-semi-collapse .nav > li > a, .sidenav-semi-collapse .sidenav-header {
-  padding: 16px;
+  padding: 16px 16px 16px 20px;
 }
 
-.sidenav-semi-collapse .nav-sidenav {
-  margin-top: 64px;
+@media (min-height: 580px) {
+  .sidenav-semi-collapse .nav-sidenav {
+    margin-top: 42px;
+  }
 }
 
 .sidenav-semi-collapse > .sidenav-menu-slider {
@@ -15213,8 +15211,17 @@ fieldset[disabled] label {
   transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.sidenav-semi-collapse > .sidenav-menu-slider a, .sidenav-semi-collapse > .sidenav-menu-slider .btn {
+.sidenav-semi-collapse > .sidenav-menu-slider a {
   color: #FFF;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider .nav-color a {
+  color: #a8abbe;
+  font-weight: 600;
+}
+
+.sidenav-semi-collapse > .sidenav-menu-slider .active a {
+  color: #7baeff;
 }
 
 .sidenav-semi-collapse > .sidenav-menu-slider:hover, .sidenav-semi-collapse > .sidenav-menu-slider.open {
