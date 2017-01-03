@@ -936,11 +936,13 @@ section: Aϟ DXP Cloud Components
 		function(event) {
 			event.preventDefault();
 
+			$('#sidenavFixed').toggleClass('hide');
 			$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
 			$('body').toggleClass('fixed');
 		}
 	);
 
+	$('#sidenavFixed').toggleClass('hide');
 	$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
 	$('body').toggleClass('fixed');
 
