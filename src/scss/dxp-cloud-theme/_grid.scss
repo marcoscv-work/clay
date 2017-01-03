@@ -7,12 +7,13 @@
 }
 
 // Temporal container modification (better if we change bootstrap grid mixin)
-.container, .container-fluid, .container-fluid-1280, .container-fluid-800 {
+
+.container, .container-fluid, .container-fluid-800, .container-fluid-1280 {
 	padding-left: ($dxp-grid-gutter-outside-width / 4);
 	padding-right: ($dxp-grid-gutter-outside-width / 4);
 
 	@media (min-width: $grid-float-breakpoint) {
-		padding-left:  $dxp-grid-gutter-outside-width;
+		padding-left: $dxp-grid-gutter-outside-width;
 		padding-right: $dxp-grid-gutter-outside-width;
 	}
 
@@ -21,7 +22,7 @@
 		margin-right: -($dxp-grid-gutter-outside-width / 8);
 
 		@media (min-width: $grid-float-breakpoint) {
-			margin-left:  -($dxp-grid-gutter-outside-width / 2);
+			margin-left: -($dxp-grid-gutter-outside-width / 2);
 			margin-right: -($dxp-grid-gutter-outside-width / 2);
 		}
 	}

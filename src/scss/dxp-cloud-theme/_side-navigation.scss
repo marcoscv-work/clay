@@ -17,6 +17,10 @@
 		padding: $sidenav-semi-collapse-item-padding;
 	}
 
+	.sidenav-header {
+		margin: 4px 0;
+	}
+
 	.nav-sidenav {
 		@media (min-height: $sidenav-semi-collapse-height-breakpoint) {
 			margin-top: $sidenav-semi-collapse-nav-margin-top;

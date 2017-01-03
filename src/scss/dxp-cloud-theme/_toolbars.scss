@@ -18,7 +18,7 @@
 		}
 	}
 
-	 // Mobile exception for forms
+	// Mobile exception for forms
 
 	.form-control {
 		@media (max-width: $grid-float-breakpoint-max) {
@@ -63,8 +63,8 @@
 	}
 
 	.toolbar-labels-container {
-		white-space: nowrap;
 		padding: 6px;
+		white-space: nowrap;
 	}
 
 	.label, .btn {
@@ -76,7 +76,7 @@
 	@media (min-width: $grid-float-breakpoint) {
 		position: relative;
 
-		@include box-shadow(0 3px 3px rgba(0,0,0,.04));
+		@include box-shadow(0 3px 3px rgba(0, 0, 0, 0.04));
 	}
 
 	.toolbar-group-content {

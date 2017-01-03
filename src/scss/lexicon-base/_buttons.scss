@@ -24,38 +24,38 @@
 @if (variable-exists(atlas-theme)) {
 	.btn-default {
 		@include color-btn($btn-default-border);
-		@include color-btn-hover($btn-default-hover-bg, $btn-default-hover-border);
 		@include color-btn-active($btn-default-active-bg, $btn-default-active-border);
+		@include color-btn-hover($btn-default-hover-bg, $btn-default-hover-border);
 	}
 
 	.btn-primary {
 		@include color-btn($btn-primary-border);
-		@include color-btn-hover($btn-primary-hover-bg, $btn-primary-hover-border);
 		@include color-btn-active($btn-primary-active-bg, $btn-primary-active-border);
+		@include color-btn-hover($btn-primary-hover-bg, $btn-primary-hover-border);
 	}
 
 	.btn-success {
 		@include color-btn($btn-success-border);
-		@include color-btn-hover($btn-success-hover-bg, $btn-success-hover-border);
 		@include color-btn-active($btn-success-active-bg, $btn-success-active-border);
+		@include color-btn-hover($btn-success-hover-bg, $btn-success-hover-border);
 	}
 
 	.btn-info {
 		@include color-btn($btn-info-border);
-		@include color-btn-hover($btn-info-hover-bg, $btn-info-hover-border);
 		@include color-btn-active($btn-info-active-bg, $btn-info-active-border);
+		@include color-btn-hover($btn-info-hover-bg, $btn-info-hover-border);
 	}
 
 	.btn-warning {
 		@include color-btn($btn-warning-border);
-		@include color-btn-hover($btn-warning-hover-bg, $btn-warning-hover-border);
 		@include color-btn-active($btn-warning-active-bg, $btn-warning-active-border);
+		@include color-btn-hover($btn-warning-hover-bg, $btn-warning-hover-border);
 	}
 
 	.btn-danger {
 		@include color-btn($btn-danger-border);
-		@include color-btn-hover($btn-danger-hover-bg, $btn-danger-hover-border);
 		@include color-btn-active($btn-danger-active-bg, $btn-danger-active-border);
+		@include color-btn-hover($btn-danger-hover-bg, $btn-danger-hover-border);
 	}
 
 	.btn-link {
