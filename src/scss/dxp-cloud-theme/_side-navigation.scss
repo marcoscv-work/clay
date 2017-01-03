@@ -5,11 +5,6 @@
 }
 
 .sidenav-semi-collapse {
-	// temporal:
-	.icon-monospaced {
-		font-size: 125%;
-	}
-
 	.user-icon {
 		display: inline-table;
 
@@ -19,11 +14,13 @@
 	}
 
 	.nav > li > a, .sidenav-header {
-		padding: 16px;
+		padding: $sidenav-semi-collapse-item-padding;
 	}
 
 	.nav-sidenav {
-		margin-top: 64px;
+		@media (min-height: $sidenav-semi-collapse-height-breakpoint) {
+			margin-top: $sidenav-semi-collapse-nav-margin-top;
+		}
 	}
 
 	> .sidenav-menu-slider {
@@ -43,8 +40,17 @@
 			transition: $sidenav-semi-collapse-transition;
 		}
 
-		a, .btn {
+		a {
 			color: $dxp-white;
+		}
+
+		.nav-color a {
+			color: $sidenav-semi-collapse-item-color;
+			font-weight: $dxp-font-weight-base-big;
+		}
+
+		.active a {
+			color: $sidenav-semi-collapse-item-color-active;
 		}
 
 		&:hover, &.open {

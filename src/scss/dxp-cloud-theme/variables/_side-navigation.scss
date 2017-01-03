@@ -9,5 +9,13 @@ $sidenav-semi-collapse-transition: all .2s cubic-bezier(0.230,  1.000, 0.320, 1.
 $sidenav-semi-collapse-width-closed: 72px !default;
 $sidenav-semi-collapse-width: 240px !default;
 
+$sidenav-semi-collapse-item-color-active: $dxp-cta-lighten;
+$sidenav-semi-collapse-item-color: $sc-dark-lighten-medium;
+
+$sidenav-semi-collapse-item-padding: 16px 16px 16px 20px !default;
+
 $sidenav-delays-transition: all .3s cubic-bezier(0.550,  0.085, 0.680, 0.530) !default;
 $sidenav-delays: 0.04s 0.08s 0.12s 0.16s 0.20s 0.24s !default;
+
+$sidenav-semi-collapse-height-breakpoint: 580px;
+$sidenav-semi-collapse-nav-margin-top: 42px;
