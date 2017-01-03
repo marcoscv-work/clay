@@ -5,17 +5,17 @@ $navbar-border-left-width: 0 !default;
 $navbar-border-right-width: 0 !default;
 $navbar-border-top-width: 0 !default;
 
-$navbar-height: 48px !default;
+$navbar-height: 56px !default;
 $navbar-link-line-height: 24px !default;
-$navbar-padding-horizontal: 15px !default;
+$navbar-padding-horizontal: 16px !default;
 $navbar-padding-vertical: (($navbar-height - $navbar-link-line-height - $navbar-border-bottom-width - $navbar-border-top-width) / 2) !default;
 
-$navbar-desktop-height: 60px !default;
+$navbar-desktop-height: 72px !default;
 $navbar-desktop-link-line-height: 28px !default;
-$navbar-desktop-padding-horizontal: (($grid-gutter-width / 2)) !default;
+$navbar-desktop-padding-horizontal: 16px !default;
 $navbar-desktop-padding-vertical: (($navbar-desktop-height - $navbar-desktop-link-line-height - $navbar-border-bottom-width - $navbar-border-top-width) / 2) !default;
 
-$navbar-link-active-bottom-border-width: 2px !default;
+$navbar-link-active-bottom-border-width: 4px !default;
 
 $navbar-default-border-bottom-width: 1px !default;
 $navbar-default-border-left-width: 0 !default;
@@ -38,7 +38,7 @@ $navbar-default-desktop-padding-vertical: ($navbar-default-desktop-height - $nav
 $navbar-border-radius: 0 !default;
 $navbar-collapse-absolute-box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.7) !default;
 
-$navbar-link-active-highlight: transparent !default;
+$navbar-link-active-highlight: $dxp-cta-lighten !default;
 
 $navbar-toggle-icon-bar-color: $nav-link-color !default;
 $navbar-toggle-icon-bar-width: 16px !default;
@@ -74,11 +74,11 @@ $navbar-default-toggle-icon-bar-bg: $navbar-default-link-active-color !default;
 
 // Navbar Inverse
 
-$navbar-inverse-bg: $brand-default !default;
-$navbar-inverse-border: $brand-default !default;
-$navbar-inverse-color: #FFF !default;
+$navbar-inverse-bg: $sc-dark-lighten !default;
+$navbar-inverse-border: $sc-dark-lighten !default;
+$navbar-inverse-color: $dxp-white !default;
 
-$navbar-inverse-link-color: #FFF !default;
+$navbar-inverse-link-color: $dxp-white !default;
 $navbar-inverse-link-hover-color: $navbar-inverse-link-color !default;
 
 $navbar-inverse-link-active-bg: transparent !default;
@@ -91,8 +91,8 @@ $navbar-inverse-brand-color: $navbar-inverse-link-color !default;
 $navbar-inverse-brand-hover-color: $navbar-inverse-brand-color !default;
 
 $navbar-inverse-link-open-bg: $brand-primary !default;
-$navbar-inverse-link-open-color: #FFF !default;
+$navbar-inverse-link-open-color: $dxp-white !default;
 
 $navbar-inverse-toggle-border-color: $navbar-inverse-border !default;
 $navbar-inverse-toggle-hover-bg: transparent !default;
-$navbar-inverse-toggle-icon-bar-bg: #FFF !default;
+$navbar-inverse-toggle-icon-bar-bg: $dxp-white !default;
