@@ -328,29 +328,49 @@
 <div id="pageSample" class="has-sidenav-semi-collapse">
 	<div>
 		<!-- Header bar -->
-		<div class="toolbar toolbar-marginless toolbar-inverse">
-			<div class="container-fluid">
-				<div class="toolbar-group">
-					<div class="toolbar-group-content">
-						<a href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
-							<svg class="lexicon-icon lexicon-icon-bold">
-								<use xlink:href="../../images/icons/icons.svg#bars">
-							</svg>
-						</a>
-					</div>
-				</div>
+		<nav class="navbar navbar-main navbar-inverse navbar-no-collapse">
+			<div class="navbar-header">
+				<a class="navbar-brand visible-xs-block navbar-align-left" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+					<svg class="lexicon-icon lexicon-icon-bold">
+						<use xlink:href="../../images/icons/icons.svg#bars">
+					</svg>
+				</a>
 
-				<div class="toolbar-group toolbar-group-right">
-					<div class="toolbar-group-content">
-						<svg class="lexicon-icon lexicon-icon-ellipsis-v">
-							<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-						</svg>
-					</div>
-				</div>
+				<a class="navbar-brand" href="#">
+					<svg class="lexicon-icon hidden-xs">
+						<use xlink:href="../../images/icons/icons.svg#angle-left">
+					</svg>
+					Home
+				</a>
+
+				<a class="navbar-brand visible-xs-block navbar-align-right" href="#1">
+					<div class="user-icon user-icon-warning"><span>MC</span></div>
+				</a>
 			</div>
-		</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Dashboard</a></li>
+				<li><a href="#">List</a></li>
+			</ul>
 
-		<!-- Breadcrumb -->
+			<div class="navbar-form navbar-right btn-mobile-fix">
+				<button class="btn btn-primary btn-mobile-fix" type="button">
+					<span class="hidden-xs">Create</span>
+					<span class="visible-xs-block">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#plus">
+						</svg>
+					</span>
+				</button>
+			</div>
+
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input class="form-control" placeholder="Search" type="text">
+				</div>
+			</form>
+		</nav>
+
+		<!-- Breadcrumb
 
 		<div class="breadcrumb-inverted">
 			<div class="container-fluid">
@@ -358,7 +378,7 @@
 					<li class="breadcrumb-ellipsis">
 						<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
 							<svg class="icon-monospaced lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#ellipsis-h">
+								<use xlink:href="../../images/icons/icons.svg#ellipsis-h" />
 							</svg>
 						</a>
 						<ul class="dropdown-menu">
@@ -378,6 +398,7 @@
 				</ul>
 			</div>
 		</div>
+		-->
 
 		<!-- Management bar -->
 
@@ -416,7 +437,7 @@
 				</div>
 
 				<div class="toolbar-group-right">
-					<div class="toolbar-group-content hidden-md hidden-lg">
+					<div class="toolbar-group-content hidden-sm hidden-md hidden-lg">
 						<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#search">
@@ -1184,10 +1205,11 @@
 				</div>
 			</div>
 		</div>
+		<a class="btn btn-xs btn-default pull-right" style="margin: 50px 30px 100px;" data-toggle="tooltip" href="#pageSample" id="fullscreenBtn" title="Fullscreen">Toggle full-screen <span class="icon-desktop"></span></a>
 	</div>
 </div>
 
-<a class="btn btn-bottom-right btn-primary icon-monospaced" style="z-index: 99" data-placement="left" data-toggle="tooltip" href="#pageSample" id="fullscreenBtn" title="Fullscreen"><span class="icon-desktop"></span></a>
+
 
 <script>
 	$('#fullscreenBtn').on(
