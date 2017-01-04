@@ -4,11 +4,6 @@
 	@media (max-width: $grid-float-breakpoint-max) {
 		text-align: center;
 
-		.navbar-brand {
-			display: inline-block;
-			float: none;
-		}
-
 		.btn-mobile-fix {
 			bottom: $btn-fixed-spacer-y;
 			height: $btn-icon-height-vertical;
@@ -18,22 +13,11 @@
 			width: $btn-icon-width-horizontal;
 			z-index: $zindex-navbar-fixed;
 		}
+	}
 
-		.navbar-header {
-			position: relative;
-
-			.navbar-align-left, .navbar-align-right {
-				position: absolute;
-				top: 0;
-			}
-
-			.navbar-align-left {
-				left: 0;
-			}
-
-			.navbar-align-right {
-				right: 0;
-			}
+	.navbar-header {
+		@media (max-width: $grid-float-breakpoint-max) {
+			background-color: $sc-dark;
 		}
 	}
 
@@ -81,6 +65,31 @@
 
 			@include box-shadow(none);
 		}
+
+		.icon-monospaced {
+			color: $dxp-white;
+		}
+
+		.has-feedback .form-control {
+			padding-left: 34px;
+		}
+
+		.form-control-feedback-left {
+			left: 4px;
+
+			@media (min-width: $grid-float-breakpoint) {
+				top: 4px;
+			}
+		}
+
+		.form-control-feedback {
+			pointer-events: all;
+			right: 4px;
+
+			@media (min-width: $grid-float-breakpoint) {
+				top: 4px;
+			}
+		}
 	}
 
 	.form-control {
@@ -89,6 +98,12 @@
 		color: $dxp-white;
 
 		@include placeholder($dxp-white);
+
+		@media (max-width: $grid-float-breakpoint-max) {
+			height: 32px;
+			padding-bottom: ($navbar-padding-horizontal / 8);
+			padding-top: ($navbar-padding-horizontal / 8);
+		}
 	}
 }
 
@@ -104,6 +119,7 @@
 	.navbar-brand {
 		font-size: $dxp-font-size-h4;
 		line-height: $navbar-link-line-height;
+		padding: $navbar-desktop-padding-horizontal;
 
 		@media (min-width: $grid-float-breakpoint) {
 			line-height: $navbar-desktop-link-line-height;
