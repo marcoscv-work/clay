@@ -15142,10 +15142,6 @@ fieldset[disabled] label {
   .navbar-main {
     text-align: center;
   }
-  .navbar-main .navbar-brand {
-    display: inline-block;
-    float: none;
-  }
   .navbar-main .btn-mobile-fix {
     bottom: 20px;
     height: 40px;
@@ -15155,18 +15151,11 @@ fieldset[disabled] label {
     width: 40px;
     z-index: 1030;
   }
+}
+
+@media (max-width: 767px) {
   .navbar-main .navbar-header {
-    position: relative;
-  }
-  .navbar-main .navbar-header .navbar-align-left, .navbar-main .navbar-header .navbar-align-right {
-    position: absolute;
-    top: 0;
-  }
-  .navbar-main .navbar-header .navbar-align-left {
-    left: 0;
-  }
-  .navbar-main .navbar-header .navbar-align-right {
-    right: 0;
+    background-color: #464A5E;
   }
 }
 
@@ -15216,6 +15205,35 @@ fieldset[disabled] label {
   }
 }
 
+.navbar-main .navbar-form .icon-monospaced {
+  color: #FFF;
+}
+
+.navbar-main .navbar-form .has-feedback .form-control {
+  padding-left: 34px;
+}
+
+.navbar-main .navbar-form .form-control-feedback-left {
+  left: 4px;
+}
+
+@media (min-width: 768px) {
+  .navbar-main .navbar-form .form-control-feedback-left {
+    top: 4px;
+  }
+}
+
+.navbar-main .navbar-form .form-control-feedback {
+  pointer-events: all;
+  right: 4px;
+}
+
+@media (min-width: 768px) {
+  .navbar-main .navbar-form .form-control-feedback {
+    top: 4px;
+  }
+}
+
 .navbar-main .form-control {
   background-color: #464A5E;
   border-color: #464A5E;
@@ -15235,6 +15253,14 @@ fieldset[disabled] label {
   color: #FFF;
 }
 
+@media (max-width: 767px) {
+  .navbar-main .form-control {
+    height: 32px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
+}
+
 .navbar {
   border-width: 0 0 1px 0;
   margin-bottom: 0;
@@ -15250,6 +15276,7 @@ fieldset[disabled] label {
 .navbar .navbar-brand {
   font-size: 24px;
   line-height: 24px;
+  padding: 16px;
 }
 
 @media (min-width: 768px) {

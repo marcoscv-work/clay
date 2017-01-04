@@ -1246,22 +1246,22 @@
 		</blockquote>
 
 		<div class="uxgl-assorted-section">
-			<nav class="navbar navbar-main navbar-inverse navbar-no-collapse">
-				<div class="navbar-header">
-					<a class="navbar-brand visible-xs-block navbar-align-left" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+			<nav class="navbar navbar-main navbar-inverse">
+				<div class="navbar-header flex-container">
+					<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
 						<svg class="lexicon-icon lexicon-icon-bold">
 							<use xlink:href="../../images/icons/icons.svg#bars">
 						</svg>
 					</a>
 
-					<a class="navbar-brand" href="#">
+					<div class="navbar-brand flex-item-expand truncate-text" href="#">
 						<svg class="lexicon-icon hidden-xs">
 							<use xlink:href="../../images/icons/icons.svg#angle-left">
 						</svg>
 						Home
-					</a>
+					</div>
 
-					<a class="navbar-brand visible-xs-block navbar-align-right" href="#1">
+					<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#1">
 						<div class="user-icon user-icon-warning"><span>MC</span></div>
 					</a>
 				</div>
@@ -1282,8 +1282,29 @@
 				</div>
 
 				<form class="navbar-form navbar-right" role="search">
-					<div class="form-group">
+					<div class="form-group has-feedback dropdown-wide">
+						<span class="form-control-feedback form-control-feedback-left icon-monospaced dxp-white-color">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#search">
+							</svg>
+						</span>
+
 						<input class="form-control" placeholder="Search" type="text">
+
+						<a href="javascript:function(void)" class="form-control-feedback icon-monospaced" data-toggle="dropdown" type="button" aria-expanded="false">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#bookmarks">
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li class="dropdown-header">Search saved:</li>
+							<li class="divider"></li>
+							<li><a href="#">Search filter saved A</a></li>
+							<li><a href="#">Search filter saved B</a></li>
+							<li><a href="#">Search filter saved B</a></li>
+							<li><a href="#">Search filter saved B</a></li>
+							<li><a href="#">Search filter saved B</a></li>
+						</ul>
 					</div>
 				</form>
 			</nav>
