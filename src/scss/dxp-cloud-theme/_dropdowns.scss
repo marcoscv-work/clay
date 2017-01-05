@@ -18,4 +18,8 @@
 		overflow: hidden;
 		padding: $dropdown-link-padding;
 	}
+
+	.lexicon-icon {
+		margin-right: ($dropdown-checkbox-label-spacer / 4)
+	}
 }
