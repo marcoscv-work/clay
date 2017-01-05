@@ -96,3 +96,7 @@ select[disabled].form-control > option {
 		@include box-shadow($input-box-shadow);
 	}
 }
+
+.has-feedback-left .form-control {
+	padding-left: 34px;
+}
