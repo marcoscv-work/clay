@@ -521,6 +521,17 @@
 			</div>
 		</div>
 
+		<h4>Useful Grid classes</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>DXP Cloud components like management-toolbar, breadcrumbs or toolbar-labels have a main 32px horiontal padding, to add this behaviour in grids you can add:</p>
+			<p><code>.container-padded</code></p>
+			<p>If in otherwise what you want is removing the horiontal padding you can use:</p>
+			<p><code>.container-glued</code></p>
+			<p>If you want is to remove the horiontal padding only in XS devices:</p>
+			<p><code>.container-xs-glued</code></p>
+		</blockquote>
+
 		<!-- Buttons -->
 
 		<h3 id="buttons"><a class="heading-anchor" href="#buttons"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Buttons</h3>
@@ -1595,17 +1606,17 @@
 								<form>
 									<div class="checkbox checkbox-default">
 										<label>
-											<input type="checkbox" value=""> Name row
+											<input type="checkbox" value=""> Name Col
 										</label>
 									</div>
 									<div class="checkbox checkbox-default">
 										<label>
-											<input type="checkbox" value=""> Date row
+											<input type="checkbox" value=""> Date Col
 										</label>
 									</div>
 									<div class="checkbox checkbox-default">
 										<label>
-											<input checked type="checkbox" value=""> File row
+											<input checked type="checkbox" value=""> File Col
 										</label>
 									</div>
 								</form>
@@ -1613,25 +1624,27 @@
 						</ul>
 					</div>
 
-					<div class="toolbar-group-content hidden-md hidden-lg">
+					<div class="toolbar-group-content">
 						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active" data-toggle="dropdown">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#table">
 							</svg>
 						</a>
-						<ul class="dropdown-menu dropdown-menu-right dropdown-menu-icons JS-table">
+						<ul class="dropdown-menu dropdown-menu-right JS-table">
 							<li>
-								<a href="#1" class="active JS-table-view">
+								<a href="#1" class="JS-table-view">
 									<svg class="lexicon-icon">
 										<use xlink:href="../../images/icons/icons.svg#table">
 									</svg>
+									 Table view
 								</a>
 							</li>
 							<li>
-								<a href="#1">
+								<a href="#1" class="active">
 									<svg class="lexicon-icon">
 										<use xlink:href="../../images/icons/icons.svg#list">
 									</svg>
+									List view
 								</a>
 							</li>
 							<li>
@@ -1639,27 +1652,10 @@
 									<svg class="lexicon-icon">
 										<use xlink:href="../../images/icons/icons.svg#cards2">
 									</svg>
+									Card view
 								</a>
 							</li>
 						</ul>
-					</div>
-
-					<div class="toolbar-group-content btn-group hidden-xs hidden-sm JS-table">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced JS-table-view active">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#table">
-							</svg>
-						</a>
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#list">
-							</svg>
-						</a>
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#cards2">
-							</svg>
-						</a>
 					</div>
 
 					<div class="toolbar-group-content">
@@ -1717,7 +1713,7 @@
 
 				<div class="toolbar-group-right">
 					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#trash">
 							</svg>
@@ -1725,7 +1721,7 @@
 					</div>
 
 					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#download">
 							</svg>
@@ -1733,7 +1729,7 @@
 					</div>
 
 					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#info-circle-open">
 							</svg>
@@ -1741,7 +1737,7 @@
 					</div>
 
 					<div class="toolbar-group-content">
-						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<a href="#1" data-toggle="dropdown" class="btn btn-link btn-sm btn-icon icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
 							</svg>
@@ -1866,11 +1862,7 @@
 			<ul class="tabular-list-group">
 				<li class="list-group-item">
 					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox">
-							</label>
-						</div>
+						<input type="checkbox">
 					</div>
 
 					<div class="list-group-item-field">
@@ -1882,7 +1874,7 @@
 					</div>
 
 					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 						<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
 						<span class="label label-default label-sm">ART</span>
 						<span class="label label-default label-sm">LABEL</span>
@@ -1933,11 +1925,7 @@
 
 				<li class="list-group-item">
 					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox">
-							</label>
-						</div>
+						<input type="checkbox">
 					</div>
 
 					<div class="list-group-item-field">
@@ -1949,7 +1937,7 @@
 					</div>
 
 					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 						<p class="truncate-text small">State of CSS art</p>
 						<span class="label label-default label-sm">ART</span>
 						<span class="label label-default label-sm">LABEL</span>
@@ -2010,11 +1998,7 @@
 			<ul class="tabular-list-group">
 				<li class="list-group-item">
 					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox">
-							</label>
-						</div>
+						<input type="checkbox">
 					</div>
 
 					<div class="list-group-item-field">
@@ -2026,7 +2010,7 @@
 					</div>
 
 					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 						<p class="truncate-text small">Description of this list group item</p>
 						<span class="label label-default label-sm">ART</span>
 						<span class="label label-default label-sm">LABEL</span>
@@ -2074,11 +2058,7 @@
 			<ul class="tabular-list-group">
 				<li class="list-group-item active">
 					<div class="list-group-item-field">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" checked>
-							</label>
-						</div>
+						<input type="checkbox" checked>
 					</div>
 
 					<div class="list-group-item-field">
@@ -2090,7 +2070,7 @@
 					</div>
 
 					<div class="list-group-item-content">
-						<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 						<p class="truncate-text small">Description of this list group item</p>
 						<span class="label label-default label-sm">ART</span>
 						<span class="label label-default label-sm">DESIGN</span>
@@ -2184,11 +2164,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 							<td class="table-cell-content">
@@ -2241,11 +2217,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -2300,11 +2272,8 @@
 								</tr>
 								<tr>
 									<td>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" value="">
-											</label>
-										</div>
+	
+										<input type="checkbox" value="">
 									</td>
 									<td>21149</td>
 									<td class="table-cell-content">
@@ -2357,11 +2326,8 @@
 								</tr>
 								<tr>
 									<td>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" value="">
-											</label>
-										</div>
+	
+										<input type="checkbox" value="">
 									</td>
 									<td>21150</td>
 									<td class="table-cell-content">
@@ -2486,11 +2452,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 							<td class="table-cell-content">
@@ -2543,11 +2505,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -2602,11 +2560,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21149</td>
 							<td class="table-cell-content">
@@ -2659,11 +2613,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21150</td>
 							<td class="table-cell-content">
@@ -2859,11 +2809,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 							<td class="table-cell-content">
@@ -2918,11 +2864,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -3057,11 +2999,7 @@
 					<tbody class="sr-only">
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 							<td class="table-cell-content">
@@ -3114,11 +3052,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -3173,11 +3107,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21149</td>
 							<td class="table-cell-content">
@@ -3230,11 +3160,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21150</td>
 							<td class="table-cell-content">
@@ -3300,21 +3226,13 @@
 					<tbody>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -3322,21 +3240,13 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -3410,11 +3320,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21146</td>
 							<td class="table-cell-content">
@@ -3467,11 +3373,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>
 								21148
@@ -3526,11 +3428,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21149</td>
 							<td class="table-cell-content">
@@ -3583,11 +3481,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
+								<input type="checkbox" value="">
 							</td>
 							<td>21150</td>
 							<td class="table-cell-content">

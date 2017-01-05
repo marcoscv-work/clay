@@ -328,7 +328,7 @@
 <div id="pageSample" class="has-sidenav-semi-collapse">
 	<div>
 		<!-- Header bar -->
-		<nav class="navbar navbar-main navbar-inverse navbar-no-collapse">
+		<nav class="navbar navbar-main navbar-inverse">
 			<div class="navbar-header flex-container">
 				<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
 					<svg class="lexicon-icon lexicon-icon-bold">
@@ -395,176 +395,157 @@
 		<!-- Breadcrumb
 
 		<div class="breadcrumb-inverted">
-			<div class="container-fluid">
-				<ul class="breadcrumb breadcrumb-horizontal breadcrumb-inverted">
-					<li class="breadcrumb-ellipsis">
-						<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
-							<svg class="icon-monospaced lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#ellipsis-h" />
-							</svg>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Root</a></li>
-							<li><a href="#">Folder 00</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" title="Folder One">Folder One</a>
-					</li>
-					<li>
-						<a href="#1" title="folder two">folder two</a>
-					</li>
-					<li class="active">
-						<span title="Active">Active</span>
-					</li>
-				</ul>
-			</div>
+			<ul class="breadcrumb breadcrumb-horizontal breadcrumb-inverted">
+				<li class="breadcrumb-ellipsis">
+					<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#ellipsis-h" />
+						</svg>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Root</a></li>
+						<li><a href="#">Folder 00</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" title="Folder One">Folder One</a>
+				</li>
+				<li>
+					<a href="#1" title="folder two">folder two</a>
+				</li>
+				<li class="active">
+					<span title="Active">Active</span>
+				</li>
+			</ul>
 		</div>
 		-->
 
 		<!-- Management bar -->
 
 		<div class="toolbar toolbar-marginless toolbar-management" id="managementA">
-			<div class="container-fluid">
-				<div class="toolbar-group">
+			<div class="toolbar-group">
 
-					<!-- checkbox -->
+				<!-- checkbox -->
 
-					<div class="toolbar-group-content">
-						<input type="checkbox" class="check-all">
-					</div>
-
-					<!-- checkbox end-->
-
-					<div class="toolbar-group-content">
-						<a class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" href="#1">Filter and Order <span class="icon-caret-down"></span></a>
-						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced hidden-md hidden-lg">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#control-panel">
-							</svg>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#1">Date</a></li>
-							<li><a href="#1">Time</a></li>
-							<li><a href="#1">Status</a></li>
-						</ul>
-					</div>
-					<div class="toolbar-group-content">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced a-z">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#import-export">
-							</svg>
-						</a>
-					</div>
+				<div class="toolbar-group-content">
+					<input type="checkbox" class="check-all">
 				</div>
 
-				<div class="toolbar-group-right">
-					<div class="toolbar-group-content hidden-sm hidden-md hidden-lg">
-						<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+				<!-- checkbox end-->
+
+				<div class="toolbar-group-content">
+					<a class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" href="#1">Filter and Order <span class="icon-caret-down"></span></a>
+					<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced hidden-md hidden-lg">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#control-panel">
+						</svg>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#1">Date</a></li>
+						<li><a href="#1">Time</a></li>
+						<li><a href="#1">Status</a></li>
+					</ul>
+				</div>
+				<div class="toolbar-group-content">
+					<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced a-z">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#import-export">
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="toolbar-group-right">
+				<div class="toolbar-group-content hidden-sm hidden-md hidden-lg">
+					<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#search">
+						</svg>
+					</a>
+				</div>
+
+				<div class="toolbar-group-content JS-table-view-icon hide">
+					<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#hidden">
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li>
+							<form>
+								<div class="checkbox checkbox-default">
+									<label>
+										<input type="checkbox" value=""> Name Col
+									</label>
+								</div>
+								<div class="checkbox checkbox-default">
+									<label>
+										<input type="checkbox" value=""> Date Col
+									</label>
+								</div>
+								<div class="checkbox checkbox-default">
+									<label>
+										<input checked type="checkbox" value=""> File Col
+									</label>
+								</div>
+							</form>
+						</li>
+					</ul>
+				</div>
+
+				<div class="toolbar-group-content">
+					<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active" data-toggle="dropdown">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#table">
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right JS-table">
+						<li>
+							<a href="#1" class="JS-table-view">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#table">
+								</svg>
+								 Table view
+							</a>
+						</li>
+						<li>
+							<a href="#1" class="active">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#list">
+								</svg>
+								List view
+							</a>
+						</li>
+						<li>
+							<a href="#1">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Card view
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="toolbar-group-content">
+					<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div id="searchOpen01" class="toolbar-group-expand toolbar-search">
+				<div class="toolbar-group-content has-feedback">
+					<form>
+						<input class="form-control" type="text">
+						<a href="#searchOpen01" class="form-control-feedback icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="../../images/icons/icons.svg#search">
 							</svg>
 						</a>
-					</div>
-
-					<div class="toolbar-group-content JS-table-view-icon hide">
-						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#hidden">
-							</svg>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-right">
-							<li>
-								<form>
-									<div class="checkbox checkbox-default">
-										<label>
-											<input type="checkbox" value=""> Name row
-										</label>
-									</div>
-									<div class="checkbox checkbox-default">
-										<label>
-											<input type="checkbox" value=""> Date row
-										</label>
-									</div>
-									<div class="checkbox checkbox-default">
-										<label>
-											<input checked type="checkbox" value=""> File row
-										</label>
-									</div>
-								</form>
-							</li>
-						</ul>
-					</div>
-
-					<div class="toolbar-group-content hidden-md hidden-lg">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active" data-toggle="dropdown">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#table">
-							</svg>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-right dropdown-menu-icons JS-table">
-							<li>
-								<a href="#1" class="JS-table-view">
-									<svg class="lexicon-icon">
-										<use xlink:href="../../images/icons/icons.svg#table">
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#1" class="active">
-									<svg class="lexicon-icon">
-										<use xlink:href="../../images/icons/icons.svg#list">
-									</svg>
-								</a>
-							</li>
-							<li>
-								<a href="#1">
-									<svg class="lexicon-icon">
-										<use xlink:href="../../images/icons/icons.svg#cards2">
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="toolbar-group-content btn-group hidden-xs hidden-sm JS-table">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced JS-table-view">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#table">
-							</svg>
-						</a>
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#list">
-							</svg>
-						</a>
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#cards2">
-							</svg>
-						</a>
-					</div>
-
-					<div class="toolbar-group-content">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#info-circle-open">
-							</svg>
-						</a>
-					</div>
-				</div>
-
-				<div id="searchOpen01" class="toolbar-group-expand toolbar-search">
-					<div class="toolbar-group-content has-feedback">
-						<form>
-							<input class="form-control" type="text">
-							<a href="#searchOpen01" class="form-control-feedback icon-monospaced">
-								<svg class="lexicon-icon">
-									<use xlink:href="../../images/icons/icons.svg#search">
-								</svg>
-							</a>
-						</form>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -572,68 +553,66 @@
 		<!-- Management bar state B -->
 
 		<div class="toolbar toolbar-marginless toolbar-selected toolbar-management hide" id="managementB">
-			<div class="container-fluid">
-				<div class="toolbar-group">
+			<div class="toolbar-group">
 
-					<!-- checkbox -->
+				<!-- checkbox -->
 
-					<div class="toolbar-group-content">
-						<input type="checkbox">
-					</div>
-
-					<!-- checkbox end-->
-
-					<div class="toolbar-group-content">
-						<span>5 of 20 <span class="hidden-xs hidden-sm">items selected</span></span>
-					</div>
-
-					<div class="toolbar-group-content">
-						<a href="#"><u>Select all</u></a>
-					</div>
+				<div class="toolbar-group-content">
+					<input type="checkbox">
 				</div>
 
-				<div class="toolbar-group-right">
-					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#trash">
-							</svg>
-						</a>
-					</div>
+				<!-- checkbox end-->
 
-					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#download">
-							</svg>
-						</a>
-					</div>
+				<div class="toolbar-group-content">
+					<span>5 of 20 <span class="hidden-xs hidden-sm">items selected</span></span>
+				</div>
 
-					<div class="toolbar-group-content hidden-sm hidden-xs">
-						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#info-circle-open">
-							</svg>
-						</a>
-					</div>
+				<div class="toolbar-group-content">
+					<a href="#"><u>Select all</u></a>
+				</div>
+			</div>
 
-					<div class="toolbar-group-content">
-						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-							</svg>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-right">
-							<!-- For mobile -->
-							<li class="hidden-md hidden-lg"><a href="#1">Remove</a></li>
-							<li class="hidden-md hidden-lg"><a href="#1">Download</a></li>
-							<li class="hidden-md hidden-lg"><a href="#1">File info</a></li>
-							<!---->
-							<li><a href="#1">Date</a></li>
-							<li><a href="#1">Time</a></li>
-							<li><a href="#1">Status</a></li>
-						</ul>
-					</div>
+			<div class="toolbar-group-right">
+				<div class="toolbar-group-content hidden-sm hidden-xs">
+					<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#trash">
+						</svg>
+					</a>
+				</div>
+
+				<div class="toolbar-group-content hidden-sm hidden-xs">
+					<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#download">
+						</svg>
+					</a>
+				</div>
+
+				<div class="toolbar-group-content hidden-sm hidden-xs">
+					<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+						</svg>
+					</a>
+				</div>
+
+				<div class="toolbar-group-content">
+					<a href="#1" data-toggle="dropdown" class="btn btn-link btn-sm btn-icon icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<!-- For mobile -->
+						<li class="hidden-md hidden-lg"><a href="#1">Remove</a></li>
+						<li class="hidden-md hidden-lg"><a href="#1">Download</a></li>
+						<li class="hidden-md hidden-lg"><a href="#1">File info</a></li>
+						<!---->
+						<li><a href="#1">Date</a></li>
+						<li><a href="#1">Time</a></li>
+						<li><a href="#1">Status</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -641,53 +620,46 @@
 		<!-- Label toolbar -->
 
 		<div class="toolbar-labels">
-			<div class="container-fluid">
-				<div class="toolbar-labels-container">
-					<a href="#" class="label label-default">
-						<span>Approved</span>
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times">
-						</svg>
-					</a>
-					<a href="#" class="label label-default">
-						<span>Date</span>
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times">
-						</svg>
-					</a>
-					<a href="#" class="label label-default">
-						<span>Removed</span>
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times">
-						</svg>
-					</a>
-					<a href="#" class="label label-default">
-						<span>Label</span>
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times">
-						</svg>
-					</a>
-					<a href="#" class="btn btn-sm btn-icon icon-monospaced" data-toggle="tooltip" data-placement="top" title="Remove all labels">
-						<svg class="lexicon-icon">
-							<use xlink:href="../../images/icons/icons.svg#times-circle">
-						</svg>
-					</a>
-				</div>
+			<div class="toolbar-labels-container">
+				<a href="#" class="label label-default">
+					<span>Approved</span>
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-default">
+					<span>Date</span>
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-default">
+					<span>Removed</span>
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-default">
+					<span>Label</span>
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="btn btn-sm btn-icon icon-monospaced" data-toggle="tooltip" data-placement="top" title="Remove all labels">
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times-circle">
+					</svg>
+				</a>
 			</div>
 		</div>
 
 		<!-- Tabular list -->
 		<div class="tabularList">
-			<div class="container-fluid" id="tabularList">
+			<div class="container-fluid container-padded container-xs-glued" id="tabularList">
 				<ul class="tabular-list-group">
 					<li class="list-group-item">
 						<div class="list-group-item-field">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox">
-								</label>
-							</div>
-						</div>
+								<input type="checkbox">							</div>
 
 						<div class="list-group-item-field">
 							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
@@ -698,7 +670,7 @@
 						</div>
 
 						<div class="list-group-item-content">
-							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 							<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
 							<span class="label label-default label-sm">ART</span>
 							<span class="label label-default label-sm">LABEL</span>
@@ -749,12 +721,7 @@
 
 					<li class="list-group-item">
 						<div class="list-group-item-field">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox">
-								</label>
-							</div>
-						</div>
+								<input type="checkbox">							</div>
 
 						<div class="list-group-item-field">
 							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-success sticker-static">
@@ -765,7 +732,7 @@
 						</div>
 
 						<div class="list-group-item-content">
-							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 							<p class="truncate-text small">State of CSS art</p>
 							<span class="label label-default label-sm">ART</span>
 							<span class="label label-default label-sm">LABEL</span>
@@ -816,12 +783,7 @@
 
 					<li class="list-group-item">
 						<div class="list-group-item-field">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox">
-								</label>
-							</div>
-						</div>
+								<input type="checkbox">							</div>
 
 						<div class="list-group-item-field">
 							<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
@@ -832,7 +794,7 @@
 						</div>
 
 						<div class="list-group-item-content">
-							<p class="truncate-text">Marcos Castro, modified 2 hours ago.</p>
+							<p><b>Marcos Castro, modified 2 hours ago.</b></p>
 							<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
 							<span class="label label-default label-sm">ART</span>
 							<span class="label label-default label-sm">LABEL</span>
@@ -886,7 +848,7 @@
 
 		<!-- Table list -->
 		<div class="tableList">
-			<div class="container-fluid hide" id="tableList">
+			<div class="container-fluid container-padded container-xs-glued hide" id="tableList">
 				<div id="table_01b" class="table-responsive">
 					<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
 						<thead>
@@ -951,11 +913,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" value="">
-										</label>
-									</div>
+									<input type="checkbox" value="">
 								</td>
 								<td>21146</td>
 								<td class="table-cell-content">
@@ -1008,11 +966,7 @@
 							</tr>
 							<tr>
 								<td>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" value="">
-										</label>
-									</div>
+									<input type="checkbox" value="">
 								</td>
 								<td>
 									21148
@@ -1067,11 +1021,7 @@
 							</tr>
 							<tr>
 								<td>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" value="">
-										</label>
-									</div>
+									<input type="checkbox" value="">
 								</td>
 								<td>21149</td>
 								<td class="table-cell-content">
@@ -1124,11 +1074,7 @@
 							</tr>
 							<tr>
 								<td>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" value="">
-										</label>
-									</div>
+									<input type="checkbox" value="">
 								</td>
 								<td>21150</td>
 								<td class="table-cell-content">
