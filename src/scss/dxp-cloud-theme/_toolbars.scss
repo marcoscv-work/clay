@@ -8,17 +8,9 @@
 		padding: $toolbar-desktop-padding-vertical $toolbar-desktop-padding-horizontal;
 	}
 
-	a {
+	a, a:hover, a:active, a.active {
 		color: $toolbar-default-link-color;
-
-		&:hover, &:active, &.active {
-			background-color: $toolbar-default-link-hover-bg;
-			color: $toolbar-default-link-hover-color;
-			text-decoration: none;
-		}
 	}
-
-	// Mobile exception for forms
 
 	.form-control {
 		@media (max-width: $grid-float-breakpoint-max) {
@@ -106,34 +98,27 @@
 
 	.btn {
 		&, &:hover, &:focus, &:active, &.active {
-			background-color: transparent;
 			border-width: 0;
-		}
-	}
-
-	.btn-group {
-		.btn:not(:first-child) {
-			border-left: 1px solid $dxp-dark-lighten-full;
 		}
 	}
 
 	.a-z .lexicon-icon-outline {
 		&:first-of-type {
-			color: $dxp-dark;
+			color: $toolbar-default-link-color;
 		}
 
 		&:last-of-type {
-			color: $toolbar-default-link-color;
+			color: $dxp-dark-lighten-low;
 		}
 	}
 
 	.z-a .lexicon-icon-outline {
 		&:first-of-type {
-			color: $toolbar-default-link-color;
+			color: $dxp-dark-lighten-low;
 		}
 
 		&:last-of-type {
-			color: $dxp-dark;
+			color: $toolbar-default-link-color;
 		}
 	}
 }
