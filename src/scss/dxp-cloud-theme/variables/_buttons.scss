@@ -63,11 +63,11 @@ $btn-default-color: $dxp-dark !default;
 $btn-default-bg: $dxp-white !default;
 $btn-default-border: $dxp-dark-lighten-hard !default;
 $btn-default-hover-color: $btn-default-color !default;
-$btn-default-hover-bg: $dxp-cta-lighten-hight !default;
-$btn-default-hover-border: $dxp-dark-lighten-hard !default;
+$btn-default-hover-bg: $dxp-light-dark !default;
+$btn-default-hover-border: $dxp-light-dark !default;
 $btn-default-active-color: $btn-default-color !default;
-$btn-default-active-bg: $dxp-cta-lighten-hard !default;
-$btn-default-active-border: $dxp-cta-lighten-hard !default;
+$btn-default-active-bg: $dxp-light-dark !default;
+$btn-default-active-border: $dxp-light-dark !default;
 
 $btn-primary-color: $dxp-white !default;
 $btn-primary-bg: $brand-primary !default;
