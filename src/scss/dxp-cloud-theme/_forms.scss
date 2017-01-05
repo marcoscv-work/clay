@@ -30,7 +30,7 @@
 
 label, .control-label {
 	font-size: $input-label-font-size;
-	font-weight: 600;
+	font-weight: $dxp-font-weight-base-big;
 	margin-bottom: $input-label-padding-buttom;
 }
 
@@ -46,7 +46,7 @@ select[disabled].form-control > option {
 
 .help-block {
 	color: $dxp-dark-lighten;
-	font-weight: 600;
+	font-weight: $dxp-font-weight-base-big;
 	margin: 2px 0;
 
 	.reference-mark {
