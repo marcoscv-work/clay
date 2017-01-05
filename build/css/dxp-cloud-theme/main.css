@@ -3618,7 +3618,7 @@ select[multiple].input-lg,
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 600;
+  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -5453,8 +5453,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:focus {
   z-index: 3;
   color: #41444B;
-  background-color: #e1edff;
-  border-color: #e1edff;
+  background-color: #F1F3F5;
+  border-color: #F1F3F5;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
@@ -5463,7 +5463,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #41444B;
-  background-color: #e1edff;
+  background-color: #F1F3F5;
   border-color: #41444B;
   cursor: default;
 }
@@ -5550,7 +5550,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #e1edff;
+  background-color: #F1F3F5;
 }
 
 .pager .next > a,
@@ -14174,7 +14174,7 @@ button.loading > .linear.loading-animation {
 }
 
 .breadcrumb > .active {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .breadcrumb > li {
@@ -14258,13 +14258,13 @@ fieldset[disabled] .btn {
 .open > .btn-default.dropdown-toggle,
 .open > .btn-default.dropdown-toggle:focus,
 .open > .btn-default.dropdown-toggle:hover {
-  background-color: #f5f9ff;
-  border-color: #f5f9ff;
+  background-color: #F1F3F5;
+  border-color: #F1F3F5;
 }
 
 .btn-default:focus, .btn-default:hover {
-  background-color: #ebf3ff;
-  border-color: #dddee1;
+  background-color: #F1F3F5;
+  border-color: #F1F3F5;
 }
 
 .btn-primary {
@@ -14694,7 +14694,7 @@ fieldset[disabled] .btn {
   font-family: "Source Sans Pro";
   font-stretch: normal;
   font-style: normal;
-  font-weight: 600;
+  font-weight: bold;
   src: url(../../fonts/source-sans-pro/SourceSansPro-Semibold.eot) format("embedded-opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.woff2) format("woff2"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.woff) format("woff"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.otf) format("opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.ttf) format("truetype");
 }
 
@@ -14761,7 +14761,7 @@ fieldset[disabled] .form-control::-webkit-input-placeholder, .form-control[disab
 
 label, .control-label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 6px;
 }
 
@@ -14777,7 +14777,7 @@ fieldset[disabled] label {
 
 .help-block {
   color: #656974;
-  font-weight: 600;
+  font-weight: bold;
   margin: 2px 0;
 }
 
@@ -15396,7 +15396,7 @@ fieldset[disabled] label {
 
 .sidenav-semi-collapse > .sidenav-menu-slider .nav-color a {
   color: #a8abbe;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .sidenav-semi-collapse > .sidenav-menu-slider .active a {
@@ -15683,7 +15683,7 @@ fieldset[disabled] label {
 }
 
 .toolbar-labels {
-  background-color: #e5e9ed;
+  background-color: #e8ebef;
   margin-bottom: 24px;
   min-height: 40px;
   overflow-x: auto;
