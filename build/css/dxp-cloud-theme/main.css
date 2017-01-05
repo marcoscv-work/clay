@@ -14690,6 +14690,10 @@ fieldset[disabled] .btn {
   padding: 8px 20px;
 }
 
+.dropdown-menu .lexicon-icon {
+  margin-right: 8px;
+}
+
 @font-face {
   font-family: "Source Sans Pro";
   font-stretch: normal;
@@ -14921,6 +14925,10 @@ fieldset[disabled] label {
   box-shadow: none;
 }
 
+.has-feedback-left .form-control {
+  padding-left: 34px;
+}
+
 .container-fluid-800 {
   margin-left: auto;
   margin-right: auto;
@@ -15128,6 +15136,11 @@ fieldset[disabled] label {
   padding: 16px 0 16px 16px;
 }
 
+.tabular-list-group .list-group-item-content .label,
+.tabular-list-group .list-group-item-field .label {
+  margin-right: 2px;
+}
+
 .navbar-main {
   margin-bottom: 0;
 }
@@ -15201,10 +15214,6 @@ fieldset[disabled] label {
 
 .navbar-main .navbar-form .icon-monospaced {
   color: #FFF;
-}
-
-.navbar-main .navbar-form .has-feedback .form-control {
-  padding-left: 34px;
 }
 
 .navbar-main .navbar-form .form-control-feedback-left {
