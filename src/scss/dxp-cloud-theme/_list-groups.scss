@@ -38,6 +38,10 @@
 			}
 		}
 
+		&:not(:hover) .dropdown-toggle .lexicon-icon {
+			color: $dxp-dark-lighten-low;
+		}
+
 		&:hover {
 			.list-group-item-content,
 			.list-group-item-field {
@@ -51,22 +55,33 @@
 			}
 		}
 	}
-}
 
-@media (min-width: $screen-md-min) {
-	.tabular-list-group {
-		.list-group-item-content,
-		.list-group-item-field {
-			padding: 16px 0 16px 16px;
+	.list-group-item-field,
+	.list-group-item-content {
+		vertical-align: top;
 
-			&:last-child {
-				padding-right: 8px;
+		> .sticker {
+			margin-top: 4px;
+		}
+
+		&:last-child {
+			padding-right: 8px;
+		}
+
+		p, a {
+			line-height: 20px;
+			margin-bottom: 0;
+
+			&.small {
+				color: $dxp-dark-lighten;
 			}
 		}
 	}
 }
 
-.list-group-item-field,
-.list-group-item-content {
-	vertical-align: top;
+.tabular-list-group {
+	.list-group-item-content,
+	.list-group-item-field {
+		padding: 16px 0 16px 16px;
+	}
 }

@@ -1,6 +1,10 @@
 .navbar-main {
 	margin-bottom: 0;
 
+	@media (min-width: $grid-float-breakpoint) {
+		padding: 0 16px;
+	}
+
 	@media (max-width: $grid-float-breakpoint-max) {
 		text-align: center;
 
@@ -43,11 +47,9 @@
 			width: 100%;
 
 			> li {
-				@media (max-width: $grid-float-breakpoint-max) {
-					display: table-cell;
-					float: none;
-					width: 1%;
-				}
+				display: table-cell;
+				float: none;
+				width: 1%;
 
 				> a {
 					padding-bottom: ($navbar-height / 7);
@@ -128,12 +130,11 @@
 	}
 }
 
-.navbar-form, .basic-search {
+.navbar-form {
 	padding: $navbar-form-padding-vertical $navbar-form-padding-horizontal;
 
 	@media (min-width: $grid-float-breakpoint) {
-		padding-bottom: ($navbar-desktop-height - $input-height-base - $navbar-border-bottom-width - $navbar-border-top-width) / 2;
-		padding-top: ($navbar-desktop-height - $input-height-base - $navbar-border-bottom-width - $navbar-border-top-width) / 2;
+		padding: (($navbar-desktop-height - $input-height-base - $navbar-border-bottom-width - $navbar-border-top-width) / 2) $navbar-form-desktop-padding-horizontal;
 	}
 }
 

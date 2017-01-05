@@ -33,6 +33,9 @@ $navbar-default-padding-vertical: ($navbar-default-height - $navbar-link-line-he
 $navbar-default-desktop-padding-horizontal: $navbar-default-padding-horizontal !default;
 $navbar-default-desktop-padding-vertical: ($navbar-default-desktop-height - $navbar-desktop-link-line-height - $navbar-default-border-bottom-width - $navbar-default-border-top-width) / 2 !default;
 
+$navbar-form-desktop-padding-horizontal: 16px;
+$navbar-form-padding-horizontal: 8px;
+
 // Skin
 
 $navbar-border-radius: 0 !default;

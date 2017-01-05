@@ -45,15 +45,15 @@
 }
 
 .toolbar-labels {
-	background-color: $dxp-light-dark;
-	margin-bottom: 10px;
+	background-color: darken($dxp-light-dark, 4%);
+	margin-bottom: 24px;
 	min-height: $toolbar-labels-height;
 	overflow-x: auto;
-	padding: 2px;
+	padding: $toolbar-labels-padding-vertical $toolbar-labels-padding-horizontal;
 
 	@media (min-width: $grid-float-breakpoint) {
 		min-height: $toolbar-labels-desktop-height;
-		padding: 8px;
+		padding: $toolbar-desktop-labels-vertical $toolbar-desktop-labels-horizontal;
 	}
 
 	.btn {
@@ -63,8 +63,8 @@
 	}
 
 	.toolbar-labels-container {
-		padding: 6px;
 		white-space: nowrap;
+		padding: 6px 0;
 	}
 
 	.label, .btn {
@@ -73,7 +73,11 @@
 }
 
 .toolbar-management {
+	padding: $toolbar-padding-vertical ($toolbar-padding-horizontal * 2);
+	margin-bottom: 24px;
+
 	@media (min-width: $grid-float-breakpoint) {
+		padding: $toolbar-desktop-padding-vertical ($toolbar-desktop-padding-horizontal * 4);
 		position: relative;
 
 		@include box-shadow(0 3px 3px rgba(0, 0, 0, 0.04));
