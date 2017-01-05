@@ -4,26 +4,25 @@
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 800px;
+	padding-left: $grid-gutter-width / 2;
+	padding-right: $grid-gutter-width / 2;
 }
 
-// Temporal container modification (better if we change bootstrap grid mixin)
-
-.container, .container-fluid, .container-fluid-800, .container-fluid-1280 {
-	padding-left: ($dxp-grid-gutter-outside-width / 4);
-	padding-right: ($dxp-grid-gutter-outside-width / 4);
-
+.container-padded {
 	@media (min-width: $grid-float-breakpoint) {
 		padding-left: $dxp-grid-gutter-outside-width;
 		padding-right: $dxp-grid-gutter-outside-width;
 	}
+}
 
-	.row {
-		margin-left: -($dxp-grid-gutter-outside-width / 8);
-		margin-right: -($dxp-grid-gutter-outside-width / 8);
+.container-glued {
+	padding-left: 0;
+	padding-right: 0;
+}
 
-		@media (min-width: $grid-float-breakpoint) {
-			margin-left: -($dxp-grid-gutter-outside-width / 2);
-			margin-right: -($dxp-grid-gutter-outside-width / 2);
-		}
+.container-xs-glued {
+	@media (max-width: $grid-float-breakpoint-max) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
