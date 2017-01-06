@@ -14699,7 +14699,7 @@ fieldset[disabled] .btn {
   font-stretch: normal;
   font-style: normal;
   font-weight: bold;
-  src: url(../../fonts/source-sans-pro/SourceSansPro-Semibold.eot) format("embedded-opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.woff2) format("woff2"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.woff) format("woff"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.otf) format("opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Semibold.ttf) format("truetype");
+  src: url("../../fonts/source-sans-pro/SourceSansPro-Semibold.eot") format("embedded-opentype"), url("../../fonts/source-sans-pro/SourceSansPro-Semibold.woff2") format("woff2"), url("../../fonts/source-sans-pro/SourceSansPro-Semibold.woff") format("woff"), url("../../fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("opentype"), url("../../fonts/source-sans-pro/SourceSansPro-Semibold.ttf") format("truetype");
 }
 
 @font-face {
@@ -14707,7 +14707,7 @@ fieldset[disabled] .btn {
   font-stretch: normal;
   font-style: normal;
   font-weight: 400;
-  src: url(../../fonts/source-sans-pro/SourceSansPro-Regular.eot) format("embedded-opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Regular.woff2) format("woff2"), url(../../fonts/source-sans-pro/SourceSansPro-Regular.woff) format("woff"), url(../../fonts/source-sans-pro/SourceSansPro-Regular.otf) format("opentype"), url(../../fonts/source-sans-pro/SourceSansPro-Regular.ttf) format("truetype");
+  src: url("../../fonts/source-sans-pro/SourceSansPro-Regular.eot") format("embedded-opentype"), url("../../fonts/source-sans-pro/SourceSansPro-Regular.woff2") format("woff2"), url("../../fonts/source-sans-pro/SourceSansPro-Regular.woff") format("woff"), url("../../fonts/source-sans-pro/SourceSansPro-Regular.otf") format("opentype"), url("../../fonts/source-sans-pro/SourceSansPro-Regular.ttf") format("truetype");
 }
 
 .form-control {
@@ -15684,14 +15684,11 @@ fieldset[disabled] label {
 }
 
 .toolbar-selected {
-  background-color: #488FFF;
-}
-
-.toolbar-selected, .toolbar-selected a, .toolbar-selected a:hover, .toolbar-selected a:focus, .toolbar-selected a:focus:active, .toolbar-selected a:active, .toolbar-selected a.active {
-  color: #FFF;
+  background-color: #a4c7ff;
 }
 
 .toolbar-labels {
+  -webkit-overflow-scrolling: touch;
   background-color: #e8ebef;
   margin-bottom: 24px;
   min-height: 40px;
