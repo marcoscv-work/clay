@@ -37,6 +37,7 @@
 }
 
 .toolbar-labels {
+	-webkit-overflow-scrolling: touch;
 	background-color: darken($dxp-light-dark, 3%);
 	margin-bottom: 24px;
 	min-height: $toolbar-labels-height;
