@@ -29,11 +29,7 @@
 }
 
 .toolbar-selected {
-	background-color: $dxp-cta;
-
-	&, a, a:hover, a:focus, a:focus:active, a:active, a.active {
-		color: $dxp-white;
-	}
+	background-color: $dxp-cta-lighten-low;
 }
 
 .toolbar-labels {
