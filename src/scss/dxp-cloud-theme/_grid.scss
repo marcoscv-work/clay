@@ -26,3 +26,11 @@
 		padding-right: 0;
 	}
 }
+
+.container-spaced-top {
+	margin-top: $dxp-grid-gutter-outside-width;
+}
+
+.container-spaced-bottom {
+	margin-bottom: $dxp-grid-gutter-outside-width;
+}
