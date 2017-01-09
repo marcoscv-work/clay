@@ -15,7 +15,6 @@
 	.form-control {
 		@media (max-width: $grid-float-breakpoint-max) {
 			height: 32px;
-			padding: 4px 16px;
 		}
 	}
 }
@@ -82,7 +81,7 @@
 	}
 
 	.form-control-feedback {
-		right: ($toolbar-group-content-padding-horizontal * 2);
+		right: 12px;
 		top: $toolbar-group-content-padding-horizontal;
 	}
 

@@ -97,6 +97,23 @@ select[disabled].form-control > option {
 	}
 }
 
+a.form-control-feedback {
+	pointer-events: all;
+}
+
 .has-feedback-left .form-control {
 	padding-left: 34px;
+}
+
+.has-feedback-left-xs {
+	@media (max-width: $grid-float-breakpoint-max) {
+		.form-control {
+			padding-left: 34px;
+		}
+
+		.form-control-feedback-left-xs {
+			left: 12px;
+			right: inherit;
+		}
+	}
 }

@@ -309,10 +309,17 @@ section: Aϟ DXP Cloud Components
 			</div>
 
 			<div id="searchOpen01" class="toolbar-group-expand toolbar-search">
-				<div class="toolbar-group-content has-feedback">
+				<div class="toolbar-group-content has-feedback has-feedback-left-xs">
 					<form>
+						<a href="#searchClose01Icon" class="form-control-feedback form-control-feedback-left-xs icon-monospaced visible-xs-block">
+							<svg class="lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#angle-left" />
+							</svg>
+						</a>
+
 						<input class="form-control" type="text">
-						<a href="#searchOpen01" class="form-control-feedback icon-monospaced">
+
+						<a href="#searchOpen01icon" class="form-control-feedback icon-monospaced">
 							<svg class="lexicon-icon">
 								<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
 							</svg>
@@ -1032,6 +1039,10 @@ section: Aϟ DXP Cloud Components
 	$('.toolbar-management #searchOpen01Icon').on('click', function() {
 		$('#searchOpen01').css('display','table');
 		$('#searchOpen01 .form-control').focus();
+	});
+
+	$('.toolbar-management .form-control-feedback-left-xs').on('click', function() {
+		$('#searchOpen01').css('display','none');
 	});
 
 	$('.toolbar-management .JS-table a').on('click', function() {
