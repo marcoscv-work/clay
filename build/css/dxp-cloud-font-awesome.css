@@ -14926,8 +14926,22 @@ fieldset[disabled] label {
   box-shadow: none;
 }
 
+a.form-control-feedback {
+  pointer-events: all;
+}
+
 .has-feedback-left .form-control {
   padding-left: 34px;
+}
+
+@media (max-width: 767px) {
+  .has-feedback-left-xs .form-control {
+    padding-left: 34px;
+  }
+  .has-feedback-left-xs .form-control-feedback-left-xs {
+    left: 12px;
+    right: inherit;
+  }
 }
 
 .container-fluid-800 {
@@ -15228,7 +15242,6 @@ fieldset[disabled] label {
 }
 
 .navbar-main .navbar-form .form-control-feedback {
-  pointer-events: all;
   right: 4px;
 }
 
@@ -15672,7 +15685,6 @@ fieldset[disabled] label {
 @media (max-width: 767px) {
   .toolbar .form-control {
     height: 32px;
-    padding: 4px 16px;
   }
 }
 
@@ -15741,7 +15753,7 @@ fieldset[disabled] label {
 }
 
 .toolbar-management .form-control-feedback {
-  right: 16px;
+  right: 12px;
   top: 8px;
 }
 
