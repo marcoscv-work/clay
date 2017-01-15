@@ -3676,20 +3676,20 @@ fieldset[disabled] a.btn {
 
 .btn-default:focus, .btn-default.focus {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #8c8c8c;
 }
 
 .btn-default:hover {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #adadad;
 }
 
 .btn-default:active, .btn-default.active,
 .open > .btn-default.dropdown-toggle {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #adadad;
 }
 
@@ -5195,7 +5195,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
+  color: #5e5d5d;
   background-color: transparent;
 }
 
@@ -10283,7 +10283,7 @@ button.list-group-heading {
 .management-bar-default .btn-default:focus, .management-bar-default .btn-default:hover,
 .management-bar-default .nav > li > .btn-default:focus,
 .management-bar-default .nav > li > .btn-default:hover {
-  background-color: #dfdfdf;
+  background-color: #dfdede;
   border-color: #c9c9c9;
   color: #777;
 }
@@ -10291,7 +10291,7 @@ button.list-group-heading {
 .management-bar-default .btn-default:active, .management-bar-default .btn-default.active,
 .management-bar-default .nav > li > .btn-default:active,
 .management-bar-default .nav > li > .btn-default.active {
-  background-color: #dfdfdf;
+  background-color: #dfdede;
   border-color: #c9c9c9;
   color: #777;
 }
@@ -11768,7 +11768,7 @@ body {
 
 a.bg-default:hover,
 a.bg-default:focus {
-  background-color: #5e5e5e;
+  background-color: #5e5d5d;
 }
 
 a.text-muted:hover, a.text-muted:focus {
@@ -11781,7 +11781,7 @@ a.text-muted:hover, a.text-muted:focus {
 
 a.text-default:hover,
 a.text-default:focus {
-  color: #1a1a1a;
+  color: #1a1919;
 }
 
 mark,

@@ -3676,20 +3676,20 @@ fieldset[disabled] a.btn {
 
 .btn-default:focus, .btn-default.focus {
   color: #869CAD;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #495c6b;
 }
 
 .btn-default:hover {
   color: #869CAD;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #637e93;
 }
 
 .btn-default:active, .btn-default.active,
 .open > .btn-default.dropdown-toggle {
   color: #869CAD;
-  background-color: #e6e6e6;
+  background-color: #e6e5e5;
   border-color: #637e93;
 }
 

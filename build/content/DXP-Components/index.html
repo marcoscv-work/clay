@@ -1258,67 +1258,70 @@
 
 		<div class="uxgl-assorted-section">
 			<nav class="navbar navbar-main navbar-inverse">
-				<div class="navbar-header flex-container">
-					<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
-						<svg class="lexicon-icon lexicon-icon-bold">
-							<use xlink:href="../../images/icons/icons.svg#bars">
-						</svg>
-					</a>
+			<div class="navbar-header flex-container">
+				<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+					<svg class="lexicon-icon lexicon-icon-bold">
+						<use xlink:href="../../images/icons/icons.svg#bars">
+					</svg>
+				</a>
 
-					<div class="navbar-brand flex-item-expand truncate-text" href="#">
+				<div class="navbar-brand flex-item-expand truncate-text">
+					<a href="#" class="icon-monospaced">
 						<svg class="lexicon-icon hidden-xs">
 							<use xlink:href="../../images/icons/icons.svg#angle-left">
 						</svg>
-						Home
-					</div>
-
-					<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#1">
-						<div class="user-icon user-icon-warning"><span>MC</span></div>
 					</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Dashboard</a></li>
-					<li><a href="#">List</a></li>
-				</ul>
-
-				<div class="navbar-form navbar-right btn-mobile-fix">
-					<button class="btn btn-primary btn-mobile-fix" type="button">
-						<span class="hidden-xs">Create</span>
-						<span class="visible-xs-block">
-							<svg class="icon-monospaced lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#plus">
-							</svg>
-						</span>
-					</button>
+					Home
 				</div>
 
-				<form class="navbar-form navbar-right" role="search">
-					<div class="form-group has-feedback has-feedback-left-xs dropdown-wide">
-						<span class="form-control-feedback form-control-feedback-left-xs icon-monospaced dxp-white-color">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#search">
-							</svg>
-						</span>
+				<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#1">
+					<div class="user-icon user-icon-lg user-icon-warning"><span>MC</span></div>
+				</a>
+			</div>
 
-						<input class="form-control" placeholder="Search" type="text">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Dashboard</a></li>
+				<li><a href="#">List</a></li>
+			</ul>
 
-						<a href="javascript:function(void)" class="form-control-feedback icon-monospaced" data-toggle="dropdown" type="button" aria-expanded="false">
-							<svg class="lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#bookmarks">
-							</svg>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-right">
-							<li class="dropdown-header">Search saved:</li>
-							<li class="divider"></li>
-							<li><a href="#">Search filter saved A</a></li>
-							<li><a href="#">Search filter saved B</a></li>
-							<li><a href="#">Search filter saved B</a></li>
-							<li><a href="#">Search filter saved B</a></li>
-							<li><a href="#">Search filter saved B</a></li>
-						</ul>
-					</div>
-				</form>
-			</nav>
+			<div class="navbar-form navbar-right btn-mobile-fix">
+				<button class="btn btn-primary btn-mobile-fix" type="button">
+					<span class="hidden-xs">Create</span>
+					<span class="visible-xs-block">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#plus">
+						</svg>
+					</span>
+				</button>
+			</div>
+
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group has-feedback has-feedback-left dropdown-wide">
+					<span class="form-control-feedback form-control-feedback-left icon-monospaced dxp-white-color">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#search">
+						</svg>
+					</span>
+
+					<input class="form-control" placeholder="Search" type="text">
+
+					<a href="javascript:function(void)" class="form-control-feedback icon-monospaced" data-toggle="dropdown" type="button" aria-expanded="false">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#bookmarks">
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li class="dropdown-header">Search saved:</li>
+						<li class="divider"></li>
+						<li><a href="#">Search filter saved A</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+					</ul>
+				</div>
+			</form>
+		</nav>
 		</div>
 
 		<!-- Toolbars -->
@@ -3539,6 +3542,102 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Example of modals</p>
+		</blockquote>
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button">
+						<svg class="lexicon-icon icon-monospaced">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</button>
+					<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+				</div>
+
+				<div class="modal-body">
+					<p>Modal Body</p>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="button">Primary</button>
+					<button class="btn btn-link" data-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>A modal can has different colors, using classes: <code>.modal-danger</code>, <code>.modal-cta</code> and <code>.modal-warning</code></p>
+		</blockquote>
+
+		<div class="modal-dialog modal-danger">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button">
+						<svg class="lexicon-icon icon-monospaced">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</button>
+					<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+				</div>
+
+				<div class="modal-body">
+					<p>Modal Body</p>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="button">Primary</button>
+					<button class="btn btn-link" data-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal-dialog modal-cta">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button">
+						<svg class="lexicon-icon icon-monospaced">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</button>
+					<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+				</div>
+
+				<div class="modal-body">
+					<p>Modal Body</p>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="button">Primary</button>
+					<button class="btn btn-link" data-dismiss="modal" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal-dialog modal-warning">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button">
+						<svg class="lexicon-icon icon-monospaced">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</button>
+					<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+				</div>
+
+				<div class="modal-body">
+					<p>Modal Body</p>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="button">Primary</button>
+					<button class="btn btn-link" data-dismiss="modal" type="button">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
