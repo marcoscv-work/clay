@@ -1,18 +1,19 @@
 // Structure
 
 $modal-inner-padding-horizontal: 24px !default;
-$modal-inner-padding-vertical: 16px !default;
+$modal-inner-padding-vertical: 24px !default;
+$modal-footer-inner-padding-vertical: 16px !default;
 
 $modal-inner-padding: $modal-inner-padding-vertical $modal-inner-padding-horizontal !default;
 
-$modal-title-line-height: 36px !default;
+$modal-title-line-height: 32px !default;
 $modal-title-padding: 12px !default;
 
 $modal-footer-height: 72px !default;
 
 $modal-footer-desktop-height: $modal-footer-height !default;
 
-$modal-header-height: 61px !default;
+$modal-header-height: 56px !default;
 
 $modal-header-desktop-height: $modal-header-height !default;
 
@@ -25,20 +26,20 @@ $modal-box-shadow: $box-shadow-default !default;
 $modal-content-border-color: transparent !default;
 $modal-content-fallback-border-color: transparent !default;
 
-$modal-header-bg: #29353D !default;
-$modal-header-border-color: #E4E6E8 !default;
-$modal-header-color: #FFF !default;
+$modal-header-bg: $dxp-white !default;
+$modal-header-border-color: $dxp-dark-lighten-full !default;
+$modal-header-color: $brand-default !default;
 
-$modal-header-close-color: #FFF !default;
+$modal-header-close-color: $brand-default !default;
 $modal-header-close-icon-opacity: 1 !default;
 $modal-header-close-lexicon-icon-opacity: 1 !default;
 $modal-header-close-opacity-modifier: 1 !default;
 
-$modal-body-bg: #F5F8F8 !default;
+$modal-body-bg: $modal-header-bg !default;
 $modal-body-color: $text-color !default;
 
 $modal-footer-bg: $modal-header-bg !default;
-$modal-footer-border-color: transparent !default;
+$modal-footer-border-color: $dxp-dark-lighten-full !default;
 $modal-footer-box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.15) !default;
 $modal-footer-color: $modal-header-color !default;
 
