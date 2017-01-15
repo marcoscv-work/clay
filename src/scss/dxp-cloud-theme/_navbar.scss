@@ -52,8 +52,8 @@
 				width: 1%;
 
 				> a {
-					padding-bottom: ($navbar-height / 7);
-					padding-top: ($navbar-height / 7);
+					padding-bottom: ($navbar-height / 14);
+					padding-top: ($navbar-height / 14);
 				}
 			}
 		}
@@ -104,6 +104,12 @@
 	}
 }
 
+.navbar-inverse {
+	a {
+		color: $navbar-inverse-color;
+	}
+}
+
 .navbar {
 	border-width: $navbar-border-width;
 	margin-bottom: 0;
@@ -116,7 +122,7 @@
 	.navbar-brand {
 		font-size: $dxp-font-size-h4;
 		line-height: $navbar-link-line-height;
-		padding: $navbar-desktop-padding-horizontal;
+		padding: $navbar-padding-vertical $navbar-padding-horizontal;
 
 		@media (min-width: $grid-float-breakpoint) {
 			line-height: $navbar-desktop-link-line-height;

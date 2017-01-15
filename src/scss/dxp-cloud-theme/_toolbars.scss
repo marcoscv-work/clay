@@ -65,7 +65,7 @@
 	margin-bottom: 24px;
 
 	@media (min-width: $grid-float-breakpoint) {
-		padding: $toolbar-desktop-padding-vertical ($toolbar-desktop-padding-horizontal * 4);
+		padding: $toolbar-desktop-padding-vertical ($toolbar-desktop-padding-horizontal * 3);
 		position: relative;
 
 		@include box-shadow(0 3px 3px rgba(0, 0, 0, 0.04));
