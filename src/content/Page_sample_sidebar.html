@@ -1,0 +1,174 @@
+---
+title: Page sample with Sidebar
+section: Aϟ DXP Cloud Components
+---
+
+<div id="pageSample">
+	<!-- Header bar -->
+	<nav class="navbar navbar-main navbar-inverse">
+		<div class="navbar-header flex-container">
+			<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+				<svg class="lexicon-icon lexicon-icon-bold">
+					<use xlink:href="{{rootPath}}/images/icons/icons.svg#angle-left" />
+				</svg>
+			</a>
+
+			<div class="navbar-brand flex-item-expand truncate-text">
+				<a href="#" class="icon-monospaced hidden-xs">
+					<svg class="lexicon-icon">
+						<use xlink:href="{{rootPath}}/images/icons/icons.svg#angle-left" />
+					</svg>
+				</a>
+				Home
+			</div>
+
+			<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+				<svg class="lexicon-icon">
+					<use xlink:href="{{rootPath}}/images/icons/icons.svg#product-menu-closed" />
+				</svg>
+			</a>
+		</div>
+	</nav>
+
+	<!-- toolbar -->
+	<div class="toolbar toolbar-info toolbar-marginless">
+		<div class="toolbar-group toolbar-search">
+			<div class="toolbar-group-content has-feedback">
+				<form>
+					<input class="form-control" type="text" value="Customer Portal">
+					<a href="#" class="form-control-feedback icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
+						</svg>
+					</a>
+				</form>
+			</div>
+		</div>
+
+		<div class="toolbar-group toolbar-spacer hidden-xs"></div>
+
+		<div class="toolbar-group">
+			<div class="toolbar-group-content">
+				<span>http://www.liferay.com</span>
+			</div>
+		</div>
+
+		<div class="toolbar-group-right">
+			<div class="toolbar-group-content">
+				<span class="sc-success-color">Tracking code</span>
+			</div>
+		</div>
+
+		<div class="toolbar-group-expand text-center hidden-xs">
+			<div class="toolbar-group-content">
+				<span>Last edit was 2' ago</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="sidebar-container" id="sidenavFixed">
+		<div class="sidebar sidebar-default sidebar-fixed-xs">
+			<div class="sidebar-header">
+				<ul class="sidebar-header-actions">
+					<li>
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg aria-hidden="true" class="lexicon-icon">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Download</a></li>
+								<li><a href="#1">Edit</a></li>
+								<li><a href="#1">Move</a></li>
+								<li><a href="#1">Checkout</a></li>
+								<li><a href="#1">Permissions</a></li>
+								<li><a href="#1">Move to Recycle Bin</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="visible-xs-inline-block">
+						<a class="" href="#1">
+							<svg class="icon-monospaced lexicon-icon">
+								<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
+							</svg>
+						</a>
+					</li>
+				</ul>
+
+				<h5>Approved</h5>
+			</div>
+
+			<div class="toolbar toolbar-info toolbar-marginless">
+				<div class="toolbar-group toolbar-search">
+					<div class="toolbar-group-content has-feedback">
+						<form>
+							<input class="form-control" type="text" placeholder="Search by placeholder, unit">
+							<a href="#" class="form-control-feedback icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="{{rootPath}}/images/icons/icons.svg#search" />
+								</svg>
+							</a>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar-body">
+				<div class="sidebar-panel">
+					<div class="icon-monospaced">PDF</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sidebar-content">
+			<div class="testBlock">
+				<div class="container-fluid container-padded container-xs-glued" id="tableList">
+					<div class="container-spaced-top container-fluid panel">
+						<h4>Panel title</h4>
+						<p>Testing block</p>
+					</div>
+				</div>
+			</div>
+
+			<a class="btn btn-xs btn-default pull-right" style="margin: 50px 30px 100px;" data-toggle="tooltip" href="#pageSample" id="fullscreenBtn" title="Fullscreen">Toggle full-screen <span class="icon-desktop"></span></a>
+
+			<a class="btn btn-xs btn-default pull-right" style="margin: 50px 30px 100px;" data-toggle="tooltip" href="#" id="sidebarfixedxsBtn" title="Toggle sidebar-fixed-xs class">Remove .sidebar-fixed-xs class</a>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	$('#fullscreenBtn').on(
+		'click',
+		function(event) {
+			event.preventDefault();
+
+			$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
+			$('body').toggleClass('fixed');
+		}
+	);
+
+	$('#sidebarfixedxsBtn').on(
+		'click',
+		function(event) {
+			event.preventDefault();
+
+			$('.sidebar.sidebar-default').toggleClass('sidebar-fixed-xs');
+
+			if ($('.sidebar.sidebar-default').hasClass('sidebar-fixed-xs')) {
+				$(this).text('Remove .sidebar-fixed-xs class');
+			} else {
+				$(this).text('Add .sidebar-fixed-xs class');
+			}
+
+		}
+	);
+
+	$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
+	$('body').toggleClass('fixed');
+
+	$('[data-toggle="tooltip"]').tooltip();
+</script>
