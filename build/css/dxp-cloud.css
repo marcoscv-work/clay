@@ -5390,7 +5390,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 
 .breadcrumb {
-  padding: 3px 32px;
+  padding: 3px 24px;
   margin-bottom: 22px;
   list-style: none;
   background-color: #FFF;
@@ -14164,12 +14164,12 @@ button.loading > .linear.loading-animation {
   border-radius: 0;
   line-height: 32px;
   margin-bottom: 0;
-  padding: 3px 8px;
+  padding: 3px 6px;
 }
 
 @media (min-width: 768px) {
   .breadcrumb {
-    padding: 3px 32px;
+    padding: 3px 24px;
   }
 }
 
@@ -15208,7 +15208,7 @@ a.form-control-feedback {
 
 @media (min-width: 768px) {
   .navbar-main {
-    padding: 0 16px;
+    padding: 0 8px;
   }
 }
 
@@ -15519,6 +15519,41 @@ a.form-control-feedback {
   white-space: nowrap;
 }
 
+.sidebar-container {
+  height: 100%;
+  position: relative;
+}
+
+.sidebar-container > .sidebar {
+  position: absolute;
+  width: 320px;
+}
+
+@media (max-width: 767px) {
+  .sidebar-container > .sidebar {
+    display: none;
+    z-index: 1030;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-container > .sidebar.sidebar-fixed-xs {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar-container > .sidebar-content {
+    margin-left: 320px;
+  }
+}
+
+.sidebar-container.open > .sidebar {
+  display: block;
+}
+
 .table > tbody tr td:first-child > .checkbox, .table > tbody tr td:first-child > input[type="checkbox"] {
   margin-left: 0;
 }
@@ -15724,7 +15759,7 @@ a.form-control-feedback {
 @media (min-width: 768px) {
   .toolbar {
     min-height: 64px;
-    padding: 8px 8px;
+    padding: 8px 16px;
   }
 }
 
@@ -15736,6 +15771,11 @@ a.form-control-feedback {
   .toolbar .form-control {
     height: 32px;
   }
+}
+
+.toolbar .form-control-feedback {
+  right: 12px;
+  top: 8px;
 }
 
 .toolbar-inverse {
@@ -15782,6 +15822,7 @@ a.form-control-feedback {
 .toolbar-management {
   padding: 0 0;
   margin-bottom: 24px;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -15800,11 +15841,6 @@ a.form-control-feedback {
 
 .toolbar-management > .toolbar-group .toolbar-group-content:first-of-type {
   padding-left: 16px;
-}
-
-.toolbar-management .form-control-feedback {
-  right: 12px;
-  top: 8px;
 }
 
 @media (max-width: 767px) {
@@ -15832,6 +15868,20 @@ a.form-control-feedback {
 
 .toolbar-management .z-a .lexicon-icon-outline:last-of-type {
   color: #41444B;
+}
+
+.toolbar-info .toolbar-group.toolbar-search {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .toolbar-info .toolbar-group.toolbar-search {
+    width: 288px;
+  }
+}
+
+.toolbar-info .toolbar-spacer {
+  width: 32px;
 }
 
 .toolbar-marginless {

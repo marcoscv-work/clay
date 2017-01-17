@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>DXP Cloud Skin based on Lexicon - Alerts</title>
+	<title>DXP Cloud Skin based on Lexicon - Page sample with Sidebar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
 	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
@@ -78,7 +78,7 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+<li class="active"><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
 </li>
 </ul>
 </div>
@@ -86,7 +86,7 @@
 <li class=""><span class="nav-title">Components</span>
 <div class="">
 <ul class="nav nav-stacked">
-<li class="active"><a class="nav-title" href="../../content/alerts">Alerts</a>
+<li class=""><a class="nav-title" href="../../content/alerts">Alerts</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/badges-and-labels">Badges, Labels and Stickers</a>
 </li>
@@ -232,217 +232,181 @@
 
 	<div class="" id="mainContent">
 		<h1 id="beginContent" tabindex="-1">
-			Alerts
+			Page sample with Sidebar
 
 			
 		</h1>
 
 		
-<div class="row row-spacing uxgl-alerts">
-	<div class="col-md-12">
-		<h3 id="alerts-with-embedded-links"><a class="heading-anchor" href="#alerts-with-embedded-links"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Alerts with Embedded Links</h3>
+<div id="pageSample">
+	<!-- Header bar -->
+	<nav class="navbar navbar-main navbar-inverse">
+		<div class="navbar-header flex-container">
+			<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+				<svg class="lexicon-icon lexicon-icon-bold">
+					<use xlink:href="../../images/icons/icons.svg#angle-left">
+				</svg>
+			</a>
 
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Use <code>.lead</code> inside of an alert to make the beginning of your message stand out.</p>
+			<div class="navbar-brand flex-item-expand truncate-text">
+				<a href="#" class="icon-monospaced hidden-xs">
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#angle-left">
+					</svg>
+				</a>
+				Home
+			</div>
 
-			<p>Use <code>.alert-link</code> to style a link inside your alert.</p>
-		</blockquote>
+			<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+				<svg class="lexicon-icon">
+					<use xlink:href="../../images/icons/icons.svg#product-menu-closed">
+				</svg>
+			</a>
+		</div>
+	</nav>
 
-		<div class="alert alert-default">
-			<strong class="lead">Default</strong>You just read the <a href="#" class="alert-link">alert message</a> successfully.
+	<!-- toolbar -->
+	<div class="toolbar toolbar-info toolbar-marginless">
+		<div class="toolbar-group toolbar-search">
+			<div class="toolbar-group-content has-feedback">
+				<form>
+					<input class="form-control" type="text" value="Customer Portal">
+					<a href="#" class="form-control-feedback icon-monospaced">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#search">
+						</svg>
+					</a>
+				</form>
+			</div>
 		</div>
 
-		<div class="alert alert-success">
-			<strong class="lead">Success</strong> You just read the <a href="#" class="alert-link">alert message</a> successfully.
+		<div class="toolbar-group toolbar-spacer hidden-xs"></div>
+
+		<div class="toolbar-group">
+			<div class="toolbar-group-content">
+				<span>http://www.liferay.com</span>
+			</div>
 		</div>
 
-		<div class="alert alert-info">
-			<strong class="lead">Info</strong> This <a href="#" class="alert-link">alert</a> needs your attention.
+		<div class="toolbar-group-right">
+			<div class="toolbar-group-content">
+				<span class="sc-success-color">Tracking code</span>
+			</div>
 		</div>
 
-		<div class="alert alert-warning">
-			<strong class="lead">Warning</strong> This alert is a <a href="#" class="alert-link">warning message</a>.
+		<div class="toolbar-group-expand text-center hidden-xs">
+			<div class="toolbar-group-content">
+				<span>Last edit was 2&apos; ago</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="sidebar-container" id="sidenavFixed">
+		<div class="sidebar sidebar-default sidebar-fixed-xs">
+			<div class="sidebar-header">
+				<ul class="sidebar-header-actions">
+					<li>
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg aria-hidden="true" class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Download</a></li>
+								<li><a href="#1">Edit</a></li>
+								<li><a href="#1">Move</a></li>
+								<li><a href="#1">Checkout</a></li>
+								<li><a href="#1">Permissions</a></li>
+								<li><a href="#1">Move to Recycle Bin</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="visible-xs-inline-block">
+						<a class="" href="#1">
+							<svg class="icon-monospaced lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#times">
+							</svg>
+						</a>
+					</li>
+				</ul>
+
+				<h5>Approved</h5>
+			</div>
+
+			<div class="toolbar toolbar-info toolbar-marginless">
+				<div class="toolbar-group toolbar-search">
+					<div class="toolbar-group-content has-feedback">
+						<form>
+							<input class="form-control" type="text" placeholder="Search by placeholder, unit">
+							<a href="#" class="form-control-feedback icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#search">
+								</svg>
+							</a>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar-body">
+				<div class="sidebar-panel">
+					<div class="icon-monospaced">PDF</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="alert alert-danger">
-			<strong class="lead">Danger</strong> <a href="#" class="alert-link">Something</a> is not right.
+		<div class="sidebar-content">
+			<div class="testBlock">
+				<div class="container-fluid container-padded container-xs-glued" id="tableList">
+					<div class="container-spaced-top container-fluid panel">
+						<h4>Panel title</h4>
+						<p>Testing block</p>
+					</div>
+				</div>
+			</div>
+
+			<a class="btn btn-xs btn-default pull-right" style="margin: 50px 30px 100px;" data-toggle="tooltip" href="#pageSample" id="fullscreenBtn" title="Fullscreen">Toggle full-screen <span class="icon-desktop"></span></a>
+
+			<a class="btn btn-xs btn-default pull-right" style="margin: 50px 30px 100px;" data-toggle="tooltip" href="#" id="sidebarfixedxsBtn" title="Toggle sidebar-fixed-xs class">Remove .sidebar-fixed-xs class</a>
 		</div>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse4"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse4">
-	<pre><code class="html">&lt;div class=&quot;alert alert-danger&quot;&gt;
-    &lt;strong class=&quot;lead&quot;&gt;Danger&lt;/strong&gt; &lt;a href=&quot;#&quot; class=&quot;alert-link&quot;&gt;Something&lt;/a&gt; is not right.
-&lt;/div&gt;</code></pre>
-</div>
-
 	</div>
 </div>
 
-<div class="row uxgl-alerts">
-	<div class="col-md-12">
-		<h3 id="dismissible-alerts"><a class="heading-anchor" href="#dismissible-alerts"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Dismissible Alerts</h3>
 
-		<div class="alert alert-dismissible alert-default" data-dismiss="alert">
-			<button class="close" type="button">
-				<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#times">
-				</svg>
-				<span class="sr-only">Close</span>
-			</button>
 
-			<strong class="lead">Default</strong> You just read the alert message successfully.
-		</div>
+<script>
+	$('#fullscreenBtn').on(
+		'click',
+		function(event) {
+			event.preventDefault();
 
-		<div class="alert alert-dismissible alert-success" data-dismiss="alert" role="alert">
-			<button class="close" type="button">
-				<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#times">
-				</svg>
-				<span class="sr-only">Close</span>
-			</button>
+			$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
+			$('body').toggleClass('fixed');
+		}
+	);
 
-			<strong class="lead">Success</strong> You just read the alert message successfully.
-		</div>
+	$('#sidebarfixedxsBtn').on(
+		'click',
+		function(event) {
+			event.preventDefault();
 
-		<div class="alert alert-dismissible alert-info" data-dismiss="alert" role="alert">
-			<button class="close" type="button">
-				<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#times">
-				</svg>
-				<span class="sr-only">Close</span>
-			</button>
+			$('.sidebar.sidebar-default').toggleClass('sidebar-fixed-xs');
 
-			<strong class="lead">Info</strong> This alert needs your attention.
-		</div>
+			if ($('.sidebar.sidebar-default').hasClass('sidebar-fixed-xs')) {
+				$(this).text('Remove .sidebar-fixed-xs class');
+			} else {
+				$(this).text('Add .sidebar-fixed-xs class');
+			}
 
-		<div class="alert alert-dismissible alert-warning" data-dismiss="alert" role="alert">
-			<button class="close" type="button">
-				<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#times">
-				</svg>
-				<span class="sr-only">Close</span>
-			</button>
+		}
+	);
 
-			<strong class="lead">Warning</strong> This alert is a warning message.
-		</div>
+	$('#pageSample').toggleClass('uxgl-fullscreen-fixed');
+	$('body').toggleClass('fixed');
 
-		<div class="alert alert-dismissible alert-danger" data-dismiss="alert" role="alert">
-			<button class="close" type="button">
-				<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#times">
-				</svg>
-				<span class="sr-only">Close</span>
-			</button>
-
-			<strong class="lead">Danger</strong> Something is not right.
-		</div>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse9"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse9">
-	<pre><code class="html">&lt;div class=&quot;alert alert-dismissible alert-danger&quot; data-dismiss=&quot;alert&quot; role=&quot;alert&quot;&gt;
-    &lt;button class=&quot;close&quot; type=&quot;button&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-monospaced lexicon-icon&quot;&gt;
-            &lt;use xlink:href=&quot;../../images/icons/icons.svg#times&quot; /&gt;
-        &lt;/svg&gt;
-        &lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;
-    &lt;/button&gt;
-
-    &lt;strong class=&quot;lead&quot;&gt;Danger&lt;/strong&gt; Something is not right.
-&lt;/div&gt;</code></pre>
-</div>
-
-	</div>
-</div>
-
-<div class="row row-spacing" id="alertNotifications">
-	<div class="col-md-12">
-		<h3 id="alert-notification"><a class="heading-anchor" href="#alert-notification"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Alert Notification</h3>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Alternate alert style for notifications</p>
-		</blockquote>
-
-		<div class="lexicon-site-display-container">
-			<div class="alert alert-dismissible alert-notification alert-danger" data-dismiss="alert" role="alert">
-				<button class="close" type="button">
-					<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-						<use xlink:href="../../images/icons/icons.svg#times">
-					</svg>
-					<span class="sr-only">Close</span>
-				</button>
-
-				<strong class="lead">Danger:</strong>
-				<p>Due to inactivity, your session has expired. Please save any data you may have entered before refreshing the page. <a class="alert-link" href="#1">Log in</a></p>
-			</div>
-		</div>
-
-		<div class="lexicon-site-display-container">
-			<div class="alert alert-dismissible alert-notification alert-warning" data-dismiss="alert" role="alert">
-				<button class="close" type="button">
-					<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-						<use xlink:href="../../images/icons/icons.svg#times">
-					</svg>
-					<span class="sr-only">Close</span>
-				</button>
-
-				<strong class="lead">Warning:</strong>
-				<p>Due to inactivity, your session will expire in 00:00:56. To extend your session another 2 minutes click: <a class="alert-link" href="#1">Extend</a>.</p>
-			</div>
-		</div>
-
-		<div class="lexicon-site-display-container">
-			<div class="alert alert-dismissible alert-notification alert-info" data-dismiss="alert" role="alert">
-				<button class="close" type="button">
-					<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-						<use xlink:href="../../images/icons/icons.svg#times">
-					</svg>
-					<span class="sr-only">Close</span>
-				</button>
-
-				<strong class="lead">Meeting Rescheduled:</strong>
-				<p>The UX Team has rescheduled to the following date: 2014 - 12 - 17.</p>
-				<p>Please complete the attendance form to confirm your attendance: <a class="alert-link" href="#1">More Info</a>.</p>
-			</div>
-		</div>
-
-		<div class="lexicon-site-display-container">
-			<div class="alert alert-dismissible alert-notification alert-success" data-dismiss="alert" role="alert">
-				<button class="close" type="button">
-					<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-						<use xlink:href="../../images/icons/icons.svg#times">
-					</svg>
-					<span class="sr-only">Close</span>
-				</button>
-
-				<strong class="lead">Meeting Rescheduled:</strong>
-				<p>The UX Team has rescheduled to the following date: 2014 - 12 - 17.</p>
-				<p>Please complete the attendance form to confirm your attendance: <a class="alert-link" href="#1">More Info</a>.</p>
-			</div>
-		</div>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse10"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse10">
-  <pre><code class="html">&lt;div class=&quot;alert alert-dismissible alert-notification alert-danger&quot; data-dismiss=&quot;alert&quot; role=&quot;alert&quot;&gt;
-        &lt;button class=&quot;close&quot; type=&quot;button&quot;&gt;
-            &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-monospaced lexicon-icon&quot;&gt;
-                &lt;use xlink:href=&quot;../../images/icons/icons.svg#times&quot; /&gt;
-            &lt;/svg&gt;
-            &lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;
-        &lt;/button&gt;
-
-        &lt;strong class=&quot;lead&quot;&gt;Danger:&lt;/strong&gt;
-        &lt;p&gt;Your session has expired. Please &lt;a class=&quot;alert-link&quot; href=&quot;#1&quot;&gt;log in&lt;/a&gt;.&lt;/p&gt;
-    &lt;/div&gt;</code></pre>
-</div>
-
-	</div>
-</div>
+	$('[data-toggle="tooltip"]').tooltip();
+</script>
 	</div>
 
 		</section>
