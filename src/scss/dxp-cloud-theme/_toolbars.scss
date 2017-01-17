@@ -17,6 +17,11 @@
 			height: 32px;
 		}
 	}
+
+	.form-control-feedback {
+		right: 12px;
+		top: $toolbar-group-content-padding-horizontal;
+	}
 }
 
 .toolbar-inverse {
