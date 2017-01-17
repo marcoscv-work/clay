@@ -120,6 +120,20 @@
 	}
 }
 
+.toolbar-info {
+	.toolbar-group.toolbar-search {
+		width: 100%;
+
+		@media (min-width: $grid-float-breakpoint) {
+			width: ($sidebar-container-side-width - $dxp-grid-gutter-width * 2 + $toolbar-group-content-padding-horizontal * 2)
+		}
+	}
+
+	.toolbar-spacer {
+		width: $dxp-grid-gutter-width + $toolbar-group-content-padding-horizontal;
+	}
+}
+
 .toolbar-marginless {
 	margin-bottom: 0;
 }
