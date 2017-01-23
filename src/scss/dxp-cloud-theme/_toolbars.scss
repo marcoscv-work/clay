@@ -27,7 +27,7 @@
 .toolbar-inverse {
 	background-color: $dxp-dark;
 
-	&, a:hover, a:focus, a:active, a.active {
+	&, a, a:hover, a:focus, a:active, a.active {
 		color: $dxp-white;
 	}
 }
