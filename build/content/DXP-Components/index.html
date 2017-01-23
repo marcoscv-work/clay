@@ -1,0 +1,3839 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>DXP Cloud Skin based on Lexicon - DXP Cloud Components</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
+	<link rel="stylesheet" href="../../css/main.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="../../js/bootstrap.js"></script>
+	<script src="../../js/collapsible-search.js"></script>
+	<script src="../../js/side-navigation.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<header class="row" id="headerTopBar">
+			<div class="container-fluid">
+				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
+
+				<button type="button" class="animated-toggle navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
+
+				<div class="dropdown" id="siteConfig">
+	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
+	<ul class="dropdown-menu dropdown-menu-right">
+		<li class="dropdown-header">Site Settings</li>
+		<li>
+			<form>
+				<div class="form-group">
+					<label>
+						<input checked="checked" id="toggleAtlas" type="checkbox">
+						Show DXP Cloud Theme
+					</label>
+				</div>
+				<div class="form-group">
+					<label>
+						<input checked="checked" id="toggleSiteCss" type="checkbox">
+						Show Site CSS
+					</label>
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-default btn-block" id="resetSiteConfig">Reset Settings</button>
+				</div>
+			</form>
+		</li>
+	</ul>
+</div>
+			</div>
+		</header>
+
+		<section class="container-fluid main-nav-container">
+			<nav class="" id="mainNav">
+	<div class="main-nav-inner">
+			
+
+		<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class="active"><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/alerts">Alerts</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/badges-and-labels">Badges, Labels and Stickers</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/buttons">Buttons</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/cards">Cards</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/dropdowns">Dropdowns</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/form-elements">Form Elements</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/form-elements-input-groups">Form Elements (Input Groups)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/form-validation">Form Elements (Validation)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/header">Header Toolbar</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/modals">Modals</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/nav">Nav</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/nav-tabs">Nav Tabs</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/navbar">Navbars</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/paginations">Pagination</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/panels">Panels</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/popovers">Popovers and Tooltips</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/progress-bars">Progress Bars</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/timelines">Timelines</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/toggles">Toggles</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/user-icons">User Icons</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Components (JS)</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/collapsible-search">Collapsible Search</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/sidenav">Sidenav</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Elements</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/typography">Typography</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/breadcrumbs">Breadcrumbs</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/figures">Figures</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/icons">Icons</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/icons-font-awesome">Icons (Font Awesome)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/icons-glyphicons">Icons (Glyphicons)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/images-and-thumbnails">Images, Thumbnails, and Aspect Ratios</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/nameplates">Nameplates</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/pagers">Pager</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/tables">Tables</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Example Pages</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/blogs-action">Blog - Actions</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/blogs-appearance">Blog - Appearance</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/documents-and-media">Documents and Media</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/form-examples">Form Examples</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Experimental</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/experimental-cards">Cards (Flexbox)</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/experimental-simple-flexbox-grid">Simple Flexbox Grid</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Extending Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/extending-best-practices">Best Practices</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/extending-cards">Extending Cards</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><span class="nav-title">Visual Tests</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/test-assorted">Assorted</a>
+</li>
+</ul>
+</div>
+</li>
+<li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
+</li>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
+</ul>
+	</div>
+</nav>
+
+	<div class="" id="mainContent">
+		<h1 id="beginContent" tabindex="-1">
+			DXP Cloud Components
+
+			
+		</h1>
+
+		
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h2 class="hide">DXP Cloud Components</h2>
+
+		<h3 id="dxp-cloud-colors"><a class="heading-anchor" href="#dxp-cloud-colors"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>DXP Cloud Colors</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Colors can be used with class<code>.color-name-<b>bg</b> or color-name-<b>text</b></code></p>
+		</blockquote>
+
+		<h4>Primary Colors</h4>
+
+		<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-hard-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-bg"></div>
+				<span class="dxp-dark-color small">dxp-dark-bg<br>dxp-dark-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-bg"></div>
+				<span class="dxp-cta-color small">dxp-cta-bg<br>dxp-cta-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-white-bg"></div>
+				<span class="dxp-white-color small">dxp-white-bg<br>dxp-white-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-light-dark-bg"></div>
+				<span class="dxp-light-dark-color small">dxp-light-dark-bg<br>dxp-light-dark-color</span>
+			</div>
+		</div>
+
+		<h4>Secondary Colors</h4>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-cta-bg"></div>
+				<span class="sc-cta-color small">sc-cta-bg<br>sc-cta-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-danger-bg"></div>
+				<span class="sc-danger-color small">sc-danger-bg<br>sc-danger-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-success-bg"></div>
+				<span class="sc-success-color small">sc-success-bg<br>sc-success-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-warning-bg"></div>
+				<span class="sc-warning-color small">sc-warning-bg<br>sc-warning-color</span>
+			</div>
+		</div>
+		<div class="container-fluid uxgl-assorted-section">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-dark-gradient-a-bg"></div>
+				<span class="sc-dark-gradient-a-color small">sc-dark-gradient-a-bg<br>sc-dark-gradient-a-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-dark-gradient-b-bg"></div>
+				<span class="sc-dark-gradient-b-color small">sc-dark-gradient-b-bg<br>sc-dark-gradient-b-color</span>
+			</div>
+		</div>
+
+		<h4>CTA Color Variants</h4>
+
+		<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-lighten-bg"></div>
+				<span class="dxp-cta-lighten-color small">dxp-cta-lighten-bg<br>dxp-cta-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-lighten-low-bg"></div>
+				<span class="dxp-cta-lighten-low-color small">dxp-cta-lighten-low-bg<br>dxp-cta-lighten-low-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-lighten-medium-bg"></div>
+				<span class="dxp-cta-lighten-medium-color small">dxp-cta-lighten-medium-bg<br>dxp-cta-lighten-medium-color</span>
+			</div>
+		</div>
+		<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-lighten-hight-bg"></div>
+				<span class="dxp-cta-lighten-hight-color small">dxp-cta-lighten-hight-bg<br>dxp-cta-lighten-hight-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-cta-lighten-hard-bg"></div>
+				<span class="dxp-cta-lighten-hard-color small">dxp-cta-lighten-hard-bg<br>dxp-cta-lighten-hard-color</span>
+			</div>
+		</div>
+
+		<h4>Dark Color Variants</h4>
+
+		<div class="container-fluid uxgl-assorted-section dxp-white-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-bg"></div>
+				<span class="dxp-dark-lighten-color small">dxp-dark-lighten-bg<br>dxp-dark-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-low-bg"></div>
+				<span class="dxp-dark-lighten-low-color small">dxp-dark-lighten-low-bg<br>dxp-dark-lighten-low-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-medium-bg"></div>
+				<span class="dxp-dark-lighten-medium-color small">dxp-dark-lighten-medium-bg<br>dxp-dark-lighten-medium-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-hight-bg"></div>
+				<span class="dxp-dark-lighten-hight-color small">dxp-dark-lighten-hight-bg<br>dxp-dark-lighten-hight-color</span>
+			</div>
+		</div>
+
+		<div class="container-fluid uxgl-assorted-section dxp-white-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-hard-bg"></div>
+				<span class="dxp-dark-lighten-hard-color small">dxp-dark-lighten-hard-bg<br>dxp-dark-lighten-hard-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl dxp-dark-lighten-full-bg"></div>
+				<span class="dxp-dark-lighten-full-color small">dxp-dark-lighten-full-bg<br>dxp-dark-lighten-full-color</span>
+			</div>
+		</div>
+
+		<h4>SC Dark Color Variants</h4>
+
+		<div class="container-fluid uxgl-assorted-section dxp-white-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-dark-lighten-bg"></div>
+				<span class="sc-dark-lighten-color small">sc-dark-lighten-bg<br>sc-dark-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-dark-lighten-low-bg"></div>
+				<span class="sc-dark-lighten-low-color small">sc-dark-lighten-low-bg<br>sc-dark-lighten-low-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-dark-lighten-medium-bg"></div>
+				<span class="sc-dark-lighten-medium-color small">sc-dark-lighten-medium-bg<br>sc-dark-lighten-medium-color</span>
+			</div>
+		</div>
+
+		<h4>State Color Variants</h4>
+
+		<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-danger-lighten-bg"></div>
+				<span class="sc-danger-lighten-color small">sc-danger-lighten-bg<br>sc-danger-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-danger-lighten-hight-bg"></div>
+				<span class="sc-danger-lighten-hight-color small">sc-danger-lighten-hight-bg<br>sc-danger-lighten-hight-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-success-lighten-bg"></div>
+				<span class="sc-success-lighten-color small">sc-success-lighten-bg<br>sc-success-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-success-lighten-hight-bg"></div>
+				<span class="sc-success-lighten-hight-color small">sc-success-lighten-hight-bg<br>sc-success-lighten-hight-color</span>
+			</div>
+		</div>
+		<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-bg">
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-warning-lighten-bg"></div>
+				<span class="sc-warning-lighten-color small">sc-warning-lighten-bg<br>sc-warning-lighten-color</span>
+			</div>
+			<div class="col-md-3">
+				<div class="user-icon user-icon-xl sc-warning-lighten-hight-bg"></div>
+				<span class="sc-warning-lighten-hight-color small">sc-warning-lighten-hight-bg<br>sc-warning-lighten-hight-color</span>
+			</div>
+		</div>
+
+		<!-- Grid -->
+
+		<h3 id="grid"><a class="heading-anchor" href="#grid"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Grid</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Two container sizes are added over bootstrap <code>.container-fluid-1280</code> with horizontal limit at 1280px and <code>.container-fluid-800</code> with limit in 800px, this last one usually will be used to contain forms.</p>
+		</blockquote>
+
+		<h4>.container-fluid-1280</h4>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<div class="container-fluid-1280 text-center uxgl-assorted-section dxp-cta-lighten-low-bg img-rounded">
+				<p><code>.container-fluid-1280</code></p>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-3 dxp-cta-lighten-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-medium-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-medium-bg">3</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-4 dxp-cta-lighten-bg">4</div>
+					<div class="col-md-4 dxp-cta-lighten-medium-bg">4</div>
+					<div class="col-md-4 dxp-cta-lighten-bg">4</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-6 dxp-cta-lighten-bg">6</div>
+					<div class="col-md-6 dxp-cta-lighten-medium-bg">6</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-12 dxp-cta-lighten-bg">12</div>
+				</div>
+			</div>
+		</div>
+
+		<h4>.container-fluid-800</h4>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<div class="container-fluid-800 text-center uxgl-assorted-section dxp-cta-lighten-low-bg img-rounded">
+				<p><code>.container-fluid-800</code></p>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-bg">1</div>
+					<div class="col-md-1 dxp-cta-lighten-medium-bg">1</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-bg">2</div>
+					<div class="col-md-2 dxp-cta-lighten-medium-bg">2</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-3 dxp-cta-lighten-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-medium-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-bg">3</div>
+					<div class="col-md-3 dxp-cta-lighten-medium-bg">3</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-4 dxp-cta-lighten-bg">4</div>
+					<div class="col-md-4 dxp-cta-lighten-medium-bg">4</div>
+					<div class="col-md-4 dxp-cta-lighten-bg">4</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-6 dxp-cta-lighten-bg">6</div>
+					<div class="col-md-6 dxp-cta-lighten-medium-bg">6</div>
+				</div>
+
+				<div class="uxgl-assorted-section">
+					<div class="col-md-12 dxp-cta-lighten-bg">12</div>
+				</div>
+			</div>
+		</div>
+
+		<h4>Useful Grid classes</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>DXP Cloud components like management-toolbar, breadcrumbs or toolbar-labels have a main 32px horiontal padding, to add this behaviour in grids you can add:</p>
+			<p><code>.container-padded</code></p>
+			<p>If in otherwise what you want is removing the horiontal padding you can use:</p>
+			<p><code>.container-glued</code></p>
+			<p>If you want is to remove the horiontal padding only in XS devices:</p>
+			<p><code>.container-xs-glued</code></p>
+		</blockquote>
+
+		<!-- Buttons -->
+
+		<h3 id="buttons"><a class="heading-anchor" href="#buttons"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Buttons</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>DXP Cloud use the standar size from bootstrap buttons</p>
+		</blockquote>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<button class="btn btn-default" type="button">Default</button>
+			<button class="btn btn-primary" type="button">Primary</button>
+			<button class="btn btn-info" type="button">Info</button>
+			<button class="btn btn-success" type="button">Success</button>
+			<button class="btn btn-warning" type="button">Warning</button>
+			<button class="btn btn-danger" type="button">Danger</button>
+			<button class="btn btn-link" type="button">Link</button>
+		</div>
+
+		<h4>Active State</h4>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<button class="btn btn-default active" type="button">Default</button>
+			<button class="btn btn-primary active" type="button">Primary</button>
+			<button class="btn btn-info active" type="button">Info</button>
+			<button class="btn btn-success active" type="button">Success</button>
+			<button class="btn btn-warning active" type="button">Warning</button>
+			<button class="btn btn-danger active" type="button">Danger</button>
+			<button class="btn btn-link active" type="button">Link</button>
+		</div>
+
+		<h4>Sizes</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Small buttons are allowed using the class <code>btn-sm</code></p>
+		</blockquote>
+
+		<div class="container-fluid uxgl-assorted-section">
+			<button class="btn btn-primary" type="button">Default</button>
+			<button class="btn btn-primary btn-sm" type="button">Small</button>
+		</div>
+
+		<h4>Icon buttons</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>You can use icon buttons using the class <code>btn-icon</code>. Small version using <code>btn-sm</code> and remove the border using <code>btn-no-border</code></p>
+		</blockquote>
+
+		<div class="container-fluid-800 uxgl-assorted-section text-center dxp-white-bg">
+			<div class="container-fluid-800 uxgl-assorted-section">
+				<div class="col-md-2">
+					<p class="small">Standard</p>
+					<button class="btn btn-default btn-icon" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">Active</p>
+					<button class="btn btn-default btn-icon active" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">Disable</p>
+					<button class="btn btn-default btn-icon" type="button" disabled>
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">Standard no-border</p>
+					<button class="btn btn-default btn-icon btn-no-border" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">Active no-border</p>
+					<button class="btn btn-default btn-icon btn-no-border active" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">Disable no-border</p>
+					<button class="btn btn-default btn-icon btn-no-border" type="button" disabled>
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+			</div>
+
+			<div class="container-fluid-800 uxgl-assorted-section text-center">
+				<div class="col-md-2">
+					<p class="small">btn-sm Standard</p>
+					<button class="btn btn-default btn-sm btn-icon" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">btn-sm Active</p>
+					<button class="btn btn-default btn-sm btn-icon active" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">btn-sm Disable</p>
+					<button class="btn btn-default btn-sm btn-icon" type="button" disabled>
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">btn-sm Standard no-border</p>
+					<button class="btn btn-default btn-sm btn-no-border btn-icon" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">btn-sm Active no-border</p>
+					<button class="btn btn-default btn-sm btn-no-border btn-icon active" type="button">
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+
+				<div class="col-md-2">
+					<p class="small">btn-sm Disable no-border</p>
+					<button class="btn btn-default btn-sm btn-no-border btn-icon" type="button" disabled>
+						<div class="icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double">
+							</svg>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<h4>Segmented Button</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>You can <code>btn-group</code> to agrup buttons</p>
+		</blockquote>
+
+		<div class="container-fluid-800 uxgl-assorted-section dxp-white-bg text-center">
+			<div class="col-md-6">
+				<div class="uxgl-assorted-section">
+					<div class="btn-group">
+						<button class="btn btn-default btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#table2">
+								</svg>
+							</div>
+						</button>
+						<button class="btn btn-default btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#list">
+								</svg>
+							</div>
+						</button>
+						<button class="btn btn-default btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+							</div>
+						</button>
+					</div>
+				</div>
+				<div class="uxgl-assorted-section">
+					<div class="btn-group">
+						<button class="btn btn-default btn-sm btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#table2">
+								</svg>
+							</div>
+						</button>
+						<button class="btn btn-default btn-sm btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#list">
+								</svg>
+							</div>
+						</button>
+						<button class="btn btn-default btn-sm btn-icon" type="button">
+							<div class="icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+							</div>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="uxgl-assorted-section">
+					<div class="btn-group">
+						<button class="btn btn-default" type="button">Table</button>
+						<button class="btn btn-default" type="button">List</button>
+						<button class="btn btn-default" type="button">Card</button>
+					</div>
+				</div>
+				<div class="uxgl-assorted-section">
+					<div class="btn-group">
+						<button class="btn btn-default btn-sm" type="button">Table</button>
+						<button class="btn btn-default btn-sm" type="button">List</button>
+						<button class="btn btn-default btn-sm" type="button">Card</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Labels -->
+
+		<h2>Labels</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Use labels to organize groups of items in your application. Labels have rounded borders by default, for circular borders.</p>
+			<p>We recomend use capital letters</p>
+		</blockquote>
+
+		<div class="container-fluid-800 uxgl-assorted-section dxp-white-bg text-center">
+			<div class="container-fluid uxgl-assorted-section">
+				<span href="#" class="label label-sm">LABEL</span>
+				<span href="#" class="label label-sm label-default">DEFAULT</span>
+				<span href="#" class="label label-sm label-primary">PRIMARY</span>
+				<span href="#" class="label label-sm label-success">SUCESS</span>
+				<span href="#" class="label label-sm label-info">INFO</span>
+				<span href="#" class="label label-sm label-warning">WARNING</span>
+				<span href="#" class="label label-sm label-danger">DANGER</span>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section dxp-dark-lighten-full-bg">
+				<span href="#" class="label label-sm">LABEL</span>
+				<span href="#" class="label label-sm label-default">DEFAULT</span>
+				<span href="#" class="label">LABEL</span>
+				<span href="#" class="label label-default">DEFAULT</span>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section">
+				<span href="#" class="label">LABEL</span>
+				<span href="#" class="label label-default">DEFAULT</span>
+				<span href="#" class="label label-primary">PRIMARY</span>
+				<span href="#" class="label label-success">SUCESS</span>
+				<span href="#" class="label label-info">INFO</span>
+				<span href="#" class="label label-warning">WARNING</span>
+				<span href="#" class="label label-danger">DANGER</span>
+			</div>
+
+			<div class="container-fluid uxgl-assorted-section">
+				<a href="#" class="label">
+					LABEL
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-default">
+					DEFAULT
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-primary">
+					PRIMARY
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-success">
+					SUCESS
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-info">
+					INFO
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-warning">
+					WARNING
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+				<a href="#" class="label label-danger">
+					DANGER
+					<svg class="lexicon-icon">
+						<use xlink:href="../../images/icons/icons.svg#times">
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<!-- Form Elements -->
+
+		<h2>Form Elements</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Add class <code>focus</code> on the label to change the color of the label.</p>
+		</blockquote>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<div class="uxgl-assorted-section">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label>
+							Default text input
+							<span class="reference-mark text-warning">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#asterisk">
+								</svg>
+							</span>
+						</label>
+						<input class="form-control" placeholder="Placeholder" type="text">
+					</div>
+
+					<div class="form-group col-md-6">
+						<label>
+							Default text input
+						</label>
+						<input class="form-control" placeholder="Placeholder" type="text">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Password input</label>
+					<input class="form-control" placeholder="Enter password" type="password">
+				</div>
+
+				<div class="form-group">
+					<label>Textarea</label>
+					<textarea class="form-control" placeholder="Placeholder"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label>Select</label>
+					<select class="form-control">
+						<option>Sample 1</option>
+						<option>Sample 2</option>
+						<option>Sample 3</option>
+						<option>Sample 4</option>
+					</select>
+				</div>
+
+				<blockquote class="blockquote-sm blockquote-success">
+					<p>Elements can use auto width by class <code>.form-inline</code> envolving the <code>.form-control</code> element</p>
+				</blockquote>
+
+				<div class="form-group">
+					<label>Input auto width</label>
+					<div class="form-inline">
+						<input class="form-control" placeholder="Enter password" type="password">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Select auto width</label>
+					<div class="form-inline">
+						<select class="form-control">
+							<option>Sample 1</option>
+							<option>Sample 2</option>
+							<option>Sample 3</option>
+							<option>Sample 4</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<h3>Input Validation States</h3>
+
+			<div class="uxgl-assorted-section">
+				<div class="form-group has-success">
+					<label class="control-label" for="inputSuccess1">
+						Input with success
+					</label>
+					<input class="form-control" id="successInput1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-success">
+							<use xlink:href="../../images/icons/icons.svg#check">
+						</svg>
+						This input is a success!
+					</div>
+				</div>
+
+				<div class="form-group has-warning">
+					<label class="control-label" for="inputWarning1">
+						Input with warning
+					</label>
+					<input class="form-control" id="inputWarning1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-warning">
+							<use xlink:href="../../images/icons/icons.svg#exclamation-circle">
+						</svg>
+						Warning this input is a warning!
+					</div>
+				</div>
+
+				<div class="form-group has-error">
+					<label class="control-label" for="inputError1">
+						Input with error
+					</label>
+					<input class="form-control" id="inputError1" type="text">
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-danger">
+							<use xlink:href="../../images/icons/icons.svg#exclamation-circle">
+						</svg>
+						This input is invalid!
+					</div>
+				</div>
+
+				<div class="form-group has-error has-feedback">
+					<label class="control-label" for="inputError1">
+						Input with error
+					</label>
+					<input class="form-control" id="inputError1" type="text">
+					<span aria-hidden="true" class="form-control-feedback">
+						<svg class="lexicon-icon lexicon-icon-times dxp-dark-color">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</span>
+
+					<div class="help-block small">
+						<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-danger">
+							<use xlink:href="../../images/icons/icons.svg#exclamation-circle">
+						</svg>
+						This input is invalid!
+					</div>
+					<div class="dxp-dark-lighten-low-color small">
+						This input a help text!
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid-800 dxp-white-bg img-rounded">
+			<h3>Toggles</h3>
+
+			<div class="row uxgl-assorted-section">
+				<div class="form-group col-md-6">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Required Text on Right</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="ON">
+							</span>
+						</span>
+
+						<span class="toggle-switch-text toggle-switch-text-right">Required *</span>
+					</label>
+				</div>
+
+				<div class="form-group col-md-6 text-right">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Required Text on Left</span>
+
+						<span class="toggle-switch-text toggle-switch-text-left">Required *</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="">
+							</span>
+						</span>
+					</label>
+				</div>
+
+				<div class="form-group col-md-4">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Toggle Switch with icon</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="ON">
+								<span class="button-icon button-icon-on icon-volume-up toggle-switch-icon"></span>
+								<span class="button-icon button-icon-off icon-volume-off toggle-switch-icon"></span>
+							</span>
+						</span>
+
+						<span class="toggle-switch-text toggle-switch-text-right">
+							<svg class="lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#lock">
+							</svg>
+							Lock
+						</span>
+					</label>
+				</div>
+
+				<div class="form-group col-md-4 text-center">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Toggle centered</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="ON">
+								<span class="button-icon button-icon-on icon-volume-up toggle-switch-icon"></span>
+								<span class="button-icon button-icon-off icon-volume-off toggle-switch-icon"></span>
+							</span>
+						</span>
+					</label>
+				</div>
+
+				<div class="form-group col-md-4 text-right">
+					<label>
+						<input class="toggle-switch" type="checkbox">
+						<span class="toggle-switch-label">Toggle Switch with icon</span>
+
+						<span aria-hidden="true" class="toggle-switch-bar">
+							<span class="toggle-switch-handle" data-label-off="" data-label-on="ON">
+								<span class="button-icon button-icon-on icon-volume-up toggle-switch-icon"></span>
+								<span class="button-icon button-icon-off icon-volume-off toggle-switch-icon"></span>
+							</span>
+						</span>
+
+						<span class="toggle-switch-text toggle-switch-text-right">
+							<svg class="lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#unlock">
+							</svg>
+							unLock
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tooltip -->
+
+		<h2>Tooltip</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Tooltip.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<div class="container-fluid tooltip-display">
+				<div class="col-md-3">
+					<div class="tooltip right in">
+						<div class="tooltip-arrow"></div>
+						<div class="tooltip-inner">
+							<div>Tooltip on the right</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="tooltip left in">
+						<div class="tooltip-arrow"></div>
+						<div class="tooltip-inner">
+							<div>Tooltip on the left</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="tooltip bottom in">
+						<div class="tooltip-arrow"></div>
+						<div class="tooltip-inner">
+							<div>Tooltip on bottom</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="tooltip top in">
+						<div class="tooltip-arrow"></div>
+						<div class="tooltip-inner">
+							<div>Tooltip on top</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Breadcrumb -->
+
+		<h2>Breadcrumb</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Breadcrumb has two versions, normal and invert, tu use dark version you only need to add <code>.breadcrumb-invert</code>.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<ul class="breadcrumb breadcrumb-horizontal">
+				<li class="breadcrumb-ellipsis">
+					<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#ellipsis-h">
+						</svg>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Root</a></li>
+						<li><a href="#">Folder 00</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" title="Folder One">Folder One</a>
+				</li>
+				<li>
+					<a href="#" title="Folder Two">Folder Two</a>
+				</li>
+				<li>
+					<a href="#" title="Page">Page</a>
+				</li>
+				<li>
+					<a href="#1" title="folder two">folder two</a>
+				</li>
+				<li class="active">
+					<span title="Active">Active</span>
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="breadcrumb-inverted"><a class="heading-anchor" href="#breadcrumb-inverted"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Breadcrumb inverted</h3>
+
+		<div class="uxgl-assorted-section">
+			<ul class="breadcrumb breadcrumb-horizontal breadcrumb-inverted">
+				<li class="breadcrumb-ellipsis">
+					<a href="javascript:function(void)" data-toggle="dropdown" type="button" aria-expanded="false">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#ellipsis-h">
+						</svg>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Root</a></li>
+						<li><a href="#">Folder 00</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" title="Folder One">Folder One</a>
+				</li>
+				<li>
+					<a href="#" title="Folder Two">Folder Two</a>
+				</li>
+				<li>
+					<a href="#" title="Page">Page</a>
+				</li>
+				<li>
+					<a href="#1" title="folder two">folder two</a>
+				</li>
+				<li class="active">
+					<span title="Active">Active</span>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Pagination -->
+
+		<h2>Pagination</h2>
+
+		<div class="uxgl-assorted-section">
+			<div class="pagination-bar pagination-bar-bordered">
+				<div class="dropdown pagination-items-per-page">
+					<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#1">10 entries <span class="icon-sort"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#1">5</a></li>
+						<li><a href="#1">10</a></li>
+						<li><a href="#1">20</a></li>
+						<li><a href="#1">30</a></li>
+						<li><a href="#1">50</a></li>
+					</ul>
+				</div>
+
+				<div class="pagination-results">Showing 1 to 20 of 203 entries.</div>
+
+				<ul class="pagination">
+					<li class="disabled"><a href="#1"><span class="icon-caret-left"></span></a></li>
+					<li class="active"><a href="#1">1</a></li>
+					<li><a href="#1">2</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#1">...</a>
+						<div class="dropdown-menu dropdown-menu-top-center">
+							<ul class="inline-scroller link-list">
+								<li><a href="#1">3</a></li>
+								<li><a href="#1">4</a></li>
+								<li><a href="#1">5</a></li>
+								<li><a href="#1">6</a></li>
+								<li><a href="#1">7</a></li>
+								<li><a href="#1">8</a></li>
+								<li><a href="#1">9</a></li>
+								<li><a href="#1">10</a></li>
+								<li><a href="#1">11</a></li>
+								<li><a href="#1">12</a></li>
+								<li><a href="#1">13</a></li>
+								<li><a href="#1">14</a></li>
+								<li><a href="#1">15</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#1">16</a></li>
+					<li><a href="#1"><span class="icon-caret-right"></span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- navbar -->
+
+		<h2>Navbar</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Navbar <code>.navbar-main</code> is the class used to create the DXP main top navigation.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<nav class="navbar navbar-main navbar-inverse">
+			<div class="navbar-header flex-container">
+				<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+					<svg class="lexicon-icon lexicon-icon-bold">
+						<use xlink:href="../../images/icons/icons.svg#bars">
+					</svg>
+				</a>
+
+				<div class="navbar-brand flex-item-expand truncate-text">
+					<a href="#" class="icon-monospaced">
+						<svg class="lexicon-icon hidden-xs">
+							<use xlink:href="../../images/icons/icons.svg#angle-left">
+						</svg>
+					</a>
+					Home
+				</div>
+
+				<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#1">
+					<div class="user-icon user-icon-lg user-icon-warning"><span>MC</span></div>
+				</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Dashboard</a></li>
+				<li><a href="#">List</a></li>
+			</ul>
+
+			<div class="navbar-form navbar-right btn-mobile-fix">
+				<button class="btn btn-primary btn-mobile-fix" type="button">
+					<span class="hidden-xs">Create</span>
+					<span class="visible-xs-block">
+						<svg class="icon-monospaced lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#plus">
+						</svg>
+					</span>
+				</button>
+			</div>
+
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group has-feedback has-feedback-left dropdown-wide">
+					<span class="form-control-feedback form-control-feedback-left icon-monospaced dxp-white-color">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#search">
+						</svg>
+					</span>
+
+					<input class="form-control" placeholder="Search" type="text">
+
+					<a href="javascript:function(void)" class="form-control-feedback icon-monospaced" data-toggle="dropdown" type="button" aria-expanded="false">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#bookmarks">
+						</svg>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li class="dropdown-header">Search saved:</li>
+						<li class="divider"></li>
+						<li><a href="#">Search filter saved A</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+						<li><a href="#">Search filter saved B</a></li>
+					</ul>
+				</div>
+			</form>
+		</nav>
+		</div>
+
+		<!-- Toolbars -->
+
+		<h2>Toolbar</h2>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Toolbar make easy creating toolbars, it has three diferent states, &quot;normal&quot;, inverse <code>.toolbar-inverse</code> and active <code>.toolbar-active</code></p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<h3>Simple Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Quick example about what you can create with toolbars</p>
+			</blockquote>
+
+			<div class="toolbar">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="../../images/icons/icons.svg#bold">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-italic">
+								<use xlink:href="../../images/icons/icons.svg#italic">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-underline">
+								<use xlink:href="../../images/icons/icons.svg#underline">
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-left">
+								<use xlink:href="../../images/icons/icons.svg#align-left">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-center">
+								<use xlink:href="../../images/icons/icons.svg#align-center">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-align-right">
+								<use xlink:href="../../images/icons/icons.svg#align-right">
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-indent-more">
+								<use xlink:href="../../images/icons/icons.svg#indent-more">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-indent-less">
+								<use xlink:href="../../images/icons/icons.svg#indent-less">
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-list">
+								<use xlink:href="../../images/icons/icons.svg#list">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar inverse using <code>toolbar-inverse</code></p>
+			</blockquote>
+
+			<div class="toolbar toolbar-inverse">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="../../images/icons/icons.svg#bold">
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-list">
+								<use xlink:href="../../images/icons/icons.svg#list">
+							</svg>
+						</a>
+					</div>
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar selected using <code>toolbar-selected</code></p>
+			</blockquote>
+
+			<div class="toolbar toolbar-selected">
+				<div class="toolbar-group">
+					<div class="toolbar-group-content">
+						<select class="form-control">
+							<option>Helvetica</option>
+							<option>Arial</option>
+						</select>
+					</div>
+					<div class="toolbar-group-content">
+						<a class="icon-monospaced" href="#1">
+							<svg class="lexicon-icon lexicon-icon-bold">
+								<use xlink:href="../../images/icons/icons.svg#bold">
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="toolbar-group toolbar-group-right">
+					<div class="toolbar-group-content">
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg class="lexicon-icon lexicon-icon-ellipsis-v">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Alphabetical</a></li>
+								<li><a href="#1">Reverse</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<h3>Management Toolbar</h3>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-management</code> to use Management Toolbar</p>
+			</blockquote>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".toolbar-management #searchOpen01Icon").on("click", function() {
+						$("#searchOpen01").css("display","table");
+						$("#searchOpen01 .form-control").focus();
+					});
+
+					$(".toolbar-management .JS-table a").on("click", function() {
+						if ($(this).hasClass("JS-table-view")) {
+							$(".toolbar-management .JS-table-view-icon").removeClass("hide");
+						} else {
+							$(".toolbar-management .JS-table-view-icon").addClass("hide");
+						}
+
+						$(".toolbar-management .JS-table a").removeClass("active");
+
+						$(this).addClass("active");
+					});
+
+					$(".a-z").each(function() {
+						$(this).on("click", function(e) {
+							$(this).toggleClass("a-z z-a");
+						});
+					});
+				});
+			</script>
+
+			<div class="toolbar toolbar-management">
+				<div class="toolbar-group">
+
+					<!-- checkbox -->
+
+					<div class="toolbar-group-content">
+						<input type="checkbox">
+					</div>
+
+					<!-- checkbox end-->
+
+					<div class="toolbar-group-content">
+						<a class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" href="#1">
+							Filter and Order
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#caret-double-l">
+							</svg>
+						</a>
+						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced hidden-md hidden-lg">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#control-panel">
+							</svg>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#1">Date</a></li>
+							<li><a href="#1">Time</a></li>
+							<li><a href="#1">Status</a></li>
+						</ul>
+					</div>
+					<div class="toolbar-group-content">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced a-z">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#import-export">
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- View right controls -->
+
+				<div class="toolbar-group-right">
+					<div class="toolbar-group-content hidden-sm hidden-md hidden-lg">
+						<a id="searchOpen01Icon" href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#search">
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content JS-table-view-icon">
+						<a href="#1" data-toggle="dropdown" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#hidden">
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li>
+								<form>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input type="checkbox" value=""> Name Col
+										</label>
+									</div>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input type="checkbox" value=""> Date Col
+										</label>
+									</div>
+									<div class="checkbox checkbox-default">
+										<label>
+											<input checked type="checkbox" value=""> File Col
+										</label>
+									</div>
+								</form>
+							</li>
+						</ul>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced active" data-toggle="dropdown">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#table">
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right JS-table">
+							<li>
+								<a href="#1" class="JS-table-view">
+									<svg class="lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#table">
+									</svg>
+									 Table view
+								</a>
+							</li>
+							<li>
+								<a href="#1" class="active">
+									<svg class="lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#list">
+									</svg>
+									List view
+								</a>
+							</li>
+							<li>
+								<a href="#1">
+									<svg class="lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#cards2">
+									</svg>
+									Card view
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#1" class="btn btn-default btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- View controls end -->
+
+				<!-- Search -->
+
+				<div id="searchOpen01" class="toolbar-group-expand toolbar-search">
+					<div class="toolbar-group-content has-feedback">
+						<form>
+							<input class="form-control" type="text">
+							<a href="#searchOpen01" class="form-control-feedback icon-monospaced">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#search">
+								</svg>
+							</a>
+						</form>
+					</div>
+				</div>
+
+				<!-- Search end -->
+			</div>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add the class <code>.toolbar-selected</code> to use Management Toolbar selected state</p>
+			</blockquote>
+
+			<div class="toolbar toolbar-selected toolbar-management">
+				<div class="toolbar-group">
+
+					<!-- checkbox -->
+
+					<div class="toolbar-group-content">
+						<input type="checkbox">
+					</div>
+
+					<!-- checkbox end-->
+
+					<div class="toolbar-group-content">
+						<span>5 of 20 <span class="hidden-xs hidden-sm">items selected</span></span>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#"><u>Select all</u></a>
+					</div>
+				</div>
+
+				<div class="toolbar-group-right">
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#trash">
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#download">
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content hidden-sm hidden-xs">
+						<a href="#1" class="btn btn-link btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+							</svg>
+						</a>
+					</div>
+
+					<div class="toolbar-group-content">
+						<a href="#1" data-toggle="dropdown" class="btn btn-link btn-sm btn-icon icon-monospaced">
+							<svg class="lexicon-icon">
+								<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-right">
+							<!-- For mobile -->
+							<li class="hidden-md hidden-lg"><a href="#1">Remove</a></li>
+							<li class="hidden-md hidden-lg"><a href="#1">Download</a></li>
+							<li class="hidden-md hidden-lg"><a href="#1">File info</a></li>
+							<!---->
+							<li><a href="#1">Date</a></li>
+							<li><a href="#1">Time</a></li>
+							<li><a href="#1">Status</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="uxgl-assorted-section">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Toolbar useful classes:</p>
+				<p><code>.toolbar-marginless</code></p>
+			</blockquote>
+		</div>
+
+		<h3 id="labels-toolbar"><a class="heading-anchor" href="#labels-toolbar"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Labels Toolbar</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>To use a labels toolbar you should use only the class: <code>.toolbar-labels</code> without previus <code>.toolbar</code> class.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section dxp-white-bg">
+			<div class="toolbar-labels">
+				<div class="toolbar-labels-container">
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="label label-default">
+						<span>APPROVED</span>
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times">
+						</svg>
+					</a>
+					<a href="#" class="btn btn-sm btn-icon icon-monospaced" data-toggle="tooltip" data-placement="top" title="Remove all labels">
+						<svg class="lexicon-icon">
+							<use xlink:href="../../images/icons/icons.svg#times-circle">
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Toolbars -->
+
+		<h2>Lists</h2>
+
+		<h3 id="tabular-list"><a class="heading-anchor" href="#tabular-list"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Tabular List</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Align content inside a list-group like a table with <code>.tabular-list-group</code>.</p>
+
+			<p><code>.list-group-item</code> behaves as a table row.</p>
+
+			<p>Use a combination of <code>.list-group-item-field</code> and <code>.list-group-item-content</code> to control the size of each cell. <code>.list-group-item-field</code> has width: 1% and will expand only as wide as its content as long as <code>.list-group-item-content</code> is present as a sibling.</p>
+
+			<p><code>.list-group-item-content</code> will expand to fill the remaining space.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<ul class="tabular-list-group">
+				<li class="list-group-item">
+					<div class="list-group-item-field">
+						<input type="checkbox">
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
+							<svg class="lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#folder">
+							</svg>
+						</div>
+					</div>
+
+					<div class="list-group-item-content">
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
+						<p class="truncate-text small">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</p>
+						<span class="label label-default label-sm">ART</span>
+						<span class="label label-default label-sm">LABEL</span>
+						<span class="label label-default label-sm">DESIGN</span>
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dropdown action-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+								<svg class="icon-monospaced lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-left-side">
+								<li class="dropdown-header">Dropdown Header</li>
+								<li><a href="#">Action 1</a></li>
+								<li><a href="#">Action 2</a></li>
+								<li><a href="#">Action 3</a></li>
+							</ul>
+						</div>
+						<div class="action-icons">
+							<ul class="action-icon-list">
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#trash">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#download">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+
+				<li class="list-group-item">
+					<div class="list-group-item-field">
+						<input type="checkbox">
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-success sticker-static">
+							<svg class="dxp-black-color lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#folder">
+							</svg>
+						</div>
+					</div>
+
+					<div class="list-group-item-content">
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
+						<p class="truncate-text small">State of CSS art</p>
+						<span class="label label-default label-sm">ART</span>
+						<span class="label label-default label-sm">LABEL</span>
+						<span class="label label-default label-sm">DESIGN</span>
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dropdown action-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+								<svg class="icon-monospaced lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-left-side">
+								<li class="dropdown-header">Dropdown Header</li>
+								<li><a href="#">Action 1</a></li>
+								<li><a href="#">Action 2</a></li>
+								<li><a href="#">Action 3</a></li>
+							</ul>
+						</div>
+						<div class="action-icons">
+							<ul class="action-icon-list">
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#trash">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#download">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="tabular-list-without-dropdown"><a class="heading-anchor" href="#tabular-list-without-dropdown"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Tabular List without dropdown</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>If a item list has not dropdown menu, <code>.action-icons</code> will be pulled to right margin.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<ul class="tabular-list-group">
+				<li class="list-group-item">
+					<div class="list-group-item-field">
+						<input type="checkbox">
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-warning sticker-static">
+							<svg class="lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#audio">
+							</svg>
+						</div>
+					</div>
+
+					<div class="list-group-item-content">
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
+						<p class="truncate-text small">Description of this list group item</p>
+						<span class="label label-default label-sm">ART</span>
+						<span class="label label-default label-sm">LABEL</span>
+						<span class="label label-default label-sm">DESIGN</span>
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="action-icons">
+							<ul class="action-icon-list">
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#trash">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#download">
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+											<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<h4>Tabular List Active line</h4>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Use <code>active</code> class in a <code>list-group-item-field</code> to make it the line as active.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<ul class="tabular-list-group">
+				<li class="list-group-item active">
+					<div class="list-group-item-field">
+						<input type="checkbox" checked>
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dxp-white-color sticker sticker-default sticker-rounded sticker-primary sticker-static">
+							<svg class="lexicon-icon lexicon-icon-folder">
+								<use xlink:href="../../images/icons/icons.svg#folder">
+							</svg>
+						</div>
+					</div>
+
+					<div class="list-group-item-content">
+						<p><b>Marcos Castro, modified 2 hours ago.</b></p>
+						<p class="truncate-text small">Description of this list group item</p>
+						<span class="label label-default label-sm">ART</span>
+						<span class="label label-default label-sm">DESIGN</span>
+					</div>
+
+					<div class="list-group-item-field">
+						<div class="dropdown action-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+								<svg class="icon-monospaced lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#trash">
+								</svg>
+							</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="table-list"><a class="heading-anchor" href="#table-list"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Table List</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>A table styled like a list. The active state can be invoked by adding class <code>active</code> to the <code>&lt;tr&gt;&lt;/tr&gt;</code> element. Alse exist diferents states to add to the table like <code>table-actions</code> if you want to add the last column with actions<code>table-autobix</code> to set the table auto fitable, <code>table-checkbox</code> when we want to use a checkbox at the first column <code>table-out-border</code> to add a single border, <code>table-stripe</code> to add striped lines, <code>table-heading-nowrap</code> to add no wrap effect and <code>table-hover</code></p>
+		</blockquote>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Actions column can be added using the class<code>actions in the last &lt;tr&gt;&lt;/tr&gt;</code> of table body</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<div id="table_01" class="table-responsive">
+				<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+							<th class="table-cell-content">
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								<span class="truncate-text" title="Description">Title</span>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Status
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Modified Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Display Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Author
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Type
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+								</tr>
+								<tr>
+									<td>
+	
+										<input type="checkbox" value="">
+									</td>
+									<td>21149</td>
+									<td class="table-cell-content">
+										<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+									</td>
+									<td>--</td>
+									<td>2 Hours Ago</td>
+									<td>--</td>
+									<td>Nelson</td>
+									<td>Folder</td>
+									<td>
+										<div class="dropdown action-dropdown">
+											<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+												<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+											</svg>
+											</a>
+											<ul class="dropdown-menu dropdown-menu-left-side">
+												<li><a href="#1">Move</a></li>
+												<li><a href="#1">Checkout</a></li>
+												<li><a href="#1">Permissions</a></li>
+											</ul>
+										</div>
+										<div class="action-icons">
+											<ul class="action-icon-list">
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#trash">
+														</svg>
+													</a>
+												</li>
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#download">
+														</svg>
+													</a>
+												</li>
+												<li>
+													<a href="#1">
+														<svg class="icon-monospaced lexicon-icon">
+															<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+														</svg>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+	
+										<input type="checkbox" value="">
+									</td>
+									<td>21150</td>
+									<td class="table-cell-content">
+										<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+									</td>
+									<td>--</td>
+									<td>2 Hours Ago</td>
+									<td>--</td>
+									<td>Nelson</td>
+									<td>Folder</td>
+									<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Tu use a pagination with a table we will need to add <code>.pagination-bar-table-fixed</code> class to pagination</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<div id="table_01b" class="table-responsive">
+				<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+							<th class="table-cell-content">
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								<span class="truncate-text" title="Description">Title</span>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Status
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Modified Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Display Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Author
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Type
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21149</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21150</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Pagination -->
+
+			<div class="pagination-bar pagination-bar-bordered pagination-bar-table-fixed">
+				<div class="dropdown pagination-items-per-page">
+					<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#1">10 entries <span class="icon-sort"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="#1">5</a></li>
+						<li><a href="#1">10</a></li>
+						<li><a href="#1">20</a></li>
+						<li><a href="#1">30</a></li>
+						<li><a href="#1">50</a></li>
+					</ul>
+				</div>
+
+				<div class="pagination-results hidden-xs">Showing 1 to 20 of 203 entries.</div>
+
+				<ul class="pagination">
+					<li class="disabled"><a href="#1"><span class="icon-caret-left"></span></a></li>
+					<li class="active"><a href="#1">1</a></li>
+					<li><a href="#1">2</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#1">...</a>
+						<div class="dropdown-menu dropdown-menu-top-center">
+							<ul class="inline-scroller link-list">
+								<li><a href="#1">3</a></li>
+								<li><a href="#1">4</a></li>
+								<li><a href="#1">5</a></li>
+								<li><a href="#1">6</a></li>
+								<li><a href="#1">7</a></li>
+								<li><a href="#1">8</a></li>
+								<li><a href="#1">9</a></li>
+								<li><a href="#1">10</a></li>
+								<li><a href="#1">11</a></li>
+								<li><a href="#1">12</a></li>
+								<li><a href="#1">13</a></li>
+								<li><a href="#1">14</a></li>
+								<li><a href="#1">15</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#1">16</a></li>
+					<li><a href="#1"><span class="icon-caret-right"></span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Example of a big table with horizontal inner scroll, Javascript is needed to keep actions visible</p>
+		</blockquote>
+
+		<!-- Quick JS example -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var table = function(n) {
+					var tableNode = $("#table_02");
+					var tableW = tableNode.width();
+					var tableW2 = $("#table_02 table").width();
+					var tableScrollPoint = $("#table_02").scrollLeft();
+
+					if (tableW <= tableW2 && (tableW2-tableW-tableScrollPoint) >= 0) {
+						var tableD = (tableW2 - tableW - tableScrollPoint);
+
+						$("#table_02").find(".action-icons").css("right", tableD+48+"px");
+						$("#table_02").find(".action-dropdown").css("right", tableD+"px");
+					}
+				}
+
+				$(window).on("load resize",function(){
+				    table(this);
+				});
+
+				$("#table_02").on("scroll", function() {
+					table(this);
+				});
+			});
+		</script>
+
+		<div class="uxgl-assorted-section">
+			<div id="table_02" class="table-responsive">
+				<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+							<th class="table-cell-content">
+								<span class="truncate-text" title="Description">Title</span>
+							</th>
+							<th>S&#xFA;per title</th>
+							<th>Previus title</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Status
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Modified Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Display Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Author
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Type
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>2 Hours Ago</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>2 Hours Ago</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Fixed column and table head, table-fixed class has to be added in table-responsive div.</p>
+			<p>To fix the head we can create a copy of the table which contains only the thead, this table-copy will have to contain table-fixed-head class</p>
+			<p>To fix columns we should create a copy of the table which contains one or two columns, this table-copy will have to contain table-fixed-column class. Columns fixed will have a width limit: 240px in desktop, 33% in mobile.</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section">
+			<div id="table_03" class="table-responsive table-fixed">
+
+				<!-- Copy of main table (only thead) adding class -->
+				<table class="table table-fixed-head table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+							<th class="table-cell-content">
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								<span class="truncate-text" title="Description">Title <svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg></span>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Status
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Modified Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Display Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Author
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Type
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody class="sr-only">
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21149</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21150</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Copy of main column table adding class -->
+				<table class="table table-fixed-column table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table table-actions table-autofit table-checkbox table-out-bordered table-list table-striped table-heading-nowrap table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>ID</th>
+							<th class="table-cell-content">
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								<span class="truncate-text" title="Description">Title <svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg></span>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Status
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Modified Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Display Date
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Author
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th>
+								<svg class="lexicon-icon table-cell-draggable">
+									<use xlink:href="../../images/icons/icons.svg#cards2">
+								</svg>
+								Type
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#caret-bottom">
+								</svg>
+							</th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21146</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.">Wings eu, pumpkin spice robusta, kopi-luwak mocha caffeine froth grounds.</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>
+								21148
+							</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Frappuccino medium americano">Frappuccino medium americano</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21149</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" value="">
+							</td>
+							<td>21150</td>
+							<td class="table-cell-content">
+								<span class="truncate-text" title="Cultivar extra">Cultivar extra</span>
+							</td>
+							<td>--</td>
+							<td>2 Hours Ago</td>
+							<td>--</td>
+							<td>Nelson</td>
+							<td>Folder</td>
+							<td>
+								<div class="dropdown action-dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+										<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-left-side">
+										<li><a href="#1">Move</a></li>
+										<li><a href="#1">Checkout</a></li>
+										<li><a href="#1">Permissions</a></li>
+									</ul>
+								</div>
+								<div class="action-icons">
+									<ul class="action-icon-list">
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#trash">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#download">
+												</svg>
+											</a>
+										</li>
+										<li>
+											<a href="#1">
+												<svg class="icon-monospaced lexicon-icon">
+													<use xlink:href="../../images/icons/icons.svg#info-circle-open">
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="hidden-xs">
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Example of modals</p>
+			</blockquote>
+
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-labelledby="Close" class="btn btn-link close" data-dismiss="modal" role="button" type="button">
+							<svg class="lexicon-icon icon-monospaced">
+								<use xlink:href="../../images/icons/icons.svg#times">
+							</svg>
+						</button>
+						<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+					</div>
+
+					<div class="modal-body">
+						<p>Modal Body</p>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-primary" type="button">Primary</button>
+						<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+					</div>
+				</div>
+			</div>
+
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>A modal can has different colors, using classes: <code>.modal-danger</code>, <code>.modal-cta</code> and <code>.modal-warning</code></p>
+				<div class="alert alert-warning">
+					<strong>Warning: </strong>This section is completely hidden in mobile..
+				</div>
+			</blockquote>
+
+			<div class="modal-dialog modal-danger">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-labelledby="Close" class="btn btn-link close" data-dismiss="modal" role="button" type="button">
+							<svg class="lexicon-icon icon-monospaced">
+								<use xlink:href="../../images/icons/icons.svg#times">
+							</svg>
+						</button>
+						<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+					</div>
+
+					<div class="modal-body">
+						<p>Modal Body</p>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-primary" type="button">Primary</button>
+						<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-dialog modal-cta">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-labelledby="Close" class="btn btn-link close" data-dismiss="modal" role="button" type="button">
+							<svg class="lexicon-icon icon-monospaced">
+								<use xlink:href="../../images/icons/icons.svg#times">
+							</svg>
+						</button>
+						<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+					</div>
+
+					<div class="modal-body">
+						<p>Modal Body</p>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-primary" type="button">Primary</button>
+						<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-dialog modal-warning">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button aria-labelledby="Close" class="btn btn-link close" data-dismiss="modal" role="button" type="button">
+							<svg class="lexicon-icon icon-monospaced">
+								<use xlink:href="../../images/icons/icons.svg#times">
+							</svg>
+						</button>
+						<p class="modal-title" id="lexSmallModalLabel">Modal Title</p>
+					</div>
+
+					<div class="modal-body">
+						<p>Modal Body</p>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-primary" type="button">Primary</button>
+						<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Example sidebar:</p>
+		</blockquote>
+
+		<div class="uxgl-assorted-section" style="position: relative;">
+			<nav class="navbar navbar-main navbar-inverse">
+				<div class="navbar-header flex-container">
+					<a class="navbar-brand visible-xs-block navbar-align-left flex-container" href="#" data-toggle="dropdown" data-target="#sidenavFixed" aria-expanded="false">
+						<svg class="lexicon-icon lexicon-icon-bold">
+							<use xlink:href="../../images/icons/icons.svg#bars">
+						</svg>
+					</a>
+
+					<div class="navbar-brand flex-item-expand truncate-text">
+						<a href="#" class="icon-monospaced">
+							<svg class="lexicon-icon hidden-xs">
+								<use xlink:href="../../images/icons/icons.svg#angle-left">
+							</svg>
+						</a>
+						Home
+					</div>
+
+					<a class="navbar-brand visible-xs-block navbar-align-right flex-container" href="#1">
+						<div class="user-icon user-icon-lg user-icon-warning"><span>MC</span></div>
+					</a>
+				</div>
+			</nav>
+
+			<div class="sidebar-container" id="sidenavFixed">
+				<div class="sidebar sidebar-default">
+					<div class="sidebar-header">
+						<ul class="sidebar-header-actions">
+							<li class="visible-xs-inline-block">
+								<a class="" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#times">
+									</svg>
+								</a>
+							</li>
+						</ul>
+
+						<h5>Approved</h5>
+					</div>
+
+					<div class="sidebar-body">
+						<div class="sidebar-panel">
+							<div class="icon-monospaced">PDF</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="sidebar-content">
+					<div class="testBlock">
+						<div class="container-fluid container-padded container-xs-glued" id="tableList">
+							<div class="container-spaced-top container-fluid panel">
+								<h4>Panel title</h4>
+								<p>Testing block</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<blockquote class="blockquote-sm blockquote-success clearfix">
+			<p>You can add <code>.sidebar-fixed-xs</code> to <code>.sidebar</code> to fix the sidebar on top of the screen</p>
+		</blockquote>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('[data-toggle="tooltip"]').tooltip();
+</script>
+	</div>
+
+		</section>
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script src="../../js/site/toggle_css.js"></script>
+	<script src="../../js/svg4everybody.js" type="text/javascript"></script>
+
+	<script>
+		svg4everybody({
+			polyfill: true
+		});
+
+		$(function() {
+			var body = $('body');
+			var headerTopBar = $('#headerTopBar');
+
+			headerTopBar.find('.navbar-toggle').on(
+				'click',
+				function(event) {
+					var $this = $(this);
+
+					var transitionEnd = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+
+					var mainNavContainer = $('.main-nav-container');
+					var wrapper = $this.closest('#wrapper');
+
+					var isNavOpen = (function() {
+						if (wrapper.hasClass('main-nav-open')) {
+							return true;
+						}
+
+						return false;
+					})();
+
+					var forceReflow = function(el) {
+						el.css({
+							display: 'table'
+						});
+
+						setTimeout(function() {
+							el.css({
+								display: ''
+							});
+						}, 0);
+					};
+
+					event.preventDefault();
+
+					mainNavContainer.on(
+						transitionEnd,
+						function(event) {
+							if ($(event.target).is('#mainNav')) {
+								mainNavContainer.removeClass('main-nav-transition');
+								forceReflow($('html'));
+
+								if (isNavOpen) {
+									body.removeClass('lexicon-site-body-fixed');
+								}
+
+								$(this).off(transitionEnd);
+							}
+						}
+					);
+
+					mainNavContainer.addClass('main-nav-transition');
+
+					if (isNavOpen) {
+						wrapper.removeClass('main-nav-open');
+					}
+					else {
+						body.addClass('lexicon-site-body-fixed');
+						wrapper.addClass('main-nav-open');
+					}
+				}
+			);
+		});
+
+		hljs.initHighlightingOnLoad();
+	</script>
+	</body>
+</html>

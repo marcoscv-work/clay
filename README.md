@@ -29,7 +29,7 @@ If you would like to contribute to the guidelines, or make changes on your syste
 ### Clone the repo
 Clone the repo to your computer
 
-### Install Node.js and NPM
+### Install Node.js (v4.6.0 LTS) and NPM
 If you don't already have it installed. You can find more info here: http://nodejs.org/
 Node and NPM come bundled together, so you only need to install one package.
 
@@ -75,6 +75,8 @@ You can pass these options when running `gulp`.
 This will generate all of the HTML/CSS/etc into the `build/` directory.
 
 `watch`: Because running a script after every change can get tedious, run `gulp watch` to rebuild the files automatically as you change files.
+
+`serve`: Starts a local server on port 3000 and also runs the watch task.
 
 `release`: This task will create a zip file located in the root of the repo with the version number located in the package.json.
 We use this to deploy into Liferay.

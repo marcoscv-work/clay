@@ -1,0 +1,36 @@
+.label {
+	border-radius: $label-border-radius;
+	border-style: solid;
+	border-width: $label-border-size;
+
+	@include label-border-color($label-default-border-color, $label-default-color, $label-default-bg);
+
+	&.label-sm {
+		padding-bottom: $label-sm-padding-bottom;
+		padding-top: $label-sm-padding-top;
+	}
+}
+
+.label-default {
+	@include label-border-color($label-default-border-color, $label-default-color, transparent);
+}
+
+.label-primary {
+	@include label-border-color($label-primary-bg, $label-primary-bg, transparent);
+}
+
+.label-success {
+	@include label-border-color($label-success-bg, $label-success-bg, transparent);
+}
+
+.label-info {
+	@include label-border-color($label-info-bg, $label-info-bg, transparent);
+}
+
+.label-warning {
+	@include label-border-color($label-warning-bg, $label-warning-bg, transparent);
+}
+
+.label-danger {
+	@include label-border-color($label-danger-bg, $label-danger-bg, transparent);
+}

@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Form Elements (Input Groups)</title>
+	<title>DXP Cloud Skin based on Lexicon - Form Elements (Input Groups)</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Form Elements (Input Groups)
 
 			
@@ -223,7 +240,7 @@
 		
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-addon"><a class="heading-anchor" href="#input-group-addon"><i class="icon icon-link"></i></a>Input Group Addon</h3>
+		<h3 id="input-group-addon"><a class="heading-anchor" href="#input-group-addon"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Addon</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Append or prepend different things to your form elements with input-group.</p>
@@ -257,23 +274,44 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-addon-with-checkboxes-and-radios"><a class="heading-anchor" href="#input-group-addon-with-checkboxes-and-radios"><i class="icon icon-link"></i></a>Input Group Addon with Checkboxes and Radios</h3>
+		<h3 id="input-group-addon-constrain"><a class="heading-anchor" href="#input-group-addon-constrain"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Addon Constrain</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Make long content inside an <code>input-group-addon</code> overflow by wrapping your text with <code>&lt;span class=&quot;input-group-constrain&quot;&gt;&lt;/span&gt;</code>.</p>
+		</blockquote>
+
+		<form>
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon" id="inputGroupConstrain01">
+						<span class="input-group-constrain">https://web.liferay.com/community/forums/-/message_boards/category/72632049</span>
+					</span>
+					<input aria-describedby="inputGroupConstrain01" class="form-control" placeholder="Change Default URL" type="text">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="input-group-addon-with-checkboxes-and-radios"><a class="heading-anchor" href="#input-group-addon-with-checkboxes-and-radios"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Addon with Checkboxes and Radios</h3>
 
 		<form>
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">
-						<input type="checkbox" aria-label="Checkbox for following text input">
+						<input aria-label="Checkbox for following text input" type="checkbox">
 					</span>
-					<input type="text" class="form-control" aria-label="Text input with checkbox">
+					<input aria-label="Text input with checkbox" class="form-control" type="text">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="input-group">
-					<input type="text" class="form-control" aria-label="Text input with checkbox">
+					<input aria-label="Text input with checkbox" class="form-control" type="text">
 					<span class="input-group-addon">
-						<input type="checkbox" aria-label="Checkbox for previous text input">
+						<input aria-label="Checkbox for previous text input" type="checkbox">
 					</span>
 				</div>
 			</div>
@@ -281,17 +319,17 @@
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">
-						<input type="radio" aria-label="Radio button for following text input">
+						<input aria-label="Radio button for following text input" type="radio">
 					</span>
-					<input type="text" class="form-control" aria-label="Text input with radio button">
+					<input aria-label="Text input with radio button" class="form-control" type="text">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="input-group">
-					<input type="text" class="form-control" aria-label="Text input with radio button">
+					<input aria-label="Text input with radio button" class="form-control" type="text">
 					<span class="input-group-addon">
-						<input type="radio" aria-label="Radio button for previous text input">
+						<input aria-label="Radio button for previous text input" type="radio">
 					</span>
 				</div>
 			</div>
@@ -301,20 +339,20 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-addon-with-buttons"><a class="heading-anchor" href="#input-group-addon-with-buttons"><i class="icon icon-link"></i></a>Input Group Addon with Buttons</h3>
+		<h3 id="input-group-buttons"><a class="heading-anchor" href="#input-group-buttons"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Buttons</h3>
 
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="button">Search</button>
 				</span>
-				<input type="text" class="form-control" placeholder="Search for...">
+				<input class="form-control" placeholder="Search for..." type="text">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search for...">
+				<input class="form-control" placeholder="Search for..." type="text">
 				<span class="input-group-btn">
 					<button class="btn btn-default" type="button">Search</button>
 				</span>
@@ -324,29 +362,29 @@
 		<div class="form-group">
 			<div class="input-group">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+					<button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Action <span class="caret"></span></button>
 					<ul class="dropdown-menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
+						<li class="divider" role="separator"></li>
 						<li><a href="#">Separated link</a></li>
 					</ul>
 				</div>
-				<input type="text" class="form-control" aria-label="Text input with dropdown button">
+				<input aria-label="Text input with dropdown button" class="form-control" type="text">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="input-group">
-				<input type="text" class="form-control" aria-label="Text input with dropdown button">
+				<input aria-label="Text input with dropdown button" class="form-control" type="text">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+					<button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">Action <span class="caret"></span></button>
 					<ul class="dropdown-menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
+						<li class="divider" role="separator"></li>
 						<li><a href="#">Separated link</a></li>
 					</ul>
 				</div>
@@ -356,8 +394,8 @@
 		<div class="form-group">
 			<div class="input-group">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default">Action</button>
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-default" type="button">Action</button>
+					<button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
 						<span class="caret"></span>
 						<span class="sr-only">Toggle Dropdown</span>
 					</button>
@@ -365,20 +403,20 @@
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
+						<li class="divider" role="separator"></li>
 						<li><a href="#">Separated link</a></li>
 					</ul>
 				</div>
-				<input type="text" class="form-control" aria-label="Text input with segmented button dropdown">
+				<input aria-label="Text input with segmented button dropdown" class="form-control" type="text">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="input-group">
-				<input type="text" class="form-control" aria-label="Text input with segmented button dropdown">
+				<input aria-label="Text input with segmented button dropdown" class="form-control" type="text">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default">Action</button>
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-default" type="button">Action</button>
+					<button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
 						<span class="caret"></span>
 						<span class="sr-only">Toggle Dropdown</span>
 					</button>
@@ -386,7 +424,7 @@
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
+						<li class="divider" role="separator"></li>
 						<li><a href="#">Separated link</a></li>
 					</ul>
 				</div>
@@ -397,7 +435,31 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-sizes"><a class="heading-anchor" href="#input-group-sizes"><i class="icon icon-link"></i></a>Input Group Sizes</h3>
+		<h3 id="input-group-insert"><a class="heading-anchor" href="#input-group-insert"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Insert</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Chain several <code>input-group-addon</code>&apos;s or <code>input-group-btn</code>&apos;s together by adding the class <code>input-group-insert</code> to any input-group-addon or input-group-btn that sits between the first and last element inside an input-group.</p>
+		</blockquote>
+
+		<form>
+			<div class="form-group">
+				<div class="input-group">
+					<input class="form-control" placeholder="Mailbox Name" type="text">
+					<span class="input-group-addon input-group-insert">@</span>
+					<input class="form-control" placeholder="Domain" type="text">
+					<span class="input-group-addon input-group-insert">.com</span>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">Submit</button>
+					</span>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="input-group-sizes"><a class="heading-anchor" href="#input-group-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Sizes</h3>
 
 		<form>
 			<div class="form-group">
@@ -429,7 +491,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-default"><a class="heading-anchor" href="#input-group-default"><i class="icon icon-link"></i></a>Input Group Default</h3>
+		<h3 id="input-group-default"><a class="heading-anchor" href="#input-group-default"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Default</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>An alternative style for input-group.</p>
@@ -439,7 +501,7 @@
 			<div class="form-group">
 				<label for="defaultLogoutPage">
 					Label
-					<svg class="lexicon-icon">
+					<svg class="lexicon-icon reference-mark text-warning">
 						<use xlink:href="../../images/icons/icons.svg#asterisk">
 					</svg>
 				</label>
@@ -448,7 +510,7 @@
 					<input aria-label="Amount" class="form-control" id="defaultLogoutPage" placeholder="Some placeholder text..." type="text">
 					<span class="input-group-addon">
 						<span class="input-group-addon-content">
-							<a href="#1" class="help-icon help-icon-default icon-question icon-monospaced" data-toggle="popover"></a>
+							<a class="help-icon help-icon-default icon-monospaced icon-question" data-toggle="popover" href="#1"></a>
 						</span>
 					</span>
 				</div>
@@ -459,13 +521,13 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-group-default-sizes"><a class="heading-anchor" href="#input-group-default-sizes"><i class="icon icon-link"></i></a>Input Group Default Sizes</h3>
+		<h3 id="input-group-default-sizes"><a class="heading-anchor" href="#input-group-default-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Group Default Sizes</h3>
 
 		<form>
 			<div class="form-group">
 				<label for="defaultLogoutPage">
 					Label Input Group Lg
-					<svg class="lexicon-icon">
+					<svg class="lexicon-icon reference-mark text-warning">
 						<use xlink:href="../../images/icons/icons.svg#asterisk">
 					</svg>
 				</label>
@@ -474,7 +536,7 @@
 					<input aria-label="Amount" class="form-control" id="defaultLogoutPage" placeholder="Some placeholder text..." type="text">
 					<span class="input-group-addon">
 						<span class="input-group-addon-content">
-							<a href="#1" class="help-icon help-icon-default icon-question icon-monospaced" data-toggle="popover"></a>
+							<a class="help-icon help-icon-default icon-monospaced icon-question" data-toggle="popover" href="#1"></a>
 						</span>
 					</span>
 				</div>
@@ -483,7 +545,7 @@
 			<div class="form-group">
 				<label for="defaultLogoutPage">
 					Label
-					<svg class="lexicon-icon">
+					<svg class="lexicon-icon reference-mark text-warning">
 						<use xlink:href="../../images/icons/icons.svg#asterisk">
 					</svg>
 				</label>
@@ -492,7 +554,7 @@
 					<input aria-label="Amount" class="form-control" id="defaultLogoutPage" placeholder="Some placeholder text..." type="text">
 					<span class="input-group-addon">
 						<span class="input-group-addon-content">
-							<a href="#1" class="help-icon help-icon-default icon-question icon-monospaced" data-toggle="popover"></a>
+							<a class="help-icon help-icon-default icon-monospaced icon-question" data-toggle="popover" href="#1"></a>
 						</span>
 					</span>
 				</div>
@@ -501,7 +563,7 @@
 			<div class="form-group">
 				<label for="defaultLogoutPage">
 					Label Input Group Sm
-					<svg class="lexicon-icon">
+					<svg class="lexicon-icon reference-mark text-warning">
 						<use xlink:href="../../images/icons/icons.svg#asterisk">
 					</svg>
 				</label>
@@ -510,7 +572,7 @@
 					<input aria-label="Amount" class="form-control" id="defaultLogoutPage" placeholder="Some placeholder text..." type="text">
 					<span class="input-group-addon">
 						<span class="input-group-addon-content">
-							<a href="#1" class="help-icon help-icon-default icon-question icon-monospaced" data-toggle="popover"></a>
+							<a class="help-icon help-icon-default icon-monospaced icon-question" data-toggle="popover" href="#1"></a>
 						</span>
 					</span>
 				</div>
@@ -520,19 +582,19 @@
 </div>
 
 <script>
-$('[data-toggle="popover"]').popover({
-	container: 'body',
-	content: 'Some help text for your input.',
-	placement: 'left',
-	trigger: 'hover'
-});
+	$('[data-toggle="popover"]').popover(
+		{
+			container: 'body',
+			content: 'Some help text for your input.',
+			placement: 'left',
+			trigger: 'hover'
+		}
+	);
 </script>
 	</div>
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

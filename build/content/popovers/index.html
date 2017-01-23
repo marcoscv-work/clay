@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Popovers and Tooltips</title>
+	<title>DXP Cloud Skin based on Lexicon - Popovers and Tooltips</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Popovers and Tooltips
 
 			
@@ -223,7 +240,7 @@
 		
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="tooltips-default"><a class="heading-anchor" href="#tooltips-default"><i class="icon icon-link"></i></a>Tooltips Default</h3>
+		<h3 id="tooltips-default"><a class="heading-anchor" href="#tooltips-default"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Tooltips Default</h3>
 	</div>
 
 	<div class="tooltip-display">
@@ -301,7 +318,7 @@
 <div id="popovers">
 	<div class="row row-spacing">
 		<div class="col-md-12">
-			<h3 id="popovers-default"><a class="heading-anchor" href="#popovers-default"><i class="icon icon-link"></i></a>Popovers Default</h3>
+			<h3 id="popovers-default"><a class="heading-anchor" href="#popovers-default"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Popovers Default</h3>
 			<blockquote class="blockquote-sm blockquote-success">
 				<p>Popovers</p>
 			</blockquote>
@@ -390,8 +407,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

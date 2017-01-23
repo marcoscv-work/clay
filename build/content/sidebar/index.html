@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Sidebar</title>
+	<title>DXP Cloud Skin based on Lexicon - Sidebar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class="active"><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Sidebar
 
 			
@@ -227,7 +244,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="sidebar"><a class="heading-anchor" href="#sidebar"><i class="icon icon-link"></i></a>Sidebar</h3>
+		<h3 id="sidebar"><a class="heading-anchor" href="#sidebar"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sidebar</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>An opinionated container to display related content.</p>
@@ -251,7 +268,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="sidebar-fixed"><a class="heading-anchor" href="#sidebar-fixed"><i class="icon icon-link"></i></a>Sidebar Fixed</h3>
+		<h3 id="sidebar-fixed"><a class="heading-anchor" href="#sidebar-fixed"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sidebar Fixed</h3>
 
 		<blockquote class="blockquote-sm blockquote-warning">
 			<p>There is no fixed positioned sidebar. The <a href="../sidenav">Sidenav</a> javascript plugin handles slideout drawer variations.</p>
@@ -261,7 +278,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="sidebar-default"><a class="heading-anchor" href="#sidebar-default"><i class="icon icon-link"></i></a>Sidebar Default</h3>
+		<h3 id="sidebar-default"><a class="heading-anchor" href="#sidebar-default"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sidebar Default</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Add class <code>sidebar-default</code> to <code>sidebar</code> to apply a light theme.</p>
@@ -271,7 +288,7 @@
 	<div class="col-md-6">
 		<div class="sidebar sidebar-default">
 			<div class="sidebar-header">
-				<ul class="list-unstyled list-inline sidebar-header-actions">
+				<ul class="sidebar-header-actions">
 					<li>
 						<a class="" href="#1">
 							<svg class="icon-monospaced lexicon-icon">
@@ -280,11 +297,21 @@
 						</a>
 					</li>
 					<li>
-						<a class="" href="#1">
-							<svg class="icon-monospaced lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-							</svg>
-						</a>
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg aria-hidden="true" class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Download</a></li>
+								<li><a href="#1">Edit</a></li>
+								<li><a href="#1">Move</a></li>
+								<li><a href="#1">Checkout</a></li>
+								<li><a href="#1">Permissions</a></li>
+								<li><a href="#1">Move to Recycle Bin</a></li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a class="" href="#1">
@@ -297,9 +324,7 @@
 
 				<h4>Image1.jpg</h4>
 
-				<h5 classs="text-default">
-					<span>Approved</span>
-				</h5>
+				<h5>Approved</h5>
 			</div>
 			<nav class="navbar navbar-default navbar-no-collapse collapse-basic-search">
 				<ul class="nav navbar-nav">
@@ -325,9 +350,9 @@
 					<dt class="h5">Dimensions</dt>
 					<dd>1024 x 768</dd>
 					<dt class="h5">Created</dt>
-					<dd>By Helen Smith on Feb 15 2015, 10:15am</dd>
+					<dd>By <a href="#1">Helen Smith</a> on Feb 15 2015, 10:15am</dd>
 					<dt class="h5">Last Modification</dt>
-					<dd>By Helen Smith on Feb 15 2015, 10:15am</dd>
+					<dd>By <a href="#1">Helen Smith</a> on Feb 15 2015, 10:15am</dd>
 					<dt class="h5">Tags</dt>
 					<dd>
 						<p>
@@ -366,7 +391,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="sidebar-inverse"><a class="heading-anchor" href="#sidebar-inverse"><i class="icon icon-link"></i></a>Sidebar Inverse</h3>
+		<h3 id="sidebar-inverse"><a class="heading-anchor" href="#sidebar-inverse"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sidebar Inverse</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Add class <code>sidebar-inverse</code> to <code>sidebar</code> to apply a darker theme.</p>
@@ -375,7 +400,7 @@
 	<div class="col-md-6">
 		<div class="sidebar sidebar-inverse">
 			<div class="sidebar-header">
-				<ul class="list-unstyled list-inline sidebar-header-actions">
+				<ul class="sidebar-header-actions">
 					<li>
 						<a class="" href="#1">
 							<svg class="icon-monospaced lexicon-icon">
@@ -384,11 +409,21 @@
 						</a>
 					</li>
 					<li>
-						<a class="" href="#1">
-							<svg class="icon-monospaced lexicon-icon">
-								<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
-							</svg>
-						</a>
+						<div class="dropdown">
+							<a class="dropdown-toggle icon-monospaced" data-toggle="dropdown" href="#1">
+								<svg aria-hidden="true" class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+								</svg>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#1">Download</a></li>
+								<li><a href="#1">Edit</a></li>
+								<li><a href="#1">Move</a></li>
+								<li><a href="#1">Checkout</a></li>
+								<li><a href="#1">Permissions</a></li>
+								<li><a href="#1">Move to Recycle Bin</a></li>
+							</ul>
+						</div>
 					</li>
 					<li>
 						<a class="" href="#1">
@@ -401,9 +436,7 @@
 
 				<h4>Image1.jpg</h4>
 
-				<h5 classs="text-default">
-					<span>Approved</span>
-				</h5>
+				<h5>Approved</h5>
 			</div>
 			<nav class="navbar navbar-default navbar-no-collapse collapse-basic-search">
 				<ul class="nav navbar-nav">
@@ -429,9 +462,9 @@
 					<dt class="h5">Dimensions</dt>
 					<dd>1024 x 768</dd>
 					<dt class="h5">Created</dt>
-					<dd>By Helen Smith on Feb 15 2015, 10:15am</dd>
+					<dd>By <a href="#1">Helen Smith</a> on Feb 15 2015, 10:15am</dd>
 					<dt class="h5">Last Modification</dt>
-					<dd>By Helen Smith on Feb 15 2015, 10:15am</dd>
+					<dd>By <a href="#1">Helen Smith</a> on Feb 15 2015, 10:15am</dd>
 					<dt class="h5">Tags</dt>
 					<dd>
 						<p>
@@ -472,8 +505,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

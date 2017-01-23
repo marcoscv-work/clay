@@ -1,0 +1,114 @@
+// Primary Colors
+
+$dxp-dark: #41444B;
+
+$dxp-cta: #488FFF;
+
+$dxp-white: #FFF;
+
+$dxp-light-dark: #F1F3F5;
+
+// Secondary Colors sc-
+
+$sc-cta: #4172A9;
+$sc-danger: #FF6060;
+$sc-dark: #464A5E;
+$sc-dark-gradient-a: #555A72;
+$sc-dark-gradient-b: #323643;
+$sc-success: #41A967;
+$sc-warning: #E77735;
+
+// Colors variants
+
+$dxp-cta-lighten: lighten($dxp-cta, 10%);
+$dxp-cta-lighten-hard: lighten($dxp-cta, 34%);
+$dxp-cta-lighten-hight: lighten($dxp-cta, 32%);
+$dxp-cta-lighten-low: lighten($dxp-cta, 18%);
+$dxp-cta-lighten-medium: lighten($dxp-cta, 30%);
+
+$dxp-dark-lighten: lighten($dxp-dark, 15%);
+$dxp-dark-lighten-full: lighten($dxp-dark, 65%);
+$dxp-dark-lighten-hard: lighten($dxp-dark, 60%);
+$dxp-dark-lighten-hight: lighten(desaturate($dxp-dark, 3%), 50%);
+$dxp-dark-lighten-low: lighten($dxp-dark, 35%);
+$dxp-dark-lighten-medium: lighten(desaturate($dxp-dark, 4%), 40%);
+
+$sc-dark-lighten: lighten($sc-dark, 6%);
+$sc-dark-lighten-low: lighten(desaturate($sc-dark, 3%), 18%);
+$sc-dark-lighten-medium: lighten($sc-dark, 38%);
+
+$sc-danger-lighten: lighten($sc-danger, 12%);
+$sc-danger-lighten-hight: lighten($sc-danger, 28%);
+
+$sc-success-lighten: lighten($sc-success, 25%);
+$sc-success-lighten-hight: lighten($sc-success, 49%);
+
+$sc-warning-lighten: lighten($sc-warning, 20%);
+$sc-warning-lighten-hight: lighten($sc-warning, 42%);
+
+// Font
+
+$dxp-font-family-sans-serif: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+
+$dxp-base-font-extra-small-size: 10px;
+$dxp-base-font-large-size: 18px;
+$dxp-base-font-medium-size: 16px;
+$dxp-base-font-small-size: 14px;
+
+$dxp-base-font-large-line-height: 28px;
+$dxp-base-font-medium-line-height: 24px;
+
+$dxp-font-weight-base: 400;
+$dxp-font-weight-base-big: bold;
+
+$dxp-font-size-h1: 56px;
+$dxp-font-size-h2: 40px;
+$dxp-font-size-h3: 32px;
+$dxp-font-size-h4: 24px;
+$dxp-font-size-h5: 20px;
+$dxp-font-size-h6: 18px;
+
+$dxp-font-line-height-h1: 64px;
+$dxp-font-line-height-h2: 48px;
+$dxp-font-line-height-h3: 40px;
+$dxp-font-line-height-h4: 32px;
+$dxp-font-line-height-h5: 28px;
+$dxp-font-line-height-h6: 28px;
+
+$dxp-font-data-big-size: $dxp-base-font-medium-size;
+$dxp-font-data-medium-size: $dxp-base-font-small-size;
+$dxp-font-data-small-size: 12px;
+
+$dxp-font-data-big-line-height: $dxp-base-font-medium-line-height;
+$dxp-font-data-medium-line-height: 20px;
+$dxp-font-data-small-line-height: 16px;
+
+// Grid
+
+$dxp-grid-gutter-outside-width: 24px;
+$dxp-grid-gutter-width: 24px;
+
+// Radius
+
+$dxp-border-radius-base: 4px;
+$dxp-border-radius-base-small: 2px;
+
+// Button type icon
+
+$btn-icon-padding-vertical: 2px !default;
+$btn-icon-padding-horizontal: 2px !default;
+$btn-icon-height-vertical: 40px !default;
+$btn-icon-width-horizontal: 40px !default;
+
+$btn-icon-sm-padding-vertical: 0 !default;
+$btn-icon-sm-padding-horizontal: 0 !default;
+$btn-icon-sm-height-vertical: 32px !default;
+$btn-icon-sm-width-horizontal: 32px !default;
+
+// z-index
+
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;

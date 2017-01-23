@@ -1,0 +1,35 @@
+$label-border-size: 1px !default;
+$label-border-radius: 2px !default;
+$label-desktop-font-size: ceil($dxp-base-font-extra-small-size * 1.2) !default;
+$label-font-size: ceil($dxp-base-font-extra-small-size * 1.2) !default;
+$label-font-weight: 500 !default;
+$label-lexicon-icon-height: 8px !default;
+$label-lexicon-icon-width: $label-lexicon-icon-height !default;
+$label-padding-bottom: 5px !default;
+$label-padding-left: 8px !default;
+$label-padding-right: 8px !default;
+$label-padding-top: 5px !default;
+
+$label-lg-desktop-font-size: $font-size-large !default;
+$label-lg-font-size: ceil($font-size-large / 1.166667) !default;
+$label-lg-lexicon-icon-height: 14px !default;
+$label-lg-lexicon-icon-width: $label-lg-lexicon-icon-height !default;
+$label-lg-padding-bottom: 14px !default;
+$label-lg-padding-left: 20px !default;
+$label-lg-padding-right: 20px !default;
+$label-lg-padding-top: 14px !default;
+
+$label-sm-desktop-font-size: $dxp-base-font-extra-small-size !default;
+$label-sm-font-size: $dxp-base-font-extra-small-size !default;
+$label-sm-lexicon-icon-height: 5px !default;
+$label-sm-lexicon-icon-width: $label-sm-lexicon-icon-height !default;
+$label-sm-padding-bottom: 2px !default;
+$label-sm-padding-left: 6px !default;
+$label-sm-padding-right: 6px !default;
+$label-sm-padding-top: 2px !default;
+
+// Skin
+
+$label-default-bg: $dxp-white !default;
+$label-default-border-color: $dxp-dark-lighten-hard !default;
+$label-default-color: $dxp-dark-lighten !default;

@@ -1,0 +1,44 @@
+.modal-header {
+	min-height: $modal-header-height;
+	padding: ($modal-inner-padding-vertical / 2) ($modal-inner-padding-horizontal / 1.5) ($modal-inner-padding-vertical / 2) $modal-inner-padding-horizontal;
+}
+
+.modal-title {
+	font-size: $dxp-font-size-h5;
+	line-height: $modal-title-line-height;
+	text-align: left;
+}
+
+.modal-footer {
+	padding: $modal-footer-inner-padding-vertical $modal-inner-padding-horizontal;
+}
+
+.modal-danger {
+	.modal-header {
+		background-color: $sc-danger;
+
+		&, a, .btn {
+			color: $dxp-white;
+		}
+	}
+}
+
+.modal-cta {
+	.modal-header {
+		background-color: $sc-cta;
+
+		&, a, .btn {
+			color: $dxp-white;
+		}
+	}
+}
+
+.modal-warning {
+	.modal-header {
+		background-color: $sc-warning;
+
+		&, a, .btn {
+			color: $dxp-white;
+		}
+	}
+}

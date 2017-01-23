@@ -1,205 +1,86 @@
+th {
+	height: 20px;
+}
+
 .table {
 	> thead,
 	> tbody,
 	> tfoot {
 		tr td {
 			&:first-child {
-				padding-left: 15px;
-
-				.checkbox {
+				> .checkbox,
+				> input[type="checkbox"] {
 					margin-bottom: 0;
-					margin-left: 1px;
+					margin-left: 7px;
 					margin-top: 0;
 				}
 			}
 
 			&:last-child {
-				padding-right: 15px;
+				> .dropdown {
+					margin-right: 7px;
+				}
 			}
 		}
+	}
+
+	thead .clamp-container {
+		bottom: $table-cell-padding;
+	}
+
+	th {
+		@if (variable-exists(atlas-theme)) {
+			font-size: $table-header-font-size;
+			font-weight: $table-header-font-weight;
+		}
+
+		height: 36px;
+	}
+
+	tr {
+		td,
+		th {
+			&:first-child {
+				.clamp-container {
+					left: $table-cell-gutters;
+				}
+			}
+
+			&:last-child {
+				.clamp-container {
+					right: $table-cell-gutters;
+				}
+			}
+		}
+	}
+
+	.clamp-container {
+		-ms-transform: none;
+		transform: none;
 	}
 }
 
 .table-cell-content {
+	display: table-cell;
+	max-width: 100px;
+	min-width: 100px;
 	position: relative;
-	word-break: break-all; // IE
-	word-break: break-word;
+	width: auto;
+	word-break: break-all \9; // IE 8, 9
+	word-wrap: break-word;
 }
 
 .table-cell-field {
+	display: table-cell;
 	width: 1%;
 }
 
-.table-responsive-collapse .label-collapse {
-	display: none;
-	font-weight: bold;
-}
+.table-responsive {
+	-webkit-overflow-scrolling: touch;
 
-// max-width: 767px
-
-@media screen and (max-width: $grid-float-breakpoint-max) {
-	.table-responsive-flip {
-		.table {
-			> thead,
-			> tbody,
-			> tfoot {
-				> tr {
-					> th,
-					> td {
-						line-height: 40px;
-					}
-				}
-			}
-
-			> tbody {
-				padding-right: 3px;
-			}
-
-			> thead {
-				padding-right: 2px;
-			}
-		}
-	}
-}
-
-// max-width: 767px
-
-@media screen and (max-width: $grid-float-breakpoint-max) {
-	.table-responsive-collapse {
-		.table,
-		thead,
-		tbody,
-		th {
-			display: block;
-		}
-
-		> .table > tbody > tr > td {
+	.table .table-cell-content {
+		@media (max-width: $grid-float-breakpoint-max) {
 			white-space: normal;
-			word-break: break-word;
-		}
-
-		tbody {
-			border-width: 0;
-
-			tr td {
-				border-width: 0;
-			}
-		}
-
-		thead {
-			display: none;
-		}
-
-		tr {
-			border-top: 1px solid $table-border-color;
-			display: table;
-			width: 100%;
-
-			&:first-child {
-				border-top-width: 0;
-			}
-
-			&:nth-of-type(odd) {
-				background-color: $table-bg-accent;
-			}
-
-			td {
-				display: table-row;
-				white-space: normal;
-			}
-		}
-
-		.label-collapse {
-			display: table-cell;
-			padding: 10px 20px 0 10px;
-			position: relative;
-			width: 55%;
-		}
-	}
-
-	.table-responsive-flip {
-		&.table-responsive {
-			border-width: 0;
-		}
-
-		.table,
-		thead,
-		tbody,
-		th,
-		td,
-		tr {
-			display: block;
-		}
-
-		.table {
-			tbody {
-				overflow-x: auto;
-				white-space: nowrap;
-			}
-
-			thead {
-				float: left;
-			}
-
-			> thead {
-				border-left: 1px solid $table-border-color;
-				border-right: 3px solid $table-border-color;
-				max-width: 200px;
-				overflow: auto;
-
-				> tr > th {
-					border-bottom-width: 0;
-					border-top-width: 0;
-				}
-			}
-
-			tr {
-				border-top: 1px solid $table-border-color;
-				display: inline-block;
-				margin: 0 -2px;
-			}
-
-			> tbody > tr > td,
-			> thead > tr > th {
-				border-bottom: 1px solid $table-border-color;
-				border-left: 1px solid $table-border-color;
-				border-top-width: 0;
-			}
-		}
-
-		.table-bordered {
-			> thead > tr > th {
-				border-right-width: 0;
-			}
-		}
-
-		> .table-bordered {
-			> tbody {
-				> tr {
-					border-right: 1px solid $table-border-color;
-
-					&:last-child > td {
-						border-bottom: 1px solid $table-border-color;
-					}
-
-					> td {
-						border-left-width: 0;
-						border-right-width: 0;
-					}
-				}
-			}
-		}
-	}
-}
-
-// max-width: 479px
-
-@media screen and (max-width: ($screen-xs-min - 1)) {
-	.table-responsive-flip {
-		.table {
-			> thead {
-				max-width: 100px;
-			}
 		}
 	}
 }
@@ -207,6 +88,14 @@
 // Table List Skin
 
 .table-list {
+	@if (variable-exists(atlas-theme)) {
+		color: $table-header-color;
+
+		a {
+			color: $table-list-link-color;
+		}
+	}
+
 	> thead > tr > td,
 	> thead > tr > th {
 		border-bottom-width: 0;
@@ -220,6 +109,12 @@
 	> tbody > tr > th,
 	> tfoot > tr > td,
 	> tfoot > tr > th {
+		@if (variable-exists(atlas-theme)) {
+			// Chrome rendering issue with responsive-tables and td position relative
+
+			background-color: $table-list-body-row-bg;
+		}
+
 		border-top-width: 0;
 		vertical-align: middle;
 	}
@@ -227,20 +122,15 @@
 	> tbody,
 	> tfoot {
 		td {
-			box-shadow: inset 0 -#{$table-list-row-border-bottom-width} $table-list-row-border-color;
+			box-shadow: inset 0 #{-$table-list-row-border-bottom-width} $table-list-row-border-color;
 		}
 
-		> tr.active {
-			&:hover td,
-			td {
-				box-shadow: inset 0 -#{$table-list-row-active-border-bottom-width} $table-list-row-active-border-color;
-			}
+		> tr:hover td {
+			box-shadow: inset 0 #{-$table-list-row-border-bottom-width} $table-list-row-border-color;
 		}
 
-		> tr:hover {
-			td {
-				box-shadow: inset 0 -#{$table-list-row-border-bottom-width} $table-list-row-border-color;
-			}
+		> tr.active td {
+			box-shadow: inset 0 #{-$table-list-row-active-border-bottom-width} $table-list-row-active-border-color;
 		}
 	}
 
@@ -251,5 +141,197 @@
 		label {
 			display: block;
 		}
+	}
+
+	thead .clamp-container {
+		-ms-transform: none;
+		transform: none;
+	}
+
+	&.table-valign-middle thead .clamp-container,
+	.clamp-container {
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+}
+
+@if (variable-exists(atlas-theme)) {
+	// Chrome rendering issue with responsive-tables and td position relative
+
+	.table-striped > tbody > tr:nth-of-type(odd) > td {
+		background-color: $table-bg-accent;
+	}
+
+	.table-hover > tbody > tr:hover > td {
+		background-color: $table-bg-hover;
+	}
+}
+
+// Table Helpers
+
+.table-autofit {
+	> thead,
+	> tbody {
+		> tr {
+			> th,
+			> td {
+				width: 1%;
+			}
+		}
+	}
+
+	.table-cell-content {
+		width: auto;
+	}
+}
+
+.table-heading-nowrap > thead > tr {
+	> th,
+	> td {
+		white-space: nowrap;
+	}
+}
+
+.table-responsive .table-heading-nowrap > thead > tr > .table-cell-content {
+	white-space: nowrap;
+}
+
+// Table Vertical Align
+
+.table-valign-bottom {
+	> thead > tr > th,
+	> tbody > tr > td,
+	> tfoot > tr > td {
+		vertical-align: bottom;
+	}
+
+	.clamp-container {
+		bottom: $table-cell-padding;
+
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+.table-valign-middle {
+	> thead > tr > th,
+	> tbody > tr > td,
+	> tfoot > tr > td {
+		vertical-align: middle;
+	}
+
+	thead .clamp-container {
+		bottom: auto;
+	}
+
+	.clamp-container {
+		top: auto;
+
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+}
+
+.table-valign-top {
+	> thead > tr > th,
+	> tbody > tr > td,
+	> tfoot > tr > td {
+		vertical-align: top;
+	}
+
+	thead .clamp-container {
+		bottom: auto;
+	}
+
+	.clamp-container {
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+// Tbody Vertical Align
+
+.tbody-valign-bottom {
+	> tbody > tr > td {
+		vertical-align: bottom;
+	}
+
+	tbody .clamp-container {
+		bottom: $table-cell-padding;
+
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+.tbody-valign-middle {
+	> tbody > tr > td {
+		vertical-align: middle;
+	}
+
+	tbody .clamp-container {
+		top: auto;
+
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+}
+
+.tbody-valign-top {
+	> tbody > tr > td {
+		vertical-align: top;
+	}
+
+	tbody .clamp-container {
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+// Thead Vertical Align
+
+.thead-valign-bottom {
+	> thead > tr {
+		> td,
+		> th {
+			vertical-align: bottom;
+		}
+	}
+
+	thead .clamp-container {
+		-ms-transform: none;
+		transform: none;
+	}
+}
+
+.thead-valign-middle {
+	> thead > tr {
+		> td,
+		> th {
+			vertical-align: middle;
+		}
+	}
+
+	thead .clamp-container {
+		bottom: auto;
+
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+}
+
+.thead-valign-top {
+	> thead > tr {
+		> td,
+		> th {
+			vertical-align: top;
+		}
+	}
+
+	thead .clamp-container {
+		bottom: auto;
+
+		-ms-transform: none;
+		transform: none;
 	}
 }

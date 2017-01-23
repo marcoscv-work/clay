@@ -1,0 +1,22 @@
+// Buttons type icon
+
+.btn.btn-icon {
+	height: $btn-icon-height-vertical;
+	padding: $btn-icon-padding-vertical $btn-icon-padding-horizontal;
+	width: $btn-icon-width-horizontal;
+
+	&.btn-sm {
+		height: $btn-icon-sm-height-vertical;
+		padding: $btn-icon-sm-padding-vertical $btn-icon-sm-padding-horizontal;
+		width: $btn-icon-sm-width-horizontal;
+
+		.icon-monospaced, .lexicon-icon {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&.btn-no-border {
+		border-color: transparent;
+	}
+}

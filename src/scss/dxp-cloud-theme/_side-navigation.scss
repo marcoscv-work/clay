@@ -1,0 +1,85 @@
+.has-sidenav-semi-collapse {
+	@media (min-width: $grid-float-breakpoint) {
+		margin-left: $sidenav-semi-collapse-width-closed;
+	}
+}
+
+.sidenav-semi-collapse {
+	.user-icon {
+		display: inline-table;
+
+		~ span {
+			margin-left: 8px;
+		}
+	}
+
+	.icon-monospaced .lexicon-icon {
+		padding: 6px;
+	}
+
+	.nav > li > a, .sidenav-header {
+		padding: $sidenav-semi-collapse-item-padding;
+	}
+
+	.sidenav-header {
+		margin: 4px 0;
+	}
+
+	.nav-sidenav {
+		@media (min-height: $sidenav-semi-collapse-height-breakpoint) {
+			margin-top: $sidenav-semi-collapse-nav-margin-top;
+		}
+	}
+
+	> .sidenav-menu-slider {
+		background-color: $sc-dark;
+		color: $dxp-white;
+		overflow-x: hidden;
+		overflow-y: auto;
+		transition: $sidenav-semi-collapse-transition;
+		width: 0;
+
+		@media (min-width: $grid-float-breakpoint) {
+			width: $sidenav-semi-collapse-width-closed;
+		}
+
+		.delay-animation {
+			opacity: 0;
+			transition: $sidenav-semi-collapse-transition;
+		}
+
+		a {
+			color: $dxp-white;
+		}
+
+		.nav-color a {
+			color: $sidenav-semi-collapse-item-color;
+			font-weight: $dxp-font-weight-base-big;
+		}
+
+		.active a {
+			color: $sidenav-semi-collapse-item-color-active;
+		}
+
+		&:hover, &.open {
+			width: $sidenav-semi-collapse-width;
+
+			.delay-animation {
+				opacity: 1;
+			}
+
+			@each $delay in $sidenav-delays {
+				$i: index($sidenav-delays, $delay);
+
+				.delay-#{$i} {
+					@include transition-delay($delay);
+				}
+			}
+		}
+
+		> .flex-container {
+			height: 100%;
+			white-space: nowrap;
+		}
+	}
+}

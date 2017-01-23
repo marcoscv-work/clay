@@ -1,5 +1,8 @@
 var argv = require('minimist')(process.argv.slice(2));
 var cmdPromise = require('../lib/cmd_promise');
+var fs = require('fs-extra');
+var packageJSONUtil = require('../lib/package_json_util');
+var path = require('path');
 var semver = require('semver');
 var updateVersion = require('../lib/update_version');
 
@@ -9,6 +12,8 @@ module.exports = function(gulp, plugins, _, config) {
 	var license = require('./copyright_banner');
 
 	var GIT_REMOTE;
+
+	var TEMP_PATH = path.join(process.cwd(), 'temp');
 
 	var getGitRemote = function() {
 		if (!GIT_REMOTE) {
@@ -59,6 +64,7 @@ module.exports = function(gulp, plugins, _, config) {
 
 			return gulp.src([
 				'src/fonts/**/*',
+				'src/images/icons/*',
 				'src/scss/+(atlas-theme|bootstrap|lexicon-base)/**/*',
 				'src/scss/+(atlas|atlas-variables|bootstrap|lexicon-base|lexicon-base-variables).scss',
 				'src/js/{,bootstrap/}*.js'
@@ -112,13 +118,20 @@ module.exports = function(gulp, plugins, _, config) {
 			var previousTagName = 'v' + currentVersion;
 			var tagName = 'v' + bumpedVersion;
 
-			cmdPromise.resolve()
-				.git('checkout', 'master')
-				.git('status', '--porcelain').then(function(status) {
+			var checkStatus = function(msg) {
+				return function(status) {
 					if (!!status.stdout) {
-						throw new Error('working directory not clean, aborting');
+						throw new Error(msg);
 					}
-				})
+				};
+			};
+
+			cmdPromise.resolve()
+				.git('checkout', 'develop')
+				.cmd('gulp', 'build:svg:scss-icons')
+				.git('status', '--porcelain', './src/scss/lexicon-base/mixins/_global-functions.scss').then(checkStatus('It appears that there are new icons. Please commit the modified Sass functions file.'))
+				.git('checkout', 'master')
+				.git('status', '--porcelain').then(checkStatus('working directory not clean, aborting'))
 				.then(getGitRemote)
 				.then(function(remote) {
 					return cmdPromise.resolve().git('fetch', remote, '--quiet');
@@ -173,10 +186,81 @@ module.exports = function(gulp, plugins, _, config) {
 				.then(function(remote){
 					return cmdPromise.resolve().git('push', remote, '--tags', 'master', 'develop');
 				})
-				.cmd('npm', 'run', 'deploy')
+				.npm('run', 'deploy')
 				.then(function() {
 					done();
 				});
+		}
+	);
+
+	gulp.task(
+		'release:npm-build-files',
+		function(done) {
+			return gulp.src(
+				[
+					'build/{fonts,js,css,images/icons}/**/*',
+					'!build/js/site{,/**}',
+					'!build/css/main.css{,.map}'
+				]
+			)
+			.pipe(gulp.dest('temp/lexicon-ux/build'));
+		}
+	);
+
+	gulp.task(
+		'release:npm-clean',
+		function(done) {
+			return gulp.src('./temp')
+				.pipe(plugins.clean({
+					read: false
+				}));
+		}
+	);
+
+	gulp.task(
+		'release:npm-index',
+		function(done) {
+			return gulp.src(['./index.js', './{README,CHANGELOG}.md'])
+				.pipe(gulp.dest('temp/lexicon-ux'));
+		}
+	);
+
+	gulp.task(
+		'release:npm-package',
+		function() {
+			var version = packageJSONUtil.getVersion();
+
+			var lexiconPkg = packageJSONUtil.generate('lexicon-ux', version);
+
+			fs.writeFileSync(path.join(TEMP_PATH, 'lexicon-ux', 'package.json'), lexiconPkg);
+		}
+	);
+
+	gulp.task(
+		'release:npm-publish',
+		function(done) {
+			var lexiconPath = path.join(TEMP_PATH, 'lexicon-ux');
+
+			cmdPromise.resolve()
+				.npm('publish', lexiconPath)
+				.then(function() {
+					done();
+				});
+		}
+	);
+
+	gulp.task(
+		'release:npm-src-files',
+		function(done) {
+			return gulp.src(
+				[
+					'src/{fonts,js,scss,images/icons}/**/*',
+					'!src/js/site{,/**}',
+					'!src/scss/{_site,main}.scss',
+					'!src/scss/highlightjs{,/**/*}'
+				]
+			)
+			.pipe(gulp.dest('temp/lexicon-ux/src'));
 		}
 	);
 };

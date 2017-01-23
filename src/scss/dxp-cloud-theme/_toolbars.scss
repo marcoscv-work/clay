@@ -1,0 +1,139 @@
+.toolbar {
+	background-color: $toolbar-default-bg;
+	min-height: $toolbar-group-height;
+	padding: $toolbar-padding-vertical $toolbar-padding-horizontal;
+
+	@media (min-width: $grid-float-breakpoint) {
+		min-height: $toolbar-group-desktop-height;
+		padding: $toolbar-desktop-padding-vertical $toolbar-desktop-padding-horizontal;
+	}
+
+	a, a:hover, a:active, a.active {
+		color: $toolbar-default-link-color;
+	}
+
+	.form-control {
+		@media (max-width: $grid-float-breakpoint-max) {
+			height: 32px;
+		}
+	}
+
+	.form-control-feedback {
+		right: 12px;
+		top: $toolbar-group-content-padding-horizontal;
+	}
+}
+
+.toolbar-inverse {
+	background-color: $dxp-dark;
+
+	&, a, a:hover, a:focus, a:active, a.active {
+		color: $dxp-white;
+	}
+}
+
+.toolbar-selected {
+	background-color: $dxp-cta-lighten-low;
+}
+
+.toolbar-labels {
+	-webkit-overflow-scrolling: touch;
+	background-color: darken($dxp-light-dark, 3%);
+	margin-bottom: 24px;
+	min-height: $toolbar-labels-height;
+	overflow-x: auto;
+	padding: $toolbar-labels-padding-vertical $toolbar-labels-padding-horizontal;
+
+	@media (min-width: $grid-float-breakpoint) {
+		min-height: $toolbar-labels-desktop-height;
+		padding: $toolbar-desktop-labels-vertical $toolbar-desktop-labels-horizontal;
+	}
+
+	.btn {
+		&, a, a:hover, a:focus, a:focus:active, a:active, a.active {
+			color: $dxp-dark-lighten;
+		}
+	}
+
+	.toolbar-labels-container {
+		white-space: nowrap;
+		padding: 6px 0;
+	}
+
+	.label, .btn {
+		margin-right: 8px;
+	}
+}
+
+.toolbar-management {
+	padding: $toolbar-padding-vertical ($toolbar-padding-horizontal * 2);
+	margin-bottom: 24px;
+	z-index: 1;
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: $toolbar-desktop-padding-vertical ($toolbar-desktop-padding-horizontal * 1.5);
+		position: relative;
+
+		@include box-shadow(0 3px 3px rgba(0, 0, 0, 0.04));
+	}
+
+	.toolbar-group-content {
+		padding-left: $toolbar-group-content-padding-horizontal;
+		padding-right: $toolbar-group-content-padding-horizontal;
+	}
+
+	> .toolbar-group .toolbar-group-content:first-of-type {
+		padding-left: ($toolbar-group-content-padding-horizontal * 2);
+	}
+
+	.toolbar-search {
+		@media (max-width: $grid-float-breakpoint-max) {
+			display: none;
+			position: absolute;
+		}
+	}
+
+	.btn {
+		&, &:hover, &:focus, &:active, &.active {
+			border-width: 0;
+		}
+	}
+
+	.a-z .lexicon-icon-outline {
+		&:first-of-type {
+			color: $toolbar-default-link-color;
+		}
+
+		&:last-of-type {
+			color: $dxp-dark-lighten-low;
+		}
+	}
+
+	.z-a .lexicon-icon-outline {
+		&:first-of-type {
+			color: $dxp-dark-lighten-low;
+		}
+
+		&:last-of-type {
+			color: $toolbar-default-link-color;
+		}
+	}
+}
+
+.toolbar-info {
+	.toolbar-group.toolbar-search {
+		width: 100%;
+
+		@media (min-width: $grid-float-breakpoint) {
+			width: ($sidebar-container-side-width - $dxp-grid-gutter-width * 2 + $toolbar-group-content-padding-horizontal * 2)
+		}
+	}
+
+	.toolbar-spacer {
+		width: $dxp-grid-gutter-width + $toolbar-group-content-padding-horizontal;
+	}
+}
+
+.toolbar-marginless {
+	margin-bottom: 0;
+}

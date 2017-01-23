@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Form Elements (Validation)</title>
+	<title>DXP Cloud Skin based on Lexicon - Form Elements (Validation)</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Form Elements (Validation)
 
 			
@@ -223,12 +240,12 @@
 		
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="input-validation-states"><a class="heading-anchor" href="#input-validation-states"><i class="icon icon-link"></i></a>Input Validation States</h3>
+		<h3 id="input-validation-states"><a class="heading-anchor" href="#input-validation-states"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Input Validation States</h3>
 
 		<div class="form-group has-success">
 			<label class="control-label" for="inputSuccess1">
 				Input with success
-				<svg class="lexicon-icon">
+				<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-warning">
 					<use xlink:href="../../images/icons/icons.svg#asterisk">
 				</svg>
 			</label>
@@ -239,9 +256,8 @@
 		<div class="form-group has-warning">
 			<label class="control-label" for="inputWarning1">
 				Input with warning
-				<svg class="lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#asterisk">
-				</svg>
+
+				<span class="icon-asterisk reference-mark text-warning"></span>
 			</label>
 			<input class="form-control" id="inputWarning1" type="text">
 			<div class="help-block">Warning this input is a warning!</div>
@@ -250,9 +266,9 @@
 		<div class="form-group has-error">
 			<label class="control-label" for="inputError1">
 				Input with error
-				<svg class="lexicon-icon">
-					<use xlink:href="../../images/icons/icons.svg#asterisk">
-				</svg>
+				<span class="reference-mark text-warning">
+					<span class="glyphicon glyphicon-asterisk"></span>
+				</span>
 			</label>
 			<input class="form-control" id="inputError1" type="text">
 			<div class="help-block">This input is invalid!</div>
@@ -262,14 +278,14 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="checkbox-and-radio-validation-states"><a class="heading-anchor" href="#checkbox-and-radio-validation-states"><i class="icon icon-link"></i></a>Checkbox and Radio Validation States</h3>
+		<h3 id="checkbox-and-radio-validation-states"><a class="heading-anchor" href="#checkbox-and-radio-validation-states"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Checkbox and Radio Validation States</h3>
 	</div>
 
 	<div class="col-md-6">
 		<div class="has-success">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="checkboxSuccess1" value="option1">
+					<input id="checkboxSuccess1" type="checkbox" value="option1">
 					Checkbox with success
 				</label>
 			</div>
@@ -278,7 +294,7 @@
 		<div class="has-warning">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="checkboxWarning1" value="option2">
+					<input id="checkboxWarning1" type="checkbox" value="option2">
 					Checkbox with warning
 				</label>
 			</div>
@@ -287,7 +303,7 @@
 		<div class="has-error">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="checkboxError1" value="option3">
+					<input id="checkboxError1" type="checkbox" value="option3">
 					Checkbox with error
 				</label>
 			</div>
@@ -298,7 +314,7 @@
 		<div class="has-success">
 			<div class="radio">
 				<label>
-					<input type="radio" id="radioSuccess1" value="option1">
+					<input id="radioSuccess1" type="radio" value="option1">
 					Radio with success
 				</label>
 			</div>
@@ -307,7 +323,7 @@
 		<div class="has-warning">
 			<div class="radio">
 				<label>
-					<input type="radio" id="radioWarning1" value="option2">
+					<input id="radioWarning1" type="radio" value="option2">
 					Radio with warning
 				</label>
 			</div>
@@ -316,7 +332,7 @@
 		<div class="has-error">
 			<div class="radio">
 				<label>
-					<input type="radio" id="radioError1" value="option3">
+					<input id="radioError1" type="radio" value="option3">
 					Radio with error
 				</label>
 			</div>
@@ -326,7 +342,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="select-box-validation-states"><a class="heading-anchor" href="#select-box-validation-states"><i class="icon icon-link"></i></a>Select Box Validation States</h3>
+		<h3 id="select-box-validation-states"><a class="heading-anchor" href="#select-box-validation-states"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Select Box Validation States</h3>
 
 		<div class="has-success">
 			<div class="form-group">
@@ -368,7 +384,49 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="readonly-validation-states"><a class="heading-anchor" href="#readonly-validation-states"><i class="icon icon-link"></i></a>Readonly Validation States</h3>
+		<h3 id="multiple-select-box-validation-states"><a class="heading-anchor" href="#multiple-select-box-validation-states"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Multiple Select Box Validation States</h3>
+
+		<div class="has-success">
+			<div class="form-group">
+				<label class="control-label">Multiple Select Box with Success</label>
+				<select class="form-control" multiple>
+					<option>Sample 1</option>
+					<option>Sample 2</option>
+					<option>Sample 3</option>
+					<option>Sample 4</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="has-warning">
+			<div class="form-group">
+				<label class="control-label">Multiple Select Box with Warning</label>
+				<select class="form-control" multiple>
+					<option>Sample 1</option>
+					<option>Sample 2</option>
+					<option>Sample 3</option>
+					<option>Sample 4</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="has-error">
+			<div class="form-group">
+				<label class="control-label">Multiple Select Box with Error</label>
+				<select class="form-control" multiple>
+					<option>Sample 1</option>
+					<option>Sample 2</option>
+					<option>Sample 3</option>
+					<option>Sample 4</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="readonly-validation-states"><a class="heading-anchor" href="#readonly-validation-states"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Readonly Validation States</h3>
 
 		<div class="has-success">
 			<div class="form-group">
@@ -416,59 +474,59 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h3 id="inputs-with-feedback-icons"><a class="heading-anchor" href="#inputs-with-feedback-icons"><i class="icon icon-link"></i></a>Inputs with Feedback Icons</h3>
+		<h3 id="inputs-with-feedback-icons"><a class="heading-anchor" href="#inputs-with-feedback-icons"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Inputs with Feedback Icons</h3>
 
 		<div class="form-group has-feedback">
 			<label class="control-label" for="inputSuccess2">Label
-				<svg class="lexicon-icon">
+				<svg class="lexicon-icon reference-mark text-warning">
 					<use xlink:href="../../images/icons/icons.svg#asterisk">
 				</svg>
 			</label>
-			<input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-			<span class="form-control-feedback" aria-hidden="true">
-				<svg class="lexicon-icon">
+			<input aria-describedby="inputSuccess2Status" class="form-control" id="inputSuccess2" type="text">
+			<span aria-hidden="true" class="form-control-feedback">
+				<svg class="lexicon-icon lexicon-icon-asterisk">
 					<use xlink:href="../../images/icons/icons.svg#asterisk">
 				</svg>
 			</span>
-			<span id="inputSuccess2Status" class="sr-only">(success)</span>
+			<span class="sr-only" id="inputSuccess2Status">(success)</span>
 		</div>
 
-		<div class="form-group has-success has-feedback">
+		<div class="form-group has-feedback has-success">
 			<label class="control-label" for="inputSuccess2">
 				Success Label
-				<svg class="lexicon-icon">
+				<svg class="lexicon-icon lexicon-icon-asterisk reference-mark text-warning">
 					<use xlink:href="../../images/icons/icons.svg#asterisk">
 				</svg>
 			</label>
-			<input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-			<span class="form-control-feedback" aria-hidden="true">
-				<svg class="lexicon-icon">
+			<input aria-describedby="inputSuccess2Status" class="form-control" id="inputSuccess2" type="text">
+			<span aria-hidden="true" class="form-control-feedback">
+				<svg class="lexicon-icon lexicon-icon-check">
 					<use xlink:href="../../images/icons/icons.svg#check">
 				</svg>
 			</span>
-			<span id="inputSuccess2Status" class="sr-only">(success)</span>
+			<span class="sr-only" id="inputSuccess2Status">(success)</span>
 		</div>
 
-		<div class="form-group has-warning has-feedback">
+		<div class="form-group has-feedback has-warning">
 			<label class="control-label" for="inputWarning2">Warning Label</label>
-			<input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
-			<span class="form-control-feedback" aria-hidden="true">
-				<svg class="lexicon-icon">
+			<input aria-describedby="inputWarning2Status" class="form-control" id="inputWarning2" type="text">
+			<span aria-hidden="true" class="form-control-feedback">
+				<svg class="lexicon-icon lexicon-icon-exclamation-full">
 					<use xlink:href="../../images/icons/icons.svg#exclamation-full">
 				</svg>
 			</span>
-			<span id="inputWarning2Status" class="sr-only">(warning)</span>
+			<span class="sr-only" id="inputWarning2Status">(warning)</span>
 		</div>
 
 		<div class="form-group has-error has-feedback">
 			<label class="control-label" for="inputError2">Error Label</label>
-			<input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
-			<span class="form-control-feedback" aria-hidden="true">
-				<svg class="lexicon-icon">
+			<input aria-describedby="inputError2Status" class="form-control" id="inputError2" type="text">
+			<span aria-hidden="true" class="form-control-feedback">
+				<svg class="lexicon-icon lexicon-icon-times">
 					<use xlink:href="../../images/icons/icons.svg#times">
 				</svg>
 			</span>
-			<span id="inputError2Status" class="sr-only">(error)</span>
+			<span class="sr-only" id="inputError2Status">(error)</span>
 		</div>
 
 <div class="uxgl-toggle-code">
@@ -484,8 +542,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

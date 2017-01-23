@@ -1,0 +1,25 @@
+.dropdown-menu {
+	border-width: $dropdown-border-width;
+	box-shadow: $dropdown-box-shadow;
+	font-size: $dropdown-font-size;
+	max-height: $dropdown-menu-max-height;
+	max-width: $dropdown-menu-max-width;
+	min-height: 40px;
+	overflow: auto;
+	padding: 6px 0;
+
+	@media (min-width: $grid-float-breakpoint) {
+		font-size: $dropdown-font-size-desktop;
+		max-height: $dropdown-menu-desktop-max-height;
+		max-width: $dropdown-menu-desktop-max-width;
+	}
+
+	> li > a {
+		overflow: hidden;
+		padding: $dropdown-link-padding;
+	}
+
+	.lexicon-icon {
+		margin-right: ($dropdown-checkbox-label-spacer / 4)
+	}
+}

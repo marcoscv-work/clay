@@ -1,0 +1,9 @@
+@mixin colors($name, $var) {
+	.#{$name}-color {
+		color: $var;
+	}
+
+	.#{$name}-bg {
+		background-color: $var;
+	}
+}

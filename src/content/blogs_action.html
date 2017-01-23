@@ -5,26 +5,47 @@ section: Example Pages
 
 <div class="row" id="blogActions">
 	<div class="col-md-12">
-		<div class="sidenav-container sidenav-fixed uxgl-slideout-nav" id="blogActionsSidenav">
+		<div class="closed sidenav-container sidenav-fixed uxgl-slideout-nav" id="blogActionsSidenav">
 			<div class="sidenav-menu-slider">
 				<div class="sidebar sidebar-inverse sidenav-menu">
 					<div class="sidebar-header">
-						<h4>
-							<a href="#1">
-								<span class="sidebar-header-logo">
-									<svg aria-hidden="true" class="lexicon-icon">
-										<use xlink:href="{{rootPath}}/images/icons/icons.svg#staging" />
+						<ul class="list-inline list-unstyled sidebar-header-actions">
+							<li>
+								<a class="" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#star-o" />
 									</svg>
-								</span>
-								<span>Squareup</span>
-							</a>
+								</a>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#1">Download</a></li>
+									<li><a href="#1">Edit</a></li>
+									<li><a href="#1">Move</a></li>
+									<li><a href="#1">Checkout</a></li>
+									<li><a href="#1">Permissions</a></li>
+									<li><a href="#1">Move to Recycle Bin</a></li>
+								</ul>
+							</li>
+							<li>
+								<a class="sidenav-close" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
+									</svg>
+								</a>
+							</li>
+						</ul>
 
-							<a class="sidenav-close" href="#1">
-								<svg aria-hidden="true" class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
-								</svg>
-							</a>
-						</h4>
+						<h4>Image1.jpg</h4>
+
+						<h5 classs="text-default">
+							<span>Approved</span>
+						</h5>
 					</div>
 
 					<div class="sidebar-body">
@@ -33,28 +54,28 @@ section: Example Pages
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>From</label>
-										<input class="form-control" type="text" placeholder="City or Airport">
+										<input class="form-control" placeholder="City or Airport" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>To</label>
-										<input class="form-control" type="text" placeholder="City or Airport">
+										<input class="form-control" placeholder="City or Airport" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Departing</label>
-										<input class="form-control" type="text" placeholder="Departing Date">
+										<input class="form-control" placeholder="Departing Date" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Returning</label>
-										<input class="form-control" type="text" placeholder="Returning Date">
+										<input class="form-control" placeholder="Returning Date" type="text">
 									</div>
 								</div>
 
@@ -131,7 +152,7 @@ section: Example Pages
 					<div class="container-fluid-1280">
 						<div class="toolbar-group">
 							<div class="toolbar-group-content">
-								<a class="sidenav-toggler" href="#1" id="blogActionsToggler">
+								<a class="sidenav-toggler" href="#blogActionsSidenav" id="blogActionsToggler">
 									<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
 										<use xlink:href="{{rootPath}}/images/icons/icons.svg#bars" />
 									</svg>
@@ -311,7 +332,7 @@ section: Example Pages
 				</div>
 
 				<div class="container-fluid-1280">
-					<button class="btn btn-info" data-toggle="modal" data-target="#imageSelectorModal">Select / Change Items</button>
+					<button class="btn btn-info" data-target="#imageSelectorModal" data-toggle="modal">Select / Change Items</button>
 					<div aria-labelledby="lexLargeModalLabel" class="fade modal" id="imageSelectorModal" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-full-screen">
 							<div class="modal-content">
@@ -367,7 +388,7 @@ section: Example Pages
 												</label>
 											</div>
 
-											<a class="collapsed management-bar-toggle management-bar-toggle-link" data-toggle="collapse" href="#mgmtBarCollapse00" aria-expanded="false">
+											<a aria-expanded="false" class="collapsed management-bar-toggle management-bar-toggle-link" data-toggle="collapse" href="#mgmtBarCollapse00">
 												<span class="management-bar-item-title">Label</span>
 												<svg aria-hidden="true" class="lexicon-icon">
 													<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-double-l" />
@@ -393,7 +414,7 @@ section: Example Pages
 											</a>
 										</div>
 
-										<div class="collapse management-bar-collapse" id="mgmtBarCollapse00" aria-expanded="false">
+										<div aria-expanded="false" class="collapse management-bar-collapse" id="mgmtBarCollapse00">
 											<ul class="management-bar-nav nav">
 												<li class="dropdown">
 													<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
@@ -481,7 +502,7 @@ section: Example Pages
 										<div class="panel-heading" style="background-color: #DDD;">10 item(s) to be added</div>
 										<div class="panel-body">
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -501,7 +522,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -521,7 +542,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -541,7 +562,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -561,7 +582,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -581,7 +602,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -601,7 +622,7 @@ section: Example Pages
 											</div>
 
 											<div class="nameplate-label nameplate-label-default">
-												<div class="nameplate-icon">
+												<div class="nameplate-field">
 													<div class="user-icon user-icon-sm">
 														<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_dock.jpg">
 													</div>
@@ -620,7 +641,7 @@ section: Example Pages
 												</div>
 											</div>
 
-											<div class="nameplate-label nameplate-label-default nameplate-label-next">
+											<div class="nameplate-label nameplate-label-default nameplate-label-more">
 												<div class="nameplate-content">
 													<a class="nameplate-label-text" href="#1">...</a>
 												</div>
@@ -736,9 +757,9 @@ section: Example Pages
 
 												<div class="list-group-item-field">
 													<div class="detailed-list-view-icon">
-														<svg aria-hidden="true" class="lexicon-icon">
-															<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-														</svg>
+														<div class="user-icon user-icon-lg user-icon-warning">
+															<span>SB</span>
+														</div>
 													</div>
 												</div>
 
@@ -938,9 +959,9 @@ section: Example Pages
 
 						<div class="list-group-item-field">
 							<div class="detailed-list-view-icon">
-								<svg aria-hidden="true" class="lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-								</svg>
+								<div class="user-icon user-icon-lg user-icon-warning">
+									<span>SB</span>
+								</div>
 							</div>
 						</div>
 
@@ -1075,57 +1096,67 @@ section: Example Pages
 	</div>
 </div>
 
-<a class="btn btn-action btn-bottom-right btn-primary icon-monospaced" data-toggle="tooltip" data-placement="left" title="Fullscreen" href="#1" id="fullscreenBtn"><span class="icon-desktop"></span></a>
+<a class="btn btn-action btn-bottom-right btn-primary icon-monospaced" data-placement="left" data-toggle="tooltip" href="#1" id="fullscreenBtn" title="Fullscreen"><span class="icon-desktop"></span></a>
 
 <script>
-	$('#blogActionsSidenav').sideNavigation({
-		gutter: 0,
-		toggler: '#blogActionsToggler',
-		typeMobile: 'fixed-push',
-		type: 'fixed',
-		width: 320
-	});
+	$('#blogActionsToggler').sideNavigation(
+		{
+			gutter: 0,
+			type: 'fixed',
+			typeMobile: 'fixed',
+			width: 320
+		}
+	);
 
 	$('.collapse-basic-search').collapsibleSearch();
 
-	$('#fullscreenBtn').on('click', function(event) {
-		event.preventDefault();
+	$('#fullscreenBtn').on(
+		'click',
+		function(event) {
+			event.preventDefault();
 
-		$('#blogActions').toggleClass('uxgl-fullscreen-fixed');
-		$('body').toggleClass('fixed');
-	});
+			$('#blogActions').toggleClass('uxgl-fullscreen-fixed');
+			$('body').toggleClass('fixed');
+		}
+	);
 
 	$('[data-toggle="tooltip"]').tooltip();
 
 	// Check/uncheck if list group item clicked
 
-	$('.tabular-list-group .list-group-item').on('click', function(event) {
-		var target = $(event.target);
+	$('.tabular-list-group .list-group-item').on(
+		'click',
+		function(event) {
+			var target = $(event.target);
 
-		if (!target.closest('.dropdown').length) {
-			$(this).toggleClass('active');
+			if (!target.closest('.dropdown').length) {
+				$(this).toggleClass('active');
 
-			if ($(this).hasClass('active')) {
-				$(this).find('input[type="checkbox"]').prop('checked', true);
-			}
-			else {
-				$(this).find('input[type="checkbox"]').prop('checked', false);
+				if ($(this).hasClass('active')) {
+					$(this).find('input[type="checkbox"]').prop('checked', true);
+				}
+				else {
+					$(this).find('input[type="checkbox"]').prop('checked', false);
+				}
 			}
 		}
-	});
+	);
 
 	// Check / uncheck all
 
-	$('.management-bar .check-all').on('click', function(event) {
-		var listGroupItem = $('.tabular-list-group .list-group-item');
+	$('.management-bar .check-all').on(
+		'click',
+		function(event) {
+			var listGroupItem = $('.tabular-list-group .list-group-item');
 
-		if ($(this).prop('checked')) {
-			listGroupItem.addClass('active');
-			listGroupItem.find('input[type="checkbox"]').prop('checked', true);
+			if ($(this).prop('checked')) {
+				listGroupItem.addClass('active');
+				listGroupItem.find('input[type="checkbox"]').prop('checked', true);
+			}
+			else {
+				listGroupItem.removeClass('active');
+				listGroupItem.find('input[type="checkbox"]').prop('checked', false);
+			}
 		}
-		else {
-			listGroupItem.removeClass('active');
-			listGroupItem.find('input[type="checkbox"]').prop('checked', false);
-		}
-	});
+	);
 </script>

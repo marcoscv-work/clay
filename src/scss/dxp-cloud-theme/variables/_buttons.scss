@@ -1,0 +1,122 @@
+// Structure
+
+// When changing variables that affect the btn's height, make sure to match the
+// corresponding input-height with the button height.
+
+$btn-border-width: 1px !default;
+
+$btn-line-height: 24 - ($btn-border-width * 2) !default;
+
+$btn-font-size: $font-size-base !default;
+$btn-font-weight: $dxp-font-weight-base-big !default;
+$btn-padding-vertical: 8px !default;
+$btn-padding-horizontal: round($btn-padding-vertical * 3) !default;
+
+$btn-lg-font-size: $font-size-large !default;
+$btn-lg-padding-vertical: 12px !default;
+$btn-lg-padding-horizontal: round($btn-lg-padding-vertical * 3) !default;
+
+$btn-sm-font-size: $font-size-small !default;
+$btn-sm-padding-vertical: 4px !default;
+$btn-sm-padding-horizontal: round($btn-sm-padding-vertical * 3) !default;
+
+$btn-xs-font-size: 10px !default;
+$btn-xs-padding-vertical: 1px !default;
+$btn-xs-padding-horizontal: round($btn-xs-padding-vertical * 3) !default;
+
+$btn-desktop-font-size: 16px !default;
+$btn-desktop-padding-vertical: 8px !default;
+$btn-desktop-padding-horizontal: 15px !default;
+
+$btn-desktop-lg-font-size: $btn-lg-font-size !default;
+$btn-desktop-lg-padding-vertical: 12px !default;
+$btn-desktop-lg-padding-horizontal: 48px !default;
+
+$btn-desktop-sm-font-size: $btn-sm-font-size !default;
+$btn-desktop-sm-padding-vertical: 4px !default;
+$btn-desktop-sm-padding-horizontal: 11px !default;
+
+$btn-desktop-xs-font-size: 10px !default;
+$btn-desktop-xs-padding-vertical: 1px !default;
+$btn-desktop-xs-padding-horizontal: round($btn-desktop-xs-padding-vertical * 4) !default;
+
+// End variables that affect btn height
+
+$btn-disabled-opacity: 0.5 !default;
+
+// Skin
+
+$btn-action-size: 52px !default;
+$btn-desktop-action-size: 64px !default;
+
+$btn-border-radius: $dxp-border-radius-base !default;
+
+$btn-action-border-radius: $btn-border-radius !default;
+
+$btn-lg-border-radius: $btn-border-radius !default;
+$btn-sm-border-radius: $btn-border-radius !default;
+$btn-xs-border-radius: $dxp-border-radius-base-small !default;
+
+$btn-active-box-shadow: none !default;
+
+$btn-default-color: $dxp-dark !default;
+$btn-default-bg: $dxp-white !default;
+$btn-default-border: $dxp-dark-lighten-hard !default;
+$btn-default-hover-color: $btn-default-color !default;
+$btn-default-hover-bg: $dxp-light-dark !default;
+$btn-default-hover-border: $dxp-light-dark !default;
+$btn-default-active-color: $btn-default-color !default;
+$btn-default-active-bg: $dxp-light-dark !default;
+$btn-default-active-border: $dxp-light-dark !default;
+
+$btn-primary-color: $dxp-white !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $btn-primary-bg !default;
+$btn-primary-hover-color: $btn-primary-color !default;
+$btn-primary-hover-bg: darken($btn-primary-bg, 5%) !default;
+$btn-primary-hover-border: $btn-primary-hover-bg !default;
+$btn-primary-active-color: $btn-primary-color !default;
+$btn-primary-active-bg: darken($btn-primary-hover-bg, 5%) !default;
+$btn-primary-active-border: $btn-primary-active-bg !default;
+
+$btn-success-color: $dxp-white !default;
+$btn-success-bg: $brand-success !default;
+$btn-success-border: $btn-success-bg !default;
+$btn-success-hover-color: $btn-success-color !default;
+$btn-success-hover-bg: darken($btn-success-bg, 5%) !default;
+$btn-success-hover-border: $btn-success-hover-bg !default;
+$btn-success-active-color: $btn-success-color !default;
+$btn-success-active-bg: darken($btn-success-hover-bg, 5%) !default;
+$btn-success-active-border: $btn-success-active-bg !default;
+
+$btn-info-color: $dxp-white !default;
+$btn-info-bg: $brand-info !default;
+$btn-info-border: $btn-info-bg !default;
+$btn-info-hover-color: $btn-info-color !default;
+$btn-info-hover-bg: darken($btn-info-bg, 5%) !default;
+$btn-info-hover-border: $btn-info-hover-bg !default;
+$btn-info-active-color: $btn-info-color !default;
+$btn-info-active-bg: darken($btn-info-hover-bg, 5%) !default;
+$btn-info-active-border: $btn-info-active-bg !default;
+
+$btn-warning-color: $dxp-white !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: $btn-warning-bg !default;
+$btn-warning-hover-color: $btn-warning-color !default;
+$btn-warning-hover-bg: darken($btn-warning-bg, 5%) !default;
+$btn-warning-hover-border: $btn-warning-hover-bg !default;
+$btn-warning-active-color: $btn-warning-color !default;
+$btn-warning-active-bg: darken($btn-warning-hover-bg, 5%) !default;
+$btn-warning-active-border: $btn-warning-active-bg !default;
+
+$btn-danger-color: $dxp-white !default;
+$btn-danger-bg: $brand-danger !default;
+$btn-danger-border: $btn-danger-bg !default;
+$btn-danger-hover-color: $btn-danger-color !default;
+$btn-danger-hover-bg: darken($btn-danger-bg, 5%) !default;
+$btn-danger-hover-border: $btn-danger-hover-bg !default;
+$btn-danger-active-color: $btn-danger-color !default;
+$btn-danger-active-bg: darken($btn-danger-hover-bg, 5%) !default;
+$btn-danger-active-border: $btn-danger-active-bg !default;
+
+$btn-link-disabled-color: $link-color !default;

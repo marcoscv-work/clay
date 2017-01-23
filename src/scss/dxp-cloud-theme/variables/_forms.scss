@@ -1,0 +1,86 @@
+// Structure
+
+$input-font-size: $dxp-base-font-medium-size !default;
+
+$input-desktop-font-size: $dxp-base-font-medium-size !default;
+
+$input-label-font-size: $dxp-base-font-small-size !default;
+
+$input-label-desktop-font-size: $dxp-base-font-small-size !default;
+
+$input-label-padding-buttom: 6px !default;
+
+$input-label-reference-mark-spacer: 5px !default;
+$input-label-reference-mark-vertical-alignment: baseline !default;
+
+$input-border-bottom-width: 1px !default;
+$input-border-left-width: 1px !default;
+$input-border-right-width: 1px !default;
+$input-border-top-width: 1px !default;
+
+$input-padding-horizontal: 16px !default;
+$input-padding-vertical: 8px !default;
+
+$input-font-size-base: $dxp-base-font-medium-size !default;
+$input-font-size-large: $dxp-base-font-large-size !default;
+$input-font-size-small: $dxp-base-font-extra-small-size !default;
+
+// When changing input, make sure to match the corresponding
+// btn settings to the input height.
+$input-height-base: 40px !default;
+$input-height-large: 48px !default;
+$input-height-small: 32px !default;
+
+$input-mobile-height-base: 40px !default;
+$input-mobile-height-large: 48px !default;
+$input-mobile-height-small: 32px !default;
+
+$form-group-margin-bottom: 20px !default;
+
+// Skin
+
+$input-border-radius: $border-radius-base !default;
+$input-border-radius-large: $input-border-radius !default;
+$input-border-radius-small: $input-border-radius !default;
+
+$input-bg: $dxp-light-dark !default;
+$input-bg-disabled: $input-bg !default;
+$input-bg-focus: $dxp-cta-lighten-hight !default;
+
+$input-color: $text-color !default;
+$input-color-focus: $dxp-cta-lighten-low !default;
+
+$input-border: $dxp-dark-lighten-full !default;
+$input-border-focus: $input-color-focus !default;
+
+$input-border-disabled: #CFD7DE !default;
+
+$input-box-shadow: none !default;
+$input-box-shadow-focus: none !default;
+
+$input-color-placeholder: $dxp-dark-lighten-low !default;
+$input-color-placeholder-focus: $input-border-focus !default;
+
+$input-label-color: $brand-default !default;
+$input-label-focus-color: $input-color-focus !default;
+
+$input-readonly-bg: #FAFAFA !default;
+$input-readonly-border: $input-border !default;
+$input-readonly-color: darken($input-color-placeholder, 12%) !default;
+
+$legend-border-color: #B0B4BB !default;
+
+$input-group-addon-bg: $dxp-white !default;
+$input-group-addon-border-color: $input-group-addon-bg !default;
+$input-group-addon-border-radius: 0 !default;
+$input-group-addon-color: #FFF !default;
+
+$input-group-default-addon-border-color: #DDD !default;
+$input-group-default-addon-color: #BBB !default;
+
+$input-danger: $brand-danger !default;
+$input-danger-bg: $state-danger-bg !default;
+$input-success: $brand-success !default;
+$input-success-bg: $state-success-bg !default;
+$input-warning: $brand-warning !default;
+$input-warning-bg: $state-warning-bg !default;

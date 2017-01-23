@@ -1,0 +1,41 @@
+.breadcrumb {
+	border-radius: 0;
+	line-height: $breadcrumb-line-height;
+	margin-bottom: 0;
+	padding: $breadcrumb-padding-vertical ($breadcrumb-padding-horizontal / 4);
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+	}
+
+	> .active {
+		font-weight: $dxp-font-weight-base-big;
+	}
+
+	> li {
+		display: inline-block;
+
+		&.breadcrumb-ellipsis {
+			margin-right: 0;
+			overflow: visible;
+		}
+
+		+ li:before {
+			left: - ($breadcrumb-separator-svg-icon-height / 6);
+			margin-top: -($breadcrumb-separator-svg-icon-height / 3);
+		}
+	}
+}
+
+.breadcrumb-inverted {
+	background-color: $breadcrumb-bg-inverted;
+	color: $breadcrumb-color-inverted;
+
+	a, .active {
+		color: $breadcrumb-color-inverted;
+	}
+
+	li + li:before {
+		background-image: $breadcrumb-separator-svg-icon-inverted;
+	}
+}

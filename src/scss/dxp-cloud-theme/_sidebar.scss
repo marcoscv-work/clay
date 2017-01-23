@@ -1,0 +1,35 @@
+.sidebar-container {
+	height: 100%;
+	position: relative;
+
+	> .sidebar {
+		position: absolute;
+		width: $sidebar-container-side-width;
+
+		@media (max-width: $grid-float-breakpoint-max) {
+			display: none;
+			z-index: $zindex-navbar-fixed;
+		}
+
+		&.sidebar-fixed-xs {
+			@media (max-width: $grid-float-breakpoint-max) {
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	> .sidebar-content {
+		@media (min-width: $grid-float-breakpoint) {
+			margin-left: $sidebar-container-side-width;
+		}
+	}
+
+	&.open {
+		> .sidebar {
+			display: block;
+		}
+
+	}
+}

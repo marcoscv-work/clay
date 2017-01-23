@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Collapsible Search</title>
+	<title>DXP Cloud Skin based on Lexicon - Collapsible Search</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Collapsible Search
 
 			
@@ -249,28 +266,10 @@
 			</form>
 		</div>
 
-		<h5>Data Attributes:</h5>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Enable by data attribute with <code>data-toggle=&quot;collapsible-search&quot;</code> and specify at what screen width to run collapsible-search by adding <code>data-breakpoint=&quot;991&quot;</code>, default is 768.</p>
-		</blockquote>
-
-		<h5>Javascript:</h5>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Enable by javascript with <code>$(&apos;#myElement&apos;).collapsibleSearch();</code> and specify at what screen width to run collapsible-search with:</p>
-		</blockquote>
-
-		<pre><code>$(&apos;#myElement&apos;).collapsibleSearch({
-    breakpoint: 991 // default 768
-});</code></pre>
-
-		<div class="alert alert-warning" style="margin-top: 20px;">
-			<p>Changing the breakpoint requires changing the media queries for basic search in the navbar component.</p>
-		</div>
-
-		<h5>HTML Markup:</h5>
-
+<div class="uxgl-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse0"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse0">
 		<pre><code class="html">&lt;div class=&quot;collapse-basic-search&quot; data-toggle=&quot;collapsible-search&quot;&gt;
     &lt;form class=&quot;basic-search input-group&quot;&gt;
         &lt;div class=&quot;input-group-input&quot;&gt;
@@ -288,19 +287,57 @@
         &lt;/div&gt;
     &lt;/form&gt;
 &lt;/div&gt;</code></pre>
+</div>
+
+		<h3 id="data-api"><a class="heading-anchor" href="#data-api"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Data API:</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Enable using data attributes with <code>data-toggle=&quot;collapsible-search&quot;</code>. This method uses event delegation on the document.</p>
+		</blockquote>
+
+		<h3 id="javascript"><a class="heading-anchor" href="#javascript"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Javascript:</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Enable using javascript with <code>$(&apos;#myElement&apos;).collapsibleSearch();</code>. This method attaches the event handler on the element specified.</p>
+		</blockquote>
+
+		<h3 id="options"><a class="heading-anchor" href="#options"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Options:</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>The default breakpoint is 768px, but can be customized through the variable <code>$.fn.collapsibleSearch.Constructor.BREAKPOINT</code>.</p>
+
+			<p>There is also <code>$.fn.collapsibleSearch.Constructor.TRANSITION_DURATION</code> that sets the delay (in hundreths) before the class <code>basic-search-transition</code> is removed.</p>
+		</blockquote>
+
+		<div class="alert alert-warning" style="margin-top: 20px;">
+			<p>Changing the breakpoint requires changing the media queries for basic search in the navbar component.</p>
+		</div>
+
+		<ul>
+			<li><a href="https://github.com/liferay/lexicon/blob/master/src/scss/lexicon-base/_navbar.scss">https://github.com/liferay/lexicon/blob/master/src/scss/lexicon-base/_navbar.scss</a></li>
+			<li><a href="https://github.com/liferay/lexicon/blob/master/src/scss/atlas-theme/_navbar.scss">https://github.com/liferay/lexicon/blob/master/src/scss/atlas-theme/_navbar.scss</a></li>
+		</ul>
 
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-12">
-		<h3 id="alternate-navbar-toggle-style"><a class="heading-anchor" href="#alternate-navbar-toggle-style"><i class="icon icon-link"></i></a>Alternate Navbar Toggle Style</h3>
-		<blockquote class="blockquote-success blockquote-sm">
+		<h3 id="alternate-navbar-toggle-style"><a class="heading-anchor" href="#alternate-navbar-toggle-style"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Alternate Navbar Toggle Style</h3>
+		<blockquote class="blockquote-sm blockquote-success">
 			<p>Style navbar toggle like a navbar navigation item with <code>navbar-toggle-page-name</code>.</p>
 		</blockquote>
 
-		<nav class="navbar navbar-default collapse-basic-search" data-toggle="collapsible-search">
-			<div class="collapse navbar-collapse" id="navbar-collapse-001">
+		<nav class="collapse-basic-search navbar navbar-default" data-toggle="collapsible-search">
+			<div class="navbar-header visible-xs">
+				<button class="collapsed navbar-toggle navbar-toggle-left navbar-toggle-page-name" data-target="#navbar-collapse-001" data-toggle="collapse" type="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="page-name">Message Boards</span><!-- current page name goes here e.g. Message Boards Home -->
+					<span class="caret"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-collapse-left" id="navbar-collapse-001">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Message Boards</a></li>
 					<li class="dropdown">
@@ -339,12 +376,6 @@
 			</div>
 
 			<div class="navbar-header navbar-header-right">
-				<button type="button" class="navbar-toggle navbar-toggle-left navbar-toggle-page-name collapsed" data-toggle="collapse" data-target="#navbar-collapse-001">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="page-name">Message Boards</span><!-- current page name goes here e.g. Message Boards Home -->
-					<span class="caret"></span>
-				</button>
-
 				<form class="basic-search input-group">
 					<div class="input-group-input">
 						<div class="basic-search-slider">
@@ -367,14 +398,22 @@
 			</div>
 		</nav>
 
-		<h3 id="navbar-with-custom-toggle-and-basic-search-in-navbar-header"><a class="heading-anchor" href="#navbar-with-custom-toggle-and-basic-search-in-navbar-header"><i class="icon icon-link"></i></a>Navbar with Custom Toggle and Basic Search in Navbar Header</h3>
-		<blockquote class="blockquote-success blockquote-sm">
+		<h3 id="navbar-with-custom-toggle-and-basic-search-in-navbar-header"><a class="heading-anchor" href="#navbar-with-custom-toggle-and-basic-search-in-navbar-header"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Navbar with Custom Toggle and Basic Search in Navbar Header</h3>
+		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use this pattern when you want the search bar to always be shown (in mobile and desktop). </p>
 			<p><code>.navbar-collapse</code> needs to be declared before <code>.navbar-header</code>. It allows the search box to fill the remaining space in smaller spaces.</p>
 		</blockquote>
 
-		<nav class="navbar navbar-default collapse-basic-search" id="mySearch">
-			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<nav class="collapse-basic-search navbar navbar-default" id="mySearch">
+			<div class="navbar-header">
+				<button class="collapsed navbar-toggle navbar-toggle-left navbar-toggle-page-name" data-target="#navbar-collapse-1" data-toggle="collapse" type="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="page-name">Message Boards</span><!-- current page name goes here e.g. Message Boards Home -->
+					<span class="caret"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-collapse-left" id="navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Message Boards</a></li>
 					<li class="dropdown">
@@ -413,12 +452,6 @@
 			</div>
 
 			<div class="navbar-header navbar-header-right">
-				<button type="button" class="navbar-toggle navbar-toggle-left navbar-toggle-page-name collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="page-name">Message Boards</span><!-- current page name goes here e.g. Message Boards Home -->
-					<span class="caret"></span>
-				</button>
-
 				<form class="basic-search input-group">
 					<div class="input-group-input">
 						<div class="basic-search-slider">
@@ -453,13 +486,13 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h3 id="navbar-no-collapse"><a class="heading-anchor" href="#navbar-no-collapse"><i class="icon icon-link"></i></a>Navbar No Collapse</h3>
+		<h3 id="navbar-no-collapse"><a class="heading-anchor" href="#navbar-no-collapse"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Navbar No Collapse</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use the navbar-no-collapse component to preserve desktop navbar styles in mobile. It&apos;s useful when there are only one or two links in the navbar; where collapsing doesn&apos;t make sense.</p>
 		</blockquote>
 
-		<nav class="navbar navbar-default navbar-no-collapse collapse-basic-search" data-toggle="collapsible-search">
+		<nav class="collapse-basic-search navbar navbar-default navbar-no-collapse" data-toggle="collapsible-search">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Message Boards</a></li>
 				<li><a href="#">Blogs</a></li>
@@ -503,8 +536,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

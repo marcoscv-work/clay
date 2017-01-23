@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Badges, Labels and Stickers</title>
+	<title>DXP Cloud Skin based on Lexicon - Badges, Labels and Stickers</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Badges, Labels and Stickers
 
 			
@@ -223,7 +240,7 @@
 		
 <div class="row row-spacing" id="badges">
 	<div class="col-md-12">
-		<h3 id="badges"><a class="heading-anchor" href="#badges"><i class="icon icon-link"></i></a>Badges</h3>
+		<h3 id="badges"><a class="heading-anchor" href="#badges"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Badges</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Badges help highlight important information such as notifications or new and unread messages. Badges have circular borders by default, for rounded borders, See <a href="#labels">labels</a>.</p>
@@ -253,37 +270,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="fixed-width-and-height-badges"><a class="heading-anchor" href="#fixed-width-and-height-badges"><i class="icon icon-link"></i></a>Fixed Width and Height Badges</h3>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Use <code>badge-monospaced</code> to create a badge that has a fixed width and height. It is useful for showing the number of new messages or pending requests in your application.</p>
-		</blockquote>
-
-		<span class="badge badge-default badge-monospaced">10</span>
-		<span class="badge badge-monospaced badge-primary">10</span>
-		<span class="badge badge-monospaced badge-success">10</span>
-		<span class="badge badge-info badge-monospaced">10</span>
-		<span class="badge badge-monospaced badge-warning">10</span>
-		<span class="badge badge-danger badge-monospaced">10</span>
-
-<div class="uxgl-toggle-code" style="margin-top:15px;">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse1"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse1">
-	<pre><code class="html">&lt;span class=&quot;badge badge-default badge-monospaced&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;badge badge-monospaced badge-primary&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;badge badge-monospaced badge-success&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;badge badge-info badge-monospaced&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;badge badge-monospaced badge-warning&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;badge badge-danger badge-monospaced&quot;&gt;10&lt;/span&gt;</code></pre>
-</div>
-
-	</div>
-</div>
-
-<div class="row row-spacing">
-	<div class="col-md-12">
-		<h3 id="badge-sizes"><a class="heading-anchor" href="#badge-sizes"><i class="icon icon-link"></i></a>Badge Sizes</h3>
+		<h3 id="badge-sizes"><a class="heading-anchor" href="#badge-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Badge Sizes</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use <code>badge-sm</code> and <code>badge-lg</code> to change the badge size.</p>
@@ -296,23 +283,13 @@
 			<span class="badge badge-lg badge-success">Large Badge</span>
 		</div>
 
-		<h5>Monospaced</h5>
-		<div>
-			<span class="badge badge-info badge-monospaced badge-sm">SM</span>
-			<span class="badge badge-monospaced badge-warning">DEF</span>
-			<span class="badge badge-danger badge-lg badge-monospaced">LG</span>
-		</div>
-
 <div class="uxgl-toggle-code" style="margin-top:15px;">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse2"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse2">
 	<pre><code class="html">&lt;span class=&quot;badge badge-default badge-sm&quot;&gt;Small Badge&lt;/span&gt;
 &lt;span class=&quot;badge badge-primary&quot;&gt;Default Badge&lt;/span&gt;
-&lt;span class=&quot;badge badge-lg badge-success&quot;&gt;Large Badge&lt;/span&gt;
-&lt;span class=&quot;badge badge-info badge-monospaced badge-sm&quot;&gt;SM&lt;/span&gt;
-&lt;span class=&quot;badge badge-monospaced badge-warning&quot;&gt;DEF&lt;/span&gt;
-&lt;span class=&quot;badge badge-danger badge-lg badge-monospaced&quot;&gt;LG&lt;/span&gt;</code></pre>
+&lt;span class=&quot;badge badge-lg badge-success&quot;&gt;Large Badge&lt;/span&gt;</code></pre>
 </div>
 
 	</div>
@@ -320,7 +297,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="badge-with-links"><a class="heading-anchor" href="#badge-with-links"><i class="icon icon-link"></i></a>Badge with Links</h3>
+		<h3 id="badge-with-links"><a class="heading-anchor" href="#badge-with-links"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Badge with Links</h3>
 
 		<div>
 			<h5>Lexicon Icons</h5>
@@ -441,7 +418,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="badge-examples"><a class="heading-anchor" href="#badge-examples"><i class="icon icon-link"></i></a>Badge Examples</h3>
+		<h3 id="badge-examples"><a class="heading-anchor" href="#badge-examples"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Badge Examples</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Some badge use cases.</p>
@@ -463,7 +440,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="labels"><a class="heading-anchor" href="#labels"><i class="icon icon-link"></i></a>Labels</h3>
+		<h3 id="labels"><a class="heading-anchor" href="#labels"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Labels</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use labels to organize groups of items in your application. Labels have rounded borders by default, for circular borders, See <a href="#badges">badges</a>.</p>
@@ -493,7 +470,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="label-sizes"><a class="heading-anchor" href="#label-sizes"><i class="icon icon-link"></i></a>Label Sizes</h3>
+		<h3 id="label-sizes"><a class="heading-anchor" href="#label-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Label Sizes</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
 			<p>Use <code>label-sm</code> and <code>label-lg</code> to change the label size.</p>
@@ -517,7 +494,7 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="label-with-links"><a class="heading-anchor" href="#label-with-links"><i class="icon icon-link"></i></a>Label with Links</h3>
+		<h3 id="label-with-links"><a class="heading-anchor" href="#label-with-links"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Label with Links</h3>
 
 		<div>
 			<h5>Lexicon Icons</h5>
@@ -630,88 +607,10 @@
 
 <div class="row row-spacing">
 	<div class="col-md-12">
-		<h3 id="stickers"><a class="heading-anchor" href="#stickers"><i class="icon icon-link"></i></a>Stickers</h3>
+		<h3 id="stickers"><a class="heading-anchor" href="#stickers"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Stickers</h3>
 
 		<blockquote class="blockquote-sm blockquote-success">
-			<p>Stickers are absolutely positioned monospaced badges, place them anywhere relative to your container.</p>
-		</blockquote>
-
-		<span class="sticker sticker-default" style="position:static;">133</span>
-		<span class="sticker sticker-danger" style="position:static;">133</span>
-		<span class="sticker sticker-info" style="position:static;">133</span>
-		<span class="sticker sticker-primary" style="position:static;">133</span>
-		<span class="sticker sticker-success" style="position:static;">133</span>
-		<span class="sticker sticker-warning" style="position:static;">133</span>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse7"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse7">
-	<pre><code class="html">&lt;span class=&quot;sticker sticker-default&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-danger&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-info&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-primary&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-success&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-warning&quot;&gt;133&lt;/span&gt;</code></pre>
-</div>
-
-	</div>
-</div>
-
-<div class="row row-spacing">
-	<div class="col-md-12">
-		<h3 id="sticker-sizes"><a class="heading-anchor" href="#sticker-sizes"><i class="icon icon-link"></i></a>Sticker Sizes</h3>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Stickers come in 3 different sizes, small, regular and large. Create your own custom size by changing the <code>width</code>, <code>height</code>, <code>line-height</code>, and <code>font-size</code>. You can also use the sass monospace mixin to change the width and height e.g. <code>@include monospace(30px);</code>.</p>
-		</blockquote>
-
-		<span class="sticker sticker-default sticker-sm" style="position:static;">133</span>
-		<span class="sticker sticker-primary" style="position:static;">133</span>
-		<span class="sticker sticker-lg sticker-success" style="position:static;">133</span>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse8"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse8">
-	<pre><code class="html">&lt;span class=&quot;sticker sticker-default sticker-sm&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-primary&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-lg sticker-success&quot;&gt;133&lt;/span&gt;</code></pre>
-</div>
-
-	</div>
-</div>
-
-<div class="row row-spacing">
-	<div class="col-md-12">
-		<h3 id="sticker-shapes"><a class="heading-anchor" href="#sticker-shapes"><i class="icon icon-link"></i></a>Sticker Shapes</h3>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Change the borders with <code>sticker-circle</code>, <code>sticker-rounded</code>, or <code>sticker-square</code>.</p>
-		</blockquote>
-
-		<span class="sticker sticker-circle sticker-default" style="position:static;">133</span>
-		<span class="sticker sticker-primary sticker-rounded" style="position:static;">133</span>
-		<span class="sticker sticker-square sticker-success" style="position:static;">133</span>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse9"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse9">
-	<pre><code class="html">&lt;span class=&quot;sticker sticker-circle sticker-default&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-primary sticker-rounded&quot;&gt;133&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-square sticker-success&quot;&gt;133&lt;/span&gt;</code></pre>
-</div>
-
-	</div>
-</div>
-
-<div class="row row-spacing">
-	<div class="col-xs-12">
-		<h3>Sticker Positions</h3>
-
-		<blockquote class="blockquote-sm blockquote-success">
-			<p>Stickers are positioned in the top left corner by default. Use a combination of the classes <code>sticker-bottom</code> and <code>sticker-right</code> to position in each corner.</p>
+			<p>Stickers are absolutely positioned monospaced badges/labels, place them anywhere relative to your container. It is positioned in the top left corner by default. The positional sticker classes <code>sticker-bottom-left</code>, <code>sticker-top-right</code>, and <code>sticker-bottom-right</code> will position the sticker in each corner.</p>
 		</blockquote>
 	</div>
 
@@ -749,10 +648,297 @@
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse10"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse10">
-	<pre><code class="html">&lt;span class=&quot;sticker sticker-danger&quot;&gt;PDF&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-bottom sticker-danger&quot;&gt;PDF&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-danger sticker-right&quot;&gt;PDF&lt;/span&gt;
-&lt;span class=&quot;sticker sticker-bottom sticker-danger sticker-right&quot;&gt;PDF&lt;/span&gt;</code></pre>
+	<pre><code class="html">&lt;div class=&quot;aspect-ratio&quot;&gt;
+    &lt;img alt=&quot;thumbnail&quot; src=&quot;thumbnail.jpg&quot;&gt;
+    &lt;span class=&quot;sticker sticker-danger&quot;&gt;PDF&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;aspect-ratio&quot;&gt;
+    &lt;img alt=&quot;thumbnail&quot; src=&quot;thumbnail.jpg&quot;&gt;
+    &lt;span class=&quot;sticker sticker-bottom-left sticker-danger&quot;&gt;PDF&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;aspect-ratio&quot;&gt;
+    &lt;img alt=&quot;thumbnail&quot; src=&quot;thumbnail.jpg&quot;&gt;
+    &lt;span class=&quot;sticker sticker-danger sticker-top-right&quot;&gt;PDF&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;aspect-ratio&quot;&gt;
+    &lt;img alt=&quot;thumbnail&quot; src=&quot;thumbnail.jpg&quot;&gt;
+    &lt;span class=&quot;sticker sticker-bottom-right sticker-danger&quot;&gt;PDF&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="sticker-static"><a class="heading-anchor" href="#sticker-static"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sticker Static</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p><code>sticker-static</code>, if you don&apos;t want an absolutely positioned sticker.</p>
+		</blockquote>
+	</div>
+
+	<div class="col-md-12">
+		<span class="sticker sticker-default sticker-static">133</span>
+		<span class="sticker sticker-danger sticker-static">133</span>
+		<span class="sticker sticker-info sticker-static">133</span>
+		<span class="sticker sticker-primary sticker-static">133</span>
+		<span class="sticker sticker-static sticker-success">133</span>
+		<span class="sticker sticker-static sticker-warning">133</span>
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<span class="sticker sticker-default sticker-sm sticker-static">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#folder">
+			</svg>
+		</span>
+		<span class="sticker sticker-danger sticker-static">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#folder">
+			</svg>
+		</span>
+		<span class="sticker sticker-info sticker-lg sticker-static">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#folder">
+			</svg>
+		</span>
+		<span class="sticker sticker-primary sticker-static">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#format">
+			</svg>
+		</span>
+		<span class="sticker sticker-static sticker-success">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#home">
+			</svg>
+		</span>
+		<span class="sticker sticker-static sticker-warning">
+			<svg class="lexicon-icon">
+				<use xlink:href="../../images/icons/icons.svg#picture">
+			</svg>
+		</span>
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-4 col-sm-6">
+		<div class="checkbox checkbox-card checkbox-middle-left">
+			<label>
+				<input type="checkbox" value="">
+				<div class="card card-horizontal">
+					<div class="card-row card-row-padded">
+						<div class="card-col-field">
+							<span class="sticker sticker-default sticker-sm sticker-static">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#folder">
+								</svg>
+							</span>
+						</div>
+						<div class="card-col-content card-col-gutters">
+							<span class="h4 truncate-text" title="Folder 01">Folder 01</span>
+						</div>
+						<div class="card-col-field">
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#1">Download</a></li>
+									<li><a href="#1">Edit</a></li>
+									<li><a href="#1">Move</a></li>
+									<li><a href="#1">Checkout</a></li>
+									<li><a href="#1">Permissions</a></li>
+									<li><a href="#1">Move to Recycle Bin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</label>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-sm-6">
+		<div class="checkbox checkbox-card checkbox-middle-left">
+			<label>
+				<input type="checkbox" value="">
+				<div class="card card-horizontal">
+					<div class="card-row card-row-padded">
+						<div class="card-col-field">
+							<span class="sticker sticker-default sticker-static">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#folder">
+								</svg>
+							</span>
+						</div>
+						<div class="card-col-content card-col-gutters">
+							<span class="h4 truncate-text" title="Folder 02">Folder 02</span>
+						</div>
+						<div class="card-col-field">
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#1">Download</a></li>
+									<li><a href="#1">Edit</a></li>
+									<li><a href="#1">Move</a></li>
+									<li><a href="#1">Checkout</a></li>
+									<li><a href="#1">Permissions</a></li>
+									<li><a href="#1">Move to Recycle Bin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</label>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-sm-6">
+		<div class="checkbox checkbox-card checkbox-middle-left">
+			<label>
+				<input type="checkbox" value="">
+				<div class="card card-horizontal">
+					<div class="card-row card-row-padded">
+						<div class="card-col-field">
+							<span class="sticker sticker-default sticker-lg sticker-static">
+								<svg class="lexicon-icon">
+									<use xlink:href="../../images/icons/icons.svg#folder">
+								</svg>
+							</span>
+						</div>
+						<div class="card-col-content card-col-gutters">
+							<span class="h4 truncate-text" title="Folder 03">Folder 03</span>
+						</div>
+						<div class="card-col-field">
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#1">Download</a></li>
+									<li><a href="#1">Edit</a></li>
+									<li><a href="#1">Move</a></li>
+									<li><a href="#1">Checkout</a></li>
+									<li><a href="#1">Permissions</a></li>
+									<li><a href="#1">Move to Recycle Bin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</label>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-sm-6">
+		<div class="checkbox checkbox-card checkbox-middle-left">
+			<label>
+				<input type="checkbox" value="">
+				<div class="card card-horizontal">
+					<div class="card-row card-row-padded">
+						<div class="card-col-field">
+							<span class="sticker sticker-default sticker-lg sticker-static">JPG</span>
+						</div>
+						<div class="card-col-content card-col-gutters">
+							<span class="h4 truncate-text" title="thumbnail_hot_air_balloon.jpg">thumbnail_hot_air_balloon.jpg</span>
+						</div>
+						<div class="card-col-field">
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+									<svg class="icon-monospaced lexicon-icon">
+										<use xlink:href="../../images/icons/icons.svg#ellipsis-v">
+									</svg>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#1">Download</a></li>
+									<li><a href="#1">Edit</a></li>
+									<li><a href="#1">Move</a></li>
+									<li><a href="#1">Checkout</a></li>
+									<li><a href="#1">Permissions</a></li>
+									<li><a href="#1">Move to Recycle Bin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</label>
+		</div>
+	</div>
+
+	<div class="col-md-12">
+
+<div class="uxgl-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse7"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse7">
+	<pre><code class="html">&lt;span class=&quot;sticker sticker-default sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-danger sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-info sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-primary sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-static sticker-success&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-static sticker-warning&quot;&gt;133&lt;/span&gt;</code></pre>
+</div>
+
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="sticker-sizes"><a class="heading-anchor" href="#sticker-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sticker Sizes</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Stickers come in 3 different sizes, small, regular and large. Create your own custom size by changing the <code>width</code>, <code>height</code>, <code>line-height</code>, and <code>font-size</code>. You can also use the sass monospace mixin to change the width and height e.g. <code>@include monospace(30px);</code>.</p>
+		</blockquote>
+
+		<span class="sticker sticker-default sticker-sm sticker-static">133</span>
+		<span class="sticker sticker-primary sticker-static">133</span>
+		<span class="sticker sticker-lg sticker-static sticker-success">133</span>
+
+<div class="uxgl-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse8"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse8">
+	<pre><code class="html">&lt;span class=&quot;sticker sticker-default sticker-sm sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-primary sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-lg sticker-static sticker-success&quot;&gt;133&lt;/span&gt;</code></pre>
+</div>
+
+	</div>
+</div>
+
+<div class="row row-spacing">
+	<div class="col-md-12">
+		<h3 id="sticker-shapes"><a class="heading-anchor" href="#sticker-shapes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sticker Shapes</h3>
+
+		<blockquote class="blockquote-sm blockquote-success">
+			<p>Change the borders with <code>sticker-circle</code>, <code>sticker-rounded</code>, or <code>sticker-square</code>.</p>
+		</blockquote>
+
+		<span class="sticker sticker-circle sticker-default sticker-static">133</span>
+		<span class="sticker sticker-primary sticker-rounded sticker-static">133</span>
+		<span class="sticker sticker-square sticker-static sticker-success">133</span>
+
+<div class="uxgl-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse9"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse9">
+	<pre><code class="html">&lt;span class=&quot;sticker sticker-circle sticker-default sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-primary sticker-rounded sticker-static&quot;&gt;133&lt;/span&gt;
+&lt;span class=&quot;sticker sticker-square sticker-static sticker-success&quot;&gt;133&lt;/span&gt;</code></pre>
 </div>
 
 	</div>
@@ -761,35 +947,35 @@
 <div class="row row-spacing">
 	<div class="col-md-12">
 		<blockquote class="blockquote-sm blockquote-success">
-			<p>Add class <code>sticker-outside</code> to position the sticker on the outside corner.</p>
+			<p>Add class <code>sticker-outside</code> in conjunction with sticker positions to position the sticker on the outside corners.</p>
 		</blockquote>
 	</div>
 
 	<div class="col-md-3 col-xs-6">
 		<button class="btn btn-primary" style="position:relative;">
 			Email
-			<span class="sticker sticker-danger sticker-outside sticker-sm">133</span>
+			<span class="sticker sticker-circle sticker-danger sticker-outside">133</span>
 		</button>
 	</div>
 
 	<div class="col-md-3 col-xs-6">
 		<button class="btn btn-primary" style="position:relative;">
 			Email
-			<span class="sticker sticker-bottom sticker-danger sticker-outside sticker-sm">133</span>
+			<span class="sticker sticker-bottom sticker-circle sticker-danger sticker-outside">133</span>
 		</button>
 	</div>
 
 	<div class="col-md-3 col-xs-6">
 		<button class="btn btn-primary" style="position:relative;">
 			Email
-			<span class="sticker sticker-danger sticker-outside sticker-right sticker-sm">133</span>
+			<span class="sticker sticker-circle sticker-danger sticker-outside sticker-right">133</span>
 		</button>
 	</div>
 
 	<div class="col-md-3 col-xs-6">
 		<button class="btn btn-primary" style="position:relative;">
 			Email
-			<span class="sticker sticker-bottom sticker-danger sticker-outside sticker-right sticker-sm">133</span>
+			<span class="sticker sticker-bottom sticker-circle sticker-danger sticker-outside sticker-right">133</span>
 		</button>
 	</div>
 
@@ -812,8 +998,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

@@ -1,0 +1,27 @@
+// Structure
+
+$breadcrumb-font-size: $dxp-base-font-small-size !default;
+$breadcrumb-font-weight: $dxp-font-weight-base !default;
+$breadcrumb-line-height: 32px;
+$breadcrumb-padding-horizontal: 24px;
+$breadcrumb-padding-vertical: 3px;
+$breadcrumb-text-transform: none !default;
+
+// Skin
+
+$breadcrumb-bg: $dxp-white !default;
+
+$breadcrumb-active-color: $dxp-dark-lighten !default;
+$breadcrumb-color: $dxp-dark-lighten !default;
+$breadcrumb-link-color: $dxp-dark-lighten !default;
+
+$breadcrumb-separator-svg-icon-height: 12px;
+$breadcrumb-separator-svg-icon-width: 12px;
+
+// Iverted version
+
+$breadcrumb-bg-inverted: $sc-dark-lighten;
+
+$breadcrumb-color-inverted: $dxp-white !default;
+
+$breadcrumb-separator-svg-icon-inverted: lx-icon(angle-right, $breadcrumb-color-inverted) !default;

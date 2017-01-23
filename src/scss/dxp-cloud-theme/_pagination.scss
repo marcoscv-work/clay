@@ -1,0 +1,36 @@
+.pagination > li {
+	> a, > span {
+		border-radius: $pagination-border-radius;
+		height: $pagination-item-height;
+		line-height: $pagination-item-height;
+		margin: $pagination-item-margin;
+		text-align: center;
+		width: $pagination-item-width;
+	}
+}
+
+.pagination-items-per-page {
+	line-height: 1;
+}
+
+.pagination-bar {
+	background-color: $pagination-bar-bg;
+	padding: $pagination-bar-padding;
+
+	.pagination {
+		float: right;
+		margin: 0;
+		width: auto;
+	}
+}
+
+.pagination-bar-bordered {
+	border: $pagination-bar-bordered-border-size solid $pagination-bar-bordered-border-color;
+	padding: ($pagination-bar-padding - $pagination-bar-bordered-border-size) $pagination-bar-padding;
+}
+
+.pagination-bar-table-fixed {
+	border-top-width: 0;
+	margin-bottom: $line-height-computed;
+	margin-top: -$line-height-computed;
+}

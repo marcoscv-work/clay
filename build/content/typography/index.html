@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - Typography</title>
+	<title>DXP Cloud Skin based on Lexicon - Typography</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="../..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="../..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,13 +225,13 @@
 </li>
 <li class=""><a class="nav-title" href="../../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			Typography
 
 			
@@ -222,25 +239,33 @@
 
 		
 <div id="typography">
-	<div class="row row-spacing">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="sans-serif"><a class="heading-anchor" href="#sans-serif"><i class="icon icon-link"></i></a>Sans-serif</h3>
+			<h3 id="sans-serif"><a class="heading-anchor" href="#sans-serif"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sans-serif</h3>
 
 			<p style="font-size:32px;font-weight:900;">Helvetica Neue bold / HELVETICA NEUE BOLD</p>
 
 			<p style="font-size:20px;font-style:italic;font-weight:normal;">Helvetica Neue normal italic / HELVETICA NEUE NORMAL ITALIC</p>
 
 			<p style="font-size:20px;font-weight:normal;">Helvetica Neue Normal / HELVETICA NEUE NORMAL</p>
+		</div>
+	</div>
 
-			<h3 id="serif"><a class="heading-anchor" href="#serif"><i class="icon icon-link"></i></a>Serif</h3>
+	<div class="lx-site-row-spacer row">
+		<div class="col-md-12">
+			<h3 id="serif"><a class="heading-anchor" href="#serif"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Serif</h3>
 
 			<p class="serif" style="font-size:32px;font-weight:900;">Georgia bold / GEORGIA BOLD</p>
 
 			<p class="serif" style="font-size:20px;font-style:italic;font-weight:normal;">Georgia normal italic / GEORGIA NORMAL ITALIC</p>
 
 			<p class="serif" style="font-size:20px;font-weight:normal;">Georgia Normal / GEORGIA NORMAL</p>
+		</div>
+	</div>
 
-			<h3 id="monospace"><a class="heading-anchor" href="#monospace"><i class="icon icon-link"></i></a>Monospace</h3>
+	<div class="lx-site-row-spacer row">
+		<div class="col-md-12">
+			<h3 id="monospace"><a class="heading-anchor" href="#monospace"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Monospace</h3>
 
 			<p class="monospace" style="font-size:32px;font-weight:900;">Menlo bold / MENLO BOLD</p>
 
@@ -250,9 +275,9 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="headings"><a class="heading-anchor" href="#headings"><i class="icon icon-link"></i></a>Headings</h3>
+			<h3 id="headings"><a class="heading-anchor" href="#headings"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Headings</h3>
 
 			<div>
 				<h1>h1 Article Heading <small>Sub text</small></h1>
@@ -263,7 +288,7 @@
 				<h6>h6 Article Heading <small>Sub text</small></h6>
 			</div>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse0"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse0">
@@ -278,19 +303,24 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="lead-body-copy"><a class="heading-anchor" href="#lead-body-copy"><i class="icon icon-link"></i></a>Lead body copy</h3>
+			<h3 id="lead-body-copy"><a class="heading-anchor" href="#lead-body-copy"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Lead body copy</h3>
 			<p class="lead"> Lead Body Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish. </p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse00"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse00">
 	<pre><code class="html">&lt;p class=&quot;lead&quot;&gt;...&lt;/p&gt;</code></pre>
 </div>
 
-			<h3 id="inline-text-elements"><a class="heading-anchor" href="#inline-text-elements"><i class="icon icon-link"></i></a>Inline Text Elements</h3>
+		</div>
+	</div>
+
+	<div class="lx-site-row-spacer row">
+		<div class="col-md-12">
+			<h3 id="inline-text-elements"><a class="heading-anchor" href="#inline-text-elements"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Inline Text Elements</h3>
 
 			<p><a href="#1">Anchor Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a></p>
 			<p><span>Regular Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span></p>
@@ -300,7 +330,7 @@
 			<p><ins>Inserted Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</ins></p>
 			<p><u>Underlined Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</u></p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse1"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse1">
@@ -317,7 +347,7 @@
 			</p><p><strong>Bold Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</strong></p>
 			<p><em>Italics: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</em></p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse2"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse2">
@@ -331,7 +361,7 @@
 			<p>uppercased text: <span class="text-uppercase">uppercased text</span></p>
 			<p>capitalized text: <span class="text-capitalize">capitalized text</span></p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse3"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse3">
@@ -340,72 +370,143 @@
 &lt;span class=&quot;text-uppercase&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;text-capitalize&quot;&gt;...&lt;/span&gt;</code></pre>
 </div>
+		</div>
+	</div>
+
+	<div class="lx-site-row-spacer row">
+		<div class="col-md-12">
+			<h3 id="reference-mark"><a class="heading-anchor" href="#reference-mark"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Reference Mark</h3>
+			<blockquote class="blockquote-sm blockquote-success">
+				<p>Add a reference mark next to some text with <code>&lt;span class=&quot;reference-mark&quot;&gt;&lt;/span&gt;</code>.</p>
+			</blockquote>
+
+			<div>Reference Mark<span class="reference-mark" id="referenceMark1">[1]</span> with text.</div>
+			<div>Reference Mark<span class="glyphicon glyphicon-asterisk reference-mark" id="referenceMark2"></span> with glyphicon-asterisk.</div>
+			<div>Reference Mark<span class="icon-asterisk reference-mark" id="referenceMark3"></span> with icon-asterisk.</div>
+			<div>Reference Mark<span class="reference-mark" id="referenceMark4"><svg class="lexicon-icon"><use xlink:href="../../images/icons/icons.svg#asterisk"></svg></span> with lexicon-icon-asterisk.</div>
+
+			<h4>Footnotes</h4>
+			<div><a class="reference-mark" href="#referenceMark1">[1]</a> A reference to the text above, respectively.</div>
+			<div><a class="glyphicon glyphicon-asterisk reference-mark" href="#referenceMark2"></a> A reference to the text above, respectively.</div>
+			<div><a class="icon-asterisk reference-mark" href="#referenceMark3"></a> A reference to the text above, respectively.</div>
+			<div><a class="reference-mark" href="#referenceMark4"><svg class="lexicon-icon"><use xlink:href="../../images/icons/icons.svg#asterisk"></svg></a> A reference to the text above, respectively.</div>
+
+<div class="lx-site-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapseReferenceMark1"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapseReferenceMark1">
+	<pre><code class="html">&lt;div&gt;
+    Reference Mark&lt;span class=&quot;reference-mark&quot; id=&quot;referenceMark1&quot;&gt;[1]&lt;/span&gt; with text.
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a class=&quot;reference-mark&quot; href=&quot;#referenceMark1&quot;&gt;[1]&lt;/a&gt; A reference to the text above, respectively.
+&lt;/div&gt;</code></pre>
+</div>
 
 		</div>
 	</div>
 
-	<div class="row row-spacing">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="truncate-text"><a class="heading-anchor" href="#truncate-text"><i class="icon icon-link"></i></a>Truncate Text</h3>
+			<h3 id="truncate-text"><a class="heading-anchor" href="#truncate-text"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Truncate Text</h3>
 			<blockquote class="blockquote-sm blockquote-success">
 				<p>Shorten long lines of text with the class <code>truncate-text</code>.</p>
 			</blockquote>
 
 			<p class="truncate-text">Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish. Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish. Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
+
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapseTruncateText1"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapseTruncateText1">
+	<pre><code class="html">&lt;p class=&quot;truncate-text&quot;&gt;Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish. Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish. Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.&lt;/p&gt;</code></pre>
+</div>
+
 		</div>
 	</div>
 
-	<div class="row row-spacing">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="contextual-texts"><a class="heading-anchor" href="#contextual-texts"><i class="icon icon-link"></i></a>Contextual Texts</h3>
+			<h3 id="contextual-texts"><a class="heading-anchor" href="#contextual-texts"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Contextual Texts</h3>
 
-			<p>Regular Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-muted">Muted Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-primary">Primary Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-info">Info Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-success">Success Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-warning">Warning Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="text-danger">Danger Text: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
+			<div>
+				<a href="#1" class="text-muted">text-muted: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-default">text-default: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-primary">text-primary: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-info">text-info: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-success">text-success: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-warning">text-warning: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
+			<div>
+				<a href="#1" class="text-danger">text-danger: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</a>
+			</div>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse5"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse5">
-	<pre><code class="html">&lt;p&gt;...&lt;/p&gt; or &lt;p class=&quot;text-regular&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-muted&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-primary&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-success&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-info&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-warning&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;text-danger&quot;&gt;...&lt;/p&gt;</code></pre>
-</div>
-
-			<h3 id="contextual-backgrounds"><a class="heading-anchor" href="#contextual-backgrounds"><i class="icon icon-link"></i></a>Contextual Backgrounds</h3>
-			<p class="bg-default">Default Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="bg-primary">Primary Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="bg-success">Success Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="bg-info">Info Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="bg-warning">Warning Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-			<p class="bg-danger">Danger Background: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
-
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse6"><span class="icon-caret-down"></span></a>
-</div>
-<div class="collapse" id="codeCollapse6">
-	<pre><code class="html">&lt;p class=&quot;bg-default&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;bg-primary&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;bg-success&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;bg-info&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;bg-warning&quot;&gt;...&lt;/p&gt;
-&lt;p class=&quot;bg-danger&quot;&gt;...&lt;/p&gt;</code></pre>
+	<pre><code class="html">&lt;a href=&quot;#1&quot; class=&quot;text-muted&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-default&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-primary&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-success&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-info&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-warning&quot;&gt;...&lt;/a&gt;
+&lt;a href=&quot;#1&quot; class=&quot;text-danger&quot;&gt;...&lt;/a&gt;</code></pre>
 </div>
 
 		</div>
 	</div>
 
-	<div class="row row-spacing">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="address"><a class="heading-anchor" href="#address"><i class="icon icon-link"></i></a>Address</h3>
+			<h3 id="contextual-backgrounds"><a class="heading-anchor" href="#contextual-backgrounds"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Contextual Backgrounds</h3>
+			<div>
+				<span class="bg-default">bg-default: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+			<div>
+				<span class="bg-primary">bg-primary: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+			<div>
+				<span class="bg-success">bg-success: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+			<div>
+				<span class="bg-info">bg-info: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+			<div>
+				<span class="bg-warning">bg-warning: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+			<div>
+				<span class="bg-danger">bg-danger: Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</span>
+			</div>
+
+<div class="lx-site-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse6"><span class="icon-caret-down"></span></a>
+</div>
+<div class="collapse" id="codeCollapse6">
+	<pre><code class="html">&lt;span class=&quot;bg-default&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;bg-primary&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;bg-success&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;bg-info&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;bg-warning&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;bg-danger&quot;&gt;...&lt;/span&gt;</code></pre>
+</div>
+		</div>
+	</div>
+
+	<div class="lx-site-row-spacer row">
+		<div class="col-md-12">
+			<h3 id="address"><a class="heading-anchor" href="#address"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Address</h3>
 
 			<address>
 				<strong>Liferay, Inc.</strong><br>
@@ -419,7 +520,7 @@
 					<a href="mailto:#">joe.bloggs@liferay.com</a>
 			</address>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse7"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse7">
@@ -428,72 +529,81 @@
     1400 Montefino Ave.&lt;br&gt;
     Diamond Bar, CA 91765&lt;br&gt;
     &lt;abbr title=&quot;Phone&quot;&gt;P:&lt;/abbr&gt; +1-877-LIFERAY (1-877-543-3729)
+&lt;/address&gt;
+
+&lt;address&gt;
+    &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br&gt;
+    &lt;a href=&quot;mailto:#&quot;&gt;joe.bloggs@liferay.com&lt;/a&gt;
 &lt;/address&gt;</code></pre>
 </div>
 
 		</div>
 	</div>
 
-	<div class="row row-spacing">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="inline-code"><a class="heading-anchor" href="#inline-code"><i class="icon icon-link"></i></a>Inline Code</h3>
+			<h3 id="inline-code"><a class="heading-anchor" href="#inline-code"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Inline Code</h3>
 			<p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse07"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse07">
-	<pre><code>&lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;</code></pre>
+	<pre><code>&lt;p&gt;For example, &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; should be wrapped as inline.&lt;/p&gt;</code></pre>
 </div>
 
-			<h3 id="user-input"><a class="heading-anchor" href="#user-input"><i class="icon icon-link"></i></a>User Input</h3>
+			<h3 id="user-input"><a class="heading-anchor" href="#user-input"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>User Input</h3>
 			<p>For example, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd> to edit settings.</p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse08"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse08">
-	<pre><code>&lt;kbd&gt;&lt;kbd&gt;ctrl&lt;/kbd&gt; + &lt;kbd&gt;,&lt;/kbd&gt;&lt;/kbd&gt;</code></pre>
+	<pre><code>&lt;p&gt;For example, press &lt;kbd&gt;&lt;kbd&gt;ctrl&lt;/kbd&gt; + &lt;kbd&gt;,&lt;/kbd&gt;&lt;/kbd&gt; to edit settings.&lt;/p&gt;</code></pre>
 </div>
 
-			<h3 id="variables"><a class="heading-anchor" href="#variables"><i class="icon icon-link"></i></a>Variables</h3>
+			<h3 id="variables"><a class="heading-anchor" href="#variables"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Variables</h3>
 			<p>For example, <var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse09"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse09">
 	<pre><code class="html">&lt;var&gt;y&lt;/var&gt; = &lt;var&gt;m&lt;/var&gt;&lt;var&gt;x&lt;/var&gt; + &lt;var&gt;b&lt;/var&gt;</code></pre>
 </div>
 
-			<h3 id="sample-output"><a class="heading-anchor" href="#sample-output"><i class="icon icon-link"></i></a>Sample Output</h3>
+			<h3 id="sample-output"><a class="heading-anchor" href="#sample-output"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Sample Output</h3>
 			<samp>This text is meant to be treated as sample output from a computer program.</samp>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse010"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse010">
 	<pre><code class="html">&lt;samp&gt;This text is meant to be treated as sample output from a computer program.&lt;/samp&gt;</code></pre>
 </div>
 
-			<h3 id="basic-code-block"><a class="heading-anchor" href="#basic-code-block"><i class="icon icon-link"></i></a>Basic Code Block</h3>
+			<h3 id="basic-code-block"><a class="heading-anchor" href="#basic-code-block"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Basic Code Block</h3>
 			<pre>body {
     background-color: #FFF;
 }</pre>
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin-sm lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse011"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse011">
-	<pre><code class="html">&lt;pre&gt;...&lt;/pre&gt;</code></pre>
+	<pre><code class="html">&lt;pre&gt;
+    body {
+        background-color: #FFF;
+    }
+&lt;/pre&gt;</code></pre>
 </div>
 
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="blockquotes"><a class="heading-anchor" href="#blockquotes"><i class="icon icon-link"></i></a>Blockquotes</h3>
+			<h3 id="blockquotes"><a class="heading-anchor" href="#blockquotes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Blockquotes</h3>
 		</div>
 
 		<div class="col-md-6">
@@ -544,7 +654,7 @@
 
 		<div class="col-md-12">
 
-<div class="uxgl-toggle-code">
+<div class="lx-site-has-prev-margin lx-site-toggle-code">
 	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse8"><span class="icon-caret-down"></span></a>
 </div>
 <div class="collapse" id="codeCollapse8">
@@ -557,29 +667,30 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="blockquote-reverse"><a class="heading-anchor" href="#blockquote-reverse"><i class="icon icon-link"></i></a>Blockquote Reverse</h3>
+			<h3 id="blockquote-reverse"><a class="heading-anchor" href="#blockquote-reverse"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Blockquote Reverse</h3>
 			<blockquote class="blockquote-reverse">
 				<p>Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.</p>
 				<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
 			</blockquote>
 
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse8"><span class="icon-caret-down"></span></a>
+<div class="lx-site-has-prev-margin lx-site-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse9"><span class="icon-caret-down"></span></a>
 </div>
-<div class="collapse" id="codeCollapse8">
+<div class="collapse" id="codeCollapse9">
 	<pre><code class="html">&lt;blockquote class=&quot;blockquote-reverse&quot;&gt;
-    ...
+    &lt;p&gt;Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.&lt;/p&gt;
+    &lt;small&gt;Someone famous in &lt;cite title=&quot;Source Title&quot;&gt;Source Title&lt;/cite&gt;&lt;/small&gt;
 &lt;/blockquote&gt;</code></pre>
 </div>
 
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="lx-site-row-spacer row">
 		<div class="col-md-12">
-			<h3 id="blockquote-sizes"><a class="heading-anchor" href="#blockquote-sizes"><i class="icon icon-link"></i></a>Blockquote Sizes</h3>
+			<h3 id="blockquote-sizes"><a class="heading-anchor" href="#blockquote-sizes"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../../images/icons/icons.svg#link"></svg></a>Blockquote Sizes</h3>
 
 			<h6>blockquote-xs</h6>
 			<blockquote class="blockquote-primary blockquote-xs">
@@ -605,12 +716,13 @@
 				<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
 			</blockquote>
 
-<div class="uxgl-toggle-code">
-	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse9"><span class="icon-caret-down"></span></a>
+<div class="lx-site-has-prev-margin lx-site-toggle-code">
+	<a class="btn btn-warning btn-xs" data-toggle="collapse" href="#codeCollapse10"><span class="icon-caret-down"></span></a>
 </div>
-<div class="collapse" id="codeCollapse9">
+<div class="collapse" id="codeCollapse10">
 	<pre><code class="html">&lt;blockquote class=&quot;blockquote-lg blockquote-primary&quot;&gt;
-    ...
+    &lt;p&gt;Milk filter lungo as gal&#xE3;o roast that crema blue mountain shop turkish.&lt;/p&gt;
+    &lt;small&gt;Someone famous in &lt;cite title=&quot;Source Title&quot;&gt;Source Title&lt;/cite&gt;&lt;/small&gt;
 &lt;/blockquote&gt;</code></pre>
 </div>
 
@@ -621,8 +733,6 @@
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../../js/site/toggle_css.js"></script>

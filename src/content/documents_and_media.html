@@ -5,24 +5,28 @@ section: Example Pages
 
 <div class="row" id="documentsAndMediaExample">
 	<div class="col-md-12">
-		<div class="sidenav-container closed" id="documentsAndMediaSidenav">
+		<div class="closed sidenav-container sidenav-js-fouc" id="documentsAndMediaSidenav">
 			<div class="sidenav-menu-slider">
-				<div class="sidenav-menu sidebar sidebar-inverse">
+				<div class="sidebar sidebar-inverse sidenav-menu">
 					<div class="sidebar-header">
+						<ul class="sidebar-header-actions">
+							<li>
+								<a class="sidenav-close" href="#1">
+									<svg class="icon-monospaced lexicon-icon lexicon-icon-times">
+										<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+
 						<h4>
 							<a href="#1">
-								<span class="sidebar-header-logo">
-									<svg class="icon-monospaced lexicon-icon">
+								<div class="sticker sticker-static sticker-success">
+									<svg class="lexicon-icon lexicon-icon-staging">
 										<use xlink:href="{{rootPath}}/images/icons/icons.svg#staging" />
 									</svg>
-								</span>
+								</div>
 								<span>Squareup</span>
-							</a>
-
-							<a class="sidenav-close" href="#1">
-								<svg class="icon-monospaced lexicon-icon">
-									<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
-								</svg>
 							</a>
 						</h4>
 					</div>
@@ -33,28 +37,28 @@ section: Example Pages
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>From</label>
-										<input class="form-control" type="text" placeholder="City or Airport">
+										<input class="form-control" placeholder="City or Airport" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>To</label>
-										<input class="form-control" type="text" placeholder="City or Airport">
+										<input class="form-control" placeholder="City or Airport" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Departing</label>
-										<input class="form-control" type="text" placeholder="Departing Date">
+										<input class="form-control" placeholder="Departing Date" type="text">
 									</div>
 								</div>
 
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Returning</label>
-										<input class="form-control" type="text" placeholder="Returning Date">
+										<input class="form-control" placeholder="Returning Date" type="text">
 									</div>
 								</div>
 
@@ -97,7 +101,7 @@ section: Example Pages
 								</div>
 
 								<div class="col-md-12">
-									<button class="btn btn-success btn-md">Search Flights</button>
+									<button class="btn btn-md btn-success">Search Flights</button>
 								</div>
 							</div>
 						</form>
@@ -107,7 +111,7 @@ section: Example Pages
 						<div class="nameplate">
 							<div class="nameplate-field">
 								<div class="user-icon user-icon-warning">
-									<svg class="icon-monospaced lexicon-icon">
+									<svg class="lexicon-icon lexicon-icon-user">
 										<use xlink:href="{{rootPath}}/images/icons/icons.svg#user" />
 									</svg>
 								</div>
@@ -131,8 +135,8 @@ section: Example Pages
 					<div class="container-fluid-1280">
 						<div class="toolbar-group">
 							<div class="toolbar-group-content">
-								<a class="sidenav-toggler" href="#1" id="documentsAndMediaToggler">
-									<svg class="icon-monospaced lexicon-icon">
+								<a class="sidenav-toggler" href="#documentsAndMediaSidenav" id="documentsAndMediaToggler">
+									<svg class="icon-monospaced lexicon-icon lexicon-icon-bars">
 										<use xlink:href="{{rootPath}}/images/icons/icons.svg#bars" />
 									</svg>
 								</a>
@@ -143,7 +147,7 @@ section: Example Pages
 							<div class="toolbar-group-content">
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-										<svg class="icon-monospaced lexicon-icon">
+										<svg class="icon-monospaced lexicon-icon lexicon-icon-cog">
 											<use xlink:href="{{rootPath}}/images/icons/icons.svg#cog" />
 										</svg>
 									</a>
@@ -156,16 +160,16 @@ section: Example Pages
 							</div>
 						</div>
 
-						<div class="toolbar-group-expand-text text-center">
+						<div class="text-center toolbar-group-expand-text">
 							<span>Documents and Media</span>
 						</div>
 					</div>
 				</header>
 
-				<nav class="navbar navbar-default navbar-no-collapse collapse-basic-search">
+				<nav class="collapse-basic-search navbar navbar-default navbar-no-collapse">
 					<div class="container-fluid-1280">
 						<ul class="nav navbar-nav">
-							<li><a href="#1">All Posts</a></li>
+							<li class="active"><a href="#1">All Posts</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -173,7 +177,7 @@ section: Example Pages
 				<form action="" method="post">
 					<div class="management-bar management-bar-default management-bar-no-collapse">
 						<div class="container-fluid-1280">
-							<ul class="nav management-bar-nav">
+							<ul class="management-bar-nav nav">
 								<li>
 									<div class="checkbox">
 										<label>
@@ -186,22 +190,24 @@ section: Example Pages
 								</li>
 							</ul>
 
-							<ul class="nav management-bar-nav management-bar-nav-right">
+							<ul class="management-bar-nav management-bar-nav-right nav">
 								<li>
-									<a class="btn btn-default" href="#" id="documentsAndMediaRightSidenavToggler">
-										<span class="icon-info-sign icon-monospaced"></span>
+									<a class="active btn btn-default open" href="#documentsAndMediaRightSidenav" id="documentsAndMediaRightSidenavToggler">
+										<svg class="icon-monospaced lexicon-icon lexicon-icon-info-circle">
+											<use xlink:href="{{rootPath}}/images/icons/icons.svg#info-circle" />
+										</svg>
 									</a>
 								</li>
 								<li>
 									<a class="btn btn-default" href="#">
-										<svg class="icon-monospaced lexicon-icon">
+										<svg class="icon-monospaced lexicon-icon lexicon-icon-trash">
 											<use xlink:href="{{rootPath}}/images/icons/icons.svg#trash" />
 										</svg>
 									</a>
 								</li>
 								<li class="dropdown">
 									<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-										<svg class="icon-monospaced lexicon-icon">
+										<svg class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v">
 											<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 										</svg>
 									</a>
@@ -216,28 +222,28 @@ section: Example Pages
 						</div>
 					</div>
 
-					<div class="container-fluid-1280 sidenav-container" id="documentsAndMediaRightSidenav">
+					<div class="container-fluid-1280 open sidenav-container sidenav-js-fouc" id="documentsAndMediaRightSidenav">
 						<div class="sidenav-menu-slider">
-							<div class="sidenav-menu sidebar sidebar-default">
+							<div class="sidebar sidebar-default sidenav-menu">
 								<div class="sidebar-header">
-									<ul class="list-unstyled list-inline sidebar-header-actions">
+									<ul class="sidebar-header-actions">
 										<li>
 											<a href="#1">
-												<svg class="icon-monospaced lexicon-icon">
+												<svg class="icon-monospaced lexicon-icon lexicon-icon-star-o">
 													<use xlink:href="{{rootPath}}/images/icons/icons.svg#star-o" />
 												</svg>
 											</a>
 										</li>
 										<li>
 											<a class="" href="#1">
-												<svg class="icon-monospaced lexicon-icon">
+												<svg class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v">
 													<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 												</svg>
 											</a>
 										</li>
 										<li>
 											<a class="sidenav-close" href="#1">
-												<svg class="icon-monospaced lexicon-icon">
+												<svg class="icon-monospaced lexicon-icon lexicon-icon-times">
 													<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
 												</svg>
 											</a>
@@ -250,15 +256,14 @@ section: Example Pages
 										<span>Approved<span>
 									</h5>
 								</div>
-								<nav class="navbar navbar-default navbar-no-collapse collapse-basic-search">
+
+								<nav class="navbar navbar-default navbar-no-collapse">
 									<ul class="nav navbar-nav">
-										<li class="active dropdown">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Details <span class="caret"></span></a>
-											<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Details</a></li>
-												<li><a href="#">Versions</a></li>
-												<li><a href="#">Comments (17)</a></li>
-											</ul>
+										<li class="active">
+											<a href="#1">Details</a>
+										</li>
+										<li>
+											<a href="#1">Versions</a>
 										</li>
 									</ul>
 								</nav>
@@ -266,7 +271,7 @@ section: Example Pages
 								<div class="sidebar-body">
 									<div class="sidebar-panel">
 										<img alt="thumbnail" class="img-responsive" src="../../images/thumbnail_hot_air_ballon.jpg">
-										<div class="sticker sticker-danger sticker-bottom">PDF</div>
+										<div class="sticker sticker-bottom sticker-danger">PDF</div>
 									</div>
 
 									<dl>
@@ -284,7 +289,7 @@ section: Example Pages
 												<span class="badge badge-default">
 													History
 													<a class="" href="#1">
-														<svg aria-hidden="true" class="lexicon-icon">
+														<svg aria-hidden="true" class="lexicon-icon lexicon-icon-times">
 															<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
 														</svg>
 													</a>
@@ -292,7 +297,7 @@ section: Example Pages
 												<span class="badge badge-default">
 													Flat
 													<a class="" href="#1">
-														<svg aria-hidden="true" class="lexicon-icon">
+														<svg aria-hidden="true" class="lexicon-icon lexicon-icon-times">
 															<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
 														</svg>
 													</a>
@@ -300,7 +305,7 @@ section: Example Pages
 												<span class="badge badge-default">
 													Default
 													<a class="" href="#1">
-														<svg aria-hidden="true" class="lexicon-icon">
+														<svg aria-hidden="true" class="lexicon-icon lexicon-icon-times">
 															<use xlink:href="{{rootPath}}/images/icons/icons.svg#times" />
 														</svg>
 													</a>
@@ -321,7 +326,7 @@ section: Example Pages
 								<li class="active"><span title="Data">Data</span></li>
 							</ul>
 
-							<ul class="row list-unstyled">
+							<ul class="list-unstyled row">
 								<li class="col-md-6">
 									<div class="checkbox checkbox-card checkbox-middle-left">
 										<label>
@@ -329,17 +334,19 @@ section: Example Pages
 											<div class="card card-horizontal">
 												<div class="card-row card-row-padded">
 													<div class="card-col-field">
-														<svg class="icon-monospaced lexicon-icon">
-															<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-														</svg>
+														<div class="sticker sticker-default sticker-lg sticker-static">
+															<svg class="lexicon-icon lexicon-icon-folder">
+																<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+															</svg>
+														</div>
 													</div>
 													<div class="card-col-content card-col-gutters clamp-horizontal">
 														<div class="clamp-container"><span class="h4 truncate-text" title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual">ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual</span></div>
 													</div>
-													<div class="card-col-field" style="vertical-align:top;">
+													<div class="card-col-field">
 														<div class="dropdown">
 															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-																<svg class="icon-monospaced lexicon-icon">
+																<svg class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v">
 																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 																</svg>
 															</a>
@@ -366,17 +373,19 @@ section: Example Pages
 											<div class="card card-horizontal">
 												<div class="card-row card-row-padded">
 													<div class="card-col-field">
-														<svg class="icon-monospaced lexicon-icon">
-															<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-														</svg>
+														<div class="sticker sticker-default sticker-lg sticker-static">
+															<svg class="lexicon-icon lexicon-icon-folder">
+																<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+															</svg>
+														</div>
 													</div>
 													<div class="card-col-content card-col-gutters clamp-horizontal">
 														<div class="clamp-container"><span class="h4 truncate-text" title="Folder 01">Folder 01</span></div>
 													</div>
-													<div class="card-col-field" style="vertical-align:top;">
+													<div class="card-col-field">
 														<div class="dropdown">
 															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-																<svg class="icon-monospaced lexicon-icon">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
 																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 																</svg>
 															</a>
@@ -403,17 +412,19 @@ section: Example Pages
 											<div class="card card-horizontal">
 												<div class="card-row card-row-padded">
 													<div class="card-col-field">
-														<svg class="icon-monospaced lexicon-icon">
-															<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-														</svg>
+														<div class="sticker sticker-default sticker-lg sticker-static">
+															<svg class="lexicon-icon lexicon-icon-folder">
+																<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+															</svg>
+														</div>
 													</div>
 													<div class="card-col-content card-col-gutters clamp-horizontal">
 														<div class="clamp-container"><span class="h4 truncate-text" title="Folder 02">Folder 02</span></div>
 													</div>
-													<div class="card-col-field" style="vertical-align:top;">
+													<div class="card-col-field">
 														<div class="dropdown">
 															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-																<svg class="icon-monospaced lexicon-icon">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
 																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 																</svg>
 															</a>
@@ -440,17 +451,19 @@ section: Example Pages
 											<div class="card card-horizontal">
 												<div class="card-row card-row-padded">
 													<div class="card-col-field">
-														<svg class="icon-monospaced lexicon-icon">
-															<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
-														</svg>
+														<div class="sticker sticker-default sticker-lg sticker-static">
+															<svg class="lexicon-icon lexicon-icon-folder">
+																<use xlink:href="{{rootPath}}/images/icons/icons.svg#folder" />
+															</svg>
+														</div>
 													</div>
 													<div class="card-col-content card-col-gutters clamp-horizontal">
 														<div class="clamp-container"><span class="h4 truncate-text" title="Folder 03">Folder 03</span></div>
 													</div>
-													<div class="card-col-field" style="vertical-align:top;">
+													<div class="card-col-field">
 														<div class="dropdown">
 															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-																<svg class="icon-monospaced lexicon-icon">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
 																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
 																</svg>
 															</a>
@@ -471,36 +484,39 @@ section: Example Pages
 								</li>
 							</ul>
 
-							<ul class="row list-unstyled" id="cardSection">
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+							<ul class="list-unstyled row" id="cardSection">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-warning sticker-bottom">PNG</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -508,35 +524,38 @@ section: Example Pages
 									</div>
 								</li>
 
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-default sticker-bottom">TXT</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -544,35 +563,38 @@ section: Example Pages
 									</div>
 								</li>
 
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-danger sticker-bottom">PDF</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -580,35 +602,38 @@ section: Example Pages
 									</div>
 								</li>
 
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-info sticker-bottom">DOC</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon  lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -616,35 +641,38 @@ section: Example Pages
 									</div>
 								</li>
 
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-success sticker-bottom">XLS</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg aria-hidden="true" class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -652,35 +680,38 @@ section: Example Pages
 									</div>
 								</li>
 
-								<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-									<div class="checkbox toggle-card-dm">
+								<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+									<div class="checkbox checkbox-card checkbox-top-left">
 										<label>
 											<input type="checkbox" value="">
-											<div class="toggle-card-container card card-dm">
+											<div class="card">
 												<div class="aspect-ratio">
 													<img alt="thumbnail" src="../../images/thumbnail_coffee.jpg">
-													<span class="sticker sticker-warning sticker-bottom">PNG</span>
+													<span class="sticker sticker-bottom sticker-warning">PNG</span>
 												</div>
-												<div class="card-footer">
-													<div class="dropdown card-dm-more-options">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
-															<svg class="icon-monospaced lexicon-icon">
-																<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
-															</svg>
-														</a>
-														<ul class="dropdown-menu dropdown-menu-right">
-															<li><a href="#1">Download</a></li>
-															<li><a href="#1">Edit</a></li>
-															<li><a href="#1">Move</a></li>
-															<li><a href="#1">Checkout</a></li>
-															<li><a href="#1">Permissions</a></li>
-															<li><a href="#1">Move to Recycle Bin</a></li>
-														</ul>
+
+												<div class="card-row card-row-padded card-row-valign-top">
+													<div class="card-col-content">
+														<span class="truncate-text">Aldcott Gage George Polwarth-Kitchener</span>
+														<span class="truncate-text" title="thumbnail_dock.jpg">thumbnail_dock.jpg</span>
+														<span class="truncate-text">Approved</span>
 													</div>
-													<div class="card-dm-details">
-														<div class="card-dm-text">Aldcott Gage George Polwarth-Kitchener</div>
-														<div class="card-dm-text-large" title="thumbnail_dock.jpg">thumbnail_dock.jpg</div>
-														<div class="card-dm-text-small">Approved</div>
+													<div class="card-col-field">
+														<div class="dropdown" style="margin-right: -8px;">
+															<a class="dropdown-toggle" data-toggle="dropdown" href="#1">
+																<svg class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v">
+																	<use xlink:href="{{rootPath}}/images/icons/icons.svg#ellipsis-v" />
+																</svg>
+															</a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li><a href="#1">Download</a></li>
+																<li><a href="#1">Edit</a></li>
+																<li><a href="#1">Move</a></li>
+																<li><a href="#1">Checkout</a></li>
+																<li><a href="#1">Permissions</a></li>
+																<li><a href="#1">Move to Recycle Bin</a></li>
+															</ul>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -693,7 +724,7 @@ section: Example Pages
 								<div class="dropdown pagination-items-per-page">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#1" type="button">
 										10 entries
-										<svg class="lexicon-icon">
+										<svg class="lexicon-icon lexicon-icon-caret-double-l">
 											<use xlink:href="{{rootPath}}/images/icons/icons.svg#caret-double-l" />
 										</svg>
 									</a>
@@ -745,33 +776,39 @@ section: Example Pages
 	</div>
 </div>
 
-<a class="btn btn-primary btn-action btn-bottom-right" data-toggle="tooltip" data-placement="left" title="Fullscreen" href="#1" id="fullscreenBtn"><span class="icon-monospaced"><span class="icon-desktop"></span></span></a>
+<a class="btn btn-action btn-bottom-right btn-primary" data-placement="left" data-toggle="tooltip" href="#1" id="fullscreenBtn" title="Fullscreen">
+	<span class="icon-monospaced"><span class="icon-desktop"></span></span>
+</a>
 
 <script>
-	$('#fullscreenBtn').on('click', function(event) {
-		event.preventDefault();
+	$('#fullscreenBtn').on(
+		'click',
+			function(event) {
+			event.preventDefault();
 
-		$('#documentsAndMediaExample').toggleClass('uxgl-fullscreen-fixed');
-		$('body').toggleClass('fixed');
-	});
+			$('#documentsAndMediaExample').toggleClass('uxgl-fullscreen-fixed');
+			$('body').toggleClass('fixed');
+		}
+	);
 
-	$('#documentsAndMediaSidenav').sideNavigation({
-		gutter: 0,
-		position: 'left',
-		toggler: '#documentsAndMediaToggler',
-		typeMobile: 'fixed',
-		type: 'fixed-push',
-		width: 320
-	});
+	$('#documentsAndMediaToggler').sideNavigation(
+		{
+			gutter: 0,
+			position: 'left',
+			type: 'fixed-push',
+			typeMobile: 'fixed',
+			width: 320
+		}
+	);
 
-	$('#documentsAndMediaRightSidenav').sideNavigation({
-		gutter: 15,
-		position: 'right',
-		toggler: '#documentsAndMediaRightSidenavToggler',
-		typeMobile: 'fixed',
-		type: 'relative',
-		width: 320
-	});
+	$('#documentsAndMediaRightSidenavToggler').sideNavigation(
+		{
+			gutter: 0,
+			position: 'right',
+			typeMobile: 'fixed',
+			width: 320
+		}
+	);
 
 	$('.collapse-basic-search').collapsibleSearch();
 </script>

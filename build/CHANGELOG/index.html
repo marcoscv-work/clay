@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Lexicon - CHANGELOG</title>
+	<title>DXP Cloud Skin based on Lexicon - CHANGELOG</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../css/atlas-font-awesome.css" />
+	<link rel="stylesheet" href="../css/dxp-cloud-font-awesome.css" />
+	<link rel="stylesheet" href="../scss/highlightjs/github.css" />
 	<link rel="stylesheet" href="../css/main.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 <body>
 	<div id="wrapper">
 		<header class="row" id="headerTopBar">
-			<div class="container">
+			<div class="container-fluid">
 				<a class="btn btn-primary" href="#beginContent" id="skipTo">Skip to Content</a>
 
 				<button type="button" class="animated-toggle navbar-toggle">
@@ -25,7 +26,13 @@
 					<span class="icon-bar"></span>
 				</button>
 
-				<h4 class="title"><a href="..">Lexicon</a> <span class="label label-primary label-sm lexicon-version">v0.2.2</span></h4>
+				<h4 class="title">
+					<a href="..">DXP Cloud Skin</a>
+					<span class="label label-danger label-sm lexicon-version">v0.1.0</span>
+					<span class="small"> | </span>
+					<span class="label label-warning label-sm lexicon-version hidden-xs">by Lexicon</span>
+					<span class="label label-primary label-sm lexicon-version hidden-xs">v1.0.14</span>
+				</h4>
 
 				<div class="dropdown" id="siteConfig">
 	<button class="btn btn-primary btn-sm" data-toggle="dropdown"><i class="icon-cog"></i></button>
@@ -36,7 +43,7 @@
 				<div class="form-group">
 					<label>
 						<input checked="checked" id="toggleAtlas" type="checkbox">
-						Show Atlas Theme
+						Show DXP Cloud Theme
 					</label>
 				</div>
 				<div class="form-group">
@@ -56,13 +63,25 @@
 			</div>
 		</header>
 
-		<section class="container main-nav-container">
+		<section class="container-fluid main-nav-container">
 			<nav class="" id="mainNav">
 	<div class="main-nav-inner">
 			
 
 		<ul class="nav nav-stacked">
 <li class=""><a class="nav-title" href="../">Home</a>
+</li>
+<li class=""><span class="nav-title">Aϟ DXP Cloud Components</span>
+<div class="">
+<ul class="nav nav-stacked">
+<li class=""><a class="nav-title" href="../content/DXP-Components">DXP Cloud Components</a>
+</li>
+<li class=""><a class="nav-title" href="../content/Page-sample">Page sample</a>
+</li>
+<li class=""><a class="nav-title" href="../content/Page-sample-sidebar">Page sample with Sidebar</a>
+</li>
+</ul>
+</div>
 </li>
 <li class=""><span class="nav-title">Components</span>
 <div class="">
@@ -88,6 +107,8 @@
 <li class=""><a class="nav-title" href="../content/icons-lexicon">Icons (Lexicon)</a>
 </li>
 <li class=""><a class="nav-title" href="../content/list-groups">List Groups</a>
+</li>
+<li class=""><a class="nav-title" href="../content/loaders">Loading Indicators</a>
 </li>
 <li class=""><a class="nav-title" href="../content/management-bar">Management Bar</a>
 </li>
@@ -149,8 +170,6 @@
 </li>
 <li class=""><a class="nav-title" href="../content/sidebar">Sidebar</a>
 </li>
-<li class=""><a class="nav-title" href="../content/tab-groups">Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../content/tables">Tables</a>
 </li>
 <li class=""><a class="nav-title" href="../content/toolbars">Toolbars</a>
@@ -191,8 +210,6 @@
 </li>
 <li class=""><a class="nav-title" href="../content/extending-list-groups">Extending List Groups</a>
 </li>
-<li class=""><a class="nav-title" href="../content/extending-tab-groups">Extending Tab Groups</a>
-</li>
 <li class=""><a class="nav-title" href="../content/extending-toggles">Extending Toggles</a>
 </li>
 </ul>
@@ -208,19 +225,403 @@
 </li>
 <li class="active"><a class="nav-title" href="../CHANGELOG">CHANGELOG</a>
 </li>
-<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">Github</a>
+<li class="nav-static-link"><a class="nav-title" href="https://github.com/liferay/lexicon">GitHub</a>
 </ul>
 	</div>
 </nav>
 
 	<div class="" id="mainContent">
-		<h1 class="page-title" id="beginContent" tabindex="-1">
+		<h1 id="beginContent" tabindex="-1">
 			CHANGELOG
 
 			
 		</h1>
 
-		<div class="col-md-12"><h3 id="v0-2-2-february-8-2015"><a class="heading-anchor" href="#v0-2-2-february-8-2015"><i class="icon icon-link"></i></a>v0.2.2 - February 8, 2015</h3>
+		<div class="col-md-12"><h3 id="v1-0-14-december-09-2016"><a class="heading-anchor" href="#v1-0-14-december-09-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.14 - December 09, 2016</h3>
+<ul>
+<li>Fix: Nameplates interpolate $screen-xs-max variable inside mixin nameplate-label-autofit</li>
+<li>Fix: Tabular-list-group and tabular-list-group-unstyled should fill its container width</li>
+<li>Fix: Long text in badges and labels should break to new line and be constrained to its container</li>
+<li>Update: Panels in card styles</li>
+<li>Update: Sidebar adjust data-list spacing and break-word sidebar-block</li>
+<li>Update: Add clearfix to sidebar-header</li>
+<li>Site: Add Panel in Card example to Test Assorted page</li>
+<li>Site: Add example of badge with long text in test assorted</li>
+<li>Site: Update sidebar dl examples</li>
+</ul>
+<h3 id="v1-0-13-december-01-2016"><a class="heading-anchor" href="#v1-0-13-december-01-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.13 - December 01, 2016</h3>
+<ul>
+<li>New: Tabular-list-group-unstyled</li>
+<li>New: Added <code>.sidebar-actions</code>, <code>.sidebar-title</code>, <code>.sidebar-caption</code>, <code>.sidebar-block</code> classes to Sidebar</li>
+<li>Fix: #290 table-striped and table-hover should work with table-list</li>
+<li>Update: Change toggle-switch-bar min-height to height</li>
+<li>Update: #289 Add nowrap in toggle label</li>
+<li>Update: Toggle Switch remove uneeded margin-left on :checked .toggle-switch-handle:after</li>
+<li>Update: Move deprecated list-group styles to list-group-deprecated</li>
+<li>Update: Add styles for case <code>.sidebar-actions &gt; li &gt; span &gt; a</code></li>
+<li>Update: Add styles for  a.sidebar-title case</li>
+<li>Site: Update list-group docs with tabular-list-group-unstyled and add tabular-list-group-unstyled to sidebar</li>
+<li>Site: Update pages with Sidebar demos</li>
+</ul>
+<h3 id="v1-0-12-november-21-2016"><a class="heading-anchor" href="#v1-0-12-november-21-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.12 - November 21, 2016</h3>
+<ul>
+<li>Breaking: Nameplates move some hard coded css values to variables, remove selectors .nameplate-content h# and .nameplate-content small, move auto fitting nameplates to .nameplate-label-autofit-xs-max</li>
+<li>Breaking: Remove unused slider component from Atlas</li>
+<li>New: Added input-group-constrain and input-group-insert to Input Groups</li>
+<li>Fix: Atlas form-validation select[multiple] should have no dropdown icon</li>
+<li>Fix: Toggle Switch data-label-off and data-label-on text positioning in Firefox</li>
+<li>Fix: Atlas mobile navbar search close button shouldn&#x2019;t overlap input border</li>
+<li>Fix: Really long text inside fieldsets should break to new line</li>
+<li>Fix: Atlas management-bar dropdown is misaligned a little bit</li>
+<li>Fix: Chrome rendering issue with responsive-tables and td position relative</li>
+<li>Update: Increase Management Bar Item Title max-width to 180px</li>
+<li>Update: Truncate Text in Tabular List Group should break to new line in IE9</li>
+<li>Update: Make Toolbars easier to use</li>
+<li>Update: Move deprecated list-group components to _list-group-deprecated.scss</li>
+<li>Update: Deprecate list-group-card variables</li>
+<li>Update: Deprecate <code>$toolbar-group-padding-horizontal</code> and <code>$header-toolbar-padding-horizontal</code></li>
+<li>Update: Deprecate Lexicon mixins <code>color-toggle-switch-bar()</code>, <code>color-toggle-switch-button()</code>, <code>color-toggle-switch-bar-icon()</code>, and <code>color-toggle-switch-button-icon()</code></li>
+<li>Update: Move Atlas scaffolding styles to type</li>
+<li>Update: Input Group Constrain should be sized properly with input-group-lg and input-group-sm</li>
+<li>Update: Move Input Group focus, hover, and basic-search-close z-index to variables</li>
+<li>Update: Sidebar Navbar to apply to other container-fluid classes e.g. container-fluid-1280</li>
+<li>Update: Using the transparentize built in function so we can more easily see what the hex values are</li>
+<li>Update: Dropdown border-color to use rgba</li>
+<li>Update: Optimize Form Validation for better IE9 support</li>
+<li>Update: Optimize Input Groups for better IE9 support</li>
+<li>Update: Optimize Nameplates for better IE9 support</li>
+<li>Update: Optimize Popovers for better IE9 support</li>
+<li>Update: Optimize Toggle Switch for better IE9 support</li>
+<li>Update: Optimize Toolbars for better IE9 support</li>
+<li>Update: Optimize Tooltip for better IE9 support and deprecate <code>$tooltip-inner-max-width</code></li>
+<li>Update: Optimize User Icons for better IE9 support</li>
+<li>Site: Add select[multiple] examples to Form Validation page</li>
+<li>Site: Update nameplate demos to include more use cases and update code examples</li>
+<li>Site: Move deprecated List Groups to bottom and add IE9 exception</li>
+<li>Site: Update Toolbars documentation with better examples</li>
+<li>Site: Update User Icon code examples</li>
+<li>Site: Add input-group-constrain sizes to Test Assorted</li>
+<li>Site: Input Groups page add docs for input-group-constrain and input-group-insert and Source Format</li>
+<li>Site: Test Assorted page add case for input-group-constrain and input-group-insert</li>
+<li>Site: Add Input Groups examples to Test Assorted</li>
+<li>Site: Forms Add really long text example to fieldset demo</li>
+<li>Site: Update table-list demo in Test Assorted to include more content</li>
+</ul>
+<h3 id="v1-0-11-november-3-2016"><a class="heading-anchor" href="#v1-0-11-november-3-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.11 - November 3, 2016</h3>
+<ul>
+<li>New: Lexicon text-editor icon</li>
+<li>Fix: Checkbox alignment in list-group-item-field</li>
+<li>Fix: More Checkbox alignment in Management Bar, Cards, and List Group</li>
+<li>Fix: Checkbox and Radio alignment in Management Bar</li>
+<li>Fix: Navbar alignment in Sidebar</li>
+<li>Fix: Lexicon Icon alignment in Labels</li>
+<li>Fix: Label icon styles bleed into Checkbox Card</li>
+<li>Update: Removing plus sign from Lexicon moon icon</li>
+<li>Update: Deprecate @mixin select-box-icon($color)</li>
+<li>Update: Deprecate @mixin style-figcaption()</li>
+<li>Update: Figures move font-weight and padding values to variables, add figcaption-middle</li>
+<li>Update: Special spacing only for Checkboxes and Dropdowns in td:first-child and td:last-child</li>
+<li>Update: More Cards optimization for better IE9 support and source formatting</li>
+<li>Update: More optimizations to Icons for better IE9 support</li>
+<li>Update: Optimize Button Groups for better IE9 support</li>
+<li>Update: Optimize Figures for better IE9 support</li>
+<li>Update: Optimize Forms for better IE9 support</li>
+<li>Update: Optimize Modals for better IE9 support</li>
+<li>Update: Optimize Nav Tabs for better IE9 support</li>
+<li>Update: Optimize Pagination for better IE9 support</li>
+<li>Update: Optimize Panels for better IE9 support, move some hard coded values to variables, and source formatting</li>
+<li>Update: Optimize Progress Bars for better IE9 support</li>
+<li>Update: Optimize Sidebar for better IE9 support</li>
+<li>Optimize: Side Navigation for better IE9 support</li>
+<li>Update: Optimize Tables for better IE9 support</li>
+<li>Update: Optimize Typography for better IE9 support</li>
+<li>Site: Update Documents and Media example page and add more examples to Test Assorted</li>
+<li>Site: Update Figures docs</li>
+<li>Site: Update Typography docs</li>
+<li>Site: Add Modal demo to Assorted Visual Tests</li>
+<li>Site: Add Table example without Checkbox or Dropdown in Test Assorted</li>
+</ul>
+<h3 id="v1-0-10-october-13-2016"><a class="heading-anchor" href="#v1-0-10-october-13-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.10 - October 13, 2016</h3>
+<ul>
+<li>Update: Align reference-marks and icons inside control-label</li>
+<li>Update: Reset border styles when using nav-tabs in navbar</li>
+<li>Site: Add more examples of reference marks and icons inside control-label</li>
+</ul>
+<h3 id="v1-0-9-october-12-2016"><a class="heading-anchor" href="#v1-0-9-october-12-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.9 - October 12, 2016</h3>
+<ul>
+<li>Breaking: Atlas dropdown menu no longer truncates text</li>
+<li>Breaking: Renaming get-lx-svg-icon to lx-icon</li>
+<li>New: Typography class reference-mark for adding reference marks next to text</li>
+<li>Fix: Management Bar height should include borders</li>
+<li>Fix: Rename get-lx-svg-icon to lx-icon in forms and breadcrumbs</li>
+<li>Fix: Collapsible search should transition for browsers that support css transitions</li>
+<li>Update: Rebuild svg icon scss map</li>
+<li>Update: Lexicon SVG icons add attribute width and height to svgs for use with background-image</li>
+<li>Update: $color should be added on lexicon-icon-outline and width and height are needed for IE</li>
+<li>Update: Management bar styles should win over nav styles</li>
+<li>Update: Deprecate unused Atlas dropdown variables</li>
+<li>Update: Deprecate list-group-card, tabular list group states, detailed-list-view and add option to disable these</li>
+<li>Update: Adding the ability to use any lexicon icon and build the scss map from the icons directory</li>
+<li>Update: Optimize alerts for better IE9 support</li>
+<li>Update: Optimize badges and labels css selectors</li>
+<li>Update: Optimize breadcrumbs css, add breadcrumb-horizontal, use svg for breadcrumb separator</li>
+<li>Update: Optimize buttons for better IE9 support</li>
+<li>Update: Optimize dropdowns for better ie9 support</li>
+<li>Update: Optimize list-groups for better IE9 support</li>
+<li>Update: Optimize management bar for better IE9 support</li>
+<li>Update: Optimize nav component for better IE9 support</li>
+<li>Update: Optimize Navbar for better IE9 support</li>
+<li>Update: Optimize Pager for better IE9 support</li>
+<li>Update: Deprecate color-placeholder mixin in favor of Bootstraps placeholder mixin</li>
+<li>Site: Add reference-mark example to typography and update pages that need it</li>
+<li>Site: Fix typo at progress bar</li>
+<li>Site: Update Navbar demos to include more cases</li>
+<li>Site: Update Add Button demo to a better use case</li>
+<li>Site: Document Lexicon SVG functions</li>
+<li>Site: Clean up documents and media demo</li>
+<li>Site: Update list-group-card demos, update tabular list group code example, and reorder list-group demos</li>
+<li>Site: Update buttons demos</li>
+<li>Site: Add breadcrumb-horizontal demo</li>
+<li>Site: Font awesome use css import for better ie9 support</li>
+<li>Misc: Add minimum node.js version (v4.6.0 LTS) to readme</li>
+<li>Misc: Minimize property access</li>
+</ul>
+<h3 id="v1-0-8-september-12-2016"><a class="heading-anchor" href="#v1-0-8-september-12-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.8 - September 12, 2016</h3>
+<ul>
+<li>Breaking: Remove dropdown-left-side, right-side, and top use cases from navbar</li>
+<li>Breaking: Removed support for contextual buttons (btn-primary, btn-danger, btn-warning, etc) in management bar</li>
+<li>Fix: Collapsible Search should work for browsers that don&#x2019;t support css transitions</li>
+<li>Fix: Atlas table heading font weight and font size should only apply to bootstrap tables</li>
+<li>Update: Change checkbox and radio cursor to pointer</li>
+<li>Update: Atlas move modal-footer box shadow to variable</li>
+<li>Update: Optimize css dropdown selectors</li>
+<li>Update: Reduce card css selectors</li>
+<li>Update: Add sticker color variables</li>
+<li>Update: Reduce number of css selectors for icon-monospaced with font awesome icons</li>
+<li>Update: Reduce number of selectors in management bar</li>
+<li>Site: Add more cases to dropdown demos</li>
+<li>Site: Fix alignment on collapsible search navbar examples</li>
+<li>Site: Sidenav should work on Blog Appearance and Blog Actions pages</li>
+</ul>
+<h3 id="v1-0-7-august-30-2016"><a class="heading-anchor" href="#v1-0-7-august-30-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.7 - August 30, 2016</h3>
+<ul>
+<li>Fix: Word-wrap should work on card-col-content</li>
+<li>Update: Horizontal card first and last columns should have border radius</li>
+<li>Update: icon-monospaced should work for Font Awesome icons if class is on the same element</li>
+<li>Update: Modal text should change color based on theme</li>
+<li>Update: Modal Close button should change color based on theme</li>
+<li>Update: Remove keyword screen from media-queries</li>
+<li>Update: Use variable $default-text to set panel-default heading and footer text</li>
+<li>Site: Margin on pre element throws off code panel slide animation</li>
+<li>Site: Cards page use stickers inside horizontal card demos</li>
+<li>Site: _site.scss doesn&#x2019;t use atlas variables</li>
+<li>Site: Remove keyword screen from media-queries</li>
+</ul>
+<h3 id="v1-0-6-august-23-2016"><a class="heading-anchor" href="#v1-0-6-august-23-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.6 - August 23, 2016</h3>
+<ul>
+<li>Breaking: Remove Bourbon dependency from Lexicon Base and Atlas</li>
+<li>New: Add lx-color-by-lightness function</li>
+<li>Fix: Atlas input-group-lg help-icon should be fully underlined</li>
+<li>Update: Deprecate calcLexiconIconPadding, and move global functions to having an &#x2018;lx-&#x2018; prefix (and also, normalizing function name style)</li>
+<li>Update: Move functions to separate file so they can be used in variables</li>
+<li>Update: Move help-icon-default colors to variables and calculate color, hover color based on background</li>
+<li>Update: Deprecate <code>size-user-icon()</code> mixin</li>
+<li>Update: Comments to sass comments</li>
+<li>Site: Header Toolbar demo sidenav should be open</li>
+<li>Site: Remove Bourbon dependency from sites</li>
+<li>Misc: Removing bourbon devDependencies</li>
+</ul>
+<h3 id="v1-0-5-august-16-2016"><a class="heading-anchor" href="#v1-0-5-august-16-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.5 - August 16, 2016</h3>
+<ul>
+<li>Fix: Center linear loader icon inside button and styles should apply to anchor tags with btn class</li>
+<li>Fix: Loader icon colors should change color based on theme</li>
+<li>Fix: management-bar-default color bleeds into dropdowns</li>
+<li>Fix: solved unclosed line 32</li>
+<li>Fix: Lexicon Icon vertical alignment in sticker component</li>
+<li>Update: Bootstrap mixins shouldn&#x2019;t overwrite Bourbon mixins</li>
+<li>Update: Move Atlas mixins to Lexicon Base</li>
+<li>Update: Remove duplicate user-icon mixins from Atlas</li>
+<li>Update: Management Bar btn-default should inherit colors from Bootstrap</li>
+<li>Update: Lexicon Base card component add $fallback-border and $border-style</li>
+<li>Update: Scrollbar in IE covers content</li>
+<li>Site: Code examples should only have one background color</li>
+<li>Site: Fix Nav Tabs Grid code panel</li>
+<li>Site: Use svg icons in the heading links</li>
+<li>Site: Progress bar demo page update progress bar sizes titles</li>
+<li>Site: Progress bar demo page fix example code collapsible panel</li>
+<li>Site: Site header should be aligned with main nav</li>
+<li>Site: siteConfig button should be in container in large screens</li>
+<li>Site: Add more examples of lexicon icons in sticker component</li>
+<li>Misc: Update readme</li>
+<li>Misc: Reload page after changes</li>
+<li>Misc: Add browser-sync static file server</li>
+<li>Misc: Show sourcemap contents</li>
+<li>Misc: We need to patch the variables file before we publish to NPM (otherwise, the files throw errors when including the sass files)</li>
+</ul>
+<h3 id="v1-0-4-june-24-2016"><a class="heading-anchor" href="#v1-0-4-june-24-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.4 - June 24, 2016</h3>
+<ul>
+<li>New: adding 2 new icons (organizations and password-policies)</li>
+<li>Update: thickening the user and users icon</li>
+</ul>
+<h3 id="v1-0-3-june-22-2016"><a class="heading-anchor" href="#v1-0-3-june-22-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.3 - June 22, 2016</h3>
+<ul>
+<li>Update: sidenav-js-fouc should hide only the sidenav</li>
+<li>Update: icon-monospaced should work on an icon if it is a direct parent</li>
+<li>Update: Checkboxes in card should be vertically centered</li>
+<li>Site: Update icon-monospaced doc and add example of icon wrapped by icon-monospaced in management bar</li>
+<li>Misc: Setting artifactName back to the proper one</li>
+</ul>
+<h3 id="v1-0-2-june-13-2016"><a class="heading-anchor" href="#v1-0-2-june-13-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.2 - June 13, 2016</h3>
+<ul>
+<li>Update: Adding new icons<ul>
+<li>mobile-device-rules.svg</li>
+<li>page-template.svg</li>
+<li>shortcut.svg</li>
+<li>site-template.svg</li>
+<li>vocabulary.svg</li>
+</ul>
+</li>
+<li>Site: Removing unneeded files</li>
+<li>Misc: Forgot to include a README and CHANGELOG in published NPM package (will be there on next publish)</li>
+<li>Misc: Since this info can live in the package.json, and it&#x2019;s not updated frequently, we can just pluck out all of the fields from the root package.json</li>
+<li>Misc: Excluding the website specific items</li>
+<li>Misc: We can replace the index.js at the root and just use it as the template to include</li>
+<li>Misc: Making the package private to prevent accidental publishing</li>
+<li>Misc: Moving the clean to happen at the start</li>
+</ul>
+<h3 id="v1-0-1-june-8-2016"><a class="heading-anchor" href="#v1-0-1-june-8-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.1 - June 8, 2016</h3>
+<ul>
+<li>Breaking: Move navbar-collapse-absolute from navbar-collapse to navbar</li>
+<li>Update: Table-responsive should use momentum based scrolling for touch devices</li>
+<li>Site: Update navbar-collapse-absolute docs</li>
+</ul>
+<h3 id="v1-0-0-may-26-2016"><a class="heading-anchor" href="#v1-0-0-may-26-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v1.0.0 - May 26, 2016</h3>
+<ul>
+<li>Breaking: Move sidebar-header-actions link colors to separate variables</li>
+<li>Update: Card-horizontal should use card styles</li>
+<li>Site: Update sidenavs to use sidebar-header-actions</li>
+</ul>
+<h3 id="v0-2-16-may-20-2016"><a class="heading-anchor" href="#v0-2-16-may-20-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.16 - May 20, 2016</h3>
+<ul>
+<li>Fix: Sidenav-right js api should animate properly on android</li>
+<li>Fix: Panel-title should break-word not break-all</li>
+<li>Fix: Table-heading-nowrap should work on .table-cell-content in thead</li>
+</ul>
+<h3 id="v0-2-15-may-17-2016"><a class="heading-anchor" href="#v0-2-15-may-17-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.15 - May 17, 2016</h3>
+<ul>
+<li>Breaking: Sidenav should use open instead of closed to display nav, reduce specificity, active class should be removed from toggler</li>
+<li>Breaking: Remove table-responsive-flip and table-responsive-collapse</li>
+<li>Breaking: Remove card focus styles</li>
+<li>Breaking: Remove card-col-*</li>
+<li>Breaking: Cards remove card-header, card-footer, card-section</li>
+<li>Fix: Side Navigation mobile bug introduced in 4a3ae4f</li>
+<li>Fix: Atlas navbar collapse-basic-search focus style extends too far right</li>
+<li>Fix: path/url issues on Windows when building</li>
+<li>Fix: Cards to use dropdown bg color (otherwise, dark themes don&#x2019;t properly display cards)</li>
+<li>Update: truncate-text and table-cell-content older browser css fallback</li>
+<li>Update: Card Simple Grid to work with truncate-text without clamp component</li>
+<li>Update: Add fallback for truncated text inside tables</li>
+<li>Update: Alert Notification should use max-width</li>
+<li>Update: Reduce simple side nav default width to 320px and remove body-fixed class</li>
+<li>Update: Tables make truncate-text work without clamp component</li>
+<li>Update: Table-list text color</li>
+<li>Update: Add table-autofit and table-heading-nowrap to tables</li>
+<li>Update: Adding new Lexicon icons</li>
+<li>Update: card-block should break really long words</li>
+<li>Update: Cards don&#x2019;t use class*= selector, reorganize card scss, and add card-block</li>
+<li>Update: Nested card-rows in checkbox-card have space for checkbox</li>
+<li>Update: Cards add class card-block</li>
+<li>Update: Side Navigation add class sidenav-js-fouc to avoid flash of unstyled content</li>
+<li>Update: Side Navigation support for RTL</li>
+<li>Site: Update sidenav demos to use open class</li>
+<li>Site: Remove clamp component from card demos and horizontal cards with images should work in ie10</li>
+<li>Site: Tables remove clamp component and table-cell-field from table demos</li>
+<li>Site: Update table docs with table-autofit and table-heading-nowrap</li>
+<li>Site: Update card docs with changes</li>
+<li>Site: Update sidenav docs and pages using side-navigation</li>
+</ul>
+<h3 id="v0-2-14-april-19-2016"><a class="heading-anchor" href="#v0-2-14-april-19-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.14 - April 19, 2016</h3>
+<ul>
+<li>Breaking: Remove tab-groups component</li>
+<li>Update: Collapsible Search should work with RTL</li>
+<li>Update: Create radio-card</li>
+<li>Update: Radio input in chrome is off by 1px</li>
+<li>Site: Add check-source-formatter custom config</li>
+<li>Site: Remove reference to Bourbon 3.2.1 bug in Progress Bars</li>
+<li>Site: Update cards docs to include radio-card</li>
+</ul>
+<h3 id="v0-2-13-april-15-2016"><a class="heading-anchor" href="#v0-2-13-april-15-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.13 - April 15, 2016</h3>
+<ul>
+<li>Breaking: Remove label-monospaced use stickers instead</li>
+<li>Breaking: Remove badge-monospaced use stickers instead</li>
+<li>Breaking: Remove card-dm and toggle-card-dm styles</li>
+<li>Fix: IE text in card not truncating</li>
+<li>Fix: Side Navigation animation when changing orientation from landscape to portrait</li>
+<li>Update: Add sticker positional classes that match other components e.g. checkbox-card</li>
+<li>Update: Add class sticker-static for statically positioned stickers</li>
+<li>Update: Add max-height to dropdowns</li>
+<li>Update: Focus outline for truncated links are cut off</li>
+<li>Update: Checkbox card should work if you only want the checkbox to be clickable</li>
+<li>Site: Remove references to dropdown-menu-no-arrow</li>
+<li>Site: Update badges, labels, and stickers documentation</li>
+<li>Site: Cards page dropdown-toggle alignment</li>
+<li>Site: Cards page move icon-monospaced to the parent element</li>
+<li>Site: Remove docs related to card-dm and toggle-card-dm</li>
+<li>Site: Add checkbox card documentation</li>
+</ul>
+<h3 id="v0-2-12-march-25-2016"><a class="heading-anchor" href="#v0-2-12-march-25-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.12 - March 25, 2016</h3>
+<ul>
+<li>Update: Remove icon-* selector from alloy-font-awesome, and instead only target defined icons</li>
+</ul>
+<h3 id="v0-2-11-march-23-2016"><a class="heading-anchor" href="#v0-2-11-march-23-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.11 - March 23, 2016</h3>
+<ul>
+<li>Update: Search bar covers active style when navbars are in narrow column</li>
+<li>Update: Nameplate content text should be vertically centered in mobile</li>
+<li>Update: Added styling for cards to also have a radio</li>
+<li>Update: th element should have height so headings aren&#x2019;t clipped when every column is clamped</li>
+<li>Update: Add table helper classes for vertical alignment</li>
+<li>Site: Clean up Blog Actions demo</li>
+<li>Site: Update tables page with helper documentation</li>
+</ul>
+<h3 id="v0-2-10-march-8-2016"><a class="heading-anchor" href="#v0-2-10-march-8-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.10 - March 8, 2016</h3>
+<ul>
+<li>Fix: Collapsible Search covers navbar-collapse items on mobile</li>
+<li>Fix: Encoding spaces in the SVG mixin, as the YUI compressor will munge the whole thing up</li>
+<li>Update: Lexicon table clamp-container spacing when its first child and add min-widths to table cells inside table-responsive</li>
+<li>Update: Change table-list row background color in Atlas</li>
+</ul>
+<h3 id="v0-2-9-march-1-2016"><a class="heading-anchor" href="#v0-2-9-march-1-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.9 - March 1, 2016</h3>
+<ul>
+<li>Update: Collapsible Search should use event delegation</li>
+<li>Update: the (non-flag) icons to have either (or both in many cases) of a class of <code>lexicon-icon-outline</code> or <code>lexicon-icon-body</code> on their child elements. This allows them to be more easily targeted via CSS.</li>
+<li>Update: Include all icons in release task (so that people can use icons individually)</li>
+<li>Site: Update Collapsible Search documentation with event delegation stuff</li>
+</ul>
+<h3 id="v0-2-8-february-25-2016"><a class="heading-anchor" href="#v0-2-8-february-25-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.8 - February 25, 2016</h3>
+<ul>
+<li>Update: Normalized the viewBox attribute for the flag icons to use the same metrics as the other icons</li>
+<li>Fix: Removed IDs from flag icon groups as they would cause issues when using the icon</li>
+</ul>
+<h3 id="v0-2-7-february-24-2016"><a class="heading-anchor" href="#v0-2-7-february-24-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.7 - February 24, 2016</h3>
+<ul>
+<li>Fix: Add work around for ios not respecting overflow hidden on body (<a href="https://github.com/liferay/lexicon/issues/132">Fixes  #132</a>)</li>
+<li>Update: Added new icons check-circle, cut, paragraph, paste, radio-button, select-from-list, and text</li>
+<li>Update: Added new flag icons</li>
+</ul>
+<h3 id="v0-2-6-february-22-2016"><a class="heading-anchor" href="#v0-2-6-february-22-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.6 - February 22, 2016</h3>
+<ul>
+<li>The released versions for v0.2.3-v0.2.5 had invalid jars being created due to an error in the maven build script. This should be finally resolved.</li>
+</ul>
+<h3 id="v0-2-3-february-19-2016"><a class="heading-anchor" href="#v0-2-3-february-19-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.3 - February 19, 2016</h3>
+<ul>
+<li>Fix: Side Navigation lazy loading doesn&#x2019;t try to reload content that was never loaded</li>
+<li>New: Add Lexicon CSS only Loaders</li>
+<li>Update: Sidenav will now add the css loading indicator automatically</li>
+<li>Update: Side Navigation should show loading indicator when using ajax</li>
+<li>Update: Higher contrast tooltip bg color</li>
+<li>Site: Update Side Navigation docs with loading indicator</li>
+</ul>
+<h3 id="v0-2-2-february-8-2016"><a class="heading-anchor" href="#v0-2-2-february-8-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.2 - February 8, 2016</h3>
 <ul>
 <li>Fix: Remove margins on dropdown icon-monospaced</li>
 <li>Fix: Management bar link spacing in Atlas</li>
@@ -233,7 +634,7 @@
 <li>Update: Align items in left and right sides of nav components when using container-fluid-1280</li>
 <li>Update: New buttons opacity for disabled buttons (configurable via the variable <code>$btn-disabled-opacity</code>)</li>
 </ul>
-<h3 id="v0-2-1-january-29-2015"><a class="heading-anchor" href="#v0-2-1-january-29-2015"><i class="icon icon-link"></i></a>v0.2.1 - January 29, 2015</h3>
+<h3 id="v0-2-1-january-29-2016"><a class="heading-anchor" href="#v0-2-1-january-29-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.2.1 - January 29, 2016</h3>
 <ul>
 <li>Breaking: Remove IE&#x2019;s clear field button in Atlas</li>
 <li>Breaking: Side Navigation plugin instantiates on page load when using data-toggle=&#x201D;sidenav&#x201D;</li>
@@ -250,11 +651,11 @@
 <li>Update: Remove Atlas dropdown arrows</li>
 <li>Site: Document new side navigation methods</li>
 </ul>
-<h3 id="v0-1-32-january-29-2015"><a class="heading-anchor" href="#v0-1-32-january-29-2015"><i class="icon icon-link"></i></a>v0.1.32 - January 29, 2015</h3>
+<h3 id="v0-1-32-january-29-2016"><a class="heading-anchor" href="#v0-1-32-january-29-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.32 - January 29, 2016</h3>
 <ul>
 <li>Pat botched this release &#x2013; ignore</li>
 </ul>
-<h3 id="v0-1-31-january-14-2015"><a class="heading-anchor" href="#v0-1-31-january-14-2015"><i class="icon icon-link"></i></a>v0.1.31 - January 14, 2015</h3>
+<h3 id="v0-1-31-january-14-2016"><a class="heading-anchor" href="#v0-1-31-january-14-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.31 - January 14, 2016</h3>
 <ul>
 <li>Breaking: Change collapse open and close icons to be compatible with svg. Please see <a href="http://liferay.github.io/lexicon/content/panels/">this page</a> to find the updated markup.</li>
 <li>Breaking: Don&#x2019;t apply figure styles to element</li>
@@ -291,23 +692,23 @@
 <li>Site: Update blog actions demo to current mark up</li>
 <li>Site: Added a Visual Tests section to compare and test changes</li>
 </ul>
-<h3 id="v0-1-30-january-14-2015"><a class="heading-anchor" href="#v0-1-30-january-14-2015"><i class="icon icon-link"></i></a>v0.1.30 - January 14, 2015</h3>
+<h3 id="v0-1-30-january-14-2016"><a class="heading-anchor" href="#v0-1-30-january-14-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.30 - January 14, 2016</h3>
 <ul>
 <li>Bad CHANGELOG</li>
 </ul>
-<h3 id="v0-1-29-january-14-2015"><a class="heading-anchor" href="#v0-1-29-january-14-2015"><i class="icon icon-link"></i></a>v0.1.29 - January 14, 2015</h3>
+<h3 id="v0-1-29-january-14-2016"><a class="heading-anchor" href="#v0-1-29-january-14-2016"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.29 - January 14, 2016</h3>
 <ul>
 <li>Nate botched this release &#x2013; ignore</li>
 </ul>
-<h3 id="v0-1-28-december-23-2015"><a class="heading-anchor" href="#v0-1-28-december-23-2015"><i class="icon icon-link"></i></a>v0.1.28 - December 23, 2015</h3>
+<h3 id="v0-1-28-december-23-2015"><a class="heading-anchor" href="#v0-1-28-december-23-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.28 - December 23, 2015</h3>
 <ul>
 <li>No changes, just bumping because of issues with WebJars/Maven caching.</li>
 </ul>
-<h3 id="v0-1-27-december-22-2015"><a class="heading-anchor" href="#v0-1-27-december-22-2015"><i class="icon icon-link"></i></a>v0.1.27 - December 22, 2015</h3>
+<h3 id="v0-1-27-december-22-2015"><a class="heading-anchor" href="#v0-1-27-december-22-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.27 - December 22, 2015</h3>
 <ul>
 <li>Updated bower.json to exclude non-essential directories</li>
 </ul>
-<h3 id="v0-1-26-december-22-2015"><a class="heading-anchor" href="#v0-1-26-december-22-2015"><i class="icon icon-link"></i></a>v0.1.26 - December 22, 2015</h3>
+<h3 id="v0-1-26-december-22-2015"><a class="heading-anchor" href="#v0-1-26-december-22-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.26 - December 22, 2015</h3>
 <ul>
 <li>Breaking: Rename management-bar-right to management-bar-nav-right</li>
 <li>New: Updated the Sidenav component, adding the following new methods: <code>hide()</code>, <code>show()</code>, <code>toggle()</code>, and <code>visible()</code> (<a href="http://liferay.github.io/lexicon/content/sidenav/#methods">Documentation</a>)</li>
@@ -341,23 +742,23 @@
 <li>Update: Add support for placing text around toggle-switch (<a href="https://github.com/liferay/lexicon/issues/81">Fixes #81</a>)</li>
 <li>Update: Atlas select box arrows are svg instead of image</li>
 </ul>
-<h3 id="v0-1-25-november-12-2015"><a class="heading-anchor" href="#v0-1-25-november-12-2015"><i class="icon icon-link"></i></a>v0.1.25 - November 12, 2015</h3>
+<h3 id="v0-1-25-november-12-2015"><a class="heading-anchor" href="#v0-1-25-november-12-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.25 - November 12, 2015</h3>
 <ul>
 <li>Fix: Caret Icons <code>caret-top</code> and <code>caret-bottom</code> should be center aligned</li>
 <li>Update: Action button should be under dropdowns, popovers, and tooltips</li>
 <li>Update: Collapsible panels whole panel heading should be clickable</li>
 </ul>
-<h3 id="v0-1-24-november-12-2015"><a class="heading-anchor" href="#v0-1-24-november-12-2015"><i class="icon icon-link"></i></a>v0.1.24 - November 12, 2015</h3>
+<h3 id="v0-1-24-november-12-2015"><a class="heading-anchor" href="#v0-1-24-november-12-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.24 - November 12, 2015</h3>
 <ul>
 <li>Publishing the build files (Nate&#x2019;s fault)</li>
 </ul>
-<h3 id="v0-1-23-november-12-2015"><a class="heading-anchor" href="#v0-1-23-november-12-2015"><i class="icon icon-link"></i></a>v0.1.23 - November 12, 2015</h3>
+<h3 id="v0-1-23-november-12-2015"><a class="heading-anchor" href="#v0-1-23-november-12-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.23 - November 12, 2015</h3>
 <ul>
 <li>Update: Icon-monospaced should work with svg icons</li>
 <li>Update: Added new icons, <code>info-circle</code>, <code>info-circle-open</code>, <code>caret-top</code>, and <code>caret-bottom</code></li>
 <li>Site: Add icon-monospaced to svg icons</li>
 </ul>
-<h3 id="v0-1-22-november-12-2015"><a class="heading-anchor" href="#v0-1-22-november-12-2015"><i class="icon icon-link"></i></a>v0.1.22 - November 12, 2015</h3>
+<h3 id="v0-1-22-november-12-2015"><a class="heading-anchor" href="#v0-1-22-november-12-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.22 - November 12, 2015</h3>
 <ul>
 <li>Fix: Navbar-toggle should have outline on focus</li>
 <li>Breaking: Remove link-group</li>
@@ -382,7 +783,7 @@
 <li>Site: Update table-list demo to something more useful</li>
 <li>Site: Increase Sass precision to 8</li>
 </ul>
-<h3 id="v0-1-21-october-30-2015"><a class="heading-anchor" href="#v0-1-21-october-30-2015"><i class="icon icon-link"></i></a>v0.1.21 - October 30, 2015</h3>
+<h3 id="v0-1-21-october-30-2015"><a class="heading-anchor" href="#v0-1-21-october-30-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.21 - October 30, 2015</h3>
 <ul>
 <li>New: Add sizes sm, default,  md, lg to Lexicon icons</li>
 <li>New: Add timeline component</li>
@@ -400,7 +801,7 @@
 <li>Site: Update headings selector and reorganize sections</li>
 <li>Misc: Added this changelog :)</li>
 </ul>
-<h3 id="v0-1-20-october-28-2015"><a class="heading-anchor" href="#v0-1-20-october-28-2015"><i class="icon icon-link"></i></a>v0.1.20 - October 28, 2015</h3>
+<h3 id="v0-1-20-october-28-2015"><a class="heading-anchor" href="#v0-1-20-october-28-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.20 - October 28, 2015</h3>
 <ul>
 <li>Moving svg4everybody to the footer to be available on all pages</li>
 <li>Adding svg4everybody to our icons page</li>
@@ -422,7 +823,7 @@
 <li>Adding bootstrap resources</li>
 <li>Adding Bootstrap JS to the payload</li>
 </ul>
-<h3 id="v0-1-19-september-30-2015"><a class="heading-anchor" href="#v0-1-19-september-30-2015"><i class="icon icon-link"></i></a>v0.1.19 - September 30, 2015</h3>
+<h3 id="v0-1-19-september-30-2015"><a class="heading-anchor" href="#v0-1-19-september-30-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.19 - September 30, 2015</h3>
 <ul>
 <li>Adding hover effects</li>
 <li>Cleaning up unneeded files/changes</li>
@@ -440,7 +841,7 @@
 <li>Adding gulp tasks for creating svgs</li>
 <li>Adding svgs</li>
 </ul>
-<h3 id="v0-1-18-september-24-2015"><a class="heading-anchor" href="#v0-1-18-september-24-2015"><i class="icon icon-link"></i></a>v0.1.18 - September 24, 2015</h3>
+<h3 id="v0-1-18-september-24-2015"><a class="heading-anchor" href="#v0-1-18-september-24-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.18 - September 24, 2015</h3>
 <ul>
 <li>Adding links in headers</li>
 <li>Nav spacing improvements</li>
@@ -451,7 +852,7 @@
 <li>New font sizes:</li>
 <li>Remove old flexbox card styles</li>
 </ul>
-<h3 id="v0-1-17-september-16-2015"><a class="heading-anchor" href="#v0-1-17-september-16-2015"><i class="icon icon-link"></i></a>v0.1.17 - September 16, 2015</h3>
+<h3 id="v0-1-17-september-16-2015"><a class="heading-anchor" href="#v0-1-17-september-16-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.17 - September 16, 2015</h3>
 <ul>
 <li>Lexicon: Remove control menu</li>
 <li>Lexicon: add data api to collapsible-search and also documentation</li>
@@ -460,7 +861,7 @@
 <li>Side-navigation transition ending too early</li>
 <li>Rename cells to table-list-field and table-list-content, also vertically center table-list-content with top: 50%</li>
 </ul>
-<h3 id="v0-1-16-september-03-2015"><a class="heading-anchor" href="#v0-1-16-september-03-2015"><i class="icon icon-link"></i></a>v0.1.16 - September 03, 2015</h3>
+<h3 id="v0-1-16-september-03-2015"><a class="heading-anchor" href="#v0-1-16-september-03-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.16 - September 03, 2015</h3>
 <ul>
 <li>Added custom open class name to _toggleSimpleSidenav</li>
 <li>Side-navigation.js delegate causes all menus to open</li>
@@ -482,7 +883,7 @@
 <li>lexicon: add truncate-text class</li>
 <li>lexicon: breadcrumb &gt; li should have max-width and truncate text</li>
 </ul>
-<h3 id="v0-1-12-august-21-2015"><a class="heading-anchor" href="#v0-1-12-august-21-2015"><i class="icon icon-link"></i></a>v0.1.12 - August 21, 2015</h3>
+<h3 id="v0-1-12-august-21-2015"><a class="heading-anchor" href="#v0-1-12-august-21-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.12 - August 21, 2015</h3>
 <ul>
 <li>atlas: Validation inputs should have input-color not input-label-color, add validation state colors for radios and checkbox</li>
 <li>lexicon: add bottom and top properties to modal-open class for safari/chrome</li>
@@ -502,7 +903,7 @@
 <li>side-navigation: use doc variable instead of</li>
 <li>side-navigation: add/remove active and sidenav-transition class on toggler when menu opens/closes</li>
 </ul>
-<h3 id="v0-1-11-august-17-2015"><a class="heading-anchor" href="#v0-1-11-august-17-2015"><i class="icon icon-link"></i></a>v0.1.11 - August 17, 2015</h3>
+<h3 id="v0-1-11-august-17-2015"><a class="heading-anchor" href="#v0-1-11-august-17-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.11 - August 17, 2015</h3>
 <ul>
 <li>Read-only inputs are partially obstructed by padding in Firefox</li>
 <li>lexicon: remove color property from control-menu</li>
@@ -548,7 +949,7 @@
 <li>nav-equal-height-heading span tags should be aligned</li>
 <li>Add documentation for nav-equal-height and add vertical and horizontal padding variables</li>
 </ul>
-<h3 id="v0-1-10-august-06-2015"><a class="heading-anchor" href="#v0-1-10-august-06-2015"><i class="icon icon-link"></i></a>v0.1.10 - August 06, 2015</h3>
+<h3 id="v0-1-10-august-06-2015"><a class="heading-anchor" href="#v0-1-10-august-06-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.10 - August 06, 2015</h3>
 <ul>
 <li>Add links to footer and update site-administration-toolbar</li>
 <li>side-navigation: add option to delegate click event</li>
@@ -564,7 +965,7 @@
 <li>site: remove overflow on #wrapper</li>
 <li>side-navigation: add simple sidenav option</li>
 </ul>
-<h3 id="v0-1-9-august-03-2015"><a class="heading-anchor" href="#v0-1-9-august-03-2015"><i class="icon icon-link"></i></a>v0.1.9 - August 03, 2015</h3>
+<h3 id="v0-1-9-august-03-2015"><a class="heading-anchor" href="#v0-1-9-august-03-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.9 - August 03, 2015</h3>
 <ul>
 <li>side-navigation: type fixed shouldn&#x2019;t push content over</li>
 <li>side-navigation: rename transitions variable to transitionEnd</li>
@@ -582,14 +983,14 @@
 <li>side-navigation: fire events open.lexicon.sidenav and closed.lexicon.sidenav when state changes</li>
 <li>lexicon: product-menu-tabs font-size should be smaller</li>
 </ul>
-<h3 id="v0-1-8-july-28-2015"><a class="heading-anchor" href="#v0-1-8-july-28-2015"><i class="icon icon-link"></i></a>v0.1.8 - July 28, 2015</h3>
+<h3 id="v0-1-8-july-28-2015"><a class="heading-anchor" href="#v0-1-8-july-28-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.8 - July 28, 2015</h3>
 <ul>
 <li>atlas: user-icon bg should be transparent</li>
 <li>atlas: change button sizes</li>
 <li>lexicon: create portlet-topper component</li>
 <li>lexicon: anchor tags with dropdown-toggle class shouldn&#x2019;t be underlined on focus or hover</li>
 </ul>
-<h3 id="v0-1-7-july-27-2015"><a class="heading-anchor" href="#v0-1-7-july-27-2015"><i class="icon icon-link"></i></a>v0.1.7 - July 27, 2015</h3>
+<h3 id="v0-1-7-july-27-2015"><a class="heading-anchor" href="#v0-1-7-july-27-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.7 - July 27, 2015</h3>
 <ul>
 <li>lexicon: use navbar-padding-horizontal for left right margin and padding</li>
 <li>lexicon: navbar-toggle and navbar-collapse items should use calculated vertical padding</li>
@@ -638,7 +1039,7 @@
 <li>Update form validation mark up and add checkbox examples</li>
 <li>input-group-default houses help text on form inputs</li>
 </ul>
-<h3 id="v0-1-6-july-16-2015"><a class="heading-anchor" href="#v0-1-6-july-16-2015"><i class="icon icon-link"></i></a>v0.1.6 - July 16, 2015</h3>
+<h3 id="v0-1-6-july-16-2015"><a class="heading-anchor" href="#v0-1-6-july-16-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.6 - July 16, 2015</h3>
 <ul>
 <li>Namespacing borderless portlet component styling for now</li>
 <li>Removed modals stylesheet from site</li>
@@ -650,7 +1051,7 @@
 <li>atlas: add box shadow to borderless portlet</li>
 <li>Add borderless-portlet-bar component</li>
 </ul>
-<h3 id="v0-1-5-july-14-2015"><a class="heading-anchor" href="#v0-1-5-july-14-2015"><i class="icon icon-link"></i></a>v0.1.5 - July 14, 2015</h3>
+<h3 id="v0-1-5-july-14-2015"><a class="heading-anchor" href="#v0-1-5-july-14-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.5 - July 14, 2015</h3>
 <ul>
 <li>side-navigation: instance.equalHeight should be instance.options.equalHeight</li>
 <li>lexicon: add line-height variable to pagination-size</li>
@@ -672,7 +1073,7 @@
 <li>lexicon: add stickers component</li>
 <li>lexicon: increase badge-monospaced sizes to make it more useable</li>
 </ul>
-<h3 id="v0-1-4-july-08-2015"><a class="heading-anchor" href="#v0-1-4-july-08-2015"><i class="icon icon-link"></i></a>v0.1.4 - July 08, 2015</h3>
+<h3 id="v0-1-4-july-08-2015"><a class="heading-anchor" href="#v0-1-4-july-08-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.4 - July 08, 2015</h3>
 <ul>
 <li>atlas: style product menu</li>
 <li>sidebar: product menu header and footer should be fixed and clean up unused sidebar css</li>
@@ -699,11 +1100,11 @@
 <li>Created Documents and Media mock up example page</li>
 <li>Fixing release script</li>
 </ul>
-<h3 id="v0-1-3-june-29-2015"><a class="heading-anchor" href="#v0-1-3-june-29-2015"><i class="icon icon-link"></i></a>v0.1.3 - June 29, 2015</h3>
+<h3 id="v0-1-3-june-29-2015"><a class="heading-anchor" href="#v0-1-3-june-29-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.3 - June 29, 2015</h3>
 <ul>
 <li>Moving lexicon to lexicon-base</li>
 </ul>
-<h3 id="v0-1-2-june-29-2015"><a class="heading-anchor" href="#v0-1-2-june-29-2015"><i class="icon icon-link"></i></a>v0.1.2 - June 29, 2015</h3>
+<h3 id="v0-1-2-june-29-2015"><a class="heading-anchor" href="#v0-1-2-june-29-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.2 - June 29, 2015</h3>
 <ul>
 <li>Fixing parent selector reference</li>
 <li>Splitting up CSS files</li>
@@ -716,7 +1117,7 @@
 <li>Demo Site: make code example page smaller</li>
 <li>Cards component: move some css properties to variables</li>
 </ul>
-<h3 id="v0-1-1-june-25-2015"><a class="heading-anchor" href="#v0-1-1-june-25-2015"><i class="icon icon-link"></i></a>v0.1.1 - June 25, 2015</h3>
+<h3 id="v0-1-1-june-25-2015"><a class="heading-anchor" href="#v0-1-1-june-25-2015"><svg class="lexicon-icon lexicon-icon-link"><use xlink:href="../images/icons/icons.svg#link"></svg></a>v0.1.1 - June 25, 2015</h3>
 <ul>
 <li>Label atlas only and shared variables</li>
 <li>Breadcrumbs remove unused variables</li>
@@ -983,8 +1384,6 @@ _atlas-theme: add open close colors for management-bar-toggle</li>
 
 		</section>
 	</div>
-
-	<link rel="stylesheet" href="../scss/highlightjs/github.css" />
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="../js/site/toggle_css.js"></script>

@@ -1,0 +1,155 @@
+// Structure
+
+//$atlas-theme: true !default;
+
+$font-size-base: $dxp-base-font-medium-size !default;
+$font-size-large: $dxp-base-font-large-size !default;
+$font-size-small: $dxp-base-font-small-size !default;
+
+$font-size-desktop-base: $dxp-base-font-medium-size !default;
+$font-size-desktop-large: $dxp-base-font-large-size !default;
+$font-size-desktop-small: $dxp-base-font-small-size !default;
+
+$font-size-h1: $dxp-font-size-h1;
+$font-size-h2: $dxp-font-size-h2;
+$font-size-h3: $dxp-font-size-h3;
+$font-size-h4: $dxp-font-size-h4;
+$font-size-h5: $dxp-font-size-h5;
+$font-size-h6: $dxp-font-size-h6;
+
+$font-size-desktop-h1: $dxp-font-size-h1;
+$font-size-desktop-h2: $dxp-font-size-h2;
+$font-size-desktop-h3: $dxp-font-size-h3;
+$font-size-desktop-h4: $dxp-font-size-h4;
+$font-size-desktop-h5: $dxp-font-size-h5;
+$font-size-desktop-h6: $dxp-font-size-h6;
+
+$line-height-base: 1.428571429 !default;
+$headings-line-height: 1.2 !default;
+
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 16px !default;
+
+$padding-large-vertical: 10px !default;
+$padding-large-horizontal: 16px !default;
+
+$padding-small-vertical: 5px !default;
+$padding-small-horizontal: 10px !default;
+
+$padding-xs-vertical: 1px !default;
+$padding-xs-horizontal: 5px !default;
+
+$grid-gutter-width: $dxp-grid-gutter-width !default;
+
+// Skin
+
+$font-family-sans-serif: $dxp-font-family-sans-serif;
+
+// Border Radius
+// Defines global border-radius
+$border-radius-base: $dxp-border-radius-base !default;
+$border-radius-large: $border-radius-base * 1.5 !default;
+$border-radius-small: $border-radius-base * 0.75 !default;
+
+$body-bg: $dxp-light-dark !default;
+$gray-darker: lighten(#000, 13.5%) !default; // #222
+$gray-dark: lighten(#000, 20%) !default;   // #333
+$gray: lighten(#000, 33.5%) !default; // #555
+$gray-light: lighten(#000, 46.7%) !default; // #777
+$gray-lighter: lighten(#000, 93.5%) !default; // #eee
+
+$brand-default: $dxp-dark !default;
+$brand-default-active: darken($brand-default, 5%) !default;
+$brand-default-hover: darken($brand-default, 5%) !default;
+
+$brand-primary: $dxp-cta !default;
+$brand-primary-active: darken($brand-primary, 5%) !default;
+$brand-primary-hover: darken($brand-primary, 5%) !default;
+
+$brand-success: $sc-success !default;
+$brand-success-active: darken($brand-success, 5%) !default;
+$brand-success-hover: darken($brand-success, 5%) !default;
+
+$brand-info: #4172A9 !default;
+$brand-info-active: darken($brand-info, 5%) !default;
+$brand-info-hover: darken($brand-info, 5%) !default;
+
+$brand-warning: $sc-warning !default;
+$brand-warning-active: darken($brand-warning, 5%) !default;
+$brand-warning-hover: darken($brand-warning, 5%) !default;
+
+$brand-danger: $sc-danger !default;
+$brand-danger-active: darken($brand-danger, 5%) !default;
+$brand-danger-hover: darken($brand-danger, 5%) !default;
+
+$link-color: $brand-primary !default;
+
+$text-color: $dxp-dark !default;
+$text-muted: lighten($text-color, 55%) !default;
+
+// Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg: $brand-primary !default;
+// Global color for active items (e.g., navs or dropdowns).
+$component-active-color: #FFF !default;
+
+$link-hover-color: $brand-primary-hover !default;
+
+// States for Form and alert
+
+$state-default-text: $brand-default !default;
+$state-default-bg: lighten($state-default-text, 34%) !default;
+$state-default-border: $state-default-text !default;
+
+$state-primary-text: $brand-primary !default;
+$state-primary-bg: lighten($state-primary-text, 12%) !default;
+$state-primary-border: $state-primary-text !default;
+
+$state-success-text: $brand-success !default;
+$state-success-bg: $sc-success-lighten-hight !default;
+$state-success-border: $sc-success-lighten !default;
+
+$state-info-text: $brand-info !default;
+$state-info-bg: lighten($state-info-text, 34%) !default;
+$state-info-border: $state-info-text !default;
+
+$state-warning-text: $brand-warning !default;
+$state-warning-bg: $sc-warning-lighten-hight !default;
+$state-warning-border: $sc-warning-lighten !default;
+
+$state-danger-text: $brand-danger !default;
+$state-danger-bg: $sc-danger-lighten-hight !default;
+$state-danger-border: $sc-danger-lighten !default;
+
+// Inverse Colors
+
+$inverse-bg: #1F282E !default;
+$inverse-border: darken($inverse-bg, 10%) !default;
+$inverse-color: #869CAD !default;
+
+$inverse-active-bg: #3A4D5A !default;
+$inverse-active-border: darken($inverse-active-bg, 1%) !default;
+$inverse-active-color: #FFF !default;
+
+$inverse-disabled-color: #394956 !default;
+
+$inverse-hover-bg: #1C252C !default;
+$inverse-hover-border: darken($inverse-hover-bg, 1%) !default;
+$inverse-hover-color: $inverse-color !default;
+
+$inverse-header-bg: #1B2228 !default;
+$inverse-header-border: darken($inverse-header-bg, 1%) !default;
+$inverse-header-color: $inverse-color !default;
+
+$inverse-link-color: #FFF !default;
+$inverse-link-hover-color: $inverse-link-color !default;
+
+// Box Shadow
+// Defines global box-shadows
+$box-shadow-default-x: 0 !default;
+$box-shadow-default-y: 0 !default;
+$box-shadow-default-blur: 3px !default;
+$box-shadow-default-spread: 1px !default;
+$box-shadow-default-bg: rgba(0, 0, 0, 0.2) !default;
+$box-shadow-default: $box-shadow-default-x $box-shadow-default-y $box-shadow-default-blur $box-shadow-default-spread $box-shadow-default-bg !default;
+
+$close-text-shadow: none !default;

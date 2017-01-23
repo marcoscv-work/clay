@@ -2,6 +2,7 @@ var inquirer = require('inquirer');
 var path = require('path');
 
 var gulp = require('gulp-help')(require('gulp'));
+var liferayGulpTasks = require('liferay-gulp-tasks');
 var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 
@@ -21,6 +22,11 @@ var config = {
 
 var tasks = require('require-dir')('./tasks');
 
+liferayGulpTasks(gulp, {
+	artifactSrc: ['**/release/**/*', '!node_modules/', '!node_modules/**'],
+	artifactName: 'lexicon'
+});
+
 _.invoke(tasks, 'call', tasks, gulp, plugins, _, config);
 
 gulp.task('default', ['build']);
@@ -29,11 +35,18 @@ gulp.task('build', function(cb) {
 	runSequence(
 		'build:patch-bootstrap',
 		'build:svg',
+		'build:svg:scss-icons',
 		'build:metalsmith',
 		'build:clean-bootstrap-patch',
-		cb
+		function(err) {
+			gulp.emit('build:finished', err);
+
+			cb(err);
+		}
 	);
 });
+
+gulp.task('serve', ['serve:start', 'watch']);
 
 gulp.task(
 	'release:files',
@@ -44,6 +57,23 @@ gulp.task(
 			'release:build',
 			'release:svg',
 			'release:zip',
+			'build:clean-bootstrap-patch',
+			cb
+		);
+	}
+);
+
+gulp.task(
+	'release:npm',
+	function(cb) {
+		runSequence(
+			'build:patch-bootstrap',
+			'release:npm-clean',
+			'release:npm-build-files',
+			'release:npm-src-files',
+			'release:npm-index',
+			'release:npm-package',
+			'release:npm-publish',
 			'build:clean-bootstrap-patch',
 			cb
 		);
@@ -62,8 +92,8 @@ gulp.task(
 			},
 			{
 				default: false,
-				message: 'Do you want to push to the Maven repo?',
-				name: 'maven',
+				message: 'Do you want to push to the Maven repo and publish to npm?',
+				name: 'packageManagers',
 				type: 'confirm',
 				when: function(answers) {
 					return answers.publish;
@@ -84,8 +114,9 @@ gulp.task(
 								cb
 							];
 
-							if (answers.maven) {
+							if (answers.packageManagers) {
 								args.splice(2, 0, 'maven-publish');
+								args.splice(3, 0, 'release:npm');
 							}
 
 							runSequence.apply(null, args);
