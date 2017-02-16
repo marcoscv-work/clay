@@ -1,8 +1,11 @@
 @import "bourbon";
 
+@import "../high-contrast-theme/variables"; // Accesibbility overwriting
 @import "variables";
 @import "mixins";
 
 @import "../lexicon-base/main";
 
 @import "atlas";
+
+@import "../high-contrast-theme/high-contrast"; // Accesibbility overwriting

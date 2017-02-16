@@ -1,0 +1,31 @@
+// Make disabled components more opaque
+
+label  {
+	&.disabled {
+		opacity: 0.9;
+	}
+}
+
+.form-control {
+	fieldset[disabled] &,
+	&[disabled],
+	&select[disabled] {
+		opacity: 0.9;
+	}
+}
+
+fieldset[disabled] label {
+	opacity: 0.9;
+}
+
+.checkbox-default.disabled,
+.radio-default.disabled,
+.checkbox-default.disabled input[type="checkbox"],
+.radio-default.disabled input[type="radio"],
+.checkbox-default [disabled],
+.radio-default [disabled] {
+	opacity: 0.9;
+}
+
+
+

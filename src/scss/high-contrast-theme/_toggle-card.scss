@@ -1,0 +1,7 @@
+// Make disabled toggle card more opaque
+
+input.toggle-card {
+	&[disabled] ~ .toggle-card-container {
+		opacity: 0.9;
+	}
+}

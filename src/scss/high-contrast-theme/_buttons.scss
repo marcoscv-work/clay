@@ -1,0 +1,9 @@
+// Making disabled buttons more opaque
+
+.btn {
+	&.disabled,
+  	&[disabled],
+  	fieldset[disabled] & {
+    	@include opacity(0.9);
+    }
+}

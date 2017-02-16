@@ -1,0 +1,12 @@
+// Make disabled pagers more opaque
+
+.pager {
+	.disabled {
+		> a,
+		> a:focus,
+		> a:hover,
+		> span {
+			@include opacity(0.8);
+		}
+	}
+}
