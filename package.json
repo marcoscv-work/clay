@@ -7,7 +7,7 @@
     "test": "exit 0",
     "deploy": "cd ./build && git init . && git add . && git commit -m 'Deploy'; git push 'git@github.com:liferay/lexicon.git' master:gh-pages --force && rm -rf .git"
   },
-  "author": "Nate Cavanaugh <nate@shift22.com> (http://alterform.com/)",
+  "author": "Julian <nate@shift22.com> (http://alterform.com/)",
   "license": "MIT",
   "devDependencies": {
     "bluebird": "^3.0.6",
@@ -56,5 +56,5 @@
     "underscore.string": "^3.2.2",
     "window-size": "^0.1.2"
   },
-  "dependencies": {}
+  "dependencies": {none}
 }
