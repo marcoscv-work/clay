@@ -2,15 +2,16 @@
 	border-color: $border;
 }
 
-@mixin color-btn-hover($bg, $border) {
+@mixin color-btn-hover($bg, $border, $color) {
 	&:focus,
 	&:hover {
 		background-color: $bg;
 		border-color: $border;
+		color: $color;
 	}
 }
 
-@mixin color-btn-active($bg, $border) {
+@mixin color-btn-active($bg, $border, $color) {
 	&:active,
 	&.active,
 	&:active:focus,
@@ -22,5 +23,6 @@
 	.open > &.dropdown-toggle:hover {
 		background-color: $bg;
 		border-color: $border;
+		color: $color;
 	}
 }
