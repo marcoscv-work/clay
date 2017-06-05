@@ -1,3 +1,100 @@
+
+
+
+// Marcos
+
+
+$gray-darker: lighten(#000, 13.5%); // #222
+$gray-dark: lighten(#000, 20%);   // #333
+$gray: lighten(#000, 33.5%); // #555
+$gray-light: lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #eee
+
+$brand-default: #29353D; // Atlas
+//$brand-default-active: darken($brand-default, 12%); // Atlas
+//$brand-default-hover: darken($brand-default, 8%); // Atlas
+
+$brand-primary: #2672B5;
+//$brand-primary-active: darken($brand-primary, 12%); // Atlas
+//$brand-primary-hover: darken($brand-primary, 8%); // Atlas
+
+$brand-success: #5F9C41;
+//$brand-success-active: darken($brand-success, 12%); // Atlas
+//$brand-success-hover: darken($brand-success, 8%); // Atlas
+
+$brand-info: #6987BE;
+//$brand-info-active: darken($brand-info, 12%); // Atlas
+//$brand-info-hover: darken($brand-info, 8%); // Atlas
+
+$brand-warning: #E36A00;
+//$brand-warning-active: darken($brand-warning, 12%); // Atlas
+//$brand-warning-hover: darken($brand-warning, 8%); // Atlas
+
+$brand-danger: #CC6677;
+//$brand-danger-active: darken($brand-danger, 12%); // Atlas
+//$brand-danger-hover: darken($brand-danger, 8%); // Atlas
+
+// States for Form and alert
+
+//$state-default-text: $brand-default; // Atlas
+//$state-default-bg: lighten($state-default-text, 34%); // Atlas
+//$state-default-border: $state-default-text; // Atlas
+
+//$state-primary-text: $brand-primary; // Atlas
+//$state-primary-bg: lighten($state-primary-text, 12%); // Atlas
+//$state-primary-border: $state-primary-text; // Atlas
+
+//$state-success-text: $brand-success;
+
+$state-success-bg: lighten($brand-success, 50%);
+//$state-success-border: $state-success-text;
+
+//$state-info-text: $brand-info;
+
+$state-info-bg: lighten($brand-info, 37%);
+//$state-info-border: $state-info-text;
+
+//$state-warning-text: $brand-warning;
+
+$state-warning-bg: lighten($brand-warning, 51%);
+//$state-warning-border: $state-warning-text;
+
+//$state-danger-text: $brand-danger;
+
+$state-danger-bg: lighten($brand-danger, 35%);
+//$state-danger-border: $state-danger-text;
+
+//$alert-default-text: $brand-default;
+
+$alert-default-bg: lighten($brand-default, 76%);
+//$alert-default-border: $alert-default-text;
+
+//$alert-success-text: $brand-success;
+
+$alert-success-bg: lighten($brand-success, 50%);
+//$alert-success-border: $alert-success-text;
+
+//$alert-info-text: $brand-info;
+
+$alert-info-bg: lighten($brand-info, 37%);
+//$alert-info-border: $alert-info-text;
+
+//$alert-warning-text: $brand-warning;
+
+$alert-warning-bg: lighten($brand-warning, 51%);
+//$alert-warning-border: $alert-warning-text;
+
+//$alert-danger-text: $brand-danger;
+
+$alert-danger-bg: lighten($brand-danger, 35%);
+//$alert-danger-border: $alert-danger-text;
+
+
+
+// Special
+
+$pagination-active-color: #FFF;
+
 @import "variables/globals";
 
 @import "variables/alerts";
