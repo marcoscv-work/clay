@@ -61,27 +61,27 @@ $gray-light: lighten(#000, 46.7%) !default; // #777
 $gray-lighter: lighten(#000, 93.5%) !default; // #eee
 
 // Deprecated `$brand-*-*` as of v1.0.24 and will be removed in v2.0.0
-$brand-default: #869CAD !default; // Atlas
+$brand-default: #546D7D !default; // Atlas
 $brand-default-active: darken($brand-default, 12%) !default; // Atlas
 $brand-default-hover: darken($brand-default, 8%) !default; // Atlas
 
-$brand-primary: #65B6F0 !default;
+$brand-primary: #1A71BE !default;
 $brand-primary-active: darken($brand-primary, 12%) !default; // Atlas
 $brand-primary-hover: darken($brand-primary, 8%) !default; // Atlas
 
-$brand-success: #76BD4A !default;
+$brand-success: #4B7B2E !default;
 $brand-success-active: darken($brand-success, 12%) !default; // Atlas
 $brand-success-hover: darken($brand-success, 8%) !default; // Atlas
 
-$brand-info: #1E5EC8 !default;
+$brand-info: #5C6E96 !default;
 $brand-info-active: darken($brand-info, 12%) !default; // Atlas
 $brand-info-hover: darken($brand-info, 8%) !default; // Atlas
 
-$brand-warning: #F5984C !default;
+$brand-warning: #BA4F00 !default;
 $brand-warning-active: darken($brand-warning, 12%) !default; // Atlas
 $brand-warning-hover: darken($brand-warning, 8%) !default; // Atlas
 
-$brand-danger: #C67 !default;
+$brand-danger: #AA5064 !default;
 $brand-danger-active: darken($brand-danger, 12%) !default; // Atlas
 $brand-danger-hover: darken($brand-danger, 8%) !default; // Atlas
 

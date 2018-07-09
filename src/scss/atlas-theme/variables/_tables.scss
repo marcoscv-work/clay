@@ -1,5 +1,5 @@
-$table-bg-accent: darken(#FCFEFF, 2%) !default;
-$table-bg-hover: #FCFEFF !default;
+$table-bg-accent: lighten($brand-primary, 55%) !default;
+$table-bg-hover: lighten($brand-primary, 55%) !default;
 
 // Deprecated `$table-header-color` as of v1.0.17 and will be removed in v2.0.0
 $table-header-color: $brand-default !default;

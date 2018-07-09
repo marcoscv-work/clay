@@ -39,15 +39,15 @@ $dropdown-divider-bg: $dropdown-border !default;
 
 $dropdown-link-color: $brand-default !default;
 
-$dropdown-link-hover-bg: #F7FAFA !default;
+$dropdown-link-hover-bg: lighten($brand-primary, 55%) !default;
 $dropdown-link-hover-color: $brand-default !default;
 
 $dropdown-link-active-bg: $dropdown-link-hover-bg !default;
 $dropdown-link-active-color: $brand-primary !default;
 
-$dropdown-link-disabled-color: #CACDD2 !default;
+$dropdown-link-disabled-color: lighten($text-color, 51%) !default;
 
-$dropdown-header-color: #B0B4BB !default;
+$dropdown-header-color: $brand-default !default;
 
 // Deprecated `$dropdown-arrow-color` as of v1.0.9 and will be removed in v2.0.0
 $dropdown-arrow-color: $dropdown-bg !default;

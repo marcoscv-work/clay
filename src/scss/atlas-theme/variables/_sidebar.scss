@@ -1,8 +1,8 @@
 // Skin
 
-$sidebar-default-bg: #F5F8FA !default;
+$sidebar-default-bg: #F3F9FD !default;
 $sidebar-default-border: #DFE0E3 !default;
-$sidebar-default-color: $navbar-default-color !default;
+$sidebar-default-color: darken($brand-primary, 10%) !default;
 $sidebar-default-panel-bg: #DFE6EB !default;
 
 $sidebar-default-header-actions-link-color: $brand-default !default;

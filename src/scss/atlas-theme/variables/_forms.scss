@@ -57,7 +57,7 @@ $input-border-focus: $input-color-focus !default;
 $input-box-shadow: none !default;
 $input-box-shadow-focus: none !default;
 
-$input-color-placeholder: darken(#E4E9EC, 12%) !default;
+$input-color-placeholder: $brand-default !default;
 $input-color-placeholder-focus: $input-border-focus !default;
 
 $input-border-disabled: #CFD7DE !default;
