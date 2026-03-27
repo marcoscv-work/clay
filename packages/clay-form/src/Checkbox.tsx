@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+
 	/**
 	 * Flag to indicate if input is checked or not.
 	 */
@@ -16,6 +17,11 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	 * Props to add to the outer most container.
 	 */
 	containerProps?: React.HTMLAttributes<HTMLDivElement>;
+
+	/**
+	 * Props to disable checkbox.
+	 */
+	disabled?: boolean;
 
 	/**
 	 * Flag to indicate that checkbox is in an indeterminate state.
@@ -33,18 +39,19 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	label?: React.ReactText;
 
 	/**
-	 * Callback for when checkbox value is changed
+	 * Callback for when checkbox value is changed.
 	 */
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const ClayCheckbox = React.forwardRef<HTMLInputElement, IProps>(
+const Checkbox = React.forwardRef<HTMLInputElement, IProps>(
 	(
 		{
 			checked,
 			children,
 			className,
 			containerProps = {},
+			disabled,
 			indeterminate = false,
 			inline,
 			label,
@@ -68,6 +75,7 @@ const ClayCheckbox = React.forwardRef<HTMLInputElement, IProps>(
 					containerProps.className,
 					{
 						'custom-control-inline': inline,
+						'custom-control-outside': label,
 					}
 				)}
 			>
@@ -79,6 +87,7 @@ const ClayCheckbox = React.forwardRef<HTMLInputElement, IProps>(
 							'custom-control-input',
 							className
 						)}
+						disabled={disabled}
 						ref={(r) => {
 							inputRef.current = r;
 							if (typeof ref === 'function') {
@@ -103,6 +112,6 @@ const ClayCheckbox = React.forwardRef<HTMLInputElement, IProps>(
 	}
 );
 
-ClayCheckbox.displayName = 'ClayCheckbox';
+Checkbox.displayName = 'ClayCheckbox';
 
-export default ClayCheckbox;
+export default Checkbox;

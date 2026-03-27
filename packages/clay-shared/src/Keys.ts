@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 /**
@@ -19,9 +19,13 @@ export const Keys = {
 	Backspace: 'Backspace',
 	Del: 'Delete',
 	Down: 'ArrowDown',
+	End: 'End',
 	Enter: 'Enter',
 	Esc: 'Escape',
+	F2: 'F2',
+	Home: 'Home',
 	Left: 'ArrowLeft',
+	R: 'R',
 	Right: 'ArrowRight',
 	Spacebar: ' ',
 	Tab: 'Tab',

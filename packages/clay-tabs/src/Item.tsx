@@ -1,15 +1,21 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {LinkOrButton} from '@clayui/shared';
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends Omit<React.HTMLAttributes<HTMLLIElement>, 'onClick'> {
+export interface IProps
+	extends Omit<React.HTMLAttributes<HTMLLIElement>, 'onClick'> {
+
 	/**
 	 * Flag to indicate if the component is active or not.
+	 *
+	 * OBS: The `active` API in the new pattern has uncontrolled behavior,
+	 * working just like `defaultActive` as in the prop declared in the
+	 * root component.
 	 */
 	active?: boolean;
 
@@ -48,10 +54,13 @@ const Item = React.forwardRef<any, IProps>(
 		}: IProps,
 		ref
 	) => (
-		<li {...otherProps} className={classNames('nav-item', className)}>
+		<li
+			{...otherProps}
+			className={classNames('nav-item', className)}
+			role="none"
+		>
 			<LinkOrButton
 				{...innerProps}
-				aria-disabled={!active}
 				aria-selected={active}
 				buttonDisplayType="unstyled"
 				buttonType="button"
@@ -65,7 +74,7 @@ const Item = React.forwardRef<any, IProps>(
 				onClick={onClick}
 				ref={ref}
 				role="tab"
-				tabIndex={disabled ? -1 : undefined}
+				tabIndex={!active ? -1 : 0}
 			>
 				{children}
 			</LinkOrButton>

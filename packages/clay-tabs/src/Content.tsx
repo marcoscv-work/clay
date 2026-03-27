@@ -1,50 +1,81 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
+	/**
+	 * @ignore
+	 */
+	active?: React.Key;
+
 	/**
 	 * Receives a number that indicates the `tabkey` to be rendered.
+	 * @deprecated since v3.78.2 - No longer needed in new composition.
 	 */
-	activeIndex: number;
+	activeIndex?: number;
 
 	/**
 	 * Children elements received from ClayTabs.Content component.
 	 */
-	children: Array<React.ReactElement>;
+	children: React.ReactNode;
 
 	/**
 	 * Flag to indicate if `fade` classname that applies an fading animation should be applied.
 	 */
 	fade?: boolean;
+
+	/**
+	 * @ignore
+	 */
+	tabsId?: string;
 }
 
-const Content: React.FunctionComponent<IProps> = ({
-	activeIndex = 0,
-	children,
-	className,
-	fade = false,
-	...otherProps
-}: IProps) => {
+const Content = React.forwardRef<HTMLDivElement, IProps>(function Content(
+	{
+		active,
+		activeIndex = 0,
+		children,
+		className,
+		fade = false,
+		tabsId,
+		...otherProps
+	},
+	ref
+) {
 	return (
-		<div className={classNames('tab-content', className)} {...otherProps}>
+		<div
+			className={classNames('tab-content', className)}
+			{...otherProps}
+			ref={ref}
+		>
 			{React.Children.map(children, (child, index) => {
-				return (
-					child &&
-					React.cloneElement(child, {
-						...child.props,
-						active: activeIndex === index,
-						fade,
-						key: index,
-					})
-				);
+				if (!React.isValidElement(child)) {
+					return child;
+				}
+
+				return React.cloneElement(child, {
+					...child.props,
+					'active':
+						typeof active === 'number'
+							? active === index
+							: activeIndex === index,
+					'aria-labelledby': tabsId
+						? `${tabsId}-tab-${index}`
+						: child.props['aria-labelledby'],
+					fade,
+					'id': tabsId
+						? `${tabsId}-tabpanel-${index}`
+						: child.props.id,
+					'key': index,
+				});
 			})}
 		</div>
 	);
-};
+});
 
 export default Content;

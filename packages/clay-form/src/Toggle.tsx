@@ -1,27 +1,27 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayIcon from '@clayui/icon';
 import classNames from 'classnames';
 import React from 'react';
 
-export interface IToggleProps
-	extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	containerProps?: React.HTMLAttributes<HTMLSpanElement>;
 	disabled?: boolean;
 	id?: string;
 	label?: React.ReactText;
 	onToggle?: (val: boolean) => void;
+	sizing?: string;
 	spritemap?: string;
-	symbol?: {on: string; off: string};
+	symbol?: {off: string; on: string};
 	toggled?: boolean;
 	type?: 'checkbox' | 'radio';
 	value?: string;
 }
 
-const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
+const Toggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 	(
 		{
 			checked,
@@ -31,6 +31,8 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 			label,
 			onChange,
 			onToggle,
+			role = 'switch',
+			sizing,
 			spritemap,
 			symbol,
 			toggled,
@@ -41,6 +43,7 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 		ref
 	) => {
 		if (type === 'radio') {
+			role = 'radio';
 			toggled = checked;
 		}
 
@@ -51,7 +54,10 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 					'toggle-switch',
 					'simple-toggle-switch',
 					containerProps.className,
-					{disabled}
+					{
+						disabled,
+						[`toggle-switch-${sizing}`]: sizing,
+					}
 				)}
 				ref={ref}
 			>
@@ -62,15 +68,16 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 						className="toggle-switch-check"
 						disabled={disabled}
 						id={id}
-						onChange={(e) => {
+						onChange={(event) => {
 							if (onChange) {
-								onChange(e);
+								onChange(event);
 							}
 
 							if (onToggle) {
 								onToggle(!toggled);
 							}
 						}}
+						role={role}
 						type={type}
 						value={value}
 					/>
@@ -116,6 +123,6 @@ const ClayToggle = React.forwardRef<HTMLLabelElement, IToggleProps>(
 	}
 );
 
-ClayToggle.displayName = 'ClayToggle';
+Toggle.displayName = 'ClayToggle';
 
-export default ClayToggle;
+export default Toggle;

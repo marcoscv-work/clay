@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayLayout from '@clayui/layout';
@@ -14,10 +14,10 @@ import ItemText from './ItemText';
 import ItemTitle from './ItemTitle';
 import QuickActionMenu from './QuickActionMenu';
 
-type TLIAttributes = React.ReactElement<React.HTMLAttributes<HTMLLIElement>>;
-
-interface IProps extends React.HTMLAttributes<HTMLUListElement> {
-	children?: TLIAttributes | Array<TLIAttributes>;
+export interface IProps extends React.HTMLAttributes<HTMLUListElement> {
+	children?:
+		| React.ReactElement<React.HTMLAttributes<HTMLLIElement>>
+		| Array<React.ReactElement<React.HTMLAttributes<HTMLLIElement>>>;
 
 	/*
 	 * Flag to indicate if action items should be shown on hover.
@@ -28,19 +28,12 @@ interface IProps extends React.HTMLAttributes<HTMLUListElement> {
 
 const CLAY_REGEX = /Clay(?!ListItem|ListHeader).+/;
 
-const ClayList: React.FunctionComponent<IProps> & {
-	Header: typeof Header;
-	Item: typeof Item;
-	ItemField: typeof ClayLayout.ContentCol;
-	ItemText: typeof ItemText;
-	ItemTitle: typeof ItemTitle;
-	QuickActionMenu: typeof QuickActionMenu;
-} = ({
+function List({
 	children,
 	className,
 	showQuickActionsOnHover = true,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	return (
 		<ul
 			{...otherProps}
@@ -48,20 +41,26 @@ const ClayList: React.FunctionComponent<IProps> & {
 				'show-quick-actions-on-hover': showQuickActionsOnHover,
 			})}
 		>
-			{process.env.NODE_ENV !== 'development' && children}
+			{process.env['NODE_ENV'] !== 'development' && children}
 
-			{process.env.NODE_ENV === 'development' &&
+			{process.env['NODE_ENV'] === 'development' &&
 				children &&
 				React.Children.map(children, (child) => {
 					warning(
 						!(
 							child &&
+
 							// @ts-ignore
+
 							child.type.displayName &&
+
 							// @ts-ignore
+
 							child.type.displayName.match(CLAY_REGEX)
 						),
+
 						// @ts-ignore
+
 						`Direct descendant of ClayList must be either ClayList.Item or ClayList.Header. You used ${child.type.displayName}.`
 					);
 
@@ -69,15 +68,15 @@ const ClayList: React.FunctionComponent<IProps> & {
 				})}
 		</ul>
 	);
-};
+}
 
-ClayList.displayName = 'ClayList';
+List.displayName = 'ClayList';
 
-ClayList.Header = Header;
-ClayList.Item = Item;
-ClayList.ItemField = ClayLayout.ContentCol;
-ClayList.ItemText = ItemText;
-ClayList.ItemTitle = ItemTitle;
-ClayList.QuickActionMenu = QuickActionMenu;
+List.Header = Header;
+List.Item = Item;
+List.ItemField = ClayLayout.ContentCol;
+List.ItemText = ItemText;
+List.ItemTitle = ItemTitle;
+List.QuickActionMenu = QuickActionMenu;
 
-export default ClayList;
+export default List;

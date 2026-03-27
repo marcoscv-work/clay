@@ -1,20 +1,21 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-import Action from './Action';
-import Input from './Input';
-import Item from './Item';
-import Label from './Label';
-import Link from './Link';
-import Nav from './Nav';
-import Section from './Section';
+import {Action} from './Action';
+import {Input} from './Input';
+import {Item} from './Item';
+import {Label} from './Label';
+import {Link} from './Link';
+import {Nav} from './Nav';
+import {Section} from './Section';
 
 interface IProps extends React.HTMLAttributes<HTMLElement> {
+
 	/**
 	 * Adds a helper class that turns the Toolbar inline at a specified breakpoint.
 	 */
@@ -36,22 +37,14 @@ interface IProps extends React.HTMLAttributes<HTMLElement> {
 		  };
 }
 
-const ClayToolbar: React.FunctionComponent<IProps> & {
-	Action: typeof Action;
-	Item: typeof Item;
-	Input: typeof Input;
-	Label: typeof Label;
-	Link: typeof Link;
-	Nav: typeof Nav;
-	Section: typeof Section;
-} = ({
+function Toolbar({
 	children,
 	className,
 	inlineBreakpoint,
 	light,
 	subnav,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	subnav = subnav === true ? {} : subnav;
 
 	const classes = classNames(
@@ -74,14 +67,14 @@ const ClayToolbar: React.FunctionComponent<IProps> & {
 			{children}
 		</nav>
 	);
-};
+}
 
-ClayToolbar.Action = Action;
-ClayToolbar.Item = Item;
-ClayToolbar.Input = Input;
-ClayToolbar.Label = Label;
-ClayToolbar.Link = Link;
-ClayToolbar.Nav = Nav;
-ClayToolbar.Section = Section;
+Toolbar.Action = Action;
+Toolbar.Item = Item;
+Toolbar.Input = Input;
+Toolbar.Label = Label;
+Toolbar.Link = Link;
+Toolbar.Nav = Nav;
+Toolbar.Section = Section;
 
-export default ClayToolbar;
+export default Toolbar;

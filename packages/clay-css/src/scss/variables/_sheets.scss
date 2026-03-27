@@ -4,11 +4,9 @@
 
 $sheet-bg: $body-bg !default;
 $sheet-border-color: $gray-300 !default;
+$sheet-border-radius: $border-radius !default;
 $sheet-border-style: solid !default;
 $sheet-border-width: 0.0625rem !default; // 1px
-
-$sheet-border-radius: $border-radius !default;
-
 $sheet-padding-bottom: 0.0625rem !default; // 1px
 $sheet-padding-left: 1.5rem !default; // 24px
 $sheet-padding-right: 1.5rem !default; // 24px
@@ -27,17 +25,37 @@ $sheet-plus-sheet: map-merge(
 	$sheet-plus-sheet
 );
 
+// Sheet Row
+
+$sheet-row: () !default;
+$sheet-row: map-merge(
+	(
+		margin-left: calc(#{$sheet-padding-left} * -1),
+		margin-right: calc(#{$sheet-padding-right} * -1),
+		media-breakpoint-down: (
+			sm: (
+				margin-left: calc(#{$sheet-padding-left-mobile} * -1),
+				margin-right: calc(#{$sheet-padding-right-mobile} * -1),
+			),
+		),
+	),
+	$sheet-row
+);
+
 // Sheet Header
 
 $sheet-header-margin-bottom: 3rem !default; // 48px
+
 $sheet-header-margin-bottom-mobile: null !default;
 
 // Sheet Section
 
 $sheet-section-margin-bottom: 3rem !default; // 48px
+
 $sheet-section-margin-bottom-mobile: null !default;
 
 $sheet-panel-group-margin-bottom: 1.5rem !default; // 24px
+
 $sheet-panel-group-margin-bottom-mobile: null !default;
 
 // Sheet Footer
@@ -56,7 +74,25 @@ $sheet-footer-btn-block-sm-down: () !default;
 $sheet-footer-btn-block-sm-down: map-deep-merge(
 	(
 		breakpoint-down: sm,
-		btn-margin-bottom-mobile: 1rem,
+
+		mobile: (
+			display: block,
+
+			btn: (
+				display: block,
+				margin-bottom: 1rem,
+				width: 100%,
+			),
+
+			btn-group: (
+				display: block,
+			),
+
+			btn-group-item: (
+				display: block,
+				margin-right: 0rem,
+			),
+		),
 	),
 	$sheet-footer-btn-block-sm-down
 );
@@ -65,9 +101,7 @@ $sheet-footer-btn-block-sm-down: map-deep-merge(
 
 /// @deprecated as of 3.x.
 
-$sheet-lg-max-width: ceil(
-	map-get($container-max-widths, lg) * 0.83333
-) !default; // 800px
+$sheet-lg-max-width: 800px !default;
 
 // Sheet Title
 
@@ -86,7 +120,7 @@ $sheet-title-margin-bottom-mobile: null !default;
 
 $sheet-subtitle-border-color: null !default;
 $sheet-subtitle-border-style: solid !default;
-$sheet-subtitle-border-width: 0 0 1px 0 !default;
+$sheet-subtitle-border-width: 0px 0px 1px 0px !default;
 $sheet-subtitle-color: null !default;
 $sheet-subtitle-font-size: 0.875rem !default; // 14px
 $sheet-subtitle-font-weight: $font-weight-semi-bold !default;
@@ -99,13 +133,14 @@ $sheet-subtitle-text-transform: uppercase !default;
 $sheet-subtitle-font-size-mobile: null !default;
 $sheet-subtitle-margin-bottom-mobile: null !default;
 
-$sheet-subtitle-heading-text-margin-bottom: 0 !default;
+$sheet-subtitle-heading-text-margin-bottom: 0rem !default;
 $sheet-subtitle-heading-text-margin-top: auto !default;
 
 // Sheet Subtitle as Panel Header
 
 $sheet-subtitle-link-color: $sheet-subtitle-color !default;
 $sheet-subtitle-link-text-decoration: null !default;
+
 $sheet-subtitle-link-hover-color: null !default;
 $sheet-subtitle-link-hover-text-decoration: none !default;
 
@@ -114,13 +149,17 @@ $sheet-subtitle-link: map-deep-merge(
 	(
 		color: $sheet-subtitle-link-color,
 		text-decoration: $sheet-subtitle-link-text-decoration,
-		hover-color: $sheet-subtitle-link-hover-color,
-		hover-text-decoration: $sheet-subtitle-link-hover-text-decoration,
+
+		hover: (
+			color: $sheet-subtitle-link-hover-color,
+			text-decoration: $sheet-subtitle-link-hover-text-decoration,
+		),
 	),
 	$sheet-subtitle-link
 );
 
 $sheet-subtitle-collapse-icon-font-size: null !default;
+
 $sheet-subtitle-collapse-icon-bottom: null !default;
 $sheet-subtitle-collapse-icon-left: null !default;
 $sheet-subtitle-collapse-icon-right: null !default;
@@ -167,7 +206,7 @@ $sheet-multiple-form-sheet-header: map-merge(
 	(
 		border-color: $gray-300,
 		border-style: solid,
-		border-width: 0 0 1px,
+		border-width: 0px 0px 1px,
 		margin: -1.5rem -1.5rem 1.5rem,
 		padding: 1rem 1.5rem,
 	),
@@ -186,7 +225,7 @@ $sheet-multiple-form-sheet-header-mobile: map-merge(
 $sheet-multiple-form-sheet-title: () !default;
 $sheet-multiple-form-sheet-title: map-merge(
 	(
-		margin-bottom: 0,
+		margin-bottom: 0rem,
 	),
 	$sheet-multiple-form-sheet-title
 );
@@ -198,7 +237,7 @@ $sheet-dataset-content: () !default;
 $sheet-dataset-content-sheet-header: () !default;
 $sheet-dataset-content-sheet-header: map-merge(
 	(
-		border-width: 0,
+		border-width: 0px,
 		margin: -1.5rem -1.5rem 1.5rem,
 		padding: 1rem 1.5rem,
 	),
@@ -217,7 +256,7 @@ $sheet-dataset-content-sheet-header-mobile: map-merge(
 $sheet-dataset-content-sheet-title: () !default;
 $sheet-dataset-content-sheet-title: map-merge(
 	(
-		margin-bottom: 0,
+		margin-bottom: 0rem,
 	),
 	$sheet-dataset-content-sheet-title
 );

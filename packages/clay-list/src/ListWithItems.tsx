@@ -1,23 +1,30 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayDropDownWithItems} from '@clayui/drop-down';
 import {ClayCheckbox} from '@clayui/form';
 import ClayIcon from '@clayui/icon';
 import ClayLabel from '@clayui/label';
+import {useId} from '@clayui/shared';
 import ClaySticker from '@clayui/sticker';
 import classNames from 'classnames';
 import React from 'react';
 
 import ClayList from './List';
 
-interface IListItem {
+export interface IListItem {
+
 	/**
 	 * Description of item.
 	 */
 	description?: string;
+
+	/**
+	 * Props to add to the dropdown trigger element
+	 */
+	dropDownTriggerProps?: React.HTMLAttributes<HTMLButtonElement>;
 
 	/**
 	 * List of actions to include in dropdown.
@@ -25,11 +32,6 @@ interface IListItem {
 	dropdownActions?: React.ComponentProps<
 		typeof ClayDropDownWithItems
 	>['items'];
-
-	/**
-	 * Props to add to the dropdown trigger element
-	 */
-	dropDownTriggerProps?: React.HTMLAttributes<HTMLButtonElement>;
 
 	/**
 	 * Value to display if item is a header.
@@ -77,6 +79,7 @@ interface IBooleanMap {
 }
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Property of item that makes it unique from other items.
 	 * Defaults to 'id'.
@@ -104,13 +107,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	spritemap?: string;
 }
 
-const ListItem: React.FunctionComponent<
-	IListItem & {
-		selected?: boolean;
-		onSelectChange?: any;
-		spritemap?: string;
-	}
-> = ({
+function ListItem({
 	description,
 	dropDownTriggerProps,
 	dropdownActions,
@@ -121,13 +118,19 @@ const ListItem: React.FunctionComponent<
 	selected = false,
 	spritemap,
 	title,
-}) => {
+}: IListItem & {
+	onSelectChange?: any;
+	selected?: boolean;
+	spritemap?: string;
+}) {
+	const titleId = useId();
+
 	return (
 		<ClayList.Item active={selected} flex>
 			{onSelectChange && (
 				<ClayList.ItemField>
 					<ClayCheckbox
-						aria-label="checkbox"
+						aria-labelledby={titleId}
 						checked={selected}
 						onChange={() => {
 							onSelectChange(!selected);
@@ -143,7 +146,12 @@ const ListItem: React.FunctionComponent<
 			</ClayList.ItemField>
 
 			<ClayList.ItemField expand>
-				<ClayList.ItemTitle href={href}>{title}</ClayList.ItemTitle>
+				<ClayList.ItemTitle
+					href={href}
+					id={onSelectChange ? titleId : undefined}
+				>
+					{title}
+				</ClayList.ItemTitle>
 
 				<ClayList.ItemText>{description}</ClayList.ItemText>
 
@@ -193,9 +201,9 @@ const ListItem: React.FunctionComponent<
 			</ClayList.ItemField>
 		</ClayList.Item>
 	);
-};
+}
 
-export const ClayListWithItems: React.FunctionComponent<IProps> = ({
+export function ListWithItems({
 	className,
 	itemIdentifier = 'id',
 	items = [],
@@ -203,7 +211,7 @@ export const ClayListWithItems: React.FunctionComponent<IProps> = ({
 	onSelectedItemsChange,
 	spritemap,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	return (
 		<div {...otherProps} className={classNames(className)}>
 			<ClayList>
@@ -231,7 +239,7 @@ export const ClayListWithItems: React.FunctionComponent<IProps> = ({
 																	],
 																}
 															);
-													  }
+														}
 													: undefined
 											}
 											selected={selectedItemsMap[key]}
@@ -242,7 +250,6 @@ export const ClayListWithItems: React.FunctionComponent<IProps> = ({
 							</React.Fragment>
 						);
 					}
-
 					const key = item[itemIdentifier];
 
 					return (
@@ -256,7 +263,7 @@ export const ClayListWithItems: React.FunctionComponent<IProps> = ({
 												...selectedItemsMap,
 												[key]: !selectedItemsMap[key],
 											});
-									  }
+										}
 									: undefined
 							}
 							selected={selectedItemsMap[key]}
@@ -267,4 +274,4 @@ export const ClayListWithItems: React.FunctionComponent<IProps> = ({
 			</ClayList>
 		</div>
 	);
-};
+}

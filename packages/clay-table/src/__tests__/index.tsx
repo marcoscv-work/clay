@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayTable from '..';
@@ -40,6 +40,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -52,7 +53,9 @@ describe('ClayTable', () => {
 			<ClayTable>
 				<ClayTable.Head>
 					<ClayTable.Row />
+
 					<ClayTable.Row />
+
 					<ClayTable.Row />
 				</ClayTable.Head>
 			</ClayTable>
@@ -66,7 +69,9 @@ describe('ClayTable', () => {
 			<ClayTable>
 				<ClayTable.Body>
 					<ClayTable.Row />
+
 					<ClayTable.Row />
+
 					<ClayTable.Row />
 				</ClayTable.Body>
 			</ClayTable>
@@ -80,11 +85,13 @@ describe('ClayTable', () => {
 			<ClayTable>
 				<ClayTable.Body>
 					<ClayTable.Row>
-						<ClayTable.Cell>{'One'}</ClayTable.Cell>
+						<ClayTable.Cell>One</ClayTable.Cell>
+
 						<ClayTable.Cell>
-							<button type="button">{'Two'}</button>
+							<button type="button">Two</button>
 						</ClayTable.Cell>
-						<ClayTable.Cell>{'Three'}</ClayTable.Cell>
+
+						<ClayTable.Cell>Three</ClayTable.Cell>
 					</ClayTable.Row>
 				</ClayTable.Body>
 			</ClayTable>
@@ -109,6 +116,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable borderedColumns>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -120,6 +128,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable hover>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -130,6 +139,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable headingNoWrap noWrap>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -140,6 +150,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable striped>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -150,6 +161,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable responsive responsiveSize="sm">
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -160,6 +172,7 @@ describe('ClayTable', () => {
 		const {container} = render(
 			<ClayTable responsive responsiveSize="sm">
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -173,6 +186,7 @@ describe('ClayTable', () => {
 				tableVerticalAlignment="bottom"
 			>
 				<ClayTable.Head />
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -185,10 +199,11 @@ describe('ClayTable', () => {
 				<ClayTable.Head>
 					<ClayTable.Row>
 						<ClayTable.Cell align="center" headingCell>
-							<a href="#1">{`Link`}</a>
+							<a href="#1">Link</a>
 						</ClayTable.Cell>
 					</ClayTable.Row>
 				</ClayTable.Head>
+
 				<ClayTable.Body />
 			</ClayTable>
 		);
@@ -201,16 +216,19 @@ describe('ClayTable', () => {
 				<ClayTable.Head>
 					<ClayTable.Row>
 						<ClayTable.Cell cellDelimiter="start" headingCell>
-							{'Start'}
+							Start
 						</ClayTable.Cell>
+
 						<ClayTable.Cell headingCell>
-							<button type="button">{'Dummy'}</button>
+							<button type="button">Dummy</button>
 						</ClayTable.Cell>
+
 						<ClayTable.Cell headingCell>
-							<button type="button">{'Dummy'}</button>
+							<button type="button">Dummy</button>
 						</ClayTable.Cell>
+
 						<ClayTable.Cell cellDelimiter="end" headingCell>
-							{'End'}
+							End
 						</ClayTable.Cell>
 					</ClayTable.Row>
 				</ClayTable.Head>
@@ -224,18 +242,47 @@ describe('ClayTable', () => {
 			<ClayTable>
 				<ClayTable.Body>
 					<ClayTable.Row divider>
-						<ClayTable.Cell colSpan={8}>{'Recipes'}</ClayTable.Cell>
+						<ClayTable.Cell colSpan={8}>Recipes</ClayTable.Cell>
 					</ClayTable.Row>
 
 					<ClayTable.Row>
 						<ClayTable.Cell expanded headingTitle>
-							{'Hamburger'}
+							Hamburger
 						</ClayTable.Cell>
+
 						<ClayTable.Cell />
-						<ClayTable.Cell>{'U.S.A'}</ClayTable.Cell>
-						<ClayTable.Cell align="right">
-							{'10 min.'}
+
+						<ClayTable.Cell>U.S.A</ClayTable.Cell>
+
+						<ClayTable.Cell align="right">10 min.</ClayTable.Cell>
+					</ClayTable.Row>
+				</ClayTable.Body>
+			</ClayTable>
+		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it('renders with non wrapped cells', () => {
+		const {container} = render(
+			<ClayTable>
+				<ClayTable.Body>
+					<ClayTable.Row divider>
+						<ClayTable.Cell colSpan={8}>Recipes</ClayTable.Cell>
+					</ClayTable.Row>
+
+					<ClayTable.Row>
+						<ClayTable.Cell expanded headingTitle>
+							Hamburger
 						</ClayTable.Cell>
+
+						<ClayTable.Cell />
+
+						<ClayTable.Cell noWrap>
+							Originally from the U.S.A. but available anywhere
+							around the world
+						</ClayTable.Cell>
+
+						<ClayTable.Cell align="right">10 min.</ClayTable.Cell>
 					</ClayTable.Row>
 				</ClayTable.Body>
 			</ClayTable>

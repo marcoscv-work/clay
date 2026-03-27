@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
@@ -8,21 +8,25 @@ import React from 'react';
 
 import QuickActionMenuItem from './QuickActionMenuItem';
 
-const ClayListQuickActionMenu: React.FunctionComponent<
+const QuickActionMenuComponent = React.forwardRef<
+	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
-> & {
-	Item: typeof QuickActionMenuItem;
-} = ({children, className, ...otherProps}) => {
+>(({children, className, ...otherProps}, ref) => {
 	return (
 		<div
 			{...otherProps}
 			className={classNames('quick-action-menu', className)}
+			ref={ref}
 		>
 			{children}
 		</div>
 	);
-};
+});
 
-ClayListQuickActionMenu.Item = QuickActionMenuItem;
+QuickActionMenuComponent.displayName = 'ClayListQuickActionMenu';
 
-export default ClayListQuickActionMenu;
+const QuickActionMenu = Object.assign(QuickActionMenuComponent, {
+	Item: QuickActionMenuItem,
+});
+
+export default QuickActionMenu;

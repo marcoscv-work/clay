@@ -1,13 +1,14 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayLayout from '@clayui/layout';
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.FormHTMLAttributes<HTMLFormElement> {
+export interface IProps extends React.FormHTMLAttributes<HTMLFormElement> {
+
 	/**
 	 * Flag to indicate when there is only the search element within a
 	 * Management Toolbar.
@@ -20,12 +21,7 @@ interface IProps extends React.FormHTMLAttributes<HTMLFormElement> {
 	showMobile?: boolean;
 }
 
-const Search: React.FunctionComponent<IProps> = ({
-	children,
-	onlySearch,
-	showMobile,
-	...otherProps
-}: IProps) => {
+function Search({children, onlySearch, showMobile, ...otherProps}: IProps) {
 	const content = (
 		<form {...otherProps} role="search">
 			{children}
@@ -36,7 +32,7 @@ const Search: React.FunctionComponent<IProps> = ({
 		<div
 			className={classNames('navbar-form navbar-form-autofit', {
 				'navbar-overlay navbar-overlay-sm-down': !onlySearch,
-				show: showMobile,
+				'show': showMobile,
 			})}
 		>
 			{onlySearch ? (
@@ -46,6 +42,6 @@ const Search: React.FunctionComponent<IProps> = ({
 			)}
 		</div>
 	);
-};
+}
 
 export default Search;

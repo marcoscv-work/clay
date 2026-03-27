@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2018 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import * as React from 'react';
@@ -33,13 +33,13 @@ interface IProps extends TooltipProps {
 	itemRenderer?: (val: any) => React.ReactNode;
 }
 
-const ClayRechartsTooltip: React.FunctionComponent<IProps> = ({
+const ClayRechartsTooltip = ({
 	active,
 	label,
 	payload,
 	labelRenderer = (val) => val,
 	itemRenderer = defaultRenderer,
-}) => {
+}: IProps) => {
 	if (active) {
 		return (
 			<div className="popover" style={{position: 'static'}}>

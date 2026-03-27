@@ -25,7 +25,12 @@
 .btn-group {
 	> .btn:not(:first-child),
 	> .btn-group:not(:first-child) {
-		margin-left: math-sign($btn-border-width);
+		margin-left: calc(#{$btn-border-width} * -1);
+	}
+
+	> .btn::after {
+		content: '';
+		display: block;
 	}
 
 	> .btn:not(:last-child):not(.dropdown-toggle),
@@ -43,9 +48,16 @@
 	flex-wrap: wrap;
 }
 
+.btn-group-spaced {
+	@include clay-css($btn-group-spaced);
+}
+
 .btn-group-nowrap {
 	flex-wrap: nowrap;
 }
+
+/// @deprecated as of v3.113.0 replace `.btn-group` with `.btn-group-spaced`
+/// instead
 
 .btn-group-item {
 	align-items: center;
@@ -106,8 +118,8 @@
 // Makes .btn narrower
 
 .dropdown-toggle-split {
-	padding-left: $btn-padding-x * 0.75;
-	padding-right: $btn-padding-x * 0.75;
+	padding-left: calc(#{$btn-padding-x} * 0.75);
+	padding-right: calc(#{$btn-padding-x} * 0.75);
 
 	@if ($enable-caret) {
 		&::after,
@@ -123,13 +135,13 @@
 }
 
 .btn-sm + .dropdown-toggle-split {
-	padding-right: $btn-padding-x-sm * 0.75;
-	padding-left: $btn-padding-x-sm * 0.75;
+	padding-left: calc(#{$btn-padding-x-sm} * 0.75);
+	padding-right: calc(#{$btn-padding-x-sm} * 0.75);
 }
 
 .btn-lg + .dropdown-toggle-split {
-	padding-right: $btn-padding-x-lg * 0.75;
-	padding-left: $btn-padding-x-lg * 0.75;
+	padding-left: calc(#{$btn-padding-x-lg} * 0.75);
+	padding-right: calc(#{$btn-padding-x-lg} * 0.75);
 }
 
 // Button Group Vertical
@@ -146,7 +158,7 @@
 
 	> .btn:not(:first-child),
 	> .btn-group:not(:first-child) {
-		margin-top: math-sign($btn-border-width);
+		margin-top: calc(#{$btn-border-width} * -1);
 	}
 
 	> .btn:not(:last-child):not(.dropdown-toggle),
@@ -196,6 +208,46 @@
 			clip: rect(0, 0, 0, 0);
 			pointer-events: none;
 			position: absolute;
+		}
+	}
+}
+
+%clay-btn-group-divider {
+	$_not-first-of-type: map-get(
+		$clay-btn-group-divider,
+		'&:not(:first-of-type)'
+	);
+
+	@if ($_not-first-of-type) {
+		&:not(:first-of-type) {
+			@include clay-css($_not-first-of-type);
+		}
+	}
+
+	$_not-last-of-type: map-get(
+		$clay-btn-group-divider,
+		'&:not(:last-of-type)'
+	);
+
+	@if ($_not-last-of-type) {
+		&:not(:last-of-type) {
+			@include clay-css($_not-last-of-type);
+		}
+	}
+}
+
+.btn-group {
+	@each $name, $value in $btn-group-palette {
+		@if not clay-is-map-unset($value) {
+			$selector: if(
+				starts-with($name, 'btn'),
+				str-insert($name, '.', 1),
+				$name
+			);
+
+			#{$selector} {
+				@include clay-button-variant($value);
+			}
 		}
 	}
 }

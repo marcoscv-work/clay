@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Element or component to render for container
 	 */
@@ -29,7 +30,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	justify?: 'start' | 'center' | 'end' | 'around' | 'between';
 }
 
-const ClayRow = React.forwardRef<HTMLElement, IProps>(
+const Row = React.forwardRef<HTMLElement, IProps>(
 	(
 		{
 			children,
@@ -56,6 +57,6 @@ const ClayRow = React.forwardRef<HTMLElement, IProps>(
 	}
 );
 
-ClayRow.displayName = 'ClayRow';
+Row.displayName = 'ClayRow';
 
-export default ClayRow;
+export default Row;

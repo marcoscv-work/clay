@@ -56,292 +56,420 @@
 /// - Add @link to documentation
 
 @mixin clay-panel-variant($map) {
-	$enabled: setter(map-get($map, enabled), true);
+	@if (type-of($map) == 'map') {
+		$enabled: setter(map-get($map, enabled), true);
 
-	$base: map-merge(
-		$map,
-		(
-			background-color:
-				setter(map-get($map, bg), map-get($map, background-color)),
-		)
-	);
+		$base: map-merge(
+			$map,
+			(
+				background-color:
+					setter(map-get($map, bg), map-get($map, background-color)),
+			)
+		);
 
-	$header: setter(map-get($map, header), ());
-	$header: map-merge(
-		$header,
-		(
-			background-color:
-				setter(
-					map-get($map, header-bg),
-					map-get($header, background-color)
-				),
-			border-color:
-				setter(
-					map-get($map, header-border-color),
-					map-get($header, border-color)
-				),
-			border-style:
-				setter(
-					map-get($map, header-border-style),
-					map-get($header, border-style)
-				),
-			border-width:
-				setter(
-					map-get($map, header-border-width),
-					map-get($header, border-width)
-				),
-			color: setter(map-get($map, header-color), map-get($header, color)),
-			margin-bottom:
-				setter(
-					map-get($map, header-margin-bottom),
-					map-get($header, margin-bottom)
-				),
-			margin-left:
-				setter(
-					map-get($map, header-margin-left),
-					map-get($header, margin-left)
-				),
-			margin-right:
-				setter(
-					map-get($map, header-margin-right),
-					map-get($header, margin-right)
-				),
-			margin-top:
-				setter(
-					map-get($map, header-margin-top),
-					map-get($header, margin-top)
-				),
-			padding-bottom:
-				setter(
-					map-get($map, header-padding-bottom),
-					map-get($header, padding-bottom)
-				),
-			padding-left:
-				setter(
-					map-get($map, header-padding-left),
-					map-get($header, padding-left)
-				),
-			padding-right:
-				setter(
-					map-get($map, header-padding-right),
-					map-get($header, padding-right)
-				),
-			padding-top:
-				setter(
-					map-get($map, header-padding-top),
-					map-get($header, padding-top)
-				),
-			transition:
-				setter(
-					map-get($map, header-transition),
-					map-get($header, transition)
-				),
-		)
-	);
+		$header: setter(map-get($map, panel-header), map-get($map, header), ());
+		$header: map-merge(
+			$header,
+			(
+				background-color:
+					setter(
+						map-get($map, header-bg),
+						map-get($header, background-color)
+					),
+				border-color:
+					setter(
+						map-get($map, header-border-color),
+						map-get($header, border-color)
+					),
+				border-style:
+					setter(
+						map-get($map, header-border-style),
+						map-get($header, border-style)
+					),
+				border-width:
+					setter(
+						map-get($map, header-border-width),
+						map-get($header, border-width)
+					),
+				color:
+					setter(
+						map-get($map, header-color),
+						map-get($header, color)
+					),
+				margin-bottom:
+					setter(
+						map-get($map, header-margin-bottom),
+						map-get($header, margin-bottom)
+					),
+				margin-left:
+					setter(
+						map-get($map, header-margin-left),
+						map-get($header, margin-left)
+					),
+				margin-right:
+					setter(
+						map-get($map, header-margin-right),
+						map-get($header, margin-right)
+					),
+				margin-top:
+					setter(
+						map-get($map, header-margin-top),
+						map-get($header, margin-top)
+					),
+				padding-bottom:
+					setter(
+						map-get($map, header-padding-bottom),
+						map-get($header, padding-bottom)
+					),
+				padding-left:
+					setter(
+						map-get($map, header-padding-left),
+						map-get($header, padding-left)
+					),
+				padding-right:
+					setter(
+						map-get($map, header-padding-right),
+						map-get($header, padding-right)
+					),
+				padding-top:
+					setter(
+						map-get($map, header-padding-top),
+						map-get($header, padding-top)
+					),
+				transition:
+					setter(
+						map-get($map, header-transition),
+						map-get($header, transition)
+					),
+			)
+		);
 
-	$header-collapsed: setter(map-get($map, header-collapsed), ());
-	$header-collapsed: map-merge(
-		$header-collapsed,
-		(
-			border-color:
-				setter(
-					map-get($map, header-collapsed-border-color),
-					map-get($header-collapsed, border-color)
-				),
-		)
-	);
+		$old-header-collapsed: setter(map-get($map, header-collapsed), ());
+		$header-collapsed: setter(map-get($header, collapsed), ());
+		$header-collapsed: map-merge($header-collapsed, $old-header-collapsed);
+		$header-collapsed: map-merge(
+			$header-collapsed,
+			(
+				border-color:
+					setter(
+						map-get($map, header-collapsed-border-color),
+						map-get($header-collapsed, border-color)
+					),
+			)
+		);
 
-	$header-c-inner: setter(map-get($map, header-c-inner), ());
-	$header-c-inner: map-merge(
-		(
-			margin-bottom: math-sign(map-get($header, padding-bottom)),
-			margin-left: math-sign(map-get($header, padding-left)),
-			margin-right: math-sign(map-get($header, padding-right)),
-			margin-top: math-sign(map-get($header, padding-top)),
-		),
-		$header-c-inner
-	);
+		$_hpb: map-get($header, padding-bottom);
+		$_hpl: map-get($header, padding-left);
+		$_hpr: map-get($header, padding-right);
+		$_hpt: map-get($header, padding-top);
 
-	$header-link: setter(map-get($map, header-link), ());
+		$old-header-c-inner: setter(map-get($map, header-c-inner), ());
+		$header-c-inner: setter(map-get($header, c-inner), ());
+		$header-c-inner: map-merge(
+			(
+				enabled:
+					if(
+						variable-exists(enable-c-inner),
+						$enable-c-inner,
+						if(
+							variable-exists(cadmin-enable-c-inner),
+							$cadmin-enable-c-inner,
+							null
+						)
+					),
+				margin-bottom: if($_hpb, calc(#{$_hpb} * -1), null),
+				margin-left: if($_hpl, calc(#{$_hpl} * -1), null),
+				margin-right: if($_hpr, calc(#{$_hpr} * -1), null),
+				margin-top: if($_hpt, calc(#{$_hpt} * -1), null),
+			),
+			$header-c-inner
+		);
 
-	$title: setter(map-get($map, title), ());
-	$title: map-merge(
-		$title,
-		(
-			font-size:
-				setter(
-					map-get($map, title-font-size),
-					map-get($title, font-size)
-				),
-			font-weight:
-				setter(
-					map-get($map, title-font-weight),
-					map-get($title, font-weight)
-				),
-			text-transform:
-				setter(
-					map-get($map, title-text-transform),
-					map-get($title, text-transform)
-				),
-		)
-	);
+		$old-header-link: setter(map-get($map, header-link), ());
+		$header-link: setter(map-get($header, link), ());
+		$header-link: map-deep-merge($header-link, $old-header-link);
 
-	$collapse-icon: setter(map-get($map, collapse-icon), ());
-	$collapse-icon: map-merge(
-		$collapse-icon,
-		(
-			bottom:
-				setter(
-					map-get($map, collapse-icon-bottom),
-					map-get($collapse-icon, bottom)
-				),
-			font-size:
-				setter(
-					map-get($map, collapse-icon-font-size),
-					map-get($collapse-icon, font-size)
-				),
-			left:
-				setter(
-					map-get($map, collapse-icon-left),
-					map-get($collapse-icon, left)
-				),
-			right:
-				setter(
-					map-get($map, collapse-icon-right),
-					map-get($collapse-icon, right)
-				),
-			top:
-				setter(
-					map-get($map, collapse-icon-top),
-					map-get($collapse-icon, top)
-				),
-		)
-	);
+		$title: setter(map-get($map, panel-title), map-get($map, title), ());
+		$title: map-merge(
+			$title,
+			(
+				font-size:
+					setter(
+						map-get($map, title-font-size),
+						map-get($title, font-size)
+					),
+				font-weight:
+					setter(
+						map-get($map, title-font-weight),
+						map-get($title, font-weight)
+					),
+				text-transform:
+					setter(
+						map-get($map, title-text-transform),
+						map-get($title, text-transform)
+					),
+			)
+		);
 
-	$body: setter(map-get($map, body), ());
-	$body: map-merge(
-		$body,
-		(
-			margin-bottom:
-				setter(
-					map-get($map, body-margin-bottom),
-					map-get($body, margin-bottom)
-				),
-			margin-left:
-				setter(
-					map-get($map, body-margin-left),
-					map-get($body, margin-left)
-				),
-			margin-right:
-				setter(
-					map-get($map, body-margin-right),
-					map-get($body, margin-right)
-				),
-			margin-top:
-				setter(
-					map-get($map, body-margin-top),
-					map-get($body, margin-top)
-				),
-			padding-bottom:
-				setter(
-					map-get($map, body-padding-bottom),
-					map-get($body, padding-bottom)
-				),
-			padding-left:
-				setter(
-					map-get($map, body-padding-left),
-					map-get($body, padding-left)
-				),
-			padding-right:
-				setter(
-					map-get($map, body-padding-right),
-					map-get($body, padding-right)
-				),
-			padding-top:
-				setter(
-					map-get($map, body-padding-top),
-					map-get($body, padding-top)
-				),
-		)
-	);
+		$collapse-icon: setter(map-get($map, collapse-icon), ());
+		$collapse-icon: map-merge(
+			$collapse-icon,
+			(
+				bottom:
+					setter(
+						map-get($map, collapse-icon-bottom),
+						map-get($collapse-icon, bottom)
+					),
+				font-size:
+					setter(
+						map-get($map, collapse-icon-font-size),
+						map-get($collapse-icon, font-size)
+					),
+				left:
+					setter(
+						map-get($map, collapse-icon-left),
+						map-get($collapse-icon, left)
+					),
+				right:
+					setter(
+						map-get($map, collapse-icon-right),
+						map-get($collapse-icon, right)
+					),
+				top:
+					setter(
+						map-get($map, collapse-icon-top),
+						map-get($collapse-icon, top)
+					),
+			)
+		);
 
-	$footer: setter(map-get($map, footer), ());
-	$footer: map-merge(
-		$footer,
-		(
-			background-color:
-				setter(
-					map-get($map, footer-bg),
-					map-get($footer, background-color)
-				),
-			border-color:
-				setter(
-					map-get($map, footer-border-color),
-					map-get($footer, border-color)
-				),
-			color: setter(map-get($map, footer-color), map-get($footer, color)),
-		)
-	);
+		$body: setter(map-get($map, panel-body), map-get($map, body), ());
+		$body: map-merge(
+			$body,
+			(
+				margin-bottom:
+					setter(
+						map-get($map, body-margin-bottom),
+						map-get($body, margin-bottom)
+					),
+				margin-left:
+					setter(
+						map-get($map, body-margin-left),
+						map-get($body, margin-left)
+					),
+				margin-right:
+					setter(
+						map-get($map, body-margin-right),
+						map-get($body, margin-right)
+					),
+				margin-top:
+					setter(
+						map-get($map, body-margin-top),
+						map-get($body, margin-top)
+					),
+				padding-bottom:
+					setter(
+						map-get($map, body-padding-bottom),
+						map-get($body, padding-bottom)
+					),
+				padding-left:
+					setter(
+						map-get($map, body-padding-left),
+						map-get($body, padding-left)
+					),
+				padding-right:
+					setter(
+						map-get($map, body-padding-right),
+						map-get($body, padding-right)
+					),
+				padding-top:
+					setter(
+						map-get($map, body-padding-top),
+						map-get($body, padding-top)
+					),
+			)
+		);
 
-	@if ($enabled) {
-		@include clay-css($base);
+		$footer: setter(map-get($map, panel-footer), map-get($map, footer), ());
+		$footer: map-merge(
+			$footer,
+			(
+				background-color:
+					setter(
+						map-get($map, footer-bg),
+						map-get($footer, background-color)
+					),
+				border-color:
+					setter(
+						map-get($map, footer-border-color),
+						map-get($footer, border-color)
+					),
+				color:
+					setter(
+						map-get($map, footer-color),
+						map-get($footer, color)
+					),
+			)
+		);
 
-		.panel-header {
-			@include clay-css($header);
+		$base: map-remove(
+			$base,
+			'bg',
+			'body-margin-bottom',
+			'body-margin-left',
+			'body-margin-right',
+			'body-margin-top',
+			'body-padding-bottom',
+			'body-padding-left',
+			'body-padding-right',
+			'body-padding-top',
+			'collapse-icon-bottom',
+			'collapse-icon-font-size',
+			'collapse-icon-left',
+			'collapse-icon-right',
+			'collapse-icon-top',
+			'footer-bg',
+			'footer-border-color',
+			'footer-color',
+			'header-bg',
+			'header-border-color',
+			'header-border-style',
+			'header-border-width',
+			'header-collapsed-border-color',
+			'header-color',
+			'header-margin-bottom',
+			'header-margin-left',
+			'header-margin-right',
+			'header-margin-top',
+			'header-padding-bottom',
+			'header-padding-left',
+			'header-padding-right',
+			'header-padding-top',
+			'header-transition',
+			'title-font-size',
+			'title-font-weight',
+			'title-text-transform'
+		);
 
-			@if ($enable-c-inner) {
-				.c-inner {
-					@include clay-css($header-c-inner);
-				}
+		@if ($enabled) {
+			@if (length($base) != 0) {
+				@include clay-css($base);
 			}
 
-			&.collapsed {
-				@include clay-css($header-collapsed);
-			}
+			@if (length($header) != 0) {
+				.panel-header {
+					@include clay-css($header);
 
-			&.panel-header-link {
-				@include clay-link($header-link);
-			}
+					@if (map-get($header-c-inner, enabled)) {
+						.c-inner {
+							@include clay-css($header-c-inner);
+						}
+					}
 
-			&:not(.collapse-icon-middle) {
-				.collapse-icon-closed,
-				.collapse-icon-open {
-					@include clay-css($collapse-icon);
-				}
-			}
+					@if (length($header-collapsed) != 0) {
+						&.collapsed {
+							@include clay-css($header-collapsed);
+						}
+					}
 
-			.panel-group & {
-				+ .panel-collapse > .panel-body {
-					border-color: map-get($base, border-color);
-				}
-			}
-		}
+					@if (length($header-link) != 0) {
+						&.panel-header-link {
+							@include clay-link($header-link);
+						}
+					}
 
-		.panel-title {
-			@include clay-css($title);
-		}
+					$_panel-header: map-get($map, panel-header);
 
-		.panel-body {
-			@include clay-css($body);
-		}
+					@if ($_panel-header) {
+						$_collapse-icon: map-get(
+							$_panel-header,
+							'&.collapse-icon'
+						);
 
-		.panel-footer {
-			@include clay-css($footer);
-		}
+						@if ($_collapse-icon) {
+							&.collapse-icon {
+								@include clay-css($_collapse-icon);
+							}
+						}
+					}
 
-		// For Focus Box Shadow
+					@if (length($collapse-icon) != 0) {
+						&:not(.collapse-icon-middle) {
+							.collapse-icon-closed,
+							.collapse-icon-open {
+								@include clay-css($collapse-icon);
+							}
+						}
+					}
 
-		@at-root {
-			.panel-group.panel-group-flush & {
-				.panel-header-link {
-					&,
-					&.collapsed {
-						border-radius: map-get($header-link, border-radius);
+					$_collapse-icon-middle: map-get($map, collapse-icon-middle);
+
+					@if ($_collapse-icon-middle) {
+						&.collapse-icon-middle {
+							@include clay-css($_collapse-icon-middle);
+
+							$_collapse-icon: map-get(
+								$_collapse-icon-middle,
+								collapse-icon
+							);
+
+							@if ($_collapse-icon) {
+								.collapse-icon-closed,
+								.collapse-icon-open {
+									@include clay-css($_collapse-icon);
+								}
+							}
+						}
+					}
+
+					$_border-color: map-get($base, border-color);
+
+					@if ($_border-color) {
+						.panel-group & {
+							+ .panel-collapse > .panel-body {
+								border-color: $_border-color;
+							}
+						}
 					}
 				}
 			}
-		}
 
-		@content;
+			@if (length($title) != 0) {
+				.panel-title {
+					@include clay-css($title);
+				}
+			}
+
+			@if (length($body) != 0) {
+				.panel-body {
+					@include clay-css($body);
+				}
+			}
+
+			@if (length($footer) != 0) {
+				.panel-footer {
+					@include clay-css($footer);
+				}
+			}
+
+			// For Focus Box Shadow
+
+			$_border-radius: map-get($header-link, border-radius);
+
+			@if ($_border-radius) {
+				@at-root {
+					.panel-group.panel-group-flush & {
+						.panel-header-link {
+							&,
+							&.collapsed {
+								border-radius: $_border-radius;
+							}
+						}
+					}
+				}
+			}
+
+			@content;
+		}
 	}
 }

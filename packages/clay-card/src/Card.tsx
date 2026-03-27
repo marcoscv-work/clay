@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
@@ -16,7 +16,8 @@ import Description from './Description';
 import Group from './Group';
 import Row from './Row';
 
-export interface ICardProps extends IContext {
+interface ICardProps extends IContext {
+
 	/**
 	 * Flag that indicates if `active` class is applied
 	 */
@@ -39,14 +40,14 @@ interface IProps
 			HTMLAnchorElement | HTMLSpanElement | HTMLDivElement
 		> {}
 
-const ClayCard: React.FunctionComponent<IProps> = ({
+function CardBase({
 	active,
 	children,
 	className,
 	displayType,
 	selectable = false,
 	...otherProps
-}) => {
+}: IProps) {
 	const isCardType = {
 		file: displayType === 'file',
 		image: displayType === 'image',
@@ -60,9 +61,10 @@ const ClayCard: React.FunctionComponent<IProps> = ({
 					className,
 					{
 						active,
-						card: !selectable,
+						'card': !selectable,
 						'file-card': isCardType.file,
-						'form-check-card form-check form-check-top-left': selectable,
+						'form-check-card form-check form-check-top-left':
+							selectable,
 						'image-card': isCardType.image,
 						'user-card': isCardType.user,
 					},
@@ -74,36 +76,29 @@ const ClayCard: React.FunctionComponent<IProps> = ({
 			</div>
 		</Context.Provider>
 	);
-};
+}
 
-const ClayCardHybrid: React.FunctionComponent<IProps> & {
-	AspectRatio: typeof AspectRatio;
-	Body: typeof Body;
-	Caption: typeof Caption;
-	Description: typeof Description;
-	Group: typeof Group;
-	Row: typeof Row;
-} = ({children, horizontal, interactive, ...otherProps}: IProps) => {
+function Card({children, horizontal, interactive, ...otherProps}: IProps) {
 	const Container = interactive
 		? ClayCardNavigation
 		: horizontal
-		? ClayCardHorizontal
-		: ClayCard;
+			? ClayCardHorizontal
+			: CardBase;
 
 	return (
 		<Container horizontal={horizontal} {...otherProps}>
 			{children}
 		</Container>
 	);
-};
+}
 
-ClayCardHybrid.displayName = 'ClayCard';
+Card.displayName = 'ClayCard';
 
-ClayCardHybrid.AspectRatio = AspectRatio;
-ClayCardHybrid.Body = Body;
-ClayCardHybrid.Caption = Caption;
-ClayCardHybrid.Description = Description;
-ClayCardHybrid.Group = Group;
-ClayCardHybrid.Row = Row;
+Card.AspectRatio = AspectRatio;
+Card.Body = Body;
+Card.Caption = Caption;
+Card.Description = Description;
+Card.Group = Group;
+Card.Row = Row;
 
-export default ClayCardHybrid;
+export default Card;

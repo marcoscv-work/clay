@@ -1,7 +1,11 @@
 $drilldown-inner-transition: height 0.25s ease !default;
 
 $drilldown-transition: all 0.25s ease !default;
-$drilldown-width: $dropdown-max-width !default;
+$drilldown-width: if(
+	variable-exists(dropdown-max-width),
+	$dropdown-max-width,
+	260px
+) !default;
 
 $drilldown-inline-scroller-max-height: none !default;
 
@@ -10,7 +14,6 @@ $drilldown-inner: map-merge(
 	(
 		display: flex,
 		flex-grow: 1,
-		overflow: hidden,
 		transition: $drilldown-inner-transition,
 	),
 	$drilldown-inner
@@ -21,7 +24,7 @@ $drilldown-item: map-merge(
 	(
 		display: none,
 		flex-shrink: 0,
-		height: 0,
+		height: 0rem,
 		width: 100%,
 	),
 	$drilldown-item
@@ -44,7 +47,7 @@ $drilldown-dropdown-menu: map-merge(
 		flex-direction: column,
 		max-height: none,
 		max-width: none,
-		min-width: 0,
+		min-width: 0rem,
 		overflow: hidden,
 		width: $drilldown-width,
 	),
@@ -55,6 +58,7 @@ $drilldown-dropdown-menu-drilldown-inner: () !default;
 $drilldown-dropdown-menu-drilldown-inner: map-merge(
 	(
 		min-height: 266px,
+		overflow: hidden,
 	),
 	$drilldown-dropdown-menu-drilldown-inner
 );
@@ -182,7 +186,7 @@ $drilldown-dropdown-footer: map-merge(
 $drilldown-dropdown-divider: () !default;
 $drilldown-dropdown-divider: map-merge(
 	(
-		margin: 0,
+		margin: 0rem,
 	),
 	$drilldown-dropdown-divider
 );

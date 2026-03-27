@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
-import React from 'react';
+import React, {useMemo, useState} from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+interface IProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+
 	/**
 	 * Message the user will see describing what they can do when on this screen
 	 */
@@ -18,31 +19,82 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	imgProps?: React.ImgHTMLAttributes<HTMLImageElement>;
 
 	/**
+	 * HTMLImage element attributes to add to the reduced motion image within the component
+	 */
+	imgPropsReducedMotion?: React.ImgHTMLAttributes<HTMLImageElement>;
+
+	/**
 	 * Source of the image to signify the state
 	 */
 	imgSrc?: string;
 
 	/**
+	 * Source of the image to show when `.c-prefers-reduced-motion` is active
+	 */
+	imgSrcReducedMotion?: string | null;
+
+	/**
+	 * Indicates empty state should be a small variant.
+	 */
+	small?: boolean;
+
+	/**
 	 * Title of the message highlighting the description
 	 */
-	title?: string;
+	title?: string | null;
 }
+const defaultTile = 'No results found';
 
-const ClayEmptyState: React.FunctionComponent<IProps> = ({
+function EmptyState({
 	children,
 	className,
 	description = 'Sorry, there are no results found',
 	imgProps,
+	imgPropsReducedMotion,
 	imgSrc,
-	title = 'No results found',
+	imgSrcReducedMotion,
+	small,
+	title = defaultTile,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	const hasImg = imgSrc || imgProps;
+	const [error, setError] = useState(false);
+	const reducedMotionImage = useMemo(() => {
+		if (error) {
+			console.warn(
+				'The image url defined in `imgSrcReducedMotion` does not exist on the server. You can provide an updated url through the attribute `imgSrcReducedMotion` or set it to `{null}`.'
+			);
+
+			return null;
+		}
+		if (imgSrcReducedMotion) {
+			return imgSrcReducedMotion;
+		}
+		else if (imgSrc && imgSrcReducedMotion !== null) {
+			const url = new URL(
+				imgSrc,
+				imgSrc?.match(/http:\/\/|https:\/\//)
+					? undefined
+					: `https://${location.host}`
+			);
+			const hasImgExtension = url.pathname.match(
+				/.(gif|png|jpeg|jpg|svg)/
+			);
+
+			return hasImgExtension
+				? `${url.pathname.substring(0, hasImgExtension.index)}_reduced_motion${url.pathname.substring(hasImgExtension.index!)}`
+				: null;
+		}
+	}, [error, imgSrcReducedMotion]);
+	imgPropsReducedMotion = imgPropsReducedMotion
+		? imgPropsReducedMotion
+		: imgProps;
 
 	return (
 		<div
 			className={classNames(className, 'c-empty-state', {
 				'c-empty-state-animation': hasImg,
+				'c-empty-state-sm': small,
 			})}
 			{...otherProps}
 		>
@@ -50,22 +102,36 @@ const ClayEmptyState: React.FunctionComponent<IProps> = ({
 				<div className="c-empty-state-image">
 					<div className="c-empty-state-aspect-ratio">
 						<img
-							alt="empty-state-image"
+							alt=""
 							className={classNames(
 								'aspect-ratio-item aspect-ratio-item-fluid',
+								reducedMotionImage &&
+									'd-none-c-prefers-reduced-motion',
 								imgProps && imgProps.className
 							)}
 							src={imgSrc}
 							{...imgProps}
 						/>
+
+						{reducedMotionImage && (
+							<img
+								alt=""
+								className={classNames(
+									'aspect-ratio-item aspect-ratio-item-fluid d-block-c-prefers-reduced-motion',
+									imgPropsReducedMotion &&
+										imgPropsReducedMotion.className
+								)}
+								onError={() => setError(true)}
+								src={reducedMotionImage}
+								{...imgPropsReducedMotion}
+							/>
+						)}
 					</div>
 				</div>
 			)}
 
 			<div className="c-empty-state-title">
-				<span className="text-truncate-inline">
-					<span className="text-truncate">{title}</span>
-				</span>
+				<span>{title || defaultTile}</span>
 			</div>
 
 			<div className="c-empty-state-text">{description}</div>
@@ -73,6 +139,6 @@ const ClayEmptyState: React.FunctionComponent<IProps> = ({
 			{children && <div className="c-empty-state-footer">{children}</div>}
 		</div>
 	);
-};
+}
 
-export default ClayEmptyState;
+export default EmptyState;

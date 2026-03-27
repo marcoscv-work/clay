@@ -1,11 +1,11 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayButtonWithIcon} from '@clayui/button';
 import {ClayDropDownWithItems} from '@clayui/drop-down';
-import {ClayCheckbox} from '@clayui/form';
+import {ClayCheckbox, ClayRadio} from '@clayui/form';
 import ClayIcon from '@clayui/icon';
 import ClayLayout from '@clayui/layout';
 import ClaySticker from '@clayui/sticker';
@@ -13,6 +13,8 @@ import React from 'react';
 
 import ClayCard from './Card';
 import {ClayCardHorizontal} from './CardHorizontal';
+
+import type {ButtonWithIconProps} from '@clayui/button';
 
 interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	actions?: React.ComponentProps<typeof ClayDropDownWithItems>['items'];
@@ -30,7 +32,10 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	/**
 	 * Props to add to the dropdown trigger element
 	 */
-	dropDownTriggerProps?: React.HTMLAttributes<HTMLButtonElement>;
+	dropDownTriggerProps?: Omit<
+		ButtonWithIconProps,
+		'symbol' | 'spritemap' | 'displayType' | 'className'
+	>;
 
 	/**
 	 * Path or URL to item
@@ -38,9 +43,22 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	href?: string;
 
 	/**
-	 * Callback for when item is selected
+	 * Callback for when item is selected.
 	 */
-	onSelectChange?: (val: boolean) => void;
+	onSelectChange?: (value: boolean | string) => void;
+
+	/**
+	 * Props to add to the radio element
+	 */
+	radioProps?: React.HTMLAttributes<HTMLInputElement> & {
+		name: string;
+		value: string;
+	};
+
+	/**
+	 * Determines what type of selectable it is.
+	 */
+	selectableType?: 'checkbox' | 'radio';
 
 	/**
 	 * Flag to indicate if card is selected
@@ -50,7 +68,7 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	/**
 	 * Path to clay icon spritemap
 	 */
-	spritemap: string;
+	spritemap?: string;
 
 	/**
 	 * Name of icon symbol
@@ -61,21 +79,32 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	 * Name of the item
 	 */
 	title: string;
+
+	/**
+	 * Flag to indicate if the card text is truncated
+	 */
+	truncate?: boolean;
 }
 
-export const ClayCardWithHorizontal: React.FunctionComponent<IProps> = ({
+export function ClayCardWithHorizontal({
+	'aria-label': ariaLabel,
 	actions,
 	checkboxProps = {},
 	disabled,
-	dropDownTriggerProps = {},
+	dropDownTriggerProps = {
+		'aria-label': 'More actions',
+	},
 	href,
 	onSelectChange,
+	radioProps = {name: '', value: ''},
+	selectableType,
 	selected = false,
 	spritemap,
 	symbol = 'folder',
 	title,
+	truncate = true,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	const content = (
 		<ClayCard.Body>
 			<ClayCard.Row>
@@ -87,9 +116,11 @@ export const ClayCardWithHorizontal: React.FunctionComponent<IProps> = ({
 
 				<ClayLayout.ContentCol expand gutters>
 					<ClayCard.Description
+						aria-label={ariaLabel ?? title}
 						disabled={disabled}
 						displayType="title"
 						href={href}
+						truncate={truncate}
 					>
 						{title}
 					</ClayCard.Description>
@@ -102,7 +133,7 @@ export const ClayCardWithHorizontal: React.FunctionComponent<IProps> = ({
 							spritemap={spritemap}
 							trigger={
 								<ClayButtonWithIcon
-									{...dropDownTriggerProps}
+									{...(dropDownTriggerProps as ButtonWithIconProps)}
 									className="component-action"
 									disabled={disabled}
 									displayType="unstyled"
@@ -123,18 +154,32 @@ export const ClayCardWithHorizontal: React.FunctionComponent<IProps> = ({
 			active={selected}
 			selectable={!!onSelectChange}
 		>
-			{onSelectChange && (
-				<ClayCheckbox
-					{...checkboxProps}
-					checked={selected}
-					disabled={disabled}
-					onChange={() => onSelectChange(!selected)}
-				>
-					<ClayCardHorizontal.Body>{content}</ClayCardHorizontal.Body>
-				</ClayCheckbox>
-			)}
+			{onSelectChange &&
+				(selectableType === 'radio' ? (
+					<ClayRadio
+						{...radioProps}
+						checked={selected}
+						disabled={disabled}
+						onChange={({target: {value}}) => onSelectChange(value)}
+					>
+						<ClayCardHorizontal.Body>
+							{content}
+						</ClayCardHorizontal.Body>
+					</ClayRadio>
+				) : (
+					<ClayCheckbox
+						{...checkboxProps}
+						checked={selected}
+						disabled={disabled}
+						onChange={() => onSelectChange(!selected)}
+					>
+						<ClayCardHorizontal.Body>
+							{content}
+						</ClayCardHorizontal.Body>
+					</ClayCheckbox>
+				))}
 
 			{!onSelectChange && content}
 		</ClayCardHorizontal>
 	);
-};
+}

@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2019 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 const path = require('path');
@@ -11,10 +11,12 @@ module.exports = {
 		jest: true,
 		node: true,
 	},
-	extends: 'liferay/react',
+	extends: ['plugin:@liferay/react'],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint'],
+	plugins: ['@liferay', '@typescript-eslint', 'react-compiler'],
 	rules: {
+		'@liferay/empty-line-between-elements': 'off',
+		'@liferay/no-dynamic-require': 'off',
 		'@typescript-eslint/array-type': ['error', {default: 'generic'}],
 		'@typescript-eslint/naming-convention': [
 			'error',
@@ -35,7 +37,8 @@ module.exports = {
 			},
 		],
 		'prefer-template': 'error',
-		'react/display-name': 'error',
+		'quote-props': 'off',
+		'react/display-name': 'off',
 		'react/jsx-boolean-value': 'error',
 		'react/jsx-no-bind': [
 			'error',
@@ -43,7 +46,8 @@ module.exports = {
 				allowArrowFunctions: true,
 			},
 		],
-		'react/jsx-no-literals': 'error',
+		'react/no-unescaped-entities': 'off',
+		'react-compiler/react-compiler': 'error',
 		'react-hooks/exhaustive-deps': 'off',
 		'sort-vars': 'error',
 	},

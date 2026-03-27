@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayIcon from '@clayui/icon';
@@ -22,11 +22,6 @@ interface IProps
 	description?: React.ReactText;
 
 	/**
-	 * Path or url for click through
-	 */
-	href?: string;
-
-	/**
 	 * Flag to indicate if card should be the `horizontal` variant
 	 */
 	horizontal?: boolean;
@@ -35,6 +30,11 @@ interface IProps
 	 * Icon to display when card is `horizontal`
 	 */
 	horizontalSymbol?: string;
+
+	/**
+	 * Path or url for click through
+	 */
+	href?: string;
 
 	/**
 	 * Callback for when card is clicked on
@@ -52,14 +52,20 @@ interface IProps
 	spritemap?: string;
 
 	/**
+	 * Title for bottom-left icon.
+	 */
+	stickerTitle?: string;
+
+	/**
 	 * Value displayed for the card's title
 	 */
 	title?: string;
 }
 
-const noop = () => {};
+function noop() {}
 
-export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
+export function ClayCardWithNavigation({
+	'aria-label': ariaLabel,
 	children,
 	description,
 	horizontal = false,
@@ -68,9 +74,10 @@ export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
 	onClick,
 	onKeyDown = noop,
 	spritemap,
+	stickerTitle,
 	title,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	return (
 		<ClayCardNavigation
 			{...otherProps}
@@ -83,12 +90,10 @@ export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
 					(event && event.key === Keys.Spacebar)
 				) {
 					event.preventDefault();
-
 					if (onClick) {
 						onClick(event);
 					}
 				}
-
 				onKeyDown(event);
 			}}
 			tabIndex={0}
@@ -107,6 +112,7 @@ export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
 						<>
 							{title && (
 								<ClayCard.Description
+									aria-label={title}
 									displayType="title"
 									truncate
 								>
@@ -128,17 +134,19 @@ export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
 					{horizontal && (
 						<ClayCard.Row>
 							<ClayLayout.ContentCol>
-								<ClaySticker inline>
+								<ClaySticker inline title={stickerTitle}>
 									<ClayIcon
 										spritemap={spritemap}
 										symbol={horizontalSymbol}
 									/>
 								</ClaySticker>
 							</ClayLayout.ContentCol>
+
 							{title && (
 								<ClayLayout.ContentCol expand>
 									<ClayLayout.ContentSection>
 										<ClayCard.Description
+											aria-label={ariaLabel ?? title}
 											displayType="title"
 											truncate
 										>
@@ -153,4 +161,4 @@ export const ClayCardWithNavigation: React.FunctionComponent<IProps> = ({
 			)}
 		</ClayCardNavigation>
 	);
-};
+}

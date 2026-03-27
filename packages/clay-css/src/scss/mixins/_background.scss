@@ -11,7 +11,7 @@
 	button#{$parent} {
 		&:hover,
 		&:focus {
-			background-color: darken($color, 10%) !important;
+			background-color: clay-darken($color, 10%) !important;
 		}
 	}
 
@@ -26,7 +26,8 @@
 @mixin bg-gradient-variant($parent, $color) {
 	#{$parent} {
 		background: $color
-			linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+			linear-gradient(180deg, clay-mix($body-bg, $color, 15%), $color)
+			repeat-x !important;
 	}
 }
 
@@ -43,7 +44,11 @@
 		linear-gradient(-45deg, $fg-color 25%, transparent 25%),
 		linear-gradient(45deg, transparent 75%, $fg-color 75%),
 		linear-gradient(-45deg, transparent 75%, $fg-color 75%);
-	background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+	background-position:
+		0 0,
+		0 10px,
+		10px -10px,
+		-10px 0px;
 	background-size: 20px 20px;
 }
 

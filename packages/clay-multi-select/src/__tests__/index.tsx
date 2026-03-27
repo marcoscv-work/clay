@@ -1,12 +1,14 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayMultiSelect from '..';
-import ClayDropDown from '@clayui/drop-down';
 import {cleanup, fireEvent, render} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
+
+global.ResizeObserver = require('resize-observer-polyfill');
 
 const items = [
 	{
@@ -23,8 +25,8 @@ const items = [
 	},
 ];
 
-const ClayMultiSelectWithState = (props: any) => {
-	const [items, setItems] = React.useState(props.items as [] | []);
+function ClayMultiSelectWithState(props: any) {
+	const [items, setItems] = React.useState((props.items as []) || []);
 	const [value, setValue] = React.useState(props.inputValue || '');
 
 	return (
@@ -33,186 +35,20 @@ const ClayMultiSelectWithState = (props: any) => {
 			items={items}
 			onChange={setValue}
 			onItemsChange={setItems}
+			sourceItems={props.sourceItems}
 			spritemap="/foo/bar"
 			{...props}
 		/>
 	);
-};
-
-describe('ClayMultiSelect', () => {
-	afterEach(cleanup);
-
-	it('renders', () => {
-		render(<ClayMultiSelectWithState items={[]} spritemap="/foo/bar" />);
-
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('renders with items', () => {
-		render(<ClayMultiSelectWithState items={items} spritemap="/foo/bar" />);
-
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('renders as not valid', () => {
-		render(
-			<ClayMultiSelectWithState
-				isValid={false}
-				items={items}
-				spritemap="/foo/bar"
-			/>
-		);
-
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('renders as disabled', () => {
-		render(
-			<ClayMultiSelectWithState
-				disabled
-				isValid={false}
-				items={items}
-				spritemap="/foo/bar"
-			/>
-		);
-
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('renders a custom menu', () => {
-		const MenuCustom: React.ComponentProps<
-			typeof ClayMultiSelect
-		>['menuRenderer'] = ({
-			inputValue,
-			locator,
-			onItemClick = () => {},
-			sourceItems,
-		}) => (
-			<ClayDropDown.ItemList>
-				{sourceItems
-					.filter(
-						(item) =>
-							inputValue && item[locator.label].match(inputValue)
-					)
-					.map((item) => (
-						<ClayDropDown.Item
-							key={item.value}
-							onClick={() => onItemClick(item)}
-						>
-							<strong>{item[locator.label]}</strong>
-							<p>{'Name'}</p>
-						</ClayDropDown.Item>
-					))}
-			</ClayDropDown.ItemList>
-		);
-
-		render(
-			<ClayMultiSelectWithState
-				inputValue="one"
-				items={items}
-				menuRenderer={MenuCustom}
-				sourceItems={[
-					{
-						label: 'one',
-						value: '1',
-					},
-					{
-						label: 'two',
-						value: '2',
-					},
-				]}
-				spritemap="/foo/bar"
-			/>
-		);
-
-		expect(document.body).toMatchSnapshot();
-	});
-});
+}
 
 describe('Interactions', () => {
 	afterEach(cleanup);
 
-	it('adding text and hitting `,` should add a new items', () => {
-		const {container} = render(<ClayMultiSelectWithState />);
-
-		const input = container.querySelector('input');
-
-		fireEvent.change(input as HTMLInputElement, {
-			target: {value: 'foo'},
-		});
-
-		fireEvent.keyDown(input as HTMLInputElement, {
-			key: ',',
-		});
-
-		expect(container.querySelectorAll('.label').length).toEqual(1);
-
-		fireEvent.change(input as HTMLInputElement, {
-			target: {value: 'bar'},
-		});
-
-		fireEvent.keyDown(input as HTMLInputElement, {key: ','});
-
-		expect(container.querySelectorAll('.label').length).toEqual(2);
-	});
-
-	it('clicking x removes item', () => {
+	it('clicking on autocomplete item calls onItemsChange', async () => {
 		const onItemsChangeFn = jest.fn();
 
-		const {container} = render(
-			<ClayMultiSelectWithState
-				items={[items[0]]}
-				onItemsChange={onItemsChangeFn}
-				spritemap="/foo/bar"
-			/>
-		);
-
-		expect(container.querySelectorAll('.label').length).toEqual(1);
-
-		expect(onItemsChangeFn).not.toHaveBeenCalled();
-
-		fireEvent.click(
-			container.querySelector('.label .close') as HTMLButtonElement,
-			{}
-		);
-
-		expect(onItemsChangeFn).toHaveBeenCalled();
-	});
-
-	it('hitting backspace should focus last item and hitting it again should call onItemsChange', () => {
-		const onItemsChangeFn = jest.fn();
-
-		const {container} = render(
-			<ClayMultiSelectWithState
-				items={[items[0], items[1]]}
-				onItemsChange={onItemsChangeFn}
-				spritemap="/foo/bar"
-			/>
-		);
-
-		expect(container.querySelectorAll('.label').length).toEqual(2);
-
-		expect(document.activeElement!.tagName).toEqual('BODY');
-
-		fireEvent.keyDown(
-			container.querySelector('input[type=text]') as HTMLInputElement,
-			{key: 'Backspace'}
-		);
-
-		expect(document.activeElement!.tagName).toEqual('BUTTON');
-		expect(document.activeElement!.classList).toContain('close');
-
-		fireEvent.keyDown(document.activeElement as HTMLSpanElement, {
-			key: 'Backspace',
-		});
-
-		expect(onItemsChangeFn).toHaveBeenCalled();
-	});
-
-	it('autocomplete menu renders with left and top styles', () => {
-		const onItemsChangeFn = jest.fn();
-
-		render(
+		const {findByRole, getByRole} = render(
 			<ClayMultiSelectWithState
 				items={[items[0]]}
 				onItemsChange={onItemsChangeFn}
@@ -221,30 +57,25 @@ describe('Interactions', () => {
 			/>
 		);
 
-		expect(document.querySelectorAll('.dropdown-item').length).toEqual(0);
+		const combobox = getByRole('combobox');
 
-		fireEvent.change(
-			document.querySelectorAll(
-				'input[type=text]'
-			)[0] as HTMLInputElement,
-			{target: {value: 'bar'}}
-		);
+		userEvent.click(combobox);
 
-		expect(document.querySelectorAll('.dropdown-item').length).toEqual(1);
+		expect(onItemsChangeFn).not.toHaveBeenCalled();
 
-		const menuStyles = (document.querySelector(
-			'.autocomplete-dropdown-menu'
-		) as HTMLElement).style;
+		const barOption = await findByRole('option', {name: 'bar'});
 
-		expect(menuStyles.left).not.toEqual('');
-		expect(menuStyles.top).not.toEqual('');
+		userEvent.click(barOption);
+
+		expect(onItemsChangeFn).toHaveBeenCalled();
 	});
 
-	it('clicking on autocomplete item calls onItemsChange', () => {
+	it('clicking on already selected item should not calls onItemsChange if duplicated items are not allowed', async () => {
 		const onItemsChangeFn = jest.fn();
 
-		render(
+		const {findByRole, getByRole} = render(
 			<ClayMultiSelectWithState
+				allowDuplicateValues={false}
 				items={[items[0]]}
 				onItemsChange={onItemsChangeFn}
 				sourceItems={items}
@@ -252,25 +83,17 @@ describe('Interactions', () => {
 			/>
 		);
 
-		expect(document.querySelectorAll('.dropdown-item').length).toEqual(0);
+		const combobox = getByRole('combobox');
+
+		userEvent.click(combobox);
 
 		expect(onItemsChangeFn).not.toHaveBeenCalled();
 
-		fireEvent.change(
-			document.querySelectorAll(
-				'input[type=text]'
-			)[0] as HTMLInputElement,
-			{target: {value: 'bar'}}
-		);
+		const fooOption = await findByRole('option', {name: 'foo'});
 
-		expect(document.querySelectorAll('.dropdown-item').length).toEqual(1);
+		userEvent.click(fooOption);
 
-		fireEvent.click(
-			document.querySelectorAll('.dropdown-item')[0] as HTMLLIElement,
-			{}
-		);
-
-		expect(onItemsChangeFn).toHaveBeenCalled();
+		expect(onItemsChangeFn).not.toHaveBeenCalled();
 	});
 
 	it('clicking the Clear All button removes items and text in the input', () => {
@@ -318,29 +141,31 @@ describe('Interactions', () => {
 		expect(document.activeElement).toBe(input);
 	});
 
-	it('adding text filters the items', () => {
-		const {container} = render(
-			<ClayMultiSelectWithState sourceItems={items} />
-		);
+	it('Use custom function for filtering autocomplete results', () => {
+		function myFilter(items: any, value: string) {
+			return items.filter(
+				(item: any) =>
+					item.label.match(value) || item.value.match(value)
+			);
+		}
 
-		const input = container.querySelector('input');
+		const WithCustomFilter = () => {
+			const [value, setValue] = React.useState('');
+			const [selectedItems, setSelectedItems] = React.useState<any>([]);
 
-		fireEvent.change(input as HTMLInputElement, {
-			target: {value: 'foo'},
-		});
+			return (
+				<ClayMultiSelect
+					inputValue={value}
+					items={selectedItems}
+					onChange={setValue}
+					onItemsChange={setSelectedItems}
+					sourceItems={myFilter(items, value)}
+					spritemap="/foo/bar"
+				/>
+			);
+		};
 
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('adding text filters the items with a custom function', () => {
-		const {container} = render(
-			<ClayMultiSelectWithState
-				filter={(item: any, inputValue: any, locator: any) =>
-					item[locator.label].match(inputValue)
-				}
-				sourceItems={items}
-			/>
-		);
+		const {container} = render(<WithCustomFilter />);
 
 		const input = container.querySelector('input');
 
@@ -348,63 +173,58 @@ describe('Interactions', () => {
 			target: {value: 'bar'},
 		});
 
-		expect(document.body).toMatchSnapshot();
-	});
-
-	it('adding text doesn not filter the items with a custom function', () => {
-		const {container} = render(
-			<ClayMultiSelectWithState filter={() => true} sourceItems={items} />
-		);
-
-		const input = container.querySelector('input');
+		expect(
+			document.querySelector('.autocomplete-dropdown-menu')
+		).toMatchSnapshot();
 
 		fireEvent.change(input as HTMLInputElement, {
-			target: {value: 'foo'},
+			target: {value: '1'},
 		});
 
-		expect(document.body).toMatchSnapshot();
+		expect(
+			document.querySelector('.autocomplete-dropdown-menu')
+		).toMatchSnapshot();
 	});
 
-	it('add non-sequential text should filter the items when it is the default function', () => {
-		const {container} = render(
-			<ClayMultiSelectWithState
-				sourceItems={[
-					{
-						label: 'baz',
-						value: '1',
-					},
-					{
-						label: 'bar',
-						value: '2',
-					},
-				]}
-			/>
-		);
+	xit('allows for async sourceItems', () => {
+		jest.useFakeTimers();
+		const callbackFn = jest.fn();
 
-		const input = container.querySelector('input');
+		const AsyncMultiSelect = () => {
+			const [value, setValue] = React.useState('');
+			const [selectedItems, setSelectedItems] = React.useState<any>([]);
+			const [isLoading, setIsLoading] = React.useState(false);
 
-		fireEvent.change(input as HTMLInputElement, {
-			target: {value: 'bz'},
-		});
+			function asyncData(query: string) {
+				setIsLoading(true);
 
-		expect(document.body).toMatchSnapshot();
-	});
+				const timer = setTimeout(() => {
+					callbackFn(query);
 
-	it('adding upper or lower case text should filter the items when it is the default function', () => {
-		const {container} = render(
-			<ClayMultiSelectWithState
-				sourceItems={[
-					{
-						label: 'Baz',
-						value: '1',
-					},
-					{
-						label: 'bar',
-						value: '2',
-					},
-				]}
-			/>
-		);
+					setIsLoading(false);
+				}, 2000);
+
+				timer.unref();
+			}
+
+			return (
+				<ClayMultiSelect
+					inputValue={value}
+					isLoading={isLoading}
+					items={selectedItems}
+					onChange={(value: string) => {
+						setValue(value);
+
+						asyncData(value);
+					}}
+					onItemsChange={setSelectedItems}
+					sourceItems={items}
+					spritemap="/foo/bar"
+				/>
+			);
+		};
+
+		const {container} = render(<AsyncMultiSelect />);
 
 		const input = container.querySelector('input');
 
@@ -412,6 +232,12 @@ describe('Interactions', () => {
 			target: {value: 'b'},
 		});
 
-		expect(document.body).toMatchSnapshot();
+		expect(callbackFn).not.toHaveBeenCalled();
+
+		jest.runAllTimers();
+
+		expect(callbackFn).toHaveBeenCalledWith('b');
+
+		jest.useRealTimers();
 	});
 });

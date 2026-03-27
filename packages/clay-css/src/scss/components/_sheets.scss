@@ -64,6 +64,45 @@
 	}
 }
 
+.sheet-row {
+	@include clay-css($sheet-row);
+
+	@if (map-get($sheet-row, media-breakpoint-up)) {
+		@each $breakpoint in map-keys(map-get($sheet-row, media-breakpoint-up))
+		{
+			$media-breakpoint-up: map-deep-get(
+				$sheet-row,
+				media-breakpoint-up,
+				$breakpoint
+			);
+
+			@if ($breakpoint) {
+				@include media-breakpoint-up($breakpoint) {
+					@include clay-css($media-breakpoint-up);
+				}
+			}
+		}
+	}
+
+	@if (map-get($sheet-row, media-breakpoint-down)) {
+		@each $breakpoint
+			in map-keys(map-get($sheet-row, media-breakpoint-down))
+		{
+			$media-breakpoint-down: map-deep-get(
+				$sheet-row,
+				media-breakpoint-down,
+				$breakpoint
+			);
+
+			@if ($breakpoint) {
+				@include media-breakpoint-down($breakpoint) {
+					@include clay-css($media-breakpoint-down);
+				}
+			}
+		}
+	}
+}
+
 .sheet-header {
 	margin-bottom: $sheet-header-margin-bottom;
 
@@ -86,16 +125,22 @@
 	}
 
 	> fieldset {
-		margin-bottom: -$sheet-section-margin-bottom;
+		margin-bottom: calc(#{$sheet-section-margin-bottom} * -1);
 
 		@include clay-scale-component {
-			margin-bottom: -$sheet-section-margin-bottom-mobile;
+			margin-bottom: calc(#{$sheet-section-margin-bottom-mobile} * -1);
 		}
 	}
 
 	> .card-page:last-child,
 	.card-page-last {
-		margin-bottom: -$card-margin-bottom;
+		margin-bottom: calc(
+			#{if(
+					variable-exists(card-margin-bottom),
+					$card-margin-bottom,
+					1.5rem
+				)} * -1
+		);
 	}
 
 	&::after {
@@ -194,10 +239,26 @@ fieldset {
 
 	@if ($enable-c-inner) {
 		.c-inner {
-			margin-bottom: #{math-sign($sheet-subtitle-padding-y)};
-			margin-left: #{math-sign($sheet-subtitle-padding-x)};
-			margin-right: #{math-sign($sheet-subtitle-padding-x)};
-			margin-top: #{math-sign($sheet-subtitle-padding-y)};
+			margin-bottom: if(
+				$sheet-subtitle-padding-y,
+				calc(#{$sheet-subtitle-padding-y} * -1),
+				null
+			);
+			margin-left: if(
+				$sheet-subtitle-padding-x,
+				calc(#{$sheet-subtitle-padding-x} * -1),
+				null
+			);
+			margin-right: if(
+				$sheet-subtitle-padding-x,
+				calc(#{$sheet-subtitle-padding-x} * -1),
+				null
+			);
+			margin-top: if(
+				$sheet-subtitle-padding-y,
+				calc(#{$sheet-subtitle-padding-y} * -1),
+				null
+			);
 		}
 	}
 
@@ -215,12 +276,16 @@ fieldset {
 
 		@if ($enable-c-inner) {
 			.c-inner {
-				margin-left: #{math-sign(
-						$sheet-subtitle-collapse-icon-padding-left
-					)};
-				margin-right: #{math-sign(
-						$sheet-subtitle-collapse-icon-padding-right
-					)};
+				margin-left: if(
+					$sheet-subtitle-collapse-icon-padding-left,
+					calc(#{$sheet-subtitle-collapse-icon-padding-left} * -1),
+					null
+				);
+				margin-right: if(
+					$sheet-subtitle-collapse-icon-padding-right,
+					calc(#{$sheet-subtitle-collapse-icon-padding-right} * -1),
+					null
+				);
 			}
 		}
 	}

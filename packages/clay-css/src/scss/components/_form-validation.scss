@@ -1,274 +1,72 @@
-// HTML 5 Form Validator
+@if ($enable-bs4-deprecated) {
+	// HTML 5 Form Validator
 
-// Form validation
-//
-// Provide feedback to users when form field values are valid or invalid. Works
-// primarily for client-side validation via scoped `:invalid` and `:valid`
-// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
-// server side validation.
+	// Form validation
+	//
+	// Provide feedback to users when form field values are valid or invalid. Works
+	// primarily for client-side validation via scoped `:invalid` and `:valid`
+	// pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
+	// server side validation.
 
-@each $state, $data in $form-validation-states {
-	@include form-validation-state(
-		$state,
-		map-get($data, color),
-		map-get($data, icon)
-	);
+	@each $state, $data in $form-validation-states {
+		@include form-validation-state(
+			$state,
+			map-get($data, color),
+			map-get($data, icon)
+		);
+	}
+
+	.invalid-feedback,
+	.valid-feedback {
+		font-weight: $form-feedback-font-weight;
+	}
 }
 
 // Form Feedback
 
-.invalid-feedback,
-.valid-feedback {
-	font-weight: $form-feedback-font-weight;
-}
-
 .form-feedback-group {
-	width: 100%;
-	word-wrap: break-word;
+	@include clay-css($form-feedback-group);
 }
 
 .form-feedback-item {
-	font-size: $form-feedback-font-size;
-	font-weight: $form-feedback-font-weight;
-	margin-top: $form-feedback-margin-top;
-	word-wrap: break-word;
+	@include clay-css($form-feedback-item);
 }
 
 .form-feedback-indicator {
-	margin-left: $form-feedback-indicator-margin-x;
-	margin-right: $form-feedback-indicator-margin-x;
+	@include clay-css($form-feedback-indicator);
 
 	&:first-child {
-		margin-left: 0;
+		@include clay-css(map-get($form-feedback-indicator, first-child));
 	}
 }
 
 .form-text {
-	color: $form-text-color;
-	display: block;
-	font-size: $form-text-font-size;
-	font-weight: $form-text-font-weight;
-	margin-top: $form-text-margin-top;
-	word-wrap: break-word;
-}
+	@include clay-css($form-text);
 
-.was-validated .form-control:valid,
-.was-validated .form-control.is-valid {
-	background-color: $input-success-bg;
-	border-color: $input-success-border-color;
-	box-shadow: $input-success-box-shadow;
-	color: $input-success-color;
+	$_blockquote: map-get($form-text, blockquote);
 
-	&:focus {
-		background-color: $input-success-focus-bg;
-		border-color: $input-success-focus-border-color;
-		box-shadow: $input-success-focus-box-shadow;
-		color: $input-success-focus-color;
-	}
-}
+	@if ($_blockquote) {
+		&.blockquote {
+			@include clay-css($_blockquote);
 
-.was-validated .form-control:invalid,
-.was-validated .form-control.is-invalid {
-	background-color: $input-danger-bg;
-	border-color: $input-danger-border-color;
-	box-shadow: $input-danger-box-shadow;
-	color: $input-danger-color;
+			$_before: map-get($_blockquote, before);
 
-	&:focus {
-		background-color: $input-danger-focus-bg;
-		border-color: $input-danger-focus-border-color;
-		box-shadow: $input-danger-focus-box-shadow;
-		color: $input-danger-focus-color;
-	}
-}
-
-// Non HTML5 Form Validator
-
-.has-error {
-	label {
-		color: $input-danger-label-color;
-	}
-
-	.custom-control-label,
-	.form-check-label {
-		color: $input-danger-checkbox-label-color;
-	}
-
-	.form-control {
-		background-color: $input-danger-bg;
-		border-color: $input-danger-border-color;
-		box-shadow: $input-danger-box-shadow;
-		color: $input-danger-color;
-
-		&:focus {
-			background-color: $input-danger-focus-bg;
-			border-color: $input-danger-focus-border-color;
-			box-shadow: $input-danger-focus-box-shadow;
-			color: $input-danger-focus-color;
-		}
-	}
-
-	.form-control[readonly] {
-		@include clay-button-variant($input-danger-readonly);
-	}
-
-	.form-feedback-item {
-		color: $form-feedback-invalid-color;
-	}
-
-	select.form-control {
-		background-image: $input-danger-select-icon;
-
-		&[size] {
-			@include clay-select-variant($input-danger-select-size);
-		}
-
-		&[multiple] {
-			@include clay-select-variant($input-danger-select-multiple);
-		}
-	}
-
-	.input-group-item {
-		&.focus {
-			box-shadow: setter(
-				$input-danger-focus-box-shadow,
-				$input-danger-box-shadow
-			);
-
-			.form-control,
-			.input-group-inset-item {
-				background-color: setter(
-					$input-danger-focus-bg,
-					$input-danger-bg
-				);
-				border-color: setter(
-					$input-danger-focus-border-color,
-					$input-danger-border-color
-				);
-			}
-		}
-
-		.input-group-inset:focus {
-			box-shadow: none;
-
-			~ .input-group-inset-item {
-				background-color: setter(
-					$input-danger-focus-bg,
-					$input-danger-bg
-				);
-				border-color: setter(
-					$input-danger-focus-border-color,
-					$input-danger-border-color
-				);
+			@if ($_before) {
+				&::before {
+					@include clay-css($_before);
+				}
 			}
 		}
 	}
-
-	.input-group .input-group-inset-item {
-		background-color: $input-danger-bg;
-		border-color: $input-danger-border-color;
-		box-shadow: $input-danger-box-shadow;
-	}
 }
 
-.has-warning {
-	label {
-		color: $input-warning-label-color;
-	}
-
-	.custom-control-label,
-	.form-check-label {
-		color: $input-warning-checkbox-label-color;
-	}
-
-	.form-control {
-		background-color: $input-warning-bg;
-		border-color: $input-warning-border-color;
-		box-shadow: $input-warning-box-shadow;
-		color: $input-warning-color;
-
-		&:focus {
-			background-color: $input-warning-focus-bg;
-			border-color: $input-warning-focus-border-color;
-			box-shadow: $input-warning-focus-box-shadow;
-			color: $input-warning-focus-color;
-		}
-	}
-
-	.form-control[readonly] {
-		@include clay-button-variant($input-warning-readonly);
-	}
-
-	.form-feedback-item {
-		color: $form-feedback-warning-color;
-	}
-
-	select.form-control {
-		background-image: $input-warning-select-icon;
-
-		&[size] {
-			@include clay-select-variant($input-warning-select-size);
-		}
-
-		&[multiple] {
-			@include clay-select-variant($input-warning-select-multiple);
-		}
-	}
-
-	.input-group-item {
-		&.focus {
-			box-shadow: setter(
-				$input-warning-focus-box-shadow,
-				$input-warning-box-shadow
-			);
-
-			.form-control,
-			.input-group-inset-item {
-				background-color: setter(
-					$input-warning-focus-bg,
-					$input-warning-bg
-				);
-				border-color: setter(
-					$input-warning-focus-border-color,
-					$input-warning-border-color
-				);
-			}
-		}
-
-		.input-group-inset:focus {
-			box-shadow: none;
-
-			~ .input-group-inset-item {
-				background-color: setter(
-					$input-warning-focus-bg,
-					$input-warning-bg
-				);
-				border-color: setter(
-					$input-warning-focus-border-color,
-					$input-warning-border-color
-				);
-			}
-		}
-	}
-
-	.input-group .input-group-inset-item {
-		background-color: $input-warning-bg;
-		border-color: $input-warning-border-color;
-		box-shadow: $input-warning-box-shadow;
-	}
+.form-help-text {
+	@include clay-css($form-help-text);
 }
 
-.has-success {
-	label {
-		color: $input-success-label-color;
-	}
-
-	.custom-control-label,
-	.form-check-label {
-		color: $input-success-checkbox-label-color;
-	}
-
-	.form-control {
+@if ($enable-bs4-deprecated) {
+	.was-validated .form-control:valid,
+	.was-validated .form-control.is-valid {
 		background-color: $input-success-bg;
 		border-color: $input-success-border-color;
 		box-shadow: $input-success-box-shadow;
@@ -282,65 +80,32 @@
 		}
 	}
 
-	.form-control[readonly] {
-		@include clay-button-variant($input-success-readonly);
-	}
+	.was-validated .form-control:invalid,
+	.was-validated .form-control.is-invalid {
+		background-color: $input-danger-bg;
+		border-color: $input-danger-border-color;
+		box-shadow: $input-danger-box-shadow;
+		color: $input-danger-color;
 
-	.form-feedback-item {
-		color: $form-feedback-valid-color;
-	}
-
-	select.form-control {
-		background-image: $input-success-select-icon;
-
-		&[size] {
-			@include clay-select-variant($input-success-select-size);
-		}
-
-		&[multiple] {
-			@include clay-select-variant($input-success-select-multiple);
+		&:focus {
+			background-color: $input-danger-focus-bg;
+			border-color: $input-danger-focus-border-color;
+			box-shadow: $input-danger-focus-box-shadow;
+			color: $input-danger-focus-color;
 		}
 	}
+}
 
-	.input-group-item {
-		&.focus {
-			box-shadow: setter(
-				$input-success-focus-box-shadow,
-				$input-success-box-shadow
-			);
+// Non HTML5 Form Validator
 
-			.form-control,
-			.input-group-inset-item {
-				background-color: setter(
-					$input-success-focus-bg,
-					$input-success-bg
-				);
-				border-color: setter(
-					$input-success-focus-border-color,
-					$input-success-border-color
-				);
-			}
-		}
+.has-error {
+	@include clay-form-validation-variant($has-error);
+}
 
-		.input-group-inset:focus {
-			box-shadow: none;
+.has-warning {
+	@include clay-form-validation-variant($has-warning);
+}
 
-			~ .input-group-inset-item {
-				background-color: setter(
-					$input-success-focus-bg,
-					$input-success-bg
-				);
-				border-color: setter(
-					$input-success-focus-border-color,
-					$input-success-border-color
-				);
-			}
-		}
-	}
-
-	.input-group .input-group-inset-item {
-		background-color: $input-success-bg;
-		border-color: $input-success-border-color;
-		box-shadow: $input-success-box-shadow;
-	}
+.has-success {
+	@include clay-form-validation-variant($has-success);
 }

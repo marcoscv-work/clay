@@ -1,16 +1,17 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 import warning from 'warning';
 
-export const ClayIconSpriteContext = React.createContext('');
+const ClayIconSpriteContext = React.createContext('');
 
 interface IProps extends React.SVGAttributes<SVGSVGElement> {
 	className?: string;
+
 	/**
 	 * Path to the location of the spritemap resource.
 	 */
@@ -22,7 +23,7 @@ interface IProps extends React.SVGAttributes<SVGSVGElement> {
 	symbol: string;
 }
 
-const ClayIcon = React.forwardRef<SVGSVGElement, IProps>(
+const Icon = React.forwardRef<SVGSVGElement, IProps>(
 	({className, spritemap, symbol, ...otherProps}: IProps, ref) => {
 		let spriteMapVal = React.useContext(ClayIconSpriteContext);
 
@@ -46,12 +47,13 @@ const ClayIcon = React.forwardRef<SVGSVGElement, IProps>(
 				ref={ref}
 				role="presentation"
 			>
-				<use xlinkHref={`${spriteMapVal}#${symbol}`} />
+				<use href={`${spriteMapVal}#${symbol}`} />
 			</svg>
 		);
 	}
 );
 
-ClayIcon.displayName = 'ClayIcon';
+Icon.displayName = 'ClayIcon';
 
-export default ClayIcon;
+export default Icon;
+export {ClayIconSpriteContext};

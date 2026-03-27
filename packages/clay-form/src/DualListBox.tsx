@@ -1,22 +1,25 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayButtonWithIcon} from '@clayui/button';
+import {sub} from '@clayui/shared';
 import classNames from 'classnames';
 import React from 'react';
 
+import Form from './Form';
 import ClaySelectBox, {TItem, getSelectedIndexes} from './SelectBox';
 
-type TItems = Array<Array<TItem>>;
-
-function swapArrayItems(arrays: TItems, selectedIndexes: Array<number>) {
+function swapArrayItems(
+	arrays: Array<Array<TItem>>,
+	selectedIndexes: Array<number>
+) {
 	const [sourceArray, targetArray] = arrays;
 
-	const newTargetArray = [...targetArray];
+	const newTargetArray = [...targetArray!];
 
-	const newSourceArray = sourceArray.filter((item, index) => {
+	const newSourceArray = sourceArray!.filter((item, index) => {
 		if (selectedIndexes.includes(index)) {
 			newTargetArray.push(item);
 
@@ -29,7 +32,8 @@ function swapArrayItems(arrays: TItems, selectedIndexes: Array<number>) {
 	return [newSourceArray, newTargetArray];
 }
 
-interface IBoxProps {
+type BoxProps = {
+
 	/**
 	 * Id of the selectbox to be used with the label
 	 */
@@ -49,21 +53,18 @@ interface IBoxProps {
 	 * Array of selected items in the left Select Box.
 	 */
 	selected?: Array<string>;
-}
+};
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Labels for the aria attributes
 	 */
 	ariaLabels?: {
+		error?: string;
 		transferLTR: string;
 		transferRTL: string;
 	};
-
-	/**
-	 * Disables the button responsible for moving items from right to left box.
-	 */
-	disableRTL?: boolean;
 
 	/**
 	 * Disables the button responsible for moving items from left to right box.
@@ -71,24 +72,44 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	disableLTR?: boolean;
 
 	/**
-	 * Items spread across two arrays that will be displayed in the two Select Boxes.
+	 * Disables the button responsible for moving items from right to left box.
 	 */
-	items: TItems;
+	disableRTL?: boolean;
 
 	/**
-	 * Handler that triggers when the content of the items prop are changed. Caused by either reordering or transfering of items.
+	 * Disables the component.
 	 */
-	onItemsChange: (val: TItems) => void;
+	disabled?: boolean;
+
+	/**
+	 * Items spread across two arrays that will be displayed in the two Select Boxes.
+	 */
+	items: Array<Array<TItem>>;
 
 	/**
 	 * Props for the left Select Box.
 	 */
-	left?: IBoxProps;
+	left?: BoxProps;
+
+	/**
+	 * Sets the maximum value of items on the left side.
+	 */
+	leftMaxItems?: number;
+
+	/**
+	 * Handler that triggers when the content of the items prop are changed. Caused by either reordering or transfering of items.
+	 */
+	onItemsChange: (value: Array<Array<TItem>>) => void;
 
 	/**
 	 * Props for the right Select Box.
 	 */
-	right?: IBoxProps;
+	right?: BoxProps;
+
+	/**
+	 * Sets the maximum value of items on the right side.
+	 */
+	rightMaxItems?: number;
 
 	/**
 	 * Amount of items that can fit inside the both Select Boxes before a scrollbar is introduced.
@@ -101,58 +122,71 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	spritemap?: string;
 }
 
-const ClayDualListBox: React.FunctionComponent<IProps> = ({
+const defaultError = 'The maximum number of items for {0} is {1}';
+
+function DualListBox({
 	ariaLabels = {
+		error: defaultError,
 		transferLTR: 'Transfer Item Left to Right',
 		transferRTL: 'Transfer Item Right to Left',
 	},
 	className,
+	disabled,
 	disableLTR,
 	disableRTL,
-	items,
+	items = [[], []],
 	left = {},
+	leftMaxItems,
 	onItemsChange,
 	right = {},
+	rightMaxItems,
 	size,
 	spritemap,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	const [internalLeftSelected, setInternalLeftSelected] = React.useState(
 		left.selected || []
 	);
 	const [internalRightSelected, setInternalRightSelected] = React.useState(
 		right.selected || []
 	);
-
 	const handleLeftSelectedChange =
 		left.onSelectChange || setInternalLeftSelected;
 	const handleRightSelectedChange =
 		right.onSelectChange || setInternalRightSelected;
-
 	const leftSelected = left.selected || internalLeftSelected;
 	const rightSelected = right.selected || internalRightSelected;
-
 	const [leftItems, rightItems] = items;
-
-	const selectedIndexesLeft = getSelectedIndexes(leftItems, leftSelected);
-	const selectedIndexesRight = getSelectedIndexes(rightItems, rightSelected);
+	const selectedIndexesLeft = getSelectedIndexes(leftItems!, leftSelected);
+	const selectedIndexesRight = getSelectedIndexes(rightItems!, rightSelected);
+	const isLeftError = leftMaxItems
+		? rightSelected.length + leftItems!.length > leftMaxItems
+		: false;
+	const isRightError = rightMaxItems
+		? leftSelected.length + rightItems!.length > rightMaxItems
+		: false;
+	const hasMaxItemsLeft = leftMaxItems
+		? leftItems!.length >= leftMaxItems
+		: false;
+	const hasMaxItemsRight = rightMaxItems
+		? rightItems!.length >= rightMaxItems
+		: false;
 
 	return (
 		<div {...otherProps} className={classNames(className, 'form-group')}>
 			<div className="clay-dual-listbox">
 				<ClaySelectBox
 					className="clay-dual-listbox-item clay-dual-listbox-item-expand listbox-left"
+					disabled={disabled}
 					id={left.id}
-					items={leftItems}
+					items={leftItems!}
 					label={left.label}
 					multiple
 					onItemsChange={(newLeftItems) =>
-						onItemsChange([newLeftItems, rightItems])
+						onItemsChange([newLeftItems, rightItems!])
 					}
 					onSelectChange={handleLeftSelectedChange}
-					showArrows
 					size={size}
-					spritemap={spritemap}
 					value={leftSelected}
 				/>
 
@@ -161,15 +195,19 @@ const ClayDualListBox: React.FunctionComponent<IProps> = ({
 						aria-label={ariaLabels.transferLTR}
 						className="transfer-button-ltr"
 						data-testid="ltr"
-						disabled={leftSelected.length === 0 || disableLTR}
+						disabled={
+							disableLTR ||
+							hasMaxItemsRight ||
+							isRightError ||
+							disabled
+						}
 						displayType="secondary"
 						onClick={() => {
 							const [arrayLeft, arrayRight] = swapArrayItems(
-								[leftItems, rightItems],
+								[leftItems!, rightItems!],
 								selectedIndexesLeft
 							);
-
-							onItemsChange([arrayLeft, arrayRight]);
+							onItemsChange([arrayLeft!, arrayRight!]);
 						}}
 						small
 						spritemap={spritemap}
@@ -180,15 +218,19 @@ const ClayDualListBox: React.FunctionComponent<IProps> = ({
 						aria-label={ariaLabels.transferRTL}
 						className="transfer-button-rtl"
 						data-testid="rtl"
-						disabled={rightSelected.length === 0 || disableRTL}
+						disabled={
+							disableRTL ||
+							hasMaxItemsLeft ||
+							isLeftError ||
+							disabled
+						}
 						displayType="secondary"
 						onClick={() => {
 							const [arrayRight, arrayLeft] = swapArrayItems(
-								[rightItems, leftItems],
+								[rightItems!, leftItems!],
 								selectedIndexesRight
 							);
-
-							onItemsChange([arrayLeft, arrayRight]);
+							onItemsChange([arrayLeft!, arrayRight!]);
 						}}
 						small
 						spritemap={spritemap}
@@ -198,20 +240,34 @@ const ClayDualListBox: React.FunctionComponent<IProps> = ({
 
 				<ClaySelectBox
 					className="clay-dual-listbox-item clay-dual-listbox-item-expand listbox-right"
+					disabled={disabled}
 					id={right.id}
-					items={rightItems}
+					items={rightItems!}
 					label={right.label}
 					multiple
 					onItemsChange={(newRightItems) =>
-						onItemsChange([leftItems, newRightItems])
+						onItemsChange([leftItems!, newRightItems])
 					}
 					onSelectChange={handleRightSelectedChange}
+					showArrows
 					size={size}
+					spritemap={spritemap}
 					value={rightSelected}
 				/>
 			</div>
+
+			{(isLeftError || isRightError) && (
+				<Form.FeedbackGroup className="has-error">
+					<Form.FeedbackItem>
+						{sub(ariaLabels.error || defaultError, [
+							isLeftError ? left.label! : right.label!,
+							isLeftError ? leftMaxItems! : rightMaxItems!,
+						])}
+					</Form.FeedbackItem>
+				</Form.FeedbackGroup>
+			)}
 		</div>
 	);
-};
+}
 
-export default ClayDualListBox;
+export default DualListBox;

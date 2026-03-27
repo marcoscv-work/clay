@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayModal, {useModal} from '..';
@@ -13,7 +13,9 @@ const spritemap = 'icons.svg';
 
 describe('ClayModal', () => {
 	beforeAll(() => {
+
 		// @ts-ignore
+
 		ReactDOM.createPortal = jest.fn((element) => {
 			return element;
 		});
@@ -36,12 +38,14 @@ describe('ClayModal', () => {
 
 			return (
 				<ClayModal observer={observer} spritemap={spritemap}>
-					<ClayModal.Header>{'Foo'}</ClayModal.Header>
+					<ClayModal.Header>Foo</ClayModal.Header>
+
 					<ClayModal.Body>
-						<h1>{'Hello world!'}</h1>
+						<h1>Hello world!</h1>
 					</ClayModal.Body>
+
 					<ClayModal.Footer
-						last={<Button onClick={onClose}>{'Primary'}</Button>}
+						last={<Button onClick={onClose}>Primary</Button>}
 					/>
 				</ClayModal>
 			);
@@ -62,7 +66,7 @@ describe('ClayModal', () => {
 
 			return (
 				<ClayModal observer={observer} spritemap={spritemap}>
-					<ClayModal.Header>{'Foo'}</ClayModal.Header>
+					<ClayModal.Header>Foo</ClayModal.Header>
 				</ClayModal>
 			);
 		};
@@ -87,14 +91,15 @@ describe('ClayModal', () => {
 							<ClayModal.Item>
 								<ClayModal.TitleSection>
 									<ClayModal.Title>
-										{'Modal Title'}
+										Modal Title
 									</ClayModal.Title>
 								</ClayModal.TitleSection>
 							</ClayModal.Item>
+
 							<ClayModal.Item shrink>
 								<ClayModal.SubtitleSection>
 									<ClayModal.Subtitle>
-										{'Modal Subtitle'}
+										Modal Subtitle
 									</ClayModal.Subtitle>
 								</ClayModal.SubtitleSection>
 							</ClayModal.Item>
@@ -202,9 +207,9 @@ describe('ClayModal', () => {
 			return (
 				<ClayModal observer={observer} spritemap={spritemap}>
 					<ClayModal.Footer
-						first={<Button>{'Bar'}</Button>}
-						last={<Button onClick={onClose}>{'Foo'}</Button>}
-						middle={<Button>{'Baz'}</Button>}
+						first={<Button>Bar</Button>}
+						last={<Button onClick={onClose}>Foo</Button>}
+						middle={<Button>Baz</Button>}
 					/>
 				</ClayModal>
 			);
@@ -217,5 +222,31 @@ describe('ClayModal', () => {
 		});
 
 		expect(document.body).toMatchSnapshot();
+	});
+
+	it('renders footer item wrappers only when props are provided', () => {
+		const {rerender} = render(<ClayModal.Footer />);
+
+		expect(document.querySelector('.modal-item-first')).toBeNull();
+		expect(document.querySelector('.modal-item')).toBeNull();
+		expect(document.querySelector('.modal-item-last')).toBeNull();
+
+		rerender(<ClayModal.Footer first={<Button>First</Button>} />);
+
+		expect(document.querySelector('.modal-item-first')).not.toBeNull();
+		expect(document.querySelector('.modal-item')).toBeNull();
+		expect(document.querySelector('.modal-item-last')).toBeNull();
+
+		rerender(<ClayModal.Footer middle={<Button>Middle</Button>} />);
+
+		expect(document.querySelector('.modal-item-first')).toBeNull();
+		expect(document.querySelector('.modal-item')).not.toBeNull();
+		expect(document.querySelector('.modal-item-last')).toBeNull();
+
+		rerender(<ClayModal.Footer last={<Button>Last</Button>} />);
+
+		expect(document.querySelector('.modal-item-first')).toBeNull();
+		expect(document.querySelector('.modal-item')).toBeNull();
+		expect(document.querySelector('.modal-item-last')).not.toBeNull();
 	});
 });

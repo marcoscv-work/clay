@@ -1,14 +1,12 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import React from 'react';
 
-const ClayDropDownDivider: React.FunctionComponent<React.HTMLAttributes<
-	HTMLLIElement
->> = () => (
-	<li aria-hidden="true" className="dropdown-divider" role="presentation" />
-);
+function Divider() {
+	return <li className="dropdown-divider" role="separator" />;
+}
 
-export default ClayDropDownDivider;
+export default Divider;

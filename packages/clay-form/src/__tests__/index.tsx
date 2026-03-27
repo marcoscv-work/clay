@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayForm, {ClayInput} from '..';
@@ -36,6 +36,18 @@ describe('ClayForm', () => {
 
 	it('Group renders', () => {
 		const testRenderer = TestRenderer.create(<ClayForm.Group />);
+
+		expect(testRenderer.toJSON()).toMatchSnapshot();
+	});
+
+	it('BlockquoteText renders', () => {
+		const testRenderer = TestRenderer.create(<ClayForm.BlockquoteText />);
+
+		expect(testRenderer.toJSON()).toMatchSnapshot();
+	});
+
+	it('HelpText renders', () => {
+		const testRenderer = TestRenderer.create(<ClayForm.HelpText />);
 
 		expect(testRenderer.toJSON()).toMatchSnapshot();
 	});

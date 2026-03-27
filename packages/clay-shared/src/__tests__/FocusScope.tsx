@@ -1,24 +1,23 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import {cleanup, render} from '@testing-library/react';
+import Icon from '@clayui/icon';
+import {cleanup, fireEvent, render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import {ClayPortal, FocusScope} from '..';
 
 describe('FocusScope', () => {
 	afterEach(() => {
-		jest.clearAllTimers();
-
+		document.body.innerHTML = '';
 		cleanup();
 	});
 
-	it('manages focus order when using portals', () => {
-		// Create non-react based html nodes
+	beforeEach(() => {
 		if (document) {
 			const buttonNode = document.createElement('button');
 			buttonNode.id = 'button1';
@@ -37,12 +36,25 @@ describe('FocusScope', () => {
 		render(
 			<FocusScope>
 				<div id="wrapper">
-					<button id="reactButton">{'React'}</button>
+					<button id="reactButton">React</button>
+
 					<ClayPortal>
 						<ul>
 							<li>
-								<a href="#" id="linkInPortal">
-									{'link 1'}
+								<a href="#" id="linkInPortal1">
+									link 1
+								</a>
+							</li>
+
+							<li>
+								<a href="#" id="linkInPortal2">
+									link 2
+								</a>
+							</li>
+
+							<li>
+								<a href="#" id="linkInPortal3">
+									link 3
 								</a>
 							</li>
 						</ul>
@@ -51,8 +63,12 @@ describe('FocusScope', () => {
 			</FocusScope>,
 			{container: document.getElementById('reactRoot') as HTMLElement}
 		);
+	});
+
+	it('manages focus order when using portals', () => {
 
 		// Putting this snapshot inline to reference the structure of the DOM
+
 		expect(document.body).toMatchInlineSnapshot(`
 		<body>
 		  <button
@@ -79,9 +95,25 @@ describe('FocusScope', () => {
 		      <li>
 		        <a
 		          href="#"
-		          id="linkInPortal"
+		          id="linkInPortal1"
 		        >
 		          link 1
+		        </a>
+		      </li>
+		      <li>
+		        <a
+		          href="#"
+		          id="linkInPortal2"
+		        >
+		          link 2
+		        </a>
+		      </li>
+		      <li>
+		        <a
+		          href="#"
+		          id="linkInPortal3"
+		        >
+		          link 3
 		        </a>
 		      </li>
 		    </ul>
@@ -94,8 +126,14 @@ describe('FocusScope', () => {
 		const reactButton = document.getElementById(
 			'reactButton'
 		) as HTMLElement;
-		const linkInPortal = document.getElementById(
-			'linkInPortal'
+		const linkInPortalOne = document.getElementById(
+			'linkInPortal1'
+		) as HTMLElement;
+		const linkInPortalTwo = document.getElementById(
+			'linkInPortal2'
+		) as HTMLElement;
+		const linkInPortalThree = document.getElementById(
+			'linkInPortal3'
 		) as HTMLElement;
 
 		userEvent.tab();
@@ -108,10 +146,309 @@ describe('FocusScope', () => {
 
 		userEvent.tab();
 
-		expect(linkInPortal).toHaveFocus();
+		expect(linkInPortalOne).toHaveFocus();
+
+		userEvent.tab();
+
+		expect(linkInPortalTwo).toHaveFocus();
+
+		userEvent.tab();
+
+		expect(linkInPortalThree).toHaveFocus();
 
 		userEvent.tab();
 
 		expect(htmlButton2).toHaveFocus();
+	});
+
+	it('interacts with shift + tab', () => {
+		const htmlButton1 = document.getElementById('button1') as HTMLElement;
+		const htmlButton2 = document.getElementById('button2') as HTMLElement;
+
+		const reactButton = document.getElementById(
+			'reactButton'
+		) as HTMLElement;
+
+		htmlButton2.focus();
+
+		expect(htmlButton2).toHaveFocus();
+
+		userEvent.tab({shift: true});
+
+		expect(reactButton).toHaveFocus();
+
+		userEvent.tab({shift: true});
+
+		expect(htmlButton1).toHaveFocus();
+	});
+
+	it('interacts with down arrow key', () => {
+		const linkInPortalOne = document.getElementById(
+			'linkInPortal1'
+		) as HTMLElement;
+		const linkInPortalTwo = document.getElementById(
+			'linkInPortal2'
+		) as HTMLElement;
+		const linkInPortalThree = document.getElementById(
+			'linkInPortal3'
+		) as HTMLElement;
+
+		linkInPortalOne.focus();
+
+		expect(linkInPortalOne).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalOne, {key: 'ArrowDown'});
+
+		expect(linkInPortalTwo).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalTwo, {key: 'ArrowDown'});
+
+		expect(linkInPortalThree).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalThree, {key: 'ArrowDown'});
+	});
+
+	it('interacts with up arrow key', () => {
+		const linkInPortalOne = document.getElementById(
+			'linkInPortal1'
+		) as HTMLElement;
+		const linkInPortalTwo = document.getElementById(
+			'linkInPortal2'
+		) as HTMLElement;
+		const linkInPortalThree = document.getElementById(
+			'linkInPortal3'
+		) as HTMLElement;
+
+		linkInPortalThree.focus();
+
+		expect(linkInPortalThree).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalThree, {key: 'ArrowUp'});
+
+		expect(linkInPortalTwo).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalTwo, {key: 'ArrowUp'});
+
+		expect(linkInPortalOne).toHaveFocus();
+
+		fireEvent.keyDown(linkInPortalOne, {key: 'ArrowUp'});
+	});
+
+	describe('FocusScope outside the React Tree', () => {
+		beforeEach(() => {
+			document.body.innerHTML = '';
+		});
+
+		it('interacts with React.Portal', async () => {
+			const {getByText} = render(
+				<FocusScope>
+					<div>
+						<button>Button 1</button>
+
+						<ClayPortal>
+							<div id="content">
+								<button>Button 2</button>
+							</div>
+						</ClayPortal>
+
+						<ClayPortal>
+							<FocusScope>
+								<div id="content">
+									<button>one</button>
+
+									<button>two</button>
+								</div>
+							</FocusScope>
+						</ClayPortal>
+					</div>
+				</FocusScope>
+			);
+
+			const button1El = getByText('Button 1');
+			const button2El = getByText('Button 2');
+
+			await userEvent.tab();
+
+			expect(button1El).toHaveFocus();
+
+			await userEvent.tab();
+
+			expect(button2El).toHaveFocus();
+
+			await userEvent.tab();
+
+			const oneEl = getByText('one');
+
+			expect(oneEl).toHaveFocus();
+
+			await userEvent.tab();
+
+			const twoEl = getByText('two');
+
+			expect(twoEl).toHaveFocus();
+		});
+
+		it('interacts without React.Portal', () => {
+			const {getByText} = render(
+				<FocusScope>
+					<div>
+						<div id="content">
+							<button>Button 1</button>
+						</div>
+
+						<ClayPortal>
+							<FocusScope>
+								<div id="content">
+									<button>one</button>
+
+									<button>two</button>
+								</div>
+							</FocusScope>
+						</ClayPortal>
+					</div>
+				</FocusScope>
+			);
+
+			const button1El = getByText('Button 1');
+
+			userEvent.tab();
+
+			expect(button1El).toHaveFocus();
+
+			userEvent.tab();
+
+			const oneEl = getByText('one');
+
+			expect(oneEl).toHaveFocus();
+
+			userEvent.tab();
+
+			const twoEl = getByText('two');
+
+			expect(twoEl).toHaveFocus();
+
+			userEvent.tab();
+
+			expect(document.body).toHaveFocus();
+
+			userEvent.tab();
+
+			expect(button1El).toHaveFocus();
+		});
+	});
+
+	type Props = {
+		children: JSX.Element;
+		condition: boolean;
+		onRender: () => void;
+	};
+
+	it('move focus when there is an element in the tree in progress', () => {
+		document.body.innerHTML = '';
+
+		const OnRender = ({children, condition, onRender}: Props) => {
+			useEffect(() => {
+				if (condition) {
+					onRender();
+				}
+			}, [condition]);
+
+			return children;
+		};
+
+		const Menu = () => {
+			const [active, setActive] = useState(false);
+
+			return (
+				<FocusScope>
+					{(focusManager) => (
+						<div id="wrapper">
+							<button onClick={() => setActive(!active)}>
+								Open
+								<Icon
+									spritemap="icons.svg"
+									symbol={active ? 'up' : 'down'}
+								/>
+							</button>
+
+							<ClayPortal>
+								<OnRender
+									condition={active}
+									onRender={() => focusManager.focusNext()}
+								>
+									<ul role="menu">
+										<li role="presentation">
+											<a href="#" role="menuitem">
+												link 1
+											</a>
+										</li>
+
+										<li role="presentation">
+											<a href="#" role="menuitem">
+												link 2
+											</a>
+										</li>
+
+										<li role="presentation">
+											<a href="#" role="menuitem">
+												link 3
+											</a>
+										</li>
+									</ul>
+								</OnRender>
+							</ClayPortal>
+						</div>
+					)}
+				</FocusScope>
+			);
+		};
+
+		const {getAllByRole, getByRole} = render(<Menu />);
+
+		const button = getByRole('button');
+
+		button.focus();
+
+		expect(button === document.activeElement).toBeTruthy();
+
+		fireEvent.click(button);
+
+		const [link1] = getAllByRole('menuitem');
+
+		expect(link1 === document.activeElement).toBeTruthy();
+	});
+
+	describe('stopPropagation', () => {
+		const parentOnKeyDown = jest.fn();
+
+		const renderComponent = (stopPropagation = true) => {
+			return render(
+				<div onKeyDown={parentOnKeyDown}>
+					<FocusScope stopPropagation={stopPropagation}>
+						<button>Button</button>
+					</FocusScope>
+				</div>
+			);
+		};
+
+		it('stops keydown propagation to parent handlers when stopPropagation is true (default)', async () => {
+			renderComponent();
+
+			screen.getByText('Button').focus();
+
+			await userEvent.keyboard('{ArrowDown}');
+
+			expect(parentOnKeyDown).not.toHaveBeenCalled();
+		});
+
+		it('allows keydown propagation to parent handlers when stopPropagation is false', async () => {
+			renderComponent(false);
+
+			screen.getByText('Button').focus();
+
+			await userEvent.keyboard('{ArrowDown}');
+
+			expect(parentOnKeyDown).toHaveBeenCalledTimes(1);
+		});
 	});
 });

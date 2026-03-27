@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayTooltip, {ClayTooltipProvider} from '..';
@@ -11,7 +11,7 @@ describe('ClayTooltip', () => {
 	afterEach(cleanup);
 
 	it('renders', () => {
-		const {container} = render(<ClayTooltip show>{'Tooltip'}</ClayTooltip>);
+		const {container} = render(<ClayTooltip show>Tooltip</ClayTooltip>);
 
 		expect(container).toMatchSnapshot();
 	});
@@ -26,12 +26,14 @@ describe('ClayTooltip', () => {
 					data-tooltip-align="bottom"
 					title="Bottom"
 				>
-					{'tooltip'}
+					tooltip
 				</button>
 			</ClayTooltipProvider>
 		);
 
 		expect(document.querySelector('.tooltip')).toBeFalsy();
+
+		fireEvent.mouseDown(document.body);
 
 		fireEvent.mouseOver(getByTestId('button'));
 
@@ -46,6 +48,32 @@ describe('ClayTooltip', () => {
 		act(() => {
 			jest.runAllTimers();
 		});
+
+		expect(document.querySelector('.tooltip')).toBeFalsy();
+	});
+
+	it('show tooltip on element focus and hide on blur', () => {
+		const {getByTestId} = render(
+			<ClayTooltipProvider>
+				<button
+					data-testid="button"
+					data-tooltip-align="bottom"
+					title="Bottom"
+				>
+					tooltip
+				</button>
+			</ClayTooltipProvider>
+		);
+
+		fireEvent.keyDown(document.body, {key: 'Tab'});
+
+		expect(document.querySelector('.tooltip')).toBeFalsy();
+
+		fireEvent.focus(getByTestId('button'));
+
+		expect(document.querySelector('.tooltip')).toBeTruthy();
+
+		fireEvent.blur(getByTestId('button'));
 
 		expect(document.querySelector('.tooltip')).toBeFalsy();
 	});

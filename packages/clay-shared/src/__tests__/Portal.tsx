@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayPortal} from '..';
@@ -40,7 +40,7 @@ describe('Portal', () => {
 				<ClayPortal>
 					<div id="portal1" />
 				</ClayPortal>
-				{'Normal Content'}
+				Normal Content
 				<ClayPortal>
 					<div id="portal2" />
 				</ClayPortal>
@@ -93,7 +93,7 @@ describe('Portal', () => {
 			return (
 				<div>
 					<div id="content" ref={contentRef}>
-						{'content'}
+						content
 					</div>
 
 					<ClayPortal containerRef={contentRef}>
@@ -120,7 +120,7 @@ describe('Portal', () => {
 				<ClayPortal subPortalRef={contentRef}>
 					<div>
 						<div id="content" ref={contentRef}>
-							{'content'}
+							content
 						</div>
 					</div>
 
@@ -138,5 +138,19 @@ describe('Portal', () => {
 				.getElementById('content')!
 				.contains(document.getElementById('portal'))
 		).toBeTruthy();
+	});
+
+	it('pass className and id to the root element', () => {
+		const App = () => {
+			return (
+				<ClayPortal className="portalClass" id="portalId">
+					<div id="portal" />
+				</ClayPortal>
+			);
+		};
+
+		render(<App />);
+
+		expect(document.body).toMatchSnapshot();
 	});
 });

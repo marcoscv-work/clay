@@ -1,35 +1,46 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import {getEllipsisItems} from '@clayui/shared';
+import {ClayButtonWithIcon} from '@clayui/button';
 import classNames from 'classnames';
-import React from 'react';
+import React, {useState} from 'react';
 import warning from 'warning';
 
-import Ellipsis from './Ellipsis';
 import Item from './Item';
 
 type TItem = React.ComponentProps<typeof Item>;
 type TItems = Array<TItem>;
 
 interface IProps extends React.HTMLAttributes<HTMLOListElement> {
+
+	/**
+	 * Defines the aria label of component elements.
+	 */
+	ariaLabels?: {
+		breadcrumb: string;
+		close: string;
+		open: string;
+	};
+
 	/**
 	 * The number of Breadcrumb Items to show on each side of the active Breadcrumb Item before
 	 * using an ellipsis dropdown.
+	 * @deprecated since v3.91.0 - It is no longer necessary.
 	 */
 	ellipsisBuffer?: number;
 
 	/**
 	 * Use this property for defining `otherProps` that will be passed to ellipsis dropdown trigger.
+	 * @deprecated since v3.91.0 - It is no longer necessary.
 	 */
 	ellipsisProps?: Object;
 
 	/**
 	 * Property to define Breadcrumb's items.
 	 */
-	items: TItems;
+	items: Array<React.ComponentProps<typeof Item>>;
 
 	/**
 	 * Path to the location of the spritemap resource.
@@ -37,43 +48,77 @@ interface IProps extends React.HTMLAttributes<HTMLOListElement> {
 	spritemap?: string;
 }
 
-const findActiveItems = (items: TItems) => {
+function findActiveItems(items: TItems) {
 	return items.filter((item) => {
 		return item.active;
 	});
-};
+}
 
-const ClayBreadcrumb: React.FunctionComponent<IProps> = ({
-	className,
+function Breadcrumb({
+	ariaLabels = {
+		breadcrumb: 'Breadcrumb',
+		close: 'Partially nest breadcrumbs',
+		open: 'See full nested',
+	},
+
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	ellipsisBuffer = 1,
+
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	ellipsisProps = {},
+	className,
 	items,
 	spritemap,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	warning(
 		findActiveItems(items).length === 1,
 		'ClayBreadcrumb expects at least one `active` item on `items`.'
 	);
-
-	const activeItems = findActiveItems(items);
-
-	const breadCrumbItems = ellipsisBuffer
-		? getEllipsisItems(
-				{
-					EllipsisComponent: Ellipsis,
-					ellipsisProps,
-					items,
-					spritemap,
-				},
-				ellipsisBuffer,
-				items.indexOf(activeItems[0])
-		  )
-		: items;
+	const [collapsed, setCollapsed] = useState(false);
 
 	return (
-		<ol {...otherProps} className={classNames('breadcrumb', className)}>
-			{breadCrumbItems.map((item: TItem | React.ReactNode, i: number) =>
+		<nav aria-label={ariaLabels.breadcrumb} className="breadcrumb-bar">
+			{items.length > 3 && (
+				<ClayButtonWithIcon
+					aria-expanded={collapsed}
+					aria-label={collapsed ? ariaLabels.close : ariaLabels.open}
+					className="breadcrumb-toggle"
+					displayType={null}
+					onClick={() => setCollapsed(!collapsed)}
+					size="xs"
+					spritemap={spritemap}
+					symbol={
+						collapsed ? 'angle-double-left' : 'angle-double-right'
+					}
+					title={collapsed ? ariaLabels.close : ariaLabels.open}
+				/>
+			)}
+
+			<ol {...otherProps} className={classNames('breadcrumb', className)}>
+				{items.length > 3 && !collapsed ? (
+					<Items
+						items={[
+							items[items.length - 2]!,
+							items[items.length - 1]!,
+						]}
+					/>
+				) : (
+					<Items items={items} />
+				)}
+			</ol>
+		</nav>
+	);
+}
+
+type ItemsProps = {
+	items: TItems;
+};
+
+function Items({items}: ItemsProps) {
+	return (
+		<>
+			{items.map((item: TItem | React.ReactNode, i: number) =>
 				React.isValidElement(item) ? (
 					React.cloneElement(item, {key: `ellipsis${i}`})
 				) : (
@@ -86,8 +131,8 @@ const ClayBreadcrumb: React.FunctionComponent<IProps> = ({
 					/>
 				)
 			)}
-		</ol>
+		</>
 	);
-};
+}
 
-export default ClayBreadcrumb;
+export default Breadcrumb;

@@ -1,11 +1,11 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayButtonWithIcon} from '@clayui/button';
 import {ClayDropDownWithItems} from '@clayui/drop-down';
-import {ClayCheckbox} from '@clayui/form';
+import {ClayCheckbox, ClayRadio} from '@clayui/form';
 import ClayIcon from '@clayui/icon';
 import ClayLabel from '@clayui/label';
 import ClayLayout from '@clayui/layout';
@@ -15,7 +15,10 @@ import React from 'react';
 
 import ClayCard from './Card';
 
+import type {ButtonWithIconProps} from '@clayui/button';
+
 interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * List of actions in the dropdown menu
 	 */
@@ -44,7 +47,10 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	/**
 	 * Props to add to the dropdown trigger element
 	 */
-	dropDownTriggerProps?: React.HTMLAttributes<HTMLButtonElement>;
+	dropDownTriggerProps?: Omit<
+		ButtonWithIconProps,
+		'symbol' | 'spritemap' | 'displayType' | 'className'
+	>;
 
 	/**
 	 * Flag to indicate if `aspect-ratio-item-flush` class should be
@@ -76,9 +82,22 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	>;
 
 	/**
-	 * Callback for when item is selected
+	 * Callback for when item is selected.
 	 */
-	onSelectChange?: (val: boolean) => void;
+	onSelectChange?: (value: boolean | string) => void;
+
+	/**
+	 * Props to add to the radio element
+	 */
+	radioProps?: React.HTMLAttributes<HTMLInputElement> & {
+		name: string;
+		value: string;
+	};
+
+	/**
+	 * Determines what type of selectable it is.
+	 */
+	selectableType?: 'checkbox' | 'radio';
 
 	/**
 	 * Flag to indicate if card is selected
@@ -88,7 +107,7 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	/**
 	 * Path to clay icon spritemap
 	 */
-	spritemap: string;
+	spritemap?: string;
 
 	/**
 	 * Values used in displaying bottom-left icon
@@ -108,43 +127,51 @@ interface IProps extends React.BaseHTMLAttributes<HTMLDivElement> {
 	 * Name of the file
 	 */
 	title: string;
+
+	/**
+	 * Flag to indicate if the card text is truncated
+	 */
+	truncate?: boolean;
 }
 
-export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
+export function ClayCardWithInfo({
+	'aria-label': ariaLabel,
 	actions,
 	checkboxProps = {},
 	description,
 	disabled,
 	displayType,
-	dropDownTriggerProps = {},
+	dropDownTriggerProps = {
+		'aria-label': 'More actions',
+	},
 	flushHorizontal,
 	flushVertical,
 	href,
 	imgProps,
 	labels,
 	onSelectChange,
+	radioProps = {name: '', value: ''},
+	selectableType,
 	selected = false,
 	spritemap,
 	stickerProps = {},
 	symbol,
 	title,
+	truncate = true,
 	...otherProps
-}: IProps) => {
+}: IProps) {
 	const isCardType = {
 		file: displayType === 'file' && !imgProps,
 		image: displayType === 'image' || imgProps,
 	};
-
 	const contentSymbol = symbol
 		? symbol
 		: isCardType.image
-		? 'camera'
-		: 'documents-and-media';
-
+			? 'camera'
+			: 'documents-and-media';
 	const stickerSymbol = isCardType.image
 		? 'document-image'
 		: 'document-default';
-
 	const headerContent = (
 		<ClayCard.AspectRatio className="card-item-first">
 			{!imgProps && (
@@ -179,6 +206,7 @@ export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
 							: 'primary'
 					}
 					position="bottom-left"
+					title={stickerProps.title}
 					{...stickerProps}
 				>
 					{stickerProps.children ? (
@@ -203,16 +231,26 @@ export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
 			displayType={isCardType.image ? 'image' : 'file'}
 			selectable={!!onSelectChange}
 		>
-			{onSelectChange && (
-				<ClayCheckbox
-					{...checkboxProps}
-					checked={selected}
-					disabled={disabled}
-					onChange={() => onSelectChange(!selected)}
-				>
-					{headerContent}
-				</ClayCheckbox>
-			)}
+			{onSelectChange &&
+				(selectableType === 'radio' ? (
+					<ClayRadio
+						{...radioProps}
+						checked={selected}
+						disabled={disabled}
+						onChange={({target: {value}}) => onSelectChange(value)}
+					>
+						{headerContent}
+					</ClayRadio>
+				) : (
+					<ClayCheckbox
+						{...checkboxProps}
+						checked={selected}
+						disabled={disabled}
+						onChange={() => onSelectChange(!selected)}
+					>
+						{headerContent}
+					</ClayCheckbox>
+				))}
 
 			{!onSelectChange && headerContent}
 
@@ -220,15 +258,20 @@ export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
 				<ClayCard.Row>
 					<ClayLayout.ContentCol expand>
 						<ClayCard.Description
+							aria-label={ariaLabel ?? title}
 							disabled={disabled}
 							displayType="title"
 							href={href}
+							truncate={truncate}
 						>
 							{title}
 						</ClayCard.Description>
 
 						{description && (
-							<ClayCard.Description displayType="subtitle">
+							<ClayCard.Description
+								displayType="subtitle"
+								truncate={truncate}
+							>
 								{description}
 							</ClayCard.Description>
 						)}
@@ -251,9 +294,8 @@ export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
 								spritemap={spritemap}
 								trigger={
 									<ClayButtonWithIcon
-										{...dropDownTriggerProps}
+										{...(dropDownTriggerProps as ButtonWithIconProps)}
 										className="component-action"
-										disabled={disabled}
 										displayType="unstyled"
 										spritemap={spritemap}
 										symbol="ellipsis-v"
@@ -266,4 +308,4 @@ export const ClayCardWithInfo: React.FunctionComponent<IProps> = ({
 			</ClayCard.Body>
 		</ClayCard>
 	);
-};
+}

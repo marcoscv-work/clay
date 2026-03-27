@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClaySlider from '..';
@@ -12,7 +12,7 @@ describe('ClaySlider', () => {
 
 	it('renders', () => {
 		const {container} = render(
-			<ClaySlider onValueChange={() => {}} value={10} />
+			<ClaySlider onChange={() => {}} value={10} />
 		);
 
 		expect(container).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe('ClaySlider', () => {
 
 	it('renders a Slider disabled', () => {
 		const {container} = render(
-			<ClaySlider disabled onValueChange={() => {}} value={10} />
+			<ClaySlider disabled onChange={() => {}} value={10} />
 		);
 
 		const input = container.querySelector(
@@ -34,11 +34,7 @@ describe('ClaySlider', () => {
 
 	it('renders a Slider with the tooltip position bottom', () => {
 		const {container} = render(
-			<ClaySlider
-				onValueChange={() => {}}
-				tooltipPosition="bottom"
-				value={10}
-			/>
+			<ClaySlider defaultValue={10} tooltipPosition="bottom" />
 		);
 
 		expect(

@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
@@ -16,6 +16,7 @@ type TableCellBaseProps = React.ThHTMLAttributes<HTMLTableHeaderCellElement> &
 type TextCellAlignmentType = 'center' | 'left' | 'right';
 
 export interface ICellProps extends TableCellBaseProps {
+
 	/**
 	 * Aligns the text inside the Cell.
 	 */
@@ -50,6 +51,11 @@ export interface ICellProps extends TableCellBaseProps {
 	 */
 	headingTitle?: boolean;
 
+	/*
+	 * Keep cells on one line.
+	 */
+	noWrap?: boolean;
+
 	/**
 	 * Truncates the text inside a Cell. Requires `expanded`
 	 * property value set to true.
@@ -71,6 +77,7 @@ const ClayTableCell = React.forwardRef<
 			expanded,
 			headingCell = false,
 			headingTitle = false,
+			noWrap = false,
 			truncate = false,
 			...otherProps
 		}: ICellProps,
@@ -84,8 +91,10 @@ const ClayTableCell = React.forwardRef<
 				className={classNames(className, {
 					'table-cell-expand': expanded || truncate,
 					[`table-cell-${cellDelimiter}`]: cellDelimiter,
-					[`table-column-text-${columnTextAlignment}`]: columnTextAlignment,
+					[`table-column-text-${columnTextAlignment}`]:
+						columnTextAlignment,
 					[`text-${align}`]: align,
+					'table-cell-ws-nowrap': noWrap,
 				})}
 				ref={ref}
 			>

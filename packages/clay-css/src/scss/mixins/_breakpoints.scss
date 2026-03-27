@@ -6,15 +6,36 @@
 /// @param {Key} $name - The breakpoint name or keys in `$grid-breakpoints` (e.g., `xs`, `sm`, `md`, `lg`, `xl`)
 /// @param {Map} $breakpoints[$grid-breakpoints] - A map that defines the breakpoints
 
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-	$min: breakpoint-min($name, $breakpoints);
+@mixin media-breakpoint-up($name, $breakpoints: null) {
+	@if ($name != c-unset) {
+		$breakpoints: setter(
+			$breakpoints,
+			if(
+				variable-exists(grid-breakpoints),
+				$grid-breakpoints,
+				if(
+					variable-exists(cadmin-grid-breakpoints),
+					$cadmin-grid-breakpoints,
+					(
+						xs: 0,
+						sm: 576px,
+						md: 768px,
+						lg: 992px,
+						xl: 1280px,
+					)
+				)
+			)
+		);
 
-	@if $min {
-		@media (min-width: $min) {
+		$min: breakpoint-min($name, $breakpoints);
+
+		@if $min {
+			@media (min-width: $min) {
+				@content;
+			}
+		} @else {
 			@content;
 		}
-	} @else {
-		@content;
 	}
 }
 
@@ -22,15 +43,36 @@
 /// @param {Key} $name - The breakpoint name or keys in `$grid-breakpoints`(e.g., `xs`, `sm`, `md`, `lg`, `xl`)
 /// @param {Map} $breakpoints[$grid-breakpoints] - A map that defines the breakpoints
 
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
-	$max: breakpoint-max($name, $breakpoints);
+@mixin media-breakpoint-down($name, $breakpoints: null) {
+	@if ($name != c-unset) {
+		$breakpoints: setter(
+			$breakpoints,
+			if(
+				variable-exists(grid-breakpoints),
+				$grid-breakpoints,
+				if(
+					variable-exists(cadmin-grid-breakpoints),
+					$cadmin-grid-breakpoints,
+					(
+						xs: 0,
+						sm: 576px,
+						md: 768px,
+						lg: 992px,
+						xl: 1280px,
+					)
+				)
+			)
+		);
 
-	@if $max {
-		@media (max-width: $max) {
+		$max: breakpoint-max($name, $breakpoints);
+
+		@if $max {
+			@media (max-width: $max) {
+				@content;
+			}
+		} @else {
 			@content;
 		}
-	} @else {
-		@content;
 	}
 }
 
@@ -39,11 +81,26 @@
 /// @param {Key} $upper - The upper bound breakpoint name or keys in `$grid-breakpoints` (e.g., `xs`, `sm`, `md`, `lg`, `xl`)
 /// @param {Map} $breakpoints[$grid-breakpoints] - A map that defines the breakpoints
 
-@mixin media-breakpoint-between(
-	$lower,
-	$upper,
-	$breakpoints: $grid-breakpoints
-) {
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: null) {
+	$breakpoints: setter(
+		$breakpoints,
+		if(
+			variable-exists(grid-breakpoints),
+			$grid-breakpoints,
+			if(
+				variable-exists(cadmin-grid-breakpoints),
+				$cadmin-grid-breakpoints,
+				(
+					xs: 0,
+					sm: 576px,
+					md: 768px,
+					lg: 992px,
+					xl: 1280px,
+				)
+			)
+		)
+	);
+
 	$min: breakpoint-min($lower, $breakpoints);
 	$max: breakpoint-max($upper, $breakpoints);
 
@@ -66,7 +123,26 @@
 /// @param {Key} $name - The breakpoint name or keys in `$grid-breakpoints` (e.g., `xs`, `sm`, `md`, `lg`, `xl`)
 /// @param {Map} $breakpoints[$grid-breakpoints] - A map that defines the breakpoints
 
-@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+@mixin media-breakpoint-only($name, $breakpoints: null) {
+	$breakpoints: setter(
+		$breakpoints,
+		if(
+			variable-exists(grid-breakpoints),
+			$grid-breakpoints,
+			if(
+				variable-exists(cadmin-grid-breakpoints),
+				$cadmin-grid-breakpoints,
+				(
+					xs: 0,
+					sm: 576px,
+					md: 768px,
+					lg: 992px,
+					xl: 1280px,
+				)
+			)
+		)
+	);
+
 	$min: breakpoint-min($name, $breakpoints);
 	$max: breakpoint-max($name, $breakpoints);
 

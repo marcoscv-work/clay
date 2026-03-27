@@ -1,38 +1,44 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import React from 'react';
 
 import {FirstDayOfWeek} from './types';
 
-interface IChildrenProps {
+type ChildrenProps = {
 	key: number;
 	weekday: string;
-}
+};
 
-interface IProps {
-	children: (object: IChildrenProps) => React.ReactNode;
+type Props = {
+	children: (object: ChildrenProps) => React.ReactNode;
 	firstDayOfWeek: FirstDayOfWeek;
 	weekdaysShort: Array<string>;
-}
+};
 
-const ClayDatePickerWeekdayHeader: React.FunctionComponent<IProps> = ({
+function ClayDatePickerWeekdayHeader({
 	children,
 	firstDayOfWeek = 0,
 	weekdaysShort,
-}) => (
-	<div className="date-picker-days-row date-picker-row">
-		{weekdaysShort.map((weekday, index) => {
-			return React.Children.only(
-				children({
-					key: index,
-					weekday: weekdaysShort[(index + firstDayOfWeek) % 7],
-				})
-			);
-		})}
-	</div>
-);
+}: Props) {
+	return (
+		<div
+			aria-hidden="true"
+			className="date-picker-days-row date-picker-row"
+			role="presentation"
+		>
+			{weekdaysShort.map((_weekday, index) => {
+				return React.Children.only(
+					children({
+						key: index,
+						weekday: weekdaysShort[(index + firstDayOfWeek) % 7]!,
+					})
+				);
+			})}
+		</div>
+	);
+}
 
 export default ClayDatePickerWeekdayHeader;

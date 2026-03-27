@@ -1,61 +1,79 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayIcon from '@clayui/icon';
 import ClayLink from '@clayui/link';
 import classNames from 'classnames';
-import React from 'react';
+import React, {useContext} from 'react';
 
-interface IProps
+import {DropDownContext} from './DropDownContext';
+
+export interface IProps
 	extends React.HTMLAttributes<
 		HTMLSpanElement | HTMLButtonElement | HTMLAnchorElement
 	> {
+
 	/**
 	 * Flag that indicates if item is selected.
 	 */
-	active?: boolean;
+	'active'?: boolean;
+
+	/**
+	 * @ignore
+	 */
+	'data-index'?: number;
 
 	/**
 	 * Flag that indicates if item is disabled or not.
 	 */
-	disabled?: boolean;
+	'disabled'?: boolean;
 
 	/**
 	 * Path for item to link to.
 	 */
-	href?: string;
+	'href'?: string;
 
-	innerRef?: React.Ref<any>;
+	'innerRef'?: React.Ref<any>;
+
+	/**
+	 * Sets the role accessibility property of the item. Set the item's
+	 * container (<li />) role use the role="" prop instead of roleItem="".
+	 */
+	'roleItem'?: string;
 
 	/**
 	 * Path to icon spritemap from clay-css.
 	 */
-	spritemap?: string;
+	'spritemap'?: string;
 
 	/**
 	 * Flag that indicates if there is an icon symbol on the left side.
 	 */
-	symbolLeft?: string;
+	'symbolLeft'?: string;
 
 	/**
 	 * Flag that indicates if there is an icon symbol on the right side.
 	 */
-	symbolRight?: string;
+	'symbolRight'?: string;
 }
 
-const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
+const Item = React.forwardRef<HTMLLIElement, IProps>(
 	(
 		{
 			active,
 			children,
 			className,
+			'data-index': dataIndex,
 			disabled,
 			href,
 			innerRef,
 			onClick,
+			role = 'presentation',
+			roleItem = 'menuitem',
 			spritemap,
+			style,
 			symbolLeft,
 			symbolRight,
 			tabIndex,
@@ -66,9 +84,12 @@ const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
 		const clickableElement = onClick ? 'button' : 'span';
 		const ItemElement = href ? ClayLink : clickableElement;
 
+		const {close, closeOnClick, tabFocus} = useContext(DropDownContext);
+
 		return (
-			<li aria-selected={active} ref={ref}>
+			<li data-index={dataIndex} ref={ref} role={role} style={style}>
 				<ItemElement
+					aria-selected={active}
 					{...otherProps}
 					className={classNames('dropdown-item', className, {
 						active,
@@ -76,9 +97,27 @@ const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
 					})}
 					disabled={disabled}
 					href={href}
-					onClick={onClick}
+					onClick={(
+						event: React.MouseEvent<
+							HTMLButtonElement | HTMLAnchorElement,
+							MouseEvent
+						>
+					) => {
+						if (onClick) {
+							onClick(event);
+						}
+
+						if (event.defaultPrevented) {
+							return;
+						}
+
+						if (closeOnClick) {
+							close();
+						}
+					}}
 					ref={innerRef}
-					tabIndex={disabled ? -1 : tabIndex}
+					role={roleItem}
+					tabIndex={disabled || !tabFocus ? -1 : tabIndex}
 				>
 					{symbolLeft && (
 						<span className="dropdown-item-indicator-start">
@@ -105,6 +144,6 @@ const ClayDropDownItem = React.forwardRef<HTMLLIElement, IProps>(
 	}
 );
 
-ClayDropDownItem.displayName = 'ClayDropDownItem';
+Item.displayName = 'ClayDropDownItem';
 
-export default ClayDropDownItem;
+export default Item;

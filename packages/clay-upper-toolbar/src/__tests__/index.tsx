@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayUpperToolbar from '..';
@@ -19,7 +19,7 @@ describe('ClayUpperToolbar', () => {
 		const {container} = render(
 			<ClayUpperToolbar>
 				<ClayUpperToolbar.Item className="text-left" expand>
-					<label className="component-title">{'Foo Bar'}</label>
+					<label className="component-title">Foo Bar</label>
 
 					<ClayIcon spritemap={spritemap} symbol="lock" />
 				</ClayUpperToolbar.Item>
@@ -29,6 +29,7 @@ describe('ClayUpperToolbar', () => {
 				<ClayUpperToolbar.Item>
 					<ClayButton.Group>
 						<ClayButtonWithIcon
+							aria-label="Left"
 							displayType="secondary"
 							onClick={() => {}}
 							small
@@ -37,6 +38,7 @@ describe('ClayUpperToolbar', () => {
 						/>
 
 						<ClayButtonWithIcon
+							aria-label="Right"
 							displayType="secondary"
 							onClick={() => {}}
 							small
@@ -48,14 +50,14 @@ describe('ClayUpperToolbar', () => {
 
 				<ClayUpperToolbar.Item>
 					<ClayButton displayType="secondary" onClick={() => {}}>
-						{'Delete'}
+						Delete
 					</ClayButton>
 
 					<ClayButton
 						className="inline-item-after"
 						onClick={() => {}}
 					>
-						{'Edit'}
+						Edit
 					</ClayButton>
 				</ClayUpperToolbar.Item>
 
@@ -70,6 +72,7 @@ describe('ClayUpperToolbar', () => {
 						spritemap={spritemap}
 						trigger={
 							<ClayButtonWithIcon
+								aria-label="More actions"
 								displayType="unstyled"
 								small
 								spritemap={spritemap}

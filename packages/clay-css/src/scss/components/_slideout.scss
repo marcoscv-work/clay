@@ -14,26 +14,34 @@
 	@include clay-css($c-slideout-absolute);
 }
 
+.c-slideout-container {
+	@include clay-map-to-css($c-slideout-container);
+}
+
+.c-slideout-push-start {
+	@include clay-css($c-slideout-push-start);
+}
+
+.c-slideout-push-end {
+	@include clay-css($c-slideout-push-end);
+}
+
 .c-slideout {
 	@include clay-slideout-variant($c-slideout);
+}
 
-	@include media-breakpoint-down(sm) {
-		@include clay-slideout-variant($c-slideout-sm-down);
-	}
+.c-slideout-fluid {
+	@include clay-slideout-variant($c-slideout-fluid);
 }
 
 .c-slideout-start {
 	@include clay-slideout-variant($c-slideout-start);
-
-	@include media-breakpoint-down(sm) {
-		@include clay-slideout-variant($c-slideout-start-sm-down);
-	}
 }
 
 .c-slideout-end {
 	@include clay-slideout-variant($c-slideout-end);
+}
 
-	@include media-breakpoint-down(sm) {
-		@include clay-slideout-variant($c-slideout-end-sm-down);
-	}
+.c-slideout-height-full {
+	@include clay-slideout-variant($c-slideout-height-full);
 }

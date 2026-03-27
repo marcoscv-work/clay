@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
 interface IGroupItemProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Flag to indicate if `input-group-append` class should
 	 * be applied
@@ -26,7 +27,7 @@ interface IGroupItemProps extends React.HTMLAttributes<HTMLDivElement> {
 	shrink?: boolean;
 }
 
-const ClayInputGroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
+export const GroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
 	(
 		{
 			append,
@@ -52,9 +53,10 @@ const ClayInputGroupItem = React.forwardRef<HTMLDivElement, IGroupItemProps>(
 	)
 );
 
-ClayInputGroupItem.displayName = 'ClayInputGroupItem';
+GroupItem.displayName = 'ClayInputGroupItem';
 
 interface IGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Flag to indicate if `input-group-sm` class should
 	 * be applied
@@ -68,7 +70,7 @@ interface IGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 	stacked?: boolean;
 }
 
-const ClayInputGroup = React.forwardRef<HTMLDivElement, IGroupProps>(
+export const Group = React.forwardRef<HTMLDivElement, IGroupProps>(
 	(
 		{children, className, small, stacked, ...otherProps}: IGroupProps,
 		ref
@@ -86,9 +88,9 @@ const ClayInputGroup = React.forwardRef<HTMLDivElement, IGroupProps>(
 	)
 );
 
-ClayInputGroup.displayName = 'ClayInputGroup';
+Group.displayName = 'ClayInputGroup';
 
-const ClayInputGroupText = React.forwardRef<
+export const GroupText = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({children, className, ...otherProps}, ref) => (
@@ -101,12 +103,13 @@ const ClayInputGroupText = React.forwardRef<
 	</div>
 ));
 
-ClayInputGroupText.displayName = 'ClayInputGroupText';
+GroupText.displayName = 'ClayInputGroupText';
 
 interface IGroupInsetProps
 	extends React.HTMLAttributes<
 		HTMLDivElement | HTMLSpanElement | HTMLLabelElement
 	> {
+
 	/**
 	 * Flag to indicate if `input-group-inset-item-after` class
 	 * should be applied.
@@ -125,7 +128,7 @@ interface IGroupInsetProps
 	tag?: 'div' | 'span' | 'label';
 }
 
-const ClayInputGroupInsetItem = React.forwardRef<
+const GroupInsetItem = React.forwardRef<
 	HTMLDivElement | HTMLSpanElement | HTMLLabelElement,
 	IGroupInsetProps
 >(
@@ -153,13 +156,14 @@ const ClayInputGroupInsetItem = React.forwardRef<
 	)
 );
 
-ClayInputGroupInsetItem.displayName = 'ClayInputGroupInsetItem';
+GroupInsetItem.displayName = 'ClayInputGroupInsetItem';
 
 interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+
 	/**
-	 * Input component to render. Can either be a string like 'input' or a component.
+	 * Input component to render. Can either be a string like 'input' or 'textarea' or a component.
 	 */
-	component?: 'input' | React.ForwardRefExoticComponent<any>;
+	component?: 'input' | 'textarea' | React.ForwardRefExoticComponent<any>;
 
 	/**
 	 * Flag to indicate if `input-group-inset-after` class should be applied
@@ -174,26 +178,26 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	/**
 	 * Selects the height of the input.
 	 */
-	sizing?: 'lg' | 'sm';
+	sizing?: 'lg' | 'regular' | 'sm';
 }
 
-const ClayInput = React.forwardRef<HTMLInputElement, IProps>(
+const InputComponent = React.forwardRef<HTMLInputElement, IProps>(
 	(
 		{
 			className,
 			component: Component = 'input',
 			insetAfter,
 			insetBefore,
-			sizing,
+			sizing = 'regular',
 			type = 'text',
 			...otherProps
-		}: IProps,
+		},
 		ref
 	) => (
 		<Component
 			{...otherProps}
 			className={classNames('form-control', className, {
-				[`form-control-${sizing}`]: sizing,
+				[`form-control-${sizing}`]: sizing && sizing !== 'regular',
 				['input-group-inset']: insetAfter || insetBefore,
 				['input-group-inset-after']: insetAfter,
 				['input-group-inset-before']: insetBefore,
@@ -204,11 +208,13 @@ const ClayInput = React.forwardRef<HTMLInputElement, IProps>(
 	)
 );
 
-ClayInput.displayName = 'ClayInput';
+InputComponent.displayName = 'ClayInput';
 
-export default Object.assign(ClayInput, {
-	Group: ClayInputGroup,
-	GroupInsetItem: ClayInputGroupInsetItem,
-	GroupItem: ClayInputGroupItem,
-	GroupText: ClayInputGroupText,
+export const Input = Object.assign(InputComponent, {
+	Group,
+	GroupInsetItem,
+	GroupItem,
+	GroupText,
 });
+
+export default Input;

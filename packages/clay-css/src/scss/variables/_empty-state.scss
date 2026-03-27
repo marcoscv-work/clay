@@ -6,6 +6,7 @@ $c-empty-state-animation: map-deep-merge(
 		align-items: center,
 		display: flex,
 		flex-direction: column,
+		flex-shrink: 0,
 		margin: 5rem auto 1.5rem,
 		max-width: 340px,
 		text-align: center,
@@ -44,7 +45,7 @@ $c-empty-state-title: map-deep-merge(
 		font-size: 1.25rem,
 		font-weight: $font-weight-semi-bold,
 		line-height: $headings-line-height,
-		margin-bottom: 0,
+		margin-bottom: 0rem,
 		margin-top: 2.5rem,
 		max-width: 100%,
 		word-wrap: break-word,
@@ -56,7 +57,7 @@ $c-empty-state-text: () !default;
 $c-empty-state-text: map-deep-merge(
 	(
 		color: $secondary,
-		margin-bottom: 0,
+		margin-bottom: 0rem,
 		margin-top: 0.5rem,
 		max-width: 100%,
 		word-wrap: break-word,
@@ -72,4 +73,30 @@ $c-empty-state-footer: map-deep-merge(
 		word-wrap: break-word,
 	),
 	$c-empty-state-footer
+);
+
+// .c-empty-state-sm
+
+$c-empty-state-sm: () !default;
+$c-empty-state-sm: map-deep-merge(
+	(
+		c-empty-state-animation: (
+			margin: 2.5rem auto 2rem,
+			max-width: 268px,
+		),
+
+		c-empty-state-image: (
+			max-width: 120px,
+		),
+
+		c-empty-state-title: (
+			font-size: 1rem,
+			line-height: 1.5,
+		),
+
+		c-empty-state-text: (
+			font-size: 0.875rem,
+		),
+	),
+	$c-empty-state-sm
 );

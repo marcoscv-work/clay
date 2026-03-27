@@ -1,27 +1,25 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-import {IClayAlertProps} from './index';
+export interface IToastContainerProps
+	extends React.HTMLAttributes<HTMLDivElement> {
 
-interface IToastContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	/**
 	 * Children of the ToastContainer must be a ClayAlert
 	 */
-	children?:
-		| React.ReactElement<IClayAlertProps>
-		| Array<React.ReactElement<IClayAlertProps>>;
+	children?: React.ReactElement<any> | Array<React.ReactElement<any>>;
 }
 
-const ClayToastContainer = ({
+export function ClayToastContainer({
 	children,
 	className,
 	...otherProps
-}: IToastContainerProps) => {
+}: IToastContainerProps) {
 	return (
 		<div
 			{...otherProps}
@@ -32,6 +30,6 @@ const ClayToastContainer = ({
 			</div>
 		</div>
 	);
-};
+}
 
-export default ClayToastContainer;
+ClayToastContainer.displayName = 'ClayToastContainer';

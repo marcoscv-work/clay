@@ -1,0 +1,43 @@
+name: Sync from liferay-portal
+
+on:
+    schedule:
+        - cron: '0 3 * * *'
+    workflow_dispatch:
+        inputs:
+            portal_branch:
+                description: 'liferay-portal branch to sync'
+                required: false
+                default: 'master'
+
+permissions:
+    contents: write
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Clay repo
+              uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  ref: master
+
+            - name: Run local sync script
+              run: |
+                  bash ./scripts/sync-portal-to-packages.sh --branch "${{ github.event.inputs.portal_branch || 'master' }}"
+
+            - name: Commit and push changes
+              run: |
+                  git config user.name "github-actions"
+                  git config user.email "github-actions@github.com"
+
+                  if git diff --quiet -- packages www; then
+                    echo "No changes to commit"
+                    exit 0
+                  fi
+
+                  git add packages www
+                  git commit -m "chore: sync clay source from liferay-portal"
+                  git push origin master

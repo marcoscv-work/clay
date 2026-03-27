@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayPopover from '..';
@@ -36,7 +36,22 @@ describe('ClayPopover', () => {
 
 	it('renders with `show`', () => {
 		const {container} = render(
-			<ClayPopover header="Popover" show>
+			<ClayPopover defaultShow header="Popover">
+				{`Viennese flavour cup eu, percolator froth ristretto mazagran
+					caffeine. White roast seasonal, mocha trifecta, dripper caffeine
+					spoon acerbic to go macchiato strong.`}
+			</ClayPopover>
+		);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it('renders with trigger', () => {
+		const {container} = render(
+			<ClayPopover
+				header="Popover"
+				trigger={<button type="button">Logo</button>}
+			>
 				{`Viennese flavour cup eu, percolator froth ristretto mazagran
 					caffeine. White roast seasonal, mocha trifecta, dripper caffeine
 					spoon acerbic to go macchiato strong.`}

@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 /**
@@ -42,7 +42,7 @@ describe('ClayLocalizedInput', () => {
 				locales={locales}
 				onSelectedLocaleChange={() => {}}
 				onTranslationsChange={() => {}}
-				selectedLocale={locales[0]}
+				selectedLocale={locales[0]!}
 				spritemap="/path/to/svg"
 				translations={{
 					'en-US': 'Apple',
@@ -65,7 +65,7 @@ describe('ClayLocalizedInput', () => {
 				onTranslationsChange={() => {}}
 				prependContent={prepend}
 				resultFormatter={(val) => `https://liferay.com${prepend}${val}`}
-				selectedLocale={locales[0]}
+				selectedLocale={locales[0]!}
 				spritemap="/path/to/svg"
 				translations={{
 					'en-US': 'Apple',
@@ -85,7 +85,7 @@ describe('ClayLocalizedInput', () => {
 				locales={locales}
 				onSelectedLocaleChange={onSelectedChangeFn}
 				onTranslationsChange={() => {}}
-				selectedLocale={locales[0]}
+				selectedLocale={locales[0]!}
 				spritemap="/path/to/svg"
 				translations={{
 					'en-US': 'Apple',
@@ -95,7 +95,9 @@ describe('ClayLocalizedInput', () => {
 		);
 
 		fireEvent.click(
-			container.querySelector('.dropdown-toggle') as HTMLButtonElement,
+			container.querySelector(
+				'.form-control-select'
+			) as HTMLButtonElement,
 			{}
 		);
 
@@ -105,6 +107,8 @@ describe('ClayLocalizedInput', () => {
 		);
 
 		expect(onSelectedChangeFn).toBeCalledWith({
+			_key: 'es-ES',
+			id: 'es-ES',
 			label: 'es-ES',
 			symbol: 'es-es',
 		});

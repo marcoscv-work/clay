@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
@@ -8,31 +8,28 @@ import React from 'react';
 
 import Context from './Context';
 
-type BackgroundImageAspectRatioType = 'contain' | 'cover' | 'center';
-
 type ContainerAspectRatioType = '1/1' | '3/2' | '4/3' | '8/5' | '16/9';
 
-interface ICardAspectRatioProps
-	extends React.HTMLAttributes<HTMLDivElement | HTMLSpanElement> {
+type Props = {
+
 	/**
-	 * Aspect ratio to be applied on the background image of the card.
+	 * AspectRatio content.
 	 */
-	backgroundImageAspectRatio?: BackgroundImageAspectRatioType;
+	children: React.ReactNode;
+
+	/**
+	 * Defines a CSS class for the element.
+	 */
+	className?: string;
 
 	/**
 	 * Contrains an image for a given Aspect Ratio.
 	 */
 	containerAspectRatio?: ContainerAspectRatioType;
-}
+};
 
-const ClayCardAspectRatio: React.FunctionComponent<ICardAspectRatioProps> = ({
-	backgroundImageAspectRatio,
-	children,
-	className,
-	containerAspectRatio,
-}: ICardAspectRatioProps) => {
+function AspectRatio({children, className, containerAspectRatio}: Props) {
 	const {interactive} = React.useContext(Context);
-
 	const TagName = interactive ? 'span' : 'div';
 
 	return (
@@ -43,12 +40,11 @@ const ClayCardAspectRatio: React.FunctionComponent<ICardAspectRatioProps> = ({
 						? containerAspectRatio.replace('/', '-to-')
 						: null
 				}`]: containerAspectRatio,
-				[`aspect-ratio-bg-${backgroundImageAspectRatio}`]: backgroundImageAspectRatio,
 			})}
 		>
 			{children}
 		</TagName>
 	);
-};
+}
 
-export default ClayCardAspectRatio;
+export default AspectRatio;

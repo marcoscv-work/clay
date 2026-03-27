@@ -1,18 +1,17 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import ClayMultiStepNav, {ClayMultiStepNavWithBasicItems} from '..';
 import {cleanup, fireEvent, render} from '@testing-library/react';
 import React from 'react';
 
 const spritemap = 'path/to/spritemap';
 
-const ClayMultiStepNavWithState = () => {
+function ClayMultiStepNavWithState() {
 	const [value, setValue] = React.useState<number>(1);
-
 	const steps = [
 		{
 			active: value === 0,
@@ -55,7 +54,9 @@ const ClayMultiStepNavWithState = () => {
 						key={i}
 					>
 						<ClayMultiStepNav.Title>{title}</ClayMultiStepNav.Title>
+
 						<ClayMultiStepNav.Divider />
+
 						<ClayMultiStepNav.Indicator
 							complete={complete}
 							label={1 + i}
@@ -68,9 +69,9 @@ const ClayMultiStepNavWithState = () => {
 			)}
 		</ClayMultiStepNav>
 	);
-};
+}
 
-const ClayMultiStepNavWithBasicItemsWithState = (props: any) => {
+function ClayMultiStepNavWithBasicItemsWithState(props: any) {
 	const [active, setActive] = React.useState(0);
 
 	return (
@@ -81,7 +82,7 @@ const ClayMultiStepNavWithBasicItemsWithState = (props: any) => {
 			{...props}
 		/>
 	);
-};
+}
 
 describe('ClayMultiStepNav', () => {
 	afterEach(cleanup);
@@ -138,6 +139,40 @@ describe('ClayMultiStepNavWithBasicItems', () => {
 				]}
 			/>
 		);
+
+		expect(getByText('2').parentNode!.parentNode!).not.toHaveClass(
+			'active'
+		);
+
+		fireEvent.click(getByText('2'));
+
+		expect(getByText('2').parentNode!.parentNode!).toHaveClass('active');
+	});
+
+	it('click on step change active state (using new properties)', () => {
+		const MultiStepNavWithBasicItems = () => {
+			const [active, setActive] = React.useState(0);
+
+			return (
+				<ClayMultiStepNavWithBasicItems
+					active={active}
+					onActiveChange={setActive}
+					spritemap={spritemap}
+					steps={[
+						{
+							subTitle: 'SubOne',
+							title: 'One',
+						},
+						{
+							subTitle: 'SubTwo',
+							title: 'Two',
+						},
+					]}
+				/>
+			);
+		};
+
+		const {getByText} = render(<MultiStepNavWithBasicItems />);
 
 		expect(getByText('2').parentNode!.parentNode!).not.toHaveClass(
 			'active'

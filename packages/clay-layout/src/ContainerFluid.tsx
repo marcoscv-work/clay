@@ -1,13 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import React from 'react';
 
 import Container from './Container';
 
-interface IProps
+export interface IProps
 	extends Omit<
 		React.ComponentProps<typeof Container>,
 		'fluid' | 'fluidSize'
@@ -15,7 +15,7 @@ interface IProps
 	size?: React.ComponentProps<typeof Container>['fluidSize'] | false;
 }
 
-const ClayContainerFluid = React.forwardRef<HTMLElement, IProps>(
+const ContainerFluid = React.forwardRef<HTMLElement, IProps>(
 	({children, size = 'xl', ...otherProps}: IProps, ref) => {
 		return (
 			<Container
@@ -30,6 +30,6 @@ const ClayContainerFluid = React.forwardRef<HTMLElement, IProps>(
 	}
 );
 
-ClayContainerFluid.displayName = 'ClayContainerFluid';
+ContainerFluid.displayName = 'ClayContainerFluid';
 
-export default ClayContainerFluid;
+export default ContainerFluid;

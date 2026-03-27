@@ -1,84 +1,11 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import {ClayInput} from '@clayui/form';
-import React from 'react';
-
-import Context from './Context';
-import DropDown from './DropDown';
-import Input from './Input';
+import {Autocomplete} from './Autocomplete';
 import Item from './Item';
-import LoadingIndicator from './LoadingIndicator';
+import LegacyAutocomplete from './LegacyAutocomplete';
 
-const AutocompleteMarkup = React.forwardRef<
-	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement>
->(({children, ...otherProps}, ref) => (
-	<ClayInput.Group {...otherProps} ref={ref}>
-		<ClayInput.GroupItem>{children}</ClayInput.GroupItem>
-	</ClayInput.Group>
-));
-
-AutocompleteMarkup.displayName = 'ClayAutocompleteMarkup';
-
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
-	/**
-	 * Div component to render. It can be a one component that will replace the markup.
-	 */
-	component?: React.ForwardRefExoticComponent<any>;
-}
-
-const ClayAutocomplete = React.forwardRef<HTMLDivElement, IProps>(
-	(
-		{
-			children,
-			className,
-			component: Component = AutocompleteMarkup,
-			...otherProps
-		}: IProps,
-		ref
-	) => {
-		const containerElementRef = React.useRef<null | HTMLDivElement>(null);
-		const [loading, setLoading] = React.useState(false);
-
-		return (
-			<Component
-				{...otherProps}
-				className={className}
-				ref={(r: any) => {
-					if (r) {
-						containerElementRef.current = r;
-
-						if (typeof ref === 'function') {
-							ref(r);
-						} else if (ref !== null) {
-							(ref as React.MutableRefObject<any>).current = r;
-						}
-					}
-				}}
-			>
-				<Context.Provider
-					value={{
-						containerElementRef,
-						loading,
-						onLoadingChange: (loading: boolean) =>
-							setLoading(loading),
-					}}
-				>
-					{children}
-				</Context.Provider>
-			</Component>
-		);
-	}
-);
-
-ClayAutocomplete.displayName = 'ClayAutocomplete';
-
-export default Object.assign(ClayAutocomplete, {
-	DropDown,
-	Input,
-	Item,
-	LoadingIndicator,
-});
+export {Autocomplete, Item};
+export default LegacyAutocomplete;

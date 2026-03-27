@@ -1,42 +1,46 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
+import {cleanup, render} from '@testing-library/react';
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
 
 import ClayCheckbox from '../Checkbox';
 
 describe('ClayCheckbox', () => {
+	afterEach(cleanup);
+
 	it('renders', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox checked={false} onChange={() => {}} />
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders with a label', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox
 				checked={false}
 				label="Unchecked"
 				onChange={() => {}}
 			/>
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders as checked', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox checked label="Checked" onChange={() => {}} />
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders with an indeterminate value', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox
 				checked
 				indeterminate
@@ -44,11 +48,12 @@ describe('ClayCheckbox', () => {
 				onChange={() => {}}
 			/>
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders as disabled', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox
 				checked={false}
 				disabled
@@ -56,11 +61,12 @@ describe('ClayCheckbox', () => {
 				onChange={() => {}}
 			/>
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders as checked and disabled', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox
 				checked
 				disabled
@@ -68,11 +74,12 @@ describe('ClayCheckbox', () => {
 				onChange={() => {}}
 			/>
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders with an indeterminate value and disabled', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayCheckbox
 				checked
 				disabled
@@ -81,6 +88,15 @@ describe('ClayCheckbox', () => {
 				onChange={() => {}}
 			/>
 		);
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it('render as read only', () => {
+		const {container} = render(
+			<ClayCheckbox checked label="Indeterminate disabled" readOnly />
+		);
+
+		expect(container).toMatchSnapshot();
 	});
 });

@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayTimePicker from '..';
@@ -9,7 +9,7 @@ import React from 'react';
 
 const spritemap = 'icons.svg';
 
-const TimePickerWithState = (props: any) => {
+function TimePickerWithState(props: any) {
 	const [state, setState] = React.useState({
 		ampm: '--',
 		hours: '--',
@@ -24,7 +24,7 @@ const TimePickerWithState = (props: any) => {
 			values={state}
 		/>
 	);
-};
+}
 
 describe('BasicRendering', () => {
 	afterEach(cleanup);
@@ -91,54 +91,6 @@ describe('IncrementalInteractions', () => {
 		fireEvent.keyDown(minutesEl, {key: 'ArrowLeft'});
 
 		expect(document.activeElement).toBe(hoursEl);
-	});
-
-	it('clicking on the hour input of the time picker should add the focus', () => {
-		const {getByTestId} = render(<TimePickerWithState />);
-
-		const hoursEl = getByTestId('hours');
-		const formControlEl = getByTestId('formControl');
-
-		fireEvent.focus(hoursEl, {});
-
-		expect(formControlEl.classList).toContain('focus');
-	});
-
-	it('clicking on the minutes input of the time picker should add the focus', () => {
-		const {getByTestId} = render(<TimePickerWithState />);
-
-		const minutesEl = getByTestId('minutes');
-		const formControlEl = getByTestId('formControl');
-
-		fireEvent.focus(minutesEl, {});
-
-		expect(formControlEl.classList).toContain('focus');
-	});
-
-	it('clicking on the amp/pm input of the time picker should add the focus', () => {
-		const {getByTestId} = render(<TimePickerWithState use12Hours />);
-
-		const ampmEl = getByTestId('ampm');
-		const formControlEl = getByTestId('formControl');
-
-		fireEvent.focus(ampmEl, {});
-
-		expect(formControlEl.classList).toContain('focus');
-	});
-
-	it('clicking outside the inputs of the time picker should remove the focus', () => {
-		const {getByTestId} = render(<TimePickerWithState />);
-
-		const hoursEl = getByTestId('hours');
-		const formControlEl = getByTestId('formControl');
-
-		fireEvent.focus(hoursEl, {});
-
-		expect(formControlEl.classList).toContain('focus');
-
-		fireEvent.click(document.body, {});
-
-		expect(formControlEl.classList).not.toContain('focus');
 	});
 
 	describe('with actions', () => {

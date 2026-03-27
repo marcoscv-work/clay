@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayIcon from '@clayui/icon';
@@ -8,11 +8,27 @@ import classNames from 'classnames';
 import React from 'react';
 
 interface IGroup extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Indicates Form Group should be a small variant.
 	 */
 	small?: boolean;
 }
+
+const BlockquoteText = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({children, className, ...otherProps}, ref) => (
+	<div
+		{...otherProps}
+		className={classNames('blockquote form-text', className)}
+		ref={ref}
+	>
+		{children}
+	</div>
+));
+
+BlockquoteText.displayName = 'ClayFormBlockquoteText';
 
 const Group = React.forwardRef<HTMLDivElement, IGroup>(
 	({children, className, small, ...otherProps}: IGroup, ref) => (
@@ -33,6 +49,21 @@ const Group = React.forwardRef<HTMLDivElement, IGroup>(
 );
 
 Group.displayName = 'ClayFormGroup';
+
+const HelpText = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({children, className, ...otherProps}, ref) => (
+	<span
+		{...otherProps}
+		className={classNames('form-help-text', className)}
+		ref={ref}
+	>
+		{children}
+	</span>
+));
+
+HelpText.displayName = 'ClayFormHelpText';
 
 const Text = React.forwardRef<
 	HTMLDivElement,
@@ -81,6 +112,7 @@ FeedbackItem.displayName = 'ClayFormFeedbackItem';
 
 interface IFeedbackIndicatorProps
 	extends React.HTMLAttributes<HTMLSpanElement> {
+
 	/**
 	 * Path to the location of the spritemap resource.
 	 */
@@ -128,9 +160,11 @@ const ClayForm = React.forwardRef<
 ClayForm.displayName = 'ClayForm';
 
 export default Object.assign(ClayForm, {
+	BlockquoteText,
 	FeedbackGroup,
 	FeedbackIndicator,
 	FeedbackItem,
 	Group,
+	HelpText,
 	Text,
 });

@@ -1,21 +1,15 @@
 /**
- * SPDX-FileCopyrightText: © 2018 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import {
-	ChartTypes,
-	Data,
-	Grid,
-	LineOptions,
-	PointOptions,
-	bb,
-} from 'billboard.js';
+import {ChartTypes, Data, Grid, LineOptions, PointOptions} from 'billboard.js';
 import React from 'react';
 
 import BillboardWrapper from './BillboardWrapper';
 import GeoMap from './GeoMap';
 import Predictive from './Predictive';
+import bb from './bb-patched';
 import {
 	DEFAULT_COLORS,
 	DEFAULT_GRID_OBJECT,
@@ -47,16 +41,18 @@ const ClayChart = React.forwardRef<HTMLDivElement, IProps>(
 	({color, data, elementProps, grid, line, point, ...otherProps}, ref) => {
 		const defaultRef = React.useRef<any>();
 
+		const renderData = {...data};
+
 		let ChartComponent;
 
 		switch (data.type as Types) {
 			case 'geo-map':
-				delete data.type;
+				delete renderData.type;
 
 				ChartComponent = GeoMap;
 				break;
 			case 'predictive':
-				delete data.type;
+				delete renderData.type;
 
 				ChartComponent = Predictive;
 				break;
@@ -68,7 +64,7 @@ const ClayChart = React.forwardRef<HTMLDivElement, IProps>(
 			<ChartComponent
 				{...otherProps}
 				color={{pattern: DEFAULT_COLORS, ...color}}
-				data={data as Data}
+				data={renderData as Data}
 				elementProps={elementProps}
 				grid={Object.assign(DEFAULT_GRID_OBJECT, grid)}
 				line={{classes: DEFAULT_LINE_CLASSES, ...line}}

@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 /* eslint-disable no-sparse-arrays */
@@ -14,15 +14,11 @@ import ReactDOM from 'react-dom';
 const spritemap = 'icons.svg';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
-	initialVisible?: boolean;
 	children?: any;
+	initialVisible?: boolean;
 }
 
-const ModalWithState: React.FunctionComponent<IProps> = ({
-	children,
-	initialVisible = false,
-	...props
-}) => {
+function ModalWithState({children, initialVisible = false, ...props}: IProps) {
 	const [visible, setVisible] = React.useState(initialVisible);
 	const {observer} = useModal({onClose: () => setVisible(false)});
 
@@ -34,11 +30,24 @@ const ModalWithState: React.FunctionComponent<IProps> = ({
 				</ClayModal>
 			)}
 			<Button aria-label="button" onClick={() => setVisible(true)}>
-				{'Foo'}
+				Foo
 			</Button>
 		</>
 	);
-};
+}
+
+function ModalWithHookState() {
+	const {observer, onOpenChange, open} = useModal();
+
+	return (
+		<>
+			{open && <ClayModal observer={observer} spritemap={spritemap} />}
+			<Button aria-label="button" onClick={() => onOpenChange(true)}>
+				Foo
+			</Button>
+		</>
+	);
+}
 
 describe('Modal -> IncrementalInteractions', () => {
 	afterEach(() => {
@@ -51,6 +60,7 @@ describe('Modal -> IncrementalInteractions', () => {
 		jest.useFakeTimers();
 
 		// @ts-ignore
+
 		ReactDOM.createPortal = jest.fn((element) => {
 			return element;
 		});
@@ -62,6 +72,22 @@ describe('Modal -> IncrementalInteractions', () => {
 
 	it('open the modal', () => {
 		const {container, getByLabelText} = render(<ModalWithState />);
+
+		expect(document.body.classList).not.toContain('modal-open');
+
+		fireEvent.click(getByLabelText('button'), {});
+
+		expect(document.body.classList).toContain('modal-open');
+		expect(
+			container.querySelector('.modal-backdrop.fade.show')
+		).toBeDefined();
+		expect(
+			container.querySelector('.fade.modal.d-block.show')
+		).toBeDefined();
+	});
+
+	it('open the modal with useModal state', () => {
+		const {container, getByLabelText} = render(<ModalWithHookState />);
 
 		expect(document.body.classList).not.toContain('modal-open');
 
@@ -137,7 +163,7 @@ describe('Modal -> IncrementalInteractions', () => {
 		expect(document.querySelector(modalElSelector)).toBeDefined();
 	});
 
-	it('close the modal when pressing ESC', () => {
+	it('close the modal when pressing ESC', async () => {
 		const {container} = render(<ModalWithState initialVisible />);
 
 		act(() => {
@@ -153,7 +179,7 @@ describe('Modal -> IncrementalInteractions', () => {
 		expect(backdropEl).toBeDefined();
 		expect(modalEl).toBeDefined();
 
-		fireEvent.keyUp(container, {key: 'Escape'});
+		fireEvent.keyDown(container, {key: 'Escape'});
 
 		expect(document.body.classList).not.toContain('modal-open');
 		expect(document.querySelector(backdropElSelector)).toBeNull();
@@ -163,7 +189,7 @@ describe('Modal -> IncrementalInteractions', () => {
 	it('close the modal when clicking on the close button of the Header component', () => {
 		const {getByLabelText} = render(
 			<ModalWithState initialVisible>
-				<ClayModal.Header>{'Title'}</ClayModal.Header>
+				<ClayModal.Header>Title</ClayModal.Header>
 			</ModalWithState>
 		);
 
@@ -176,7 +202,7 @@ describe('Modal -> IncrementalInteractions', () => {
 
 		const backdropEl = document.querySelector(backdropElSelector);
 		const modalEl = document.querySelector(modalElSelector);
-		const buttonHeaderCloseEl = getByLabelText('close');
+		const buttonHeaderCloseEl = getByLabelText('Close');
 
 		expect(backdropEl).toBeDefined();
 		expect(modalEl).toBeDefined();
@@ -204,7 +230,7 @@ describe('Modal -> IncrementalInteractions', () => {
 					<ClayModal.Footer
 						last={
 							<Button aria-label="buttonFooter" onClick={onClose}>
-								{'Foo'}
+								Foo
 							</Button>
 						}
 					/>
@@ -246,6 +272,7 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 		jest.useFakeTimers();
 
 		// @ts-ignore
+
 		ReactDOM.createPortal = jest.fn((element) => {
 			return element;
 		});
@@ -253,6 +280,47 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 
 	afterAll(() => {
 		jest.useRealTimers();
+	});
+
+	it('will not render modal title and footer when not providing it', () => {
+		const ModalWithProvider = () => {
+			const [, dispatch] = React.useContext(Context);
+
+			return (
+				<Button
+					data-testid="button"
+					displayType="primary"
+					onClick={() =>
+						dispatch({
+							payload: {
+								body: <h1>Hello world!</h1>,
+								size: 'lg',
+							},
+							type: 1,
+						})
+					}
+				>
+					Open modal
+				</Button>
+			);
+		};
+
+		const {getByTestId} = render(
+			<ClayModalProvider spritemap={spritemap}>
+				<ModalWithProvider />
+			</ClayModalProvider>
+		);
+
+		const button = getByTestId('button');
+
+		fireEvent.click(button, {});
+
+		act(() => {
+			jest.runAllTimers();
+		});
+
+		expect(document.querySelector('modal-header')).toBeNull();
+		expect(document.querySelector('modal-footer')).toBeNull();
 	});
 
 	it('renders a modal when dispatching Open by provider', () => {
@@ -266,12 +334,12 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 					onClick={() =>
 						dispatch({
 							payload: {
-								body: <h1>{'Hello world!'}</h1>,
+								body: <h1>Hello world!</h1>,
 								footer: [
 									<></>,
 									<></>,
 									<Button key={3} onClick={state.onClose}>
-										{'Primary'}
+										Primary
 									</Button>,
 								],
 								header: 'Title',
@@ -281,7 +349,7 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 						})
 					}
 				>
-					{'Open modal'}
+					Open modal
 				</Button>
 			);
 		};
@@ -310,12 +378,12 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 			React.useEffect(() => {
 				dispatch({
 					payload: {
-						body: <h1>{'Hello world!'}</h1>,
+						body: <h1>Hello world!</h1>,
 						footer: [
 							<></>,
 							<></>,
 							<Button key={3} onClick={state.onClose}>
-								{'Primary'}
+								Primary
 							</Button>,
 						],
 						header: 'Title',
@@ -331,7 +399,7 @@ describe('ModalProvider -> IncrementalInteractions', () => {
 					displayType="primary"
 					onClick={() => dispatch({type: 0})}
 				>
-					{'Open modal'}
+					Open modal
 				</Button>
 			);
 		};

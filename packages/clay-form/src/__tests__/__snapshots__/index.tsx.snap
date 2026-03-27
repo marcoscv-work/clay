@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ClayForm BlockquoteText renders 1`] = `
+<div
+  className="blockquote form-text"
+/>
+`;
+
 exports[`ClayForm FeedbackGroup renders 1`] = `
 <div
   className="form-feedback-group"
@@ -15,7 +21,7 @@ exports[`ClayForm FeedbackIndicator renders 1`] = `
     role="presentation"
   >
     <use
-      xlinkHref="/some/path#test"
+      href="/some/path#test"
     />
   </svg>
 </span>
@@ -30,6 +36,12 @@ exports[`ClayForm FeedbackItem renders 1`] = `
 exports[`ClayForm Group renders 1`] = `
 <div
   className="form-group"
+/>
+`;
+
+exports[`ClayForm HelpText renders 1`] = `
+<span
+  className="form-help-text"
 />
 `;
 

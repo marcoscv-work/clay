@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayTable from '@clayui/table';
@@ -46,6 +46,7 @@ export type TRow = {
 };
 
 interface IDraggableTableRowProps {
+
 	/**
 	 * Content of the row
 	 */
@@ -63,6 +64,7 @@ interface IDraggableTableRowProps {
 }
 
 interface IDragItem {
+
 	/**
 	 * List Item unique identifier
 	 */
@@ -79,11 +81,11 @@ interface IDragItem {
 	type: string;
 }
 
-const DraggableTableRow: React.FunctionComponent<IDraggableTableRowProps> = ({
+const DraggableTableRow = ({
 	content,
 	index,
 	onMove,
-}) => {
+}: IDraggableTableRowProps) => {
 	const ref = React.useRef<HTMLTableRowElement>(null);
 
 	const [, drop] = useDrop({
@@ -171,16 +173,16 @@ const ClayTableWithDraggableRows: React.FunctionComponent = () => {
 			<ClayTable.Head>
 				<ClayTable.Row>
 					<ClayTable.Cell expanded headingCell headingTitle>
-						{'Teams'}
+						Teams
 					</ClayTable.Cell>
 					<ClayTable.Cell headingCell headingTitle>
-						{'Region'}
+						Region
 					</ClayTable.Cell>
 					<ClayTable.Cell headingCell headingTitle>
-						{'Country'}
+						Country
 					</ClayTable.Cell>
 					<ClayTable.Cell headingCell headingTitle>
-						{'Description'}
+						Description
 					</ClayTable.Cell>
 				</ClayTable.Row>
 			</ClayTable.Head>

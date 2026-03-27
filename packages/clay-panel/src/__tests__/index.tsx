@@ -1,51 +1,74 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayPanel from '..';
 import {act, cleanup, fireEvent, render} from '@testing-library/react';
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
 
 describe('ClayPanel', () => {
+	afterEach(cleanup);
+
 	it('renders', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayPanel displayTitle="Display Title" spritemap="/foo/bar">
-				<ClayPanel.Header>{'Header!'}</ClayPanel.Header>
-				<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
-				<ClayPanel.Footer>{'Footer!'}</ClayPanel.Footer>
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
 			</ClayPanel>
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders with different displayType', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayPanel
 				displayTitle="Display Title"
-				displayType="secondary"
+				displayType="block"
 				spritemap="/foo/bar"
 			>
-				<ClayPanel.Header>{'Header!'}</ClayPanel.Header>
-				<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
-				<ClayPanel.Footer>{'Footer!'}</ClayPanel.Footer>
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
 			</ClayPanel>
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
+	});
+
+	it('renders with different size', () => {
+		const {container} = render(
+			<ClayPanel
+				displayTitle="Display Title"
+				size="sm"
+				spritemap="/foo/bar"
+			>
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
+			</ClayPanel>
+		);
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders with multiple panels', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayPanel.Group>
 				<ClayPanel displayTitle="Display Title" spritemap="/foo/bar">
-					<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
+					<ClayPanel.Body>Body!</ClayPanel.Body>
 				</ClayPanel>
 
 				<ClayPanel displayTitle="Display Title" spritemap="/foo/bar">
-					<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
+					<ClayPanel.Body>Body!</ClayPanel.Body>
 				</ClayPanel>
 
 				<ClayPanel
@@ -53,51 +76,73 @@ describe('ClayPanel', () => {
 					displayTitle="Display Title"
 					spritemap="/foo/bar"
 				>
-					<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
+					<ClayPanel.Body>Body!</ClayPanel.Body>
 				</ClayPanel>
 			</ClayPanel.Group>
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
+	});
+
+	it('renders with multiple small panels', () => {
+		const {container} = render(
+			<ClayPanel.Group small>
+				<ClayPanel displayTitle="Display Title" spritemap="/foo/bar">
+					<ClayPanel.Body>Body!</ClayPanel.Body>
+				</ClayPanel>
+
+				<ClayPanel displayTitle="Display Title" spritemap="/foo/bar">
+					<ClayPanel.Body>Body!</ClayPanel.Body>
+				</ClayPanel>
+
+				<ClayPanel
+					collapsable
+					displayTitle="Display Title"
+					spritemap="/foo/bar"
+				>
+					<ClayPanel.Body>Body!</ClayPanel.Body>
+				</ClayPanel>
+			</ClayPanel.Group>
+		);
+
+		expect(container.querySelector('.panel-group-sm')).toBeTruthy();
 	});
 
 	it('renders with custom displayTitle', () => {
-		const testRenderer = TestRenderer.create(
+		const {container} = render(
 			<ClayPanel
 				collapsable
 				displayTitle={
 					<ClayPanel.Title>
-						<h3>{'Custom Panel Title'}</h3>
+						<h3>Custom Panel Title</h3>
 					</ClayPanel.Title>
 				}
-				displayType="secondary"
 				showCollapseIcon
 				spritemap="/foo/bar"
 			>
-				<ClayPanel.Header>{'Header!'}</ClayPanel.Header>
-				<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
-				<ClayPanel.Footer>{'Footer!'}</ClayPanel.Footer>
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
 			</ClayPanel>
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
 	it('renders without displayTitle', () => {
-		const testRenderer = TestRenderer.create(
-			<ClayPanel
-				collapsable
-				displayType="secondary"
-				showCollapseIcon
-				spritemap="/foo/bar"
-			>
-				<ClayPanel.Header>{'Header!'}</ClayPanel.Header>
-				<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
-				<ClayPanel.Footer>{'Footer!'}</ClayPanel.Footer>
+		const {container} = render(
+			<ClayPanel collapsable showCollapseIcon spritemap="/foo/bar">
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
 			</ClayPanel>
 		);
 
-		expect(testRenderer.toJSON()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 });
 
@@ -112,9 +157,11 @@ describe('ClayPanel Interactions', () => {
 				displayTitle="Display Title"
 				spritemap="/foo/bar"
 			>
-				<ClayPanel.Header>{'Header!'}</ClayPanel.Header>
-				<ClayPanel.Body>{'Body!'}</ClayPanel.Body>
-				<ClayPanel.Footer>{'Footer!'}</ClayPanel.Footer>
+				<ClayPanel.Header>Header!</ClayPanel.Header>
+
+				<ClayPanel.Body>Body!</ClayPanel.Body>
+
+				<ClayPanel.Footer>Footer!</ClayPanel.Footer>
 			</ClayPanel>
 		);
 

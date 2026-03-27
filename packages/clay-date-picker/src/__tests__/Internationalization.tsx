@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayDatePicker from '..';
@@ -16,26 +16,29 @@ const ariaLabels = {
 	buttonDot: 'Select current date',
 	buttonNextMonth: 'Select the next month',
 	buttonPreviousMonth: 'Select the previous month',
+	chooseDate: 'Use the calendar to choose a Date. Current selection {0}',
 	input: 'input-test',
+	selectMonth: 'Select a month',
+	selectYear: 'Select a year',
 };
 
-const DatePickerWithState = ({
-	initialMonth = new Date(2019, 3, 18),
+function DatePickerWithState({
+	defaultMonth = new Date(2019, 3, 18),
 	years = {end: 2019, start: 2019},
 	...props
-}: any) => {
-	const [value, setValue] = React.useState();
+}: any) {
+	const [value, setValue] = React.useState('');
 
 	return (
 		<ClayDatePicker
 			{...props}
-			initialMonth={initialMonth}
-			onValueChange={setValue}
+			defaultMonth={defaultMonth}
+			onChange={setValue}
 			value={value}
 			years={years}
 		/>
 	);
-};
+}
 
 describe('Internationalization', () => {
 	afterEach(cleanup);
@@ -45,8 +48,8 @@ describe('Internationalization', () => {
 			<DatePickerWithState
 				ariaLabels={ariaLabels}
 				dateFormat="DD.MM.YYYY"
+				defaultExpanded
 				firstDayOfWeek={FirstDayOfWeek.Monday}
-				initialExpanded
 				months={[
 					'Январь',
 					'Февраль',
@@ -80,8 +83,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Sunday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -94,7 +97,7 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
-					initialExpanded
+					defaultExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -107,8 +110,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Tuesday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -121,8 +124,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Wednesday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -135,8 +138,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Thursday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -149,8 +152,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Friday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>
@@ -163,8 +166,8 @@ describe('Internationalization', () => {
 			render(
 				<DatePickerWithState
 					ariaLabels={ariaLabels}
+					defaultExpanded
 					firstDayOfWeek={FirstDayOfWeek.Saturday}
-					initialExpanded
 					placeholder="YYYY-MM-DD"
 					spritemap={spritemap}
 				/>

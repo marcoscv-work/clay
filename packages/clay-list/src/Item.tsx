@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLLIElement> {
+export interface IProps extends React.HTMLAttributes<HTMLLIElement> {
+
 	/**
 	 * Flag to indicate if the `list-group-item-action` class should be applied.
 	 */
@@ -33,7 +34,7 @@ interface IProps extends React.HTMLAttributes<HTMLLIElement> {
 	header?: boolean;
 }
 
-const ClayListItem = React.forwardRef<HTMLLIElement, IProps>(
+const Item = React.forwardRef<HTMLLIElement, IProps>(
 	(
 		{
 			action = false,
@@ -78,6 +79,6 @@ const ClayListItem = React.forwardRef<HTMLLIElement, IProps>(
 	}
 );
 
-ClayListItem.displayName = 'ClayListItem';
+Item.displayName = 'ClayListItem';
 
-export default ClayListItem;
+export default Item;

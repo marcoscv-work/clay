@@ -1,29 +1,57 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayButton from '@clayui/button';
 import ClayIcon from '@clayui/icon';
 import ClayLayout from '@clayui/layout';
-import {setElementFullHeight} from '@clayui/shared';
+import {useProvider} from '@clayui/provider';
+import {setElementFullHeight, sub} from '@clayui/shared';
 import classNames from 'classnames';
-import React from 'react';
+import React, {useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import warning from 'warning';
 
-import Item from './Item';
+import {Item} from './Item';
+import {NavigationBarContext} from './context';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IProps
+	extends Omit<React.HTMLAttributes<HTMLDivElement>, 'aria-current'> {
+
 	/**
 	 * Children elements received from ClayNavigationBar component.
 	 */
-	children: Array<React.ReactElement<React.ComponentProps<typeof Item>>>;
+	children:
+		| Array<React.ReactElement<React.ComponentProps<typeof Item>>>
+		| React.ReactElement<React.ComponentProps<typeof Item>>;
+
+	/**
+	 * Set a maximum width on container-fluid.
+	 */
+	fluidSize?:
+		| React.ComponentProps<typeof ClayLayout.Container>['fluidSize']
+		| false;
 
 	/**
 	 * Determines the style of the Navigation Bar
 	 */
 	inverted?: boolean;
+
+	/**
+	 * Flag to define if the item represents the current page. Disable this
+	 * attribute only if there are multiple navigations on the page.
+	 */
+	itemAriaCurrent?: boolean;
+
+	/**
+	 * Messages for the Navigation Bar.
+	 */
+	messages?: {
+		close: 'Close';
+		open: 'Open';
+		trigger: '{0} Menu, Current Page: {1}';
+	};
 
 	/**
 	 * Path to the location of the spritemap resource.
@@ -36,20 +64,29 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	triggerLabel: string;
 }
 
-const ClayNavigationBar: React.FunctionComponent<IProps> & {
-	Item: typeof Item;
-} = ({
+function NavigationBar({
 	children,
 	className,
+	fluidSize,
 	inverted = false,
+	itemAriaCurrent: ariaCurrent = true,
+	messages = {
+		close: 'Close',
+		open: 'Open',
+		trigger: '{0} Menu, Current Page: {1}',
+	},
 	spritemap,
 	triggerLabel,
 	...otherProps
-}: IProps) => {
-	const [expanded, setExpanded] = React.useState(false);
+}: IProps) {
+	const [expanded, setExpanded] = useState(false);
 
-	const activeElementsCount = children.filter((child) => child.props.active)
-		.length;
+	const {prefersReducedMotion} = useProvider();
+
+	const activeElementsCount = React.Children.map(
+		children,
+		(child) => child.props.active
+	).filter(Boolean).length;
 
 	warning(
 		activeElementsCount <= 1,
@@ -62,7 +99,7 @@ const ClayNavigationBar: React.FunctionComponent<IProps> & {
 			className={classNames(
 				className,
 				'navbar',
-				'navbar-collapse-absolute',
+				'navbar-collapse-relative',
 				'navbar-expand-md',
 				'navbar-underline',
 				'navigation-bar',
@@ -72,56 +109,76 @@ const ClayNavigationBar: React.FunctionComponent<IProps> & {
 				}
 			)}
 		>
-			<ClayLayout.ContainerFluid>
-				<ClayButton
-					aria-expanded={expanded}
-					className={classNames(
-						'navbar-toggler',
-						'navbar-toggler-link',
-						{
-							collapsed: !expanded,
+			<NavigationBarContext.Provider
+				value={{ariaCurrent: ariaCurrent ? 'page' : null}}
+			>
+				<ClayLayout.ContainerFluid size={fluidSize}>
+					<ClayButton
+						aria-expanded={expanded}
+						aria-label={sub(messages.trigger, [
+							expanded ? messages.close : messages.open,
+							triggerLabel ?? '',
+						])}
+						className={classNames(
+							'navbar-toggler',
+							'navbar-toggler-link',
+							{
+								collapsed: !expanded,
+							}
+						)}
+						data-testid="navbarToggler"
+						displayType="unstyled"
+						onClick={() => setExpanded(!expanded)}
+					>
+						<span className="navbar-text-truncate">
+							{triggerLabel}
+						</span>
+
+						<ClayIcon spritemap={spritemap} symbol="caret-bottom" />
+					</ClayButton>
+
+					<CSSTransition
+						className={classNames('navbar-collapse', {
+							collapse: !expanded,
+						})}
+						classNames={{
+							enter: 'collapsing',
+							enterActive: `show`,
+							enterDone: 'show',
+							exit: `show`,
+							exitActive: 'collapsing',
+						}}
+						in={expanded}
+						onEnter={(element: HTMLElement) =>
+							element.setAttribute('style', `height: 0px`)
 						}
-					)}
-					data-testid="navbarToggler"
-					displayType="unstyled"
-					onClick={() => setExpanded(!expanded)}
-				>
-					<span className="navbar-text-truncate">{triggerLabel}</span>
-
-					<ClayIcon spritemap={spritemap} symbol="caret-bottom" />
-				</ClayButton>
-
-				<CSSTransition
-					className={classNames('navbar-collapse', {
-						collapse: !expanded,
-					})}
-					classNames={{
-						enter: 'collapsing',
-						enterActive: `show`,
-						enterDone: 'show',
-						exit: `show`,
-						exitActive: 'collapsing',
-					}}
-					in={expanded}
-					onEnter={(el: HTMLElement) =>
-						el.setAttribute('style', `height: 0px`)
-					}
-					onEntering={(el: HTMLElement) => setElementFullHeight(el)}
-					onExit={(el) => setElementFullHeight(el)}
-					onExiting={(el) => el.setAttribute('style', `height: 0px`)}
-					timeout={250}
-				>
-					<div>
-						<ClayLayout.ContainerFluid>
-							<ul className="navbar-nav">{children}</ul>
-						</ClayLayout.ContainerFluid>
-					</div>
-				</CSSTransition>
-			</ClayLayout.ContainerFluid>
+						onEntered={(element: HTMLElement) =>
+							element.setAttribute('style', `height: auto`)
+						}
+						onEntering={(element: HTMLElement) =>
+							setElementFullHeight(element)
+						}
+						onExit={(element) => setElementFullHeight(element)}
+						onExited={(element) =>
+							element.setAttribute('style', `height: auto`)
+						}
+						onExiting={(element) =>
+							element.setAttribute('style', `height: 0px`)
+						}
+						timeout={prefersReducedMotion ? 0 : 250}
+					>
+						<div>
+							<ClayLayout.ContainerFluid size={fluidSize}>
+								<ul className="navbar-nav">{children}</ul>
+							</ClayLayout.ContainerFluid>
+						</div>
+					</CSSTransition>
+				</ClayLayout.ContainerFluid>
+			</NavigationBarContext.Provider>
 		</nav>
 	);
-};
+}
 
-ClayNavigationBar.Item = Item;
+NavigationBar.Item = Item;
 
-export default ClayNavigationBar;
+export default NavigationBar;

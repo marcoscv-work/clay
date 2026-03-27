@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import React from 'react';
@@ -10,11 +10,13 @@ import {Size, Status} from './types';
 import {useModal} from './useModal';
 
 enum Action {
-	Close = 0,
-	Open = 1,
+	Close = 'CLOSE',
+	Open = 'OPEN',
 }
 
 interface IProps {
+	children: React.ReactNode;
+
 	/**
 	 * The path to the SVG spritemap file containing the icons.
 	 */
@@ -22,6 +24,7 @@ interface IProps {
 }
 
 type TState = {
+
 	/**
 	 * Renders an element in the modal body.
 	 */
@@ -38,7 +41,7 @@ type TState = {
 	 * - middle
 	 * - last
 	 */
-	footer: Array<React.ReactElement | undefined>;
+	footer?: Array<React.ReactElement | undefined>;
 
 	/**
 	 * Renders an element in the modal header.
@@ -61,7 +64,9 @@ type TState = {
 	url?: string;
 };
 
-type TAction = {type: Action.Open; payload: TState} | {type: Action.Close};
+type TAction =
+	| {payload: TState; type: Action.Open | 1}
+	| {type: Action.Close | 0};
 
 type TProvider = [TState & {onClose: () => void}, React.Dispatch<TAction>];
 
@@ -72,26 +77,27 @@ const initialState = {
 	visible: false,
 };
 
-const reducer = (
-	state: TState,
+function reducer(
+	_state: TState,
 	action: TAction
-): TState & {visible: boolean} => {
+): TState & {
+	visible: boolean;
+} {
 	switch (action.type) {
+		case 1:
 		case Action.Open:
 			return {...action.payload, visible: true};
+		case 0:
 		case Action.Close:
 			return initialState;
 		default:
 			throw new TypeError();
 	}
-};
+}
 
 const Context = React.createContext<TProvider>([initialState, () => {}]);
 
-const ClayModalProvider: React.FunctionComponent<IProps> = ({
-	children,
-	spritemap,
-}) => {
+function ModalProvider({children, spritemap}: IProps) {
 	const [{visible, ...otherState}, dispatch] = React.useReducer(
 		reducer,
 		initialState
@@ -99,7 +105,7 @@ const ClayModalProvider: React.FunctionComponent<IProps> = ({
 	const {observer, onClose} = useModal({
 		onClose: () => dispatch({type: Action.Close}),
 	});
-	const {body, center, footer, header, size, status, url} = otherState;
+	const {body, center, footer = [], header, size, status, url} = otherState;
 	const [first, middle, last] = footer;
 	const state = {
 		...otherState,
@@ -116,13 +122,17 @@ const ClayModalProvider: React.FunctionComponent<IProps> = ({
 					spritemap={spritemap}
 					status={status}
 				>
-					<ClayModal.Header>{header}</ClayModal.Header>
+					{header && <ClayModal.Header>{header}</ClayModal.Header>}
+
 					<ClayModal.Body url={url}>{body}</ClayModal.Body>
-					<ClayModal.Footer
-						first={first}
-						last={last}
-						middle={middle}
-					/>
+
+					{!!footer.length && (
+						<ClayModal.Footer
+							first={first}
+							last={last}
+							middle={middle}
+						/>
+					)}
 				</ClayModal>
 			)}
 			<Context.Provider value={[state, dispatch]}>
@@ -130,7 +140,7 @@ const ClayModalProvider: React.FunctionComponent<IProps> = ({
 			</Context.Provider>
 		</>
 	);
-};
+}
 
 export {Context};
-export default ClayModalProvider;
+export default ModalProvider;

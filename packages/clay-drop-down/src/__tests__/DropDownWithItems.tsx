@@ -1,11 +1,11 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {ClayDropDownWithItems} from '..';
 import ClayButton from '@clayui/button';
-import {cleanup, render} from '@testing-library/react';
+import {cleanup, fireEvent, render, screen} from '@testing-library/react';
 import React from 'react';
 
 const spritemap = 'icons.svg';
@@ -31,8 +31,9 @@ describe('ClayDropDownWithItems', () => {
 						label: 'linkable',
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -61,8 +62,9 @@ describe('ClayDropDownWithItems', () => {
 						type: 'radiogroup' as const,
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -90,8 +92,9 @@ describe('ClayDropDownWithItems', () => {
 						type: 'group' as const,
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -108,8 +111,9 @@ describe('ClayDropDownWithItems', () => {
 						label: 'linkable',
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -119,15 +123,16 @@ describe('ClayDropDownWithItems', () => {
 	it('renders a DropDownWithItems with footer content', () => {
 		render(
 			<ClayDropDownWithItems
-				footerContent={<ClayButton>{'Done'}</ClayButton>}
+				footerContent={<ClayButton>Done</ClayButton>}
 				items={[
 					{
 						href: '#',
 						label: 'linkable',
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -144,8 +149,9 @@ describe('ClayDropDownWithItems', () => {
 						label: 'linkable',
 					},
 				]}
+				renderMenuOnClick
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
@@ -162,13 +168,69 @@ describe('ClayDropDownWithItems', () => {
 					},
 				]}
 				onSearchValueChange={() => {}}
+				renderMenuOnClick
 				searchValue="Search"
 				searchable
 				spritemap={spritemap}
-				trigger={<ClayButton>{'Click Me'}</ClayButton>}
+				trigger={<ClayButton>Click Me</ClayButton>}
 			/>
 		);
 
 		expect(document.body).toMatchSnapshot();
+	});
+
+	it('renders a DropDownWithItems using title', () => {
+		render(
+			<ClayDropDownWithItems
+				items={[
+					{
+						href: '#',
+						title: 'linkable',
+					},
+					{
+						items: [
+							{
+								checked: true,
+								title: 'checkbox',
+								type: 'checkbox' as const,
+							},
+							{
+								checked: false,
+								title: 'checkbox 1',
+								type: 'checkbox' as const,
+							},
+						],
+						title: 'checkbox',
+						type: 'group' as const,
+					},
+					{
+						items: [
+							{
+								title: 'one',
+								type: 'radio' as const,
+								value: 'one',
+							},
+							{
+								title: 'two',
+								type: 'radio' as const,
+								value: 'two',
+							},
+						],
+						name: 'radio',
+						title: 'radio',
+						type: 'radiogroup' as const,
+					},
+				]}
+				renderMenuOnClick
+				spritemap={spritemap}
+				trigger={<ClayButton>Click Me</ClayButton>}
+			/>
+		);
+
+		const toggleButton = document.querySelector('.dropdown-toggle');
+
+		fireEvent.click(toggleButton as HTMLButtonElement, {});
+
+		expect(screen.getByText('linkable')).toBeDefined();
 	});
 });

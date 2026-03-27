@@ -1,21 +1,23 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import Button from '@clayui/button';
+import {Option, Picker} from '@clayui/core';
 import Icon from '@clayui/icon';
+import {Keys} from '@clayui/shared';
 import React from 'react';
 
-import {addMonths, range} from './Helpers';
+import {setMonth} from './Helpers';
 import Select, {ISelectOption} from './Select';
-import {IAriaLabels, IYears} from './types';
+import {IAriaLabels} from './types';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+type Props = {
 	ariaLabels: IAriaLabels;
 	currentMonth: Date;
 	disabled?: boolean;
-	months: Array<string>;
+	months: Array<ISelectOption>;
 	onDotClicked: () => void;
 	onMonthChange: (date: Date) => void;
 
@@ -24,10 +26,10 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	 */
 	spritemap?: string;
 
-	years: IYears;
-}
+	years: Array<ISelectOption>;
+};
 
-const ClayDatePickerDateNavigation: React.FunctionComponent<IProps> = ({
+function ClayDatePickerDateNavigation({
 	ariaLabels,
 	currentMonth,
 	disabled,
@@ -36,42 +38,15 @@ const ClayDatePickerDateNavigation: React.FunctionComponent<IProps> = ({
 	onMonthChange,
 	spritemap,
 	years,
-}) => {
-	const memoizedYears: Array<ISelectOption> = React.useMemo(
-		() =>
-			range(years).map((elem) => {
-				return {
-					label: elem,
-					value: elem,
-				};
-			}),
-		[years]
-	);
-
-	const memoizedMonths: Array<ISelectOption> = React.useMemo(
-		() =>
-			months.map((month, index) => {
-				return {
-					label: month,
-					value: index,
-				};
-			}),
-		[months]
-	);
-
-	const monthSelectorRef = React.useRef<HTMLSelectElement | null>(null);
-
-	const yearSelectorRef = React.useRef<HTMLSelectElement | null>(null);
+}: Props) {
 
 	/**
 	 * Handles the change of the month from the available
 	 * years in the range
 	 */
 	function handleChangeMonth(month: number) {
-		const date = addMonths(currentMonth, month);
-		const year = date.getFullYear();
-
-		if (memoizedYears.find((elem) => elem.value === year)) {
+		const date = setMonth(years, month, currentMonth);
+		if (date) {
 			onMonthChange(date);
 		}
 	}
@@ -86,41 +61,65 @@ const ClayDatePickerDateNavigation: React.FunctionComponent<IProps> = ({
 	 */
 	const handleNextMonthClicked = () => handleChangeMonth(1);
 
-	/**
-	 * Handles the change of the year and month of the header
-	 */
-	function handleFormChange() {
-		if (monthSelectorRef.current && yearSelectorRef.current) {
-			const year = Number(yearSelectorRef.current.value);
-			const month = Number(monthSelectorRef.current.value);
-			onMonthChange(new Date(year, month));
-		}
-	}
-
 	return (
 		<div className="date-picker-calendar-header">
 			<div className="date-picker-nav">
 				<div className="date-picker-nav-item input-date-picker-month">
 					<Select
+						aria-label={ariaLabels.selectMonth}
 						disabled={disabled}
 						name="month"
-						onChange={handleFormChange}
-						options={memoizedMonths}
-						ref={monthSelectorRef}
+						onChange={(event) =>
+							onMonthChange(
+								new Date(
+									currentMonth.getFullYear(),
+									Number(event.target.value)
+								)
+							)
+						}
+						options={months}
 						testId="month-select"
 						value={currentMonth.getMonth()}
 					/>
 				</div>
+
 				<div className="date-picker-nav-item input-date-picker-year">
-					<Select
+					<Picker
+						UNSAFE_behavior="secondary"
+						aria-label={ariaLabels.selectYear}
+						className="form-control-sm"
+						data-testid="year-select"
 						disabled={disabled}
-						name="year"
-						onChange={handleFormChange}
-						options={memoizedYears}
-						ref={yearSelectorRef}
-						testId="year-select"
-						value={currentMonth.getFullYear()}
-					/>
+						items={years}
+						native
+						onKeyDown={(
+							event: React.KeyboardEvent<HTMLButtonElement>
+						) => {
+							if (
+								event.shiftKey &&
+								(event.key === Keys.Up ||
+									event.key === Keys.Down)
+							) {
+								event.key =
+									event.key === Keys.Up
+										? 'PageUp'
+										: 'PageDown';
+							}
+						}}
+						onSelectionChange={(key) => {
+							onMonthChange(
+								new Date(Number(key), currentMonth.getMonth())
+							);
+						}}
+						selectedKey={String(currentMonth.getFullYear())}
+						width={95}
+					>
+						{(item) => (
+							<Option key={item.value}>
+								{String(item.label)}
+							</Option>
+						)}
+					</Picker>
 				</div>
 
 				<div className="date-picker-nav-controls date-picker-nav-item date-picker-nav-item-expand">
@@ -130,24 +129,29 @@ const ClayDatePickerDateNavigation: React.FunctionComponent<IProps> = ({
 						disabled={disabled}
 						displayType={null}
 						onClick={handlePreviousMonthClicked}
+						title={ariaLabels.buttonPreviousMonth}
 					>
 						<Icon spritemap={spritemap} symbol="angle-left" />
 					</Button>
+
 					<Button
 						aria-label={ariaLabels.buttonDot}
 						className="nav-btn nav-btn-monospaced"
 						disabled={disabled}
 						displayType={null}
 						onClick={onDotClicked}
+						title={ariaLabels.buttonDot}
 					>
 						<Icon spritemap={spritemap} symbol="simple-circle" />
 					</Button>
+
 					<Button
 						aria-label={ariaLabels.buttonNextMonth}
 						className="nav-btn nav-btn-monospaced"
 						disabled={disabled}
 						displayType={null}
 						onClick={handleNextMonthClicked}
+						title={ariaLabels.buttonNextMonth}
 					>
 						<Icon spritemap={spritemap} symbol="angle-right" />
 					</Button>
@@ -155,6 +159,6 @@ const ClayDatePickerDateNavigation: React.FunctionComponent<IProps> = ({
 			</div>
 		</div>
 	);
-};
+}
 
 export default ClayDatePickerDateNavigation;

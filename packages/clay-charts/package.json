@@ -1,33 +1,36 @@
 {
-	"name": "@clayui/charts",
-	"version": "3.25.1",
-	"description": "React.js wrapper for D3 and billboard.js",
-	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
-	"ts:main": "src/index.tsx",
-	"scripts": {
-		"build:types": "cross-env NODE_ENV=production tsc --project ./tsconfig.declarations.json",
-		"build": "cross-env NODE_ENV=production babel src --root-mode upward --out-dir lib --extensions .ts,.tsx",
-		"copySvg": "ncp src/svg lib/svg",
-		"prepublishOnly": "yarn sass && yarn build && yarn build:types && yarn copySvg",
-		"sass": "node-sass src/scss/main.scss -o lib/css --source-map true",
-		"test": "jest --config ../../jest.config.js"
+	"browserslist": [
+		"extends browserslist-config-clay"
+	],
+	"dependencies": {
+		"billboard.js": "^1.8.0",
+		"classnames": "2.3.1",
+		"d3": "^5.9.2"
 	},
+	"description": "React.js wrapper for D3 and billboard.js",
+	"files": [
+		"lib"
+	],
 	"keywords": [
 		"clay",
 		"react"
 	],
-	"dependencies": {
-		"billboard.js": "^1.8.0",
-		"classnames": "^2.2.6",
-		"d3": "^5.9.2"
-	},
+	"main": "src/index.tsx",
+	"name": "@clayui/charts",
 	"peerDependencies": {
-		"@clayui/css": "3.x",
-		"react": "^16.8.1",
-		"react-dom": "^16.8.1"
+		"@clayui/css": "^3.159.0",
+		"react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+		"react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
 	},
-	"browserslist": [
-		"extends browserslist-config-clay"
-	]
+	"scripts": {
+		"build": "yarn build:cjs && yarn build:esm",
+		"build:cjs": "cross-env NODE_ENV=production node ../build-package-esbuild.js --format=cjs --outdir=lib/cjs",
+		"build:esm": "cross-env NODE_ENV=production node ../build-package-esbuild.js --format=esm --outdir=lib/esm",
+		"buildTypes": "cross-env NODE_ENV=production tsc --project ./tsconfig.declarations.json",
+		"copySvg": "ncp src/svg lib/svg",
+		"prepublishOnly": "yarn sass && yarn build && yarn buildTypes && yarn copySvg",
+		"sass": "sass src/scss/main.scss lib/css/main.css --source-map",
+		"test": "jest --config ../../jest.config.js"
+	},
+	"version": "3.156.0"
 }

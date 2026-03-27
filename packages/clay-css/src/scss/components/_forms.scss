@@ -18,142 +18,77 @@
 	}
 }
 
-fieldset {
-	word-wrap: break-word;
-}
-
 label {
-	color: $input-label-color;
-	font-size: $input-label-font-size;
-	font-weight: $input-label-font-weight;
-	margin-bottom: $input-label-margin-bottom;
-	max-width: 100%;
-	word-wrap: break-word;
+	@include clay-css($input-label);
 
 	@include clay-scale-component {
-		font-size: $input-label-font-size-mobile;
+		@include clay-css(map-get($input-label, mobile));
 	}
 
 	&.focus {
-		color: $input-label-focus-color;
+		@include clay-css(map-get($input-label, focus));
 	}
 
 	&[for] {
-		cursor: $input-label-for-cursor;
+		@include clay-css(map-get($input-label, for));
+	}
+
+	$_form-feedback-group: map-get($input-label, '+ .form-feedback-group');
+
+	@if ($_form-feedback-group) {
+		+ .form-feedback-group {
+			@include clay-css($_form-feedback-group);
+		}
 	}
 
 	+ .form-text {
-		margin-bottom: $input-label-margin-bottom;
-		margin-top: 0;
+		@include clay-css(map-get($input-label, form-text));
+	}
+
+	$_form-help-text: map-get($input-label, form-help-text);
+
+	@if ($_form-help-text) {
+		.form-help-text {
+			@include clay-css($_form-help-text);
+		}
 	}
 
 	.reference-mark {
-		color: $input-label-reference-mark-color;
-		font-size: $input-label-reference-mark-font-size;
-		margin-left: $input-label-reference-mark-spacer;
-		margin-right: $input-label-reference-mark-spacer;
-		vertical-align: $input-label-reference-mark-vertical-align;
+		@include clay-css(map-get($input-label, reference-mark));
 	}
 }
 
 // Label without for attribute
 
 .form-control-label {
-	display: inline;
-	margin-bottom: 0;
+	@include clay-css($form-control-label);
 }
 
 .form-control-label-text {
-	cursor: $input-label-for-cursor;
-	display: inline-block;
-	margin-bottom: $input-label-margin-bottom;
-	max-width: 100%;
-	word-wrap: break-word;
+	@include clay-css($form-control-label-text);
+}
+
+// Label Disabled
+
+fieldset[disabled] label,
+label.disabled {
+	@include clay-css(map-get($input-label, disabled));
+}
+
+fieldset[disabled] label {
+	.form-control {
+		font-weight: normal;
+		opacity: 1;
+	}
 }
 
 // Inputs
 
 .form-control {
-	background-color: $input-bg;
-	border-color: $input-border-color;
-	border-style: $input-border-style;
-
-	border-bottom-width: $input-border-bottom-width;
-	border-left-width: $input-border-left-width;
-	border-right-width: $input-border-right-width;
-	border-top-width: $input-border-top-width;
-
-	@include border-radius($input-border-radius, 0);
-	@include box-shadow($input-box-shadow);
-
-	color: $input-color;
-	display: block;
-	font-family: $input-font-family;
-	font-size: $input-font-size;
-	font-weight: $input-font-weight;
-	height: $input-height;
-	line-height: $input-line-height;
-	min-width: 0;
-	padding-bottom: $input-padding-y;
-	padding-left: $input-padding-x;
-	padding-right: $input-padding-x;
-	padding-top: $input-padding-y;
-	width: 100%;
-
-	@include transition($input-transition);
+	@include clay-form-control-variant($input);
 
 	@include clay-scale-component {
-		font-size: $input-font-size-mobile;
-		height: $input-height-mobile;
-	}
-
-	// Placeholder
-
-	&::placeholder {
-		color: $input-placeholder-color;
-
-		// Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
-
-		opacity: 1;
-	}
-
-	&:focus,
-	&.focus {
-		background-color: $input-focus-bg;
-		border-color: $input-focus-border-color;
-
-		// Avoid using mixin so we can pass custom focus shadow properly
-
-		@if $enable-shadows {
-			box-shadow: $input-box-shadow, $input-focus-box-shadow;
-		} @else {
-			box-shadow: $input-focus-box-shadow;
-		}
-
-		color: $input-focus-color;
-		outline: 0;
-
-		&::placeholder {
-			color: $input-placeholder-focus-color;
-		}
-	}
-
-	// Disabled
-	// HTML5 says that controls under a fieldset > legend:first-child won't be
-	// disabled if the fieldset is disabled. Due to implementation difficulty, we
-	// don't honor that edge case; we style them as disabled anyway.
-
-	&:disabled,
-	&.disabled {
-		background-color: $input-disabled-bg;
-		border-color: $input-disabled-border-color;
-		color: $input-disabled-color;
-		cursor: $input-disabled-cursor;
-
-		// `opacity: 1;` iOS fix for unreadable disabled content;
-		// see https://github.com/twbs/bootstrap/issues/11655.
-
-		opacity: $input-disabled-opacity;
+		@include clay-css(map-get($input, mobile));
 	}
 
 	// Removes inner shadow on inputs in iOS. Bootstrap 4 uses
@@ -178,8 +113,23 @@ label {
 		width: 0;
 	}
 
+	// CKEditor markup work around
+
+	&[contenteditable] p {
+		margin-bottom: 0;
+	}
+
 	.label {
-		@include clay-label-size($form-control-label-size);
+		@include clay-label-variant($form-control-label-size);
+	}
+}
+
+// This adds disabled styles to div.form-control inside a disabled fielset.
+
+fieldset[disabled] {
+	select.form-control[multiple],
+	.form-control {
+		@include clay-css(map-get($input, disabled));
 	}
 }
 
@@ -188,31 +138,7 @@ label {
 // text (without any border, background color, focus indicator)
 
 .form-control-plaintext {
-	background-clip: border-box;
-	background-color: transparent;
-	border-color: transparent;
-	border-style: solid;
-
-	border-bottom-width: $input-border-bottom-width;
-	border-left-width: $input-border-left-width;
-	border-right-width: $input-border-right-width;
-	border-top-width: $input-border-top-width;
-	color: $input-plaintext-color;
-	display: block;
-	font-size: $input-font-size;
-	height: $input-height;
-	line-height: $input-line-height;
-
-	// match inputs if this class comes on inputs with default margins
-
-	margin-bottom: 0;
-	min-width: 0;
-	padding-bottom: $input-padding-y;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: $input-padding-y;
-	text-overflow: ellipsis;
-	width: 100%;
+	@include clay-form-control-variant($input-plaintext);
 
 	@include clay-scale-component {
 		font-size: $input-font-size-mobile;
@@ -221,8 +147,8 @@ label {
 
 	&.form-control-sm,
 	&.form-control-lg {
-		padding-right: 0;
 		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -249,14 +175,14 @@ div {
 }
 
 .form-control-tag-group {
-	@include clay-container($form-control-tag-group);
+	@include clay-css($form-control-tag-group);
 
 	.autofit-row {
-		@include clay-container($form-control-tag-group-autofit-row);
+		@include clay-css($form-control-tag-group-autofit-row);
 	}
 
 	.autofit-col {
-		@include clay-container($form-control-tag-group-autofit-col);
+		@include clay-css($form-control-tag-group-autofit-col);
 
 		.form-control-inset {
 			width: auto;
@@ -264,11 +190,11 @@ div {
 	}
 
 	.input-group-item {
-		@include clay-container($form-control-tag-group-input-group-item);
+		@include clay-css($form-control-tag-group-input-group-item);
 	}
 
 	.inline-item {
-		@include clay-container($form-control-tag-group-inline-item);
+		@include clay-css($form-control-tag-group-inline-item);
 	}
 
 	.btn {
@@ -331,6 +257,14 @@ select.form-control {
 
 .form-control-select {
 	@include clay-css($form-control-select);
+
+	&:hover {
+		@include clay-css(map-get($form-control-select, hover));
+	}
+
+	&:focus {
+		@include clay-css(map-get($form-control-select, focus));
+	}
 }
 
 select.form-control[size] {
@@ -341,13 +275,44 @@ select.form-control[multiple] {
 	@include clay-select-variant($input-select-multiple);
 }
 
+// Form Control Variants
+
+@each $key, $value in $input-palette {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($key, '.') or starts-with($key, '#'),
+			$key,
+			str-insert($key, '.', 1)
+		);
+
+		#{$selector} {
+			@include clay-form-control-variant($value);
+		}
+	}
+}
+
+// Form Control Select Variants
+
+@each $key, $value in $form-control-select-palette {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($key, '.') or starts-with($key, '#'),
+			$key,
+			str-insert($key, '.', 1)
+		);
+
+		#{$selector} {
+			@include clay-select-variant($value);
+		}
+	}
+}
+
 // Textarea
 
 textarea.form-control,
 textarea.form-control-plaintext,
 .form-control.form-control-textarea {
-	height: $input-textarea-height;
-	resize: vertical;
+	@include clay-form-control-variant($input-textarea);
 }
 
 // File
@@ -379,7 +344,8 @@ textarea.form-control-plaintext,
 
 	&::-webkit-slider-thumb {
 		border-radius: 100px;
-		transition: $input-transition;
+
+		@include transition($input-transition);
 	}
 }
 
@@ -404,7 +370,7 @@ textarea.form-control-plaintext,
 }
 
 .form-check-input {
-	margin-left: math-sign($form-check-input-gutter);
+	margin-left: calc(#{$form-check-input-gutter} * -1);
 	margin-top: $form-check-input-margin-y;
 	position: static;
 
@@ -449,34 +415,6 @@ textarea.form-control-plaintext,
 
 // Disabled State
 
-fieldset[disabled] label,
-label.disabled {
-	color: $input-label-disabled-color;
-	cursor: $input-label-disabled-cursor;
-	opacity: $input-disabled-opacity;
-}
-
-fieldset[disabled] label {
-	.form-control {
-		font-weight: normal;
-		opacity: 1;
-	}
-}
-
-.form-control {
-	fieldset[disabled] &,
-	&[disabled] {
-		border-color: $input-disabled-border-color;
-		color: $input-disabled-color;
-		cursor: $input-disabled-cursor;
-		opacity: $input-disabled-opacity;
-
-		&::placeholder {
-			color: $input-placeholder-disabled-color;
-		}
-	}
-}
-
 .form-control[disabled] > option {
 	// Webkit only
 
@@ -514,23 +452,14 @@ fieldset[disabled] label {
 // Bootstrap 4 @extend .form-control-lg; work around
 
 %clay-form-control-lg {
-	@include border-radius($input-border-radius-lg);
-
-	font-size: $input-font-size-lg;
-	height: $input-height-lg;
-	padding-bottom: $input-padding-y-lg;
-	padding-left: $input-padding-x-lg;
-	padding-right: $input-padding-x-lg;
-	padding-top: $input-padding-y-lg;
-
-	@include clay-scale-component {
-		height: $input-height-lg-mobile;
-	}
+	@include clay-form-control-variant($input-lg);
 }
 
 .form-control-lg {
 	@extend %clay-form-control-lg;
 }
+
+// Select Lg
 
 %clay-select-form-control-lg {
 	height: $input-height-lg;
@@ -540,74 +469,104 @@ fieldset[disabled] label {
 	}
 }
 
+// Textarea Lg
+
 %clay-textarea-form-control-lg {
-	height: $input-textarea-height-lg;
+	@include clay-form-control-variant($input-textarea-lg);
 }
 
 textarea.form-control-lg,
 .form-control-lg.form-control-textarea {
-	height: $input-textarea-height-lg;
-}
-
-// Form control sizing
-// Build on `.form-control` with modifier classes to decrease or increase the
-// height and font-size of form controls.
-// Repeated in `_input_group.scss` to avoid Sass extend issues.
-
-.form-control-sm {
-	@include border-radius($input-border-radius-sm);
-
-	font-size: $input-font-size-sm;
-	height: $input-height-sm;
-	line-height: $input-line-height-sm;
-	padding: $input-padding-y-sm $input-padding-x-sm;
-}
-
-.form-control-lg {
-	@include border-radius($input-border-radius-lg);
-
-	font-size: $input-font-size-lg;
-	height: $input-height-lg;
-	line-height: $input-line-height-lg;
-	padding: $input-padding-y-lg $input-padding-x-lg;
+	@extend %clay-textarea-form-control-lg !optional;
 }
 
 // Bootstrap 4 @extend .form-control-sm; work around
 
 %clay-form-control-sm {
-	@include border-radius($input-border-radius-sm);
-
-	font-size: $input-font-size-sm;
-	height: $input-height-sm;
-	padding-bottom: $input-padding-y-sm;
-	padding-left: $input-padding-x-sm;
-	padding-right: $input-padding-x-sm;
-	padding-top: $input-padding-y-sm;
-
-	@include clay-scale-component {
-		height: $input-height-sm-mobile;
-	}
+	@include clay-form-control-variant($input-sm);
 }
 
 .form-control-sm {
-	@extend %clay-form-control-sm;
+	@extend %clay-form-control-sm !optional;
 }
 
+// Select Sm
+
 %clay-select-form-control-sm {
-	height: $input-height-sm;
+	@include clay-form-control-variant($form-control-select-sm);
 
 	@include clay-scale-component {
-		height: $input-height-sm-mobile;
+		@include clay-css(map-get($form-control-select-sm, mobile));
 	}
 }
 
+.form-control-select.form-control-sm {
+	@extend %clay-select-form-control-sm !optional;
+}
+
+// Textarea Sm
+
 %clay-textarea-form-control-sm {
-	height: $input-textarea-height-sm;
+	@include clay-form-control-variant($input-textarea-sm);
 }
 
 textarea.form-control-sm,
 .form-control-sm.form-control-textarea {
-	height: $input-textarea-height-sm;
+	@extend %clay-textarea-form-control-sm !optional;
+}
+
+// .form-control-tag-group-sm
+
+%clay-form-control-tag-group-sm {
+	@include clay-form-control-variant($form-control-tag-group-sm);
+}
+
+.form-control-tag-group-sm.form-control {
+	@extend %clay-form-control-tag-group-sm;
+}
+
+// Fieldset
+
+.form-fieldset {
+	@include clay-css($form-fieldset);
+
+	&[disabled] {
+		@include clay-css(map-get($form-fieldset, disabled));
+
+		label {
+			@include clay-css(map-deep-get($form-fieldset, disabled, label));
+
+			.form-control {
+				@include clay-css(
+					map-deep-get($form-fieldset, disabled, label, form-control)
+				);
+			}
+		}
+
+		.form-control-label-text {
+			@include clay-css(
+				map-deep-get($form-fieldset, disabled, form-control-label-text)
+			);
+		}
+
+		.form-legend {
+			@include clay-css(
+				map-deep-get($form-fieldset, disabled, form-legend)
+			);
+		}
+
+		.form-control {
+			@include clay-css(
+				map-deep-get($form-fieldset, disabled, form-control)
+			);
+		}
+	}
+}
+
+// Legend
+
+.form-legend {
+	@include clay-css($form-legend);
 }
 
 // Form groups
@@ -618,139 +577,141 @@ textarea.form-control-sm,
 	margin-bottom: $form-group-margin-bottom;
 }
 
-// For use with horizontal and inline forms, when you need the label (or legend)
-// text to align with the form controls.
+@if ($enable-bs4-deprecated) {
+	// For use with horizontal and inline forms, when you need the label (or legend)
+	// text to align with the form controls.
 
-.col-form-label {
-	// Override the `<legend>` default
+	.col-form-label {
+		// Override the `<legend>` default
 
-	font-size: inherit;
-	line-height: $input-line-height;
+		font-size: inherit;
+		line-height: $input-line-height;
 
-	// Override the `<label>/<legend>` default
+		// Override the `<label>/<legend>` default
 
-	margin-bottom: 0;
-	padding-bottom: add($input-padding-y, $input-border-bottom-width);
-	padding-top: add($input-padding-y, $input-border-top-width);
-}
-
-.col-form-label-lg {
-	font-size: $input-font-size-lg;
-	line-height: $input-line-height-lg;
-	padding-bottom: add($input-padding-y-lg, $input-border-bottom-width);
-	padding-top: add($input-padding-y-lg, $input-border-top-width);
-}
-
-.col-form-label-sm {
-	font-size: $input-font-size-sm;
-	line-height: $input-line-height-sm;
-	padding-bottom: add($input-padding-y-sm, $input-border-bottom-width);
-	padding-top: add($input-padding-y-sm, $input-border-top-width);
-}
-
-// Form grid
-// Special replacement for our grid system's `.row` for tighter form layouts.
-
-.form-row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: math-sign($form-grid-gutter-width / 2);
-	margin-right: math-sign($form-grid-gutter-width / 2);
-
-	> .col,
-	> [class*='col-'] {
-		padding-left: $form-grid-gutter-width / 2;
-		padding-right: $form-grid-gutter-width / 2;
-	}
-}
-
-// Inline forms
-//
-// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
-// forms begin stacked on extra small (mobile) devices and then go inline when
-// viewports reach <768px.
-//
-// Requires wrapping inputs and labels with `.form-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
-
-.form-inline {
-	// Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
-
-	align-items: center;
-	display: flex;
-	flex-flow: row wrap;
-
-	// Because we use flex, the initial sizing of checkboxes is collapsed and
-	// doesn't occupy the full-width (which is what we want for xs grid tier),
-	// so we force that here.
-
-	.form-check {
-		width: 100%;
+		margin-bottom: 0;
+		padding-bottom: add($input-padding-y, $input-border-bottom-width);
+		padding-top: add($input-padding-y, $input-border-top-width);
 	}
 
-	@include media-breakpoint-up(sm) {
-		label {
-			align-items: center;
-			display: flex;
-			justify-content: center;
-			margin-bottom: 0;
+	.col-form-label-lg {
+		font-size: $input-font-size-lg;
+		line-height: $input-line-height-lg;
+		padding-bottom: add($input-padding-y-lg, $input-border-bottom-width);
+		padding-top: add($input-padding-y-lg, $input-border-top-width);
+	}
+
+	.col-form-label-sm {
+		font-size: $input-font-size-sm;
+		line-height: $input-line-height-sm;
+		padding-bottom: add($input-padding-y-sm, $input-border-bottom-width);
+		padding-top: add($input-padding-y-sm, $input-border-top-width);
+	}
+
+	// Form grid
+	// Special replacement for our grid system's `.row` for tighter form layouts.
+
+	.form-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: calc(#{$form-grid-gutter-width} * -0.5);
+		margin-right: calc(#{$form-grid-gutter-width} * -0.5);
+
+		> .col,
+		> [class*='col-'] {
+			padding-left: calc(#{$form-grid-gutter-width} * 0.5);
+			padding-right: calc(#{$form-grid-gutter-width} * 0.5);
 		}
+	}
 
-		// Inline-block all the things for "inline"
+	// Inline forms
+	//
+	// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+	// forms begin stacked on extra small (mobile) devices and then go inline when
+	// viewports reach <768px.
+	//
+	// Requires wrapping inputs and labels with `.form-group` for proper display of
+	// default HTML form controls and our custom form controls (e.g., input groups).
 
-		.form-group {
-			align-items: center;
-			display: flex;
-			flex-flow: row wrap;
-			flex: 0 0 auto;
-			margin-bottom: 0;
-		}
+	.form-inline {
+		// Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
 
-		// Allow folks to *not* use `.form-group`
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
 
-		.form-control {
-			display: inline-block;
-			vertical-align: middle;
-
-			// Prevent labels from stacking above inputs in `.form-group`
-
-			width: auto;
-		}
-
-		// Make static controls behave like regular ones
-		.form-control-plaintext {
-			display: inline-block;
-		}
-
-		.input-group,
-		.custom-select {
-			width: auto;
-		}
-
-		// Remove default margin on radios/checkboxes that were used for stacking, and
-		// then undo the floating of radios and checkboxes to match.
+		// Because we use flex, the initial sizing of checkboxes is collapsed and
+		// doesn't occupy the full-width (which is what we want for xs grid tier),
+		// so we force that here.
 
 		.form-check {
-			align-items: center;
-			display: flex;
-			justify-content: center;
-			padding-left: 0;
-			width: auto;
-		}
-		.form-check-input {
-			flex-shrink: 0;
-			margin-left: 0;
-			margin-right: $form-check-input-margin-x;
-			margin-top: 0;
-			position: relative;
+			width: 100%;
 		}
 
-		.custom-control {
-			align-items: center;
-			justify-content: center;
-		}
-		.custom-control-label {
-			margin-bottom: 0;
+		@include media-breakpoint-up(sm) {
+			label {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 0;
+			}
+
+			// Inline-block all the things for "inline"
+
+			.form-group {
+				align-items: center;
+				display: flex;
+				flex: 0 0 auto;
+				flex-flow: row wrap;
+				margin-bottom: 0;
+			}
+
+			// Allow folks to *not* use `.form-group`
+
+			.form-control {
+				display: inline-block;
+				vertical-align: middle;
+
+				// Prevent labels from stacking above inputs in `.form-group`
+
+				width: auto;
+			}
+
+			// Make static controls behave like regular ones
+			.form-control-plaintext {
+				display: inline-block;
+			}
+
+			.input-group,
+			.custom-select {
+				width: auto;
+			}
+
+			// Remove default margin on radios/checkboxes that were used for stacking, and
+			// then undo the floating of radios and checkboxes to match.
+
+			.form-check {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				padding-left: 0;
+				width: auto;
+			}
+			.form-check-input {
+				flex-shrink: 0;
+				margin-left: 0;
+				margin-right: $form-check-input-margin-x;
+				margin-top: 0;
+				position: relative;
+			}
+
+			.custom-control {
+				align-items: center;
+				justify-content: center;
+			}
+			.custom-control-label {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
@@ -794,7 +755,7 @@ textarea.form-control-sm,
 	> .form-group-item:not(:last-child) {
 		@include media-breakpoint-up(sm) {
 			margin-bottom: 0;
-			margin-right: $grid-gutter-width / 2;
+			margin-right: calc(#{$grid-gutter-width} * 0.5);
 		}
 	}
 
@@ -859,6 +820,12 @@ textarea.form-control-sm,
 	.form-control,
 	.form-control-plaintext {
 		@extend %clay-form-control-sm;
+	}
+
+	div.form-control,
+	.form-control[contenteditable] {
+		height: auto;
+		min-height: $input-height-sm;
 	}
 
 	select.form-control {

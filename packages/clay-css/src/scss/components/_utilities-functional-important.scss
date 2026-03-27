@@ -24,36 +24,38 @@
 
 // Background
 
-@each $color, $value in $theme-colors {
-	.bg-#{$color} {
-		background-color: $value !important;
-	}
+@each $color, $value in $bg-theme-colors {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($color, '.') or
+				starts-with($color, '#') or
+				starts-with($color, '%'),
+			$color,
+			str-insert($color, '.bg-', 1)
+		);
 
-	a.bg-#{$color},
-	button.bg-#{$color} {
-		&:hover,
-		&:focus {
-			background-color: darken($value, 10%) !important;
+		#{$selector} {
+			@include clay-css($value);
+		}
+
+		a#{$selector},
+		button#{$selector} {
+			&:hover,
+			&:focus {
+				@include clay-css(map-get($value, hover));
+			}
 		}
 	}
 }
 
 @if $enable-gradients {
-	@each $color, $value in $theme-colors {
-		.bg-gradient-#{$color} {
-			background: $value
-				linear-gradient(180deg, mix($body-bg, $value, 15%), $value)
-				repeat-x !important;
+	@each $color, $value in $bg-gradient-theme-colors {
+		@if not clay-is-map-unset($value) {
+			.bg-gradient-#{$color} {
+				@include clay-css($value);
+			}
 		}
 	}
-}
-
-.bg-white {
-	background-color: $white !important;
-}
-
-.bg-transparent {
-	background-color: transparent !important;
 }
 
 // Border
@@ -98,14 +100,20 @@
 	border-left: 0 !important;
 }
 
-@each $color, $value in $theme-colors {
-	.border-#{$color} {
-		border-color: $value !important;
-	}
-}
+@each $color, $value in $border-theme-colors {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($color, '.') or
+				starts-with($color, '#') or
+				starts-with($color, '%'),
+			$color,
+			str-insert($color, '.border-', 1)
+		);
 
-.border-white {
-	border-color: $white !important;
+		#{$selector} {
+			@include clay-css($value);
+		}
+	}
 }
 
 // Border-radius
@@ -115,27 +123,27 @@
 }
 
 .rounded {
-	border-radius: $border-radius !important;
+	border-radius: $rounded-border-radius !important;
 }
 
 .rounded-top {
-	border-top-left-radius: $border-radius !important;
-	border-top-right-radius: $border-radius !important;
+	border-top-left-radius: $rounded-border-radius !important;
+	border-top-right-radius: $rounded-border-radius !important;
 }
 
 .rounded-right {
-	border-bottom-right-radius: $border-radius !important;
-	border-top-right-radius: $border-radius !important;
+	border-bottom-right-radius: $rounded-border-radius !important;
+	border-top-right-radius: $rounded-border-radius !important;
 }
 
 .rounded-bottom {
-	border-bottom-left-radius: $border-radius !important;
-	border-bottom-right-radius: $border-radius !important;
+	border-bottom-left-radius: $rounded-border-radius !important;
+	border-bottom-right-radius: $rounded-border-radius !important;
 }
 
 .rounded-left {
-	border-bottom-left-radius: $border-radius !important;
-	border-top-left-radius: $border-radius !important;
+	border-bottom-left-radius: $rounded-border-radius !important;
+	border-top-left-radius: $rounded-border-radius !important;
 }
 
 .rounded-lg {
@@ -143,7 +151,7 @@
 }
 
 .rounded-circle {
-	border-radius: 50% !important;
+	border-radius: $rounded-circle-border-radius !important;
 }
 
 .rounded-pill {
@@ -151,7 +159,7 @@
 }
 
 .rounded-0 {
-	border-radius: 0 !important;
+	border-radius: $rounded-0-border-radius !important;
 }
 
 // Clearfix
@@ -178,6 +186,10 @@
 	}
 }
 
+.hide {
+	display: none !important;
+}
+
 // Display Print
 
 @media print {
@@ -188,9 +200,9 @@
 	}
 }
 
-/* REUSE-Snippet-Begin
+/* SPDX-SnippetBegin
  * SPDX-License-Identifier: MIT
- * SPDX-Copyright: © 2012 Nicolas Gallagher <https://github.com/suitcss/components-flex-embed>
+ * SPDX-SnippetCopyrightText: © 2012 Nicolas Gallagher <https://github.com/suitcss/components-flex-embed>
  */
 
 .embed-responsive {
@@ -226,15 +238,16 @@
 
 	.embed-responsive-#{$embed-responsive-aspect-ratio-x}by#{$embed-responsive-aspect-ratio-y} {
 		&::before {
-			padding-top: percentage(
-				$embed-responsive-aspect-ratio-y /
-					$embed-responsive-aspect-ratio-x
+			padding-top: calc(
+				#{$embed-responsive-aspect-ratio-y} /
+					#{$embed-responsive-aspect-ratio-x} *
+					100%
 			);
 		}
 	}
 }
 
-/* REUSE-Snippet-End */
+/* SPDX-SnippetEnd */
 
 // Flex
 
@@ -432,6 +445,14 @@
 	z-index: $zindex-fixed;
 }
 
+.sticky-bottom {
+	@supports (position: sticky) {
+		bottom: 0;
+		position: sticky;
+		z-index: $zindex-sticky;
+	}
+}
+
 .sticky-top {
 	@supports (position: sticky) {
 		position: sticky;
@@ -560,27 +581,27 @@
 		@each $size, $length in $spacers {
 			@if $size != 0 {
 				.m#{$infix}-n#{$size} {
-					margin: -$length !important;
+					margin: calc(#{$length} * -1) !important;
 				}
 
 				.mt#{$infix}-n#{$size},
 				.my#{$infix}-n#{$size} {
-					margin-top: -$length !important;
+					margin-top: calc(#{$length} * -1) !important;
 				}
 
 				.mr#{$infix}-n#{$size},
 				.mx#{$infix}-n#{$size} {
-					margin-right: -$length !important;
+					margin-right: calc(#{$length} * -1) !important;
 				}
 
 				.mb#{$infix}-n#{$size},
 				.my#{$infix}-n#{$size} {
-					margin-bottom: -$length !important;
+					margin-bottom: calc(#{$length} * -1) !important;
 				}
 
 				.ml#{$infix}-n#{$size},
 				.mx#{$infix}-n#{$size} {
-					margin-left: -$length !important;
+					margin-left: calc(#{$length} * -1) !important;
 				}
 			}
 		}
@@ -626,12 +647,6 @@
 	}
 }
 
-// Text
-
-.text-monospace {
-	font-family: $font-family-monospace !important;
-}
-
 // Text Alignment
 
 .text-justify {
@@ -647,9 +662,11 @@
 }
 
 .text-truncate {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	@include clay-css($text-truncate);
+}
+
+.text-truncate-inline {
+	@include clay-map-to-css($text-truncate-inline);
 }
 
 // Responsive Text Alignment
@@ -688,32 +705,62 @@
 
 // Font Weight and Italics
 
-.font-weight-light {
-	font-weight: $font-weight-light !important;
-}
-
-.font-weight-lighter {
+.font-weight-lighter,
+.text-weight-lighter {
 	font-weight: $font-weight-lighter !important;
 }
 
-.font-weight-normal {
+.font-weight-light,
+.text-weight-light {
+	font-weight: $font-weight-light !important;
+}
+
+.font-weight-normal,
+.text-weight-normal {
 	font-weight: $font-weight-normal !important;
 }
 
-.font-weight-semi-bold {
+.font-weight-semi-bold,
+.text-weight-semi-bold {
 	font-weight: $font-weight-semi-bold !important;
 }
 
-.font-weight-bold {
+.font-weight-bold,
+.text-weight-bold {
 	font-weight: $font-weight-bold !important;
 }
 
-.font-weight-bolder {
+.font-weight-bolder,
+.text-weight-bolder {
 	font-weight: $font-weight-bolder !important;
 }
 
-.font-italic {
+.font-italic,
+.text-italic {
 	font-style: italic !important;
+}
+
+.font-monospace,
+.text-monospace {
+	font-family: $font-family-monospace !important;
+}
+
+// Font Sizes
+
+@each $selector, $value in $font-sizes {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($selector, '.') or
+				starts-with($selector, '#') or
+				starts-with($selector, '%'),
+			$selector,
+			str-insert($selector, '.', 1)
+		);
+
+		#{$selector} {
+			@include clay-css($value);
+		}
+	}
 }
 
 // Contextual Colors
@@ -722,38 +769,27 @@
 	color: $white !important;
 }
 
-@each $color, $value in $theme-colors {
-	.text-#{$color} {
-		color: $value !important;
-	}
+@each $color, $value in $text-theme-colors {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($color, '.') or
+				starts-with($color, '#') or
+				starts-with($color, '%'),
+			$color,
+			str-insert($color, '.text-', 1)
+		);
 
-	@if $emphasized-link-hover-darken-percentage != 0 {
-		a.text-#{$color} {
+		#{$selector} {
+			@include clay-css($value);
+		}
+
+		a#{$selector} {
 			&:hover,
 			&:focus {
-				color: darken(
-					$value,
-					$emphasized-link-hover-darken-percentage
-				) !important;
+				@include clay-css(map-get($value, hover));
 			}
 		}
 	}
-}
-
-.text-body {
-	color: $body-color !important;
-}
-
-.text-muted {
-	color: $text-muted !important;
-}
-
-.text-black-50 {
-	color: rgba($black, 0.5) !important;
-}
-
-.text-white-50 {
-	color: rgba($white, 0.5) !important;
 }
 
 // Misc
@@ -766,8 +802,20 @@
 	text-shadow: none;
 }
 
-.text-decoration-none {
-	text-decoration: none !important;
+@each $key, $value in $text-decorations {
+	@if not clay-is-map-unset($value) {
+		$selector: if(
+			starts-with($key, '.') or
+				starts-with($key, '#') or
+				starts-with($key, '%'),
+			$key,
+			str-insert($key, '.', 1)
+		);
+
+		#{$selector} {
+			@include clay-link($value);
+		}
+	}
 }
 
 .text-break {
@@ -789,4 +837,36 @@
 
 .invisible {
 	visibility: hidden !important;
+}
+
+// C Prefers Expanded Text
+
+%c-prefers-expanded-text {
+	overflow-wrap: break-word !important;
+	white-space: normal !important;
+	word-wrap: break-word !important;
+}
+
+// C Prefers Link Underline
+
+@include clay-map-to-css($c-prefers-link-underline);
+
+// C Prefers Letter Spacing
+
+@include clay-map-to-css($c-prefers-letter-spacing);
+
+// Display C Reduced Motion
+
+@include clay-map-to-css($displays-c-prefers-reduced-motion);
+
+// C Prefers Reduced Motion
+
+.c-prefers-reduced-motion {
+	@include clay-css($c-prefers-reduced-motion);
+
+	.loading-animation-squares {
+		@include clay-map-to-css(
+			map-deep-get($loading-animation-squares, 'prefers-reduced-motion')
+		);
+	}
 }

@@ -1,16 +1,19 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {default as formatDate} from 'date-fns/format';
 import {default as parseDate} from 'date-fns/parse';
 
+import type {ISelectOption} from './Select';
+
 export {formatDate, parseDate};
 
 export interface IDay {
 	date: Date;
-	outside?: boolean;
+	nextMonth?: boolean;
+	previousMonth?: boolean;
 }
 
 export type WeekDays = Array<IDay>;
@@ -29,7 +32,7 @@ export function range({end, start}: {end: number; start: number}) {
 		{
 			length: end - start + 1,
 		},
-		(v, k) => k + start
+		(_v, k) => k + start
 	);
 }
 
@@ -43,21 +46,23 @@ export function addMonths(date: number | Date, months: number) {
 
 export function setDate(
 	date: Date,
-	obj: {
+	options: {
 		date?: number | string;
-		seconds?: number | string;
-		milliseconds?: number | string;
 		hours?: number | string;
+		milliseconds?: number | string;
 		minutes?: number | string;
+		seconds?: number | string;
 		year?: number | string;
 	}
 ) {
 	date = clone(date);
 
-	return Object.keys(obj).reduce((acc, key) => {
+	return Object.keys(options).reduce((acc, key) => {
 		const method = `set${key.charAt(0).toUpperCase() + key.slice(1)}`;
+
 		// @ts-ignore
-		acc[method](obj[key]);
+
+		acc[method](options[key]);
 
 		return acc;
 	}, date);
@@ -65,4 +70,17 @@ export function setDate(
 
 export function isValid(date: Date) {
 	return date instanceof Date && !isNaN(date.getTime());
+}
+
+export function setMonth(
+	range: Array<ISelectOption>,
+	month: number,
+	currentMonth: Date
+) {
+	const date = addMonths(currentMonth, month);
+	const year = date.getFullYear();
+
+	if (range.find((elem) => elem.value === year)) {
+		return date;
+	}
 }

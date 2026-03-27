@@ -1,115 +1,69 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
-import {ClayPortal, Keys} from '@clayui/shared';
-import domAlign from 'dom-align';
-import React, {useCallback} from 'react';
+import {
+	ClayPortal,
+	IPortalBaseProps,
+	Keys,
+	delegate,
+	useInteractionFocus,
+} from '@clayui/shared';
+import React, {useCallback, useEffect, useReducer, useRef} from 'react';
 import warning from 'warning';
 
-import ClayTooltip from './Tooltip';
-
-const ALIGNMENTS = [
-	'top',
-	'top-right',
-	'right',
-	'bottom-right',
-	'bottom',
-	'bottom-left',
-	'left',
-	'top-left',
-] as const;
-
-const ALIGNMENTS_MAP = {
-	bottom: ['tc', 'bc'],
-	'bottom-left': ['tl', 'bl'],
-	'bottom-right': ['tr', 'br'],
-	left: ['cr', 'cl'],
-	right: ['cl', 'cr'],
-	top: ['bc', 'tc'],
-	'top-left': ['bl', 'tl'],
-	'top-right': ['br', 'tr'],
-} as const;
-
-const ALIGNMENTS_INVERSE_MAP = {
-	bctc: 'top',
-	bltl: 'top-left',
-	brtr: 'top-right',
-	clcr: 'right',
-	crcl: 'left',
-	tcbc: 'bottom',
-	tlbl: 'bottom-left',
-	trbr: 'bottom-right',
-} as const;
+import {Tooltip} from './Tooltip';
+import {Align, useAlign} from './useAlign';
+import {useClosestTitle} from './useClosestTitle';
+import {useTooltipState} from './useTooltipState';
 
 interface IState {
-	align?: typeof ALIGNMENTS[number];
-	message?: string;
-	show?: boolean;
+	align: Align;
+	floating: boolean;
+	setAsHTML?: boolean;
+	title?: string;
 }
 
 const initialState: IState = {
 	align: 'top',
-	message: '',
-	show: false,
+	floating: false,
+	setAsHTML: false,
+	title: '',
 };
 
-interface IAction extends IState {
-	type: 'align' | 'hide' | 'show';
+const TRIGGER_HIDE_EVENTS = [
+	'dragstart',
+	'mouseout',
+	'mouseup',
+	'pointerup',
+	'touchend',
+] as const;
+
+const TRIGGER_SHOW_EVENTS = [
+	'mouseover',
+	'mouseup',
+	'pointerdown',
+	'touchstart',
+] as const;
+
+interface IAction extends Partial<IState> {
+	type: 'reset' | 'update';
 }
 
-const reducer = (state: IState, {type, ...payload}: IAction): IState => {
+function reducer(state: IState, {type, ...payload}: IAction): IState {
 	switch (type) {
-		case 'align':
+		case 'update':
 			return {...state, ...payload};
-		case 'show':
-			return {...state, ...payload, show: true};
-		case 'hide':
+		case 'reset':
 			return {
 				...state,
 				align: initialState.align,
-				show: false,
+				floating: false,
 			};
 		default:
 			throw new TypeError();
 	}
-};
-
-function matches(
-	element: HTMLElement & {
-		msMatchesSelector?: HTMLElement['matches'];
-	},
-	selectorString: string
-) {
-	if (element.matches) {
-		return element.matches(selectorString);
-	} else if (element.msMatchesSelector) {
-		return element.msMatchesSelector(selectorString);
-	} else if (element.webkitMatchesSelector) {
-		return element.webkitMatchesSelector(selectorString);
-	} else {
-		return false;
-	}
-}
-
-function closestAncestor(node: HTMLElement, s: string) {
-	const el = node;
-	let ancestor: HTMLElement | null = node;
-
-	if (!document.documentElement.contains(el)) {
-		return null;
-	}
-
-	do {
-		if (matches(ancestor, s)) {
-			return ancestor;
-		}
-
-		ancestor = ancestor.parentElement;
-	} while (ancestor !== null);
-
-	return null;
 }
 
 type TContentRenderer = (props: {
@@ -117,145 +71,231 @@ type TContentRenderer = (props: {
 	title: string;
 }) => React.ReactElement | React.ReactNode;
 
-const TooltipProvider: React.FunctionComponent<{
+type Props = {
+
+	/**
+	 * Flag to indicate if tooltip should automatically align based on the window
+	 */
 	autoAlign?: boolean;
-	children: React.ReactElement;
+
+	children?: React.ReactElement;
+
+	/**
+	 * Props to add to the `<ClayPortal/>`.
+	 */
+	containerProps?: IPortalBaseProps;
+
+	/**
+	 * Custom function for rendering the contents of the tooltip
+	 */
 	contentRenderer?: TContentRenderer;
+
+	/**
+	 * Delay in miliseconds before showing tooltip
+	 */
 	delay?: number;
-}> = ({
+
+	/**
+	 * CSS selector to scope provider to. All titles within this scope will be
+	 * rendered in the tooltip. Titles outside of this scope will be styled
+	 * as with the default browser.
+	 */
+	scope?: string;
+};
+
+export function ClayTooltipProvider({
 	autoAlign = true,
 	children,
+	containerProps = {},
 	contentRenderer = (props) => props.title,
 	delay = 600,
-}) => {
-	const [{align, message = '', show}, dispatch] = React.useReducer(
+	scope,
+}: Props) {
+	const [{align, floating, setAsHTML, title = ''}, dispatch] = useReducer(
 		reducer,
 		initialState
 	);
-
-	// Using `any` type since TS incorrectly infers setTimeout to be from NodeJS
-	const timeoutIdRef = React.useRef<any>();
-	const targetRef = React.useRef<HTMLElement | null>(null);
-	const titleNodeRef = React.useRef<HTMLElement | null>(null);
-	const tooltipRef = React.useRef<HTMLElement | null>(null);
-
-	const handleHide = useCallback(({target}: any) => {
-		if (!titleNodeRef.current) {
-			return;
-		}
-
-		const dataTitle = titleNodeRef.current.getAttribute('data-title');
-
-		if (dataTitle) {
-			document.removeEventListener('keyup', handleEsc, true);
-			target.removeEventListener('click', handleHide);
-			titleNodeRef.current.setAttribute('title', dataTitle);
-			titleNodeRef.current.removeAttribute('data-title');
-
-			titleNodeRef.current = null;
-			targetRef.current = null;
-
-			dispatch({type: 'hide'});
-			clearTimeout(timeoutIdRef.current);
-		}
-	}, []);
-
-	const handleEsc = useCallback((event: KeyboardEvent) => {
-		if (event.key === Keys.Esc) {
-			event.stopImmediatePropagation();
-			handleHide(event);
-		}
-	}, []);
-
-	const handleShow = useCallback(({target}: any) => {
-		const hasTitle = target && target.hasAttribute('title');
-
-		const titleNode = hasTitle
-			? target
-			: closestAncestor(target, '[title]');
-
-		const title = titleNode && titleNode.getAttribute('title');
-
-		if (title) {
-			titleNodeRef.current = titleNode;
-			targetRef.current = target;
-
-			document.addEventListener('keyup', handleEsc, true);
-			target.addEventListener('click', handleHide);
-			titleNode.setAttribute('data-title', title);
-			titleNode.removeAttribute('title');
-
-			const customDelay = titleNode.getAttribute('data-tooltip-delay');
-			const newAlign = titleNode.getAttribute('data-tooltip-align');
-
-			timeoutIdRef.current = setTimeout(
-				() => {
-					dispatch({
-						align: newAlign || align,
-						message: title,
-						type: 'show',
-					});
-				},
-				customDelay ? Number(customDelay) : delay
-			);
-		}
-	}, []);
-
-	React.useEffect(() => {
-		if (
-			titleNodeRef.current &&
-			(tooltipRef as React.RefObject<HTMLDivElement>).current
-		) {
-			const points = ALIGNMENTS_MAP[align || 'top'] as [string, string];
-
-			const newAlignmentString = domAlign(
-				(tooltipRef as React.RefObject<HTMLElement>).current!,
-				titleNodeRef.current,
-				{
-					overflow: {
-						adjustX: autoAlign,
-						adjustY: autoAlign,
-					},
-					points,
-				}
-			).points.join('') as keyof typeof ALIGNMENTS_INVERSE_MAP;
-
-			const pointsString = points.join('');
-
-			if (pointsString !== newAlignmentString) {
-				dispatch({
-					align: ALIGNMENTS_INVERSE_MAP[newAlignmentString],
-					type: 'align',
-				});
+	const tooltipRef = useRef<HTMLElement>(null);
+	const {getInteraction, isFocusVisible} = useInteractionFocus();
+	const isHoveredRef = useRef(false);
+	const isFocusedRef = useRef(false);
+	const {close, isOpen, open} = useTooltipState({delay});
+	const {forceHide, getProps, onHide, target, titleNode} = useClosestTitle({
+		forceHide: useCallback(() => {
+			dispatch({type: 'reset'});
+			close();
+		}, []),
+		onClick: useCallback(() => {
+			isFocusedRef.current = false;
+			isHoveredRef.current = false;
+		}, []),
+		onHide: useCallback(() => {
+			if (!isHoveredRef.current && !isFocusedRef.current) {
+				dispatch({type: 'reset'});
+				close();
 			}
-		}
-	}, [align, show]);
+		}, []),
+		tooltipRef,
+	});
+	useAlign({
+		align,
+		autoAlign,
+		floating,
+		isOpen,
+		onAlign: useCallback((align) => dispatch({align, type: 'update'}), []),
+		sourceElement: tooltipRef,
+		targetElement: titleNode,
+		title,
+	});
+	const onShow = useCallback(
+		(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+			if (isHoveredRef.current || isFocusedRef.current) {
+				const props = getProps(event, isHoveredRef.current);
+				if (props) {
+					dispatch({
+						align: (props.align as any) ?? align,
+						floating: props.floating,
+						setAsHTML: props.setAsHTML,
+						title: props.title,
+						type: 'update',
+					});
+					open(
+						isFocusedRef.current,
+						props.delay ? Number(props.delay) : undefined
+					);
+				}
+			}
+		},
+		[align]
+	);
+	useEffect(() => {
+		const handleEsc = (event: KeyboardEvent) => {
+			if (isOpen && event.key === Keys.Esc) {
+				event.stopImmediatePropagation();
+				forceHide();
+			}
+		};
+		document.addEventListener('keyup', handleEsc, true);
 
+		return () => document.removeEventListener('keyup', handleEsc, true);
+	}, [isOpen]);
+	const onHoverStart = (event: any) => {
+		if (getInteraction() === 'pointer') {
+			isHoveredRef.current = true;
+		}
+		else {
+			isHoveredRef.current = false;
+		}
+		onShow(event);
+	};
+	const onHoverEnd = (event: any) => {
+		isFocusedRef.current = false;
+		isHoveredRef.current = false;
+		onHide(event);
+	};
+	const onFocus = (event: any) => {
+		if (isFocusVisible()) {
+			isFocusedRef.current = true;
+			onShow(event);
+		}
+	};
+	const onBlur = (event: any) => {
+		isFocusedRef.current = false;
+		isHoveredRef.current = false;
+		onHide(event);
+	};
+	useEffect(() => {
+		if (scope) {
+			const disposeShowEvents = TRIGGER_SHOW_EVENTS.map((eventName) =>
+				delegate(document.body, eventName, scope, onHoverStart)
+			);
+			const disposeHideEvents = TRIGGER_HIDE_EVENTS.map((eventName) =>
+				delegate(
+					document.body,
+					eventName,
+					`${scope}, .tooltip`,
+					onHoverEnd
+				)
+			);
+			const disposeShowFocus = delegate(
+				document.body,
+				'focus',
+				`${scope}, .tooltip`,
+				onFocus,
+				true
+			);
+			const disposeCloseBlur = delegate(
+				document.body,
+				'blur',
+				`${scope}, .tooltip`,
+				onBlur,
+				true
+			);
+
+			return () => {
+				disposeShowEvents.forEach(({dispose}) => dispose());
+				disposeHideEvents.forEach(({dispose}) => dispose());
+				disposeShowFocus.dispose();
+				disposeCloseBlur.dispose();
+			};
+		}
+	}, [onShow]);
 	warning(
-		children.type !== React.Fragment,
-		'<TooltipProvider />: React Fragment is not allowed as a child to TooltipProvider. Child must be a single HTML element.'
+		(typeof children === 'undefined' && typeof scope !== 'undefined') ||
+			(typeof scope === 'undefined' && typeof children !== 'undefined'),
+		'<TooltipProvider />: You must use at least one of the following props: `children` or `scope`.'
+	);
+	warning(
+		typeof children !== 'undefined' || typeof scope !== 'undefined',
+		'<TooltipProvider />: If you want to use `scope`, use <TooltipProvider /> as a singleton and do not pass `children`.'
+	);
+	warning(
+		children?.type !== React.Fragment,
+		'<TooltipProvider />: React Fragment is not allowed as a child to TooltipProvider. Child must be a single HTML element that accepts `onMouseOver` and `onMouseOut`.'
+	);
+	const titleContent = contentRenderer({
+		targetNode: target.current,
+		title,
+	});
+	const tooltip = isOpen && (
+		<ClayPortal {...containerProps}>
+			<Tooltip alignPosition={align} ref={tooltipRef} show>
+				{setAsHTML && typeof titleContent === 'string' ? (
+					<span
+						dangerouslySetInnerHTML={{
+							__html: titleContent,
+						}}
+					/>
+				) : (
+					titleContent
+				)}
+			</Tooltip>
+		</ClayPortal>
 	);
 
 	return (
 		<>
-			{show && (
-				<ClayPortal>
-					<ClayTooltip alignPosition={align} ref={tooltipRef} show>
-						{contentRenderer({
-							targetNode: targetRef.current,
-							title: message,
-						})}
-					</ClayTooltip>
-				</ClayPortal>
+			{scope ? (
+				<>
+					{tooltip}
+					{children}
+				</>
+			) : (
+				children &&
+				React.cloneElement(children, {
+					...children.props,
+					children: (
+						<>
+							{children.props.children}
+							{tooltip}
+						</>
+					),
+					onBlur,
+					onFocus,
+					onMouseOut: onHoverEnd,
+					onMouseOver: onHoverStart,
+				})
 			)}
-
-			{React.cloneElement(children, {
-				...children.props,
-				onMouseOut: handleHide,
-				onMouseOver: handleShow,
-			})}
 		</>
 	);
-};
-
-export default TooltipProvider;
+}

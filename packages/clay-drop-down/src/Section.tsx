@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Flag that indicates if item is selected.
 	 */
@@ -20,9 +21,9 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	innerRef?: React.Ref<any>;
 }
 
-const ClayDropDownSection = React.forwardRef<HTMLLIElement, IProps>(
+const Section = React.forwardRef<HTMLLIElement, IProps>(
 	({active, children, className, disabled, innerRef, ...otherProps}, ref) => (
-		<li aria-selected={active} ref={ref}>
+		<li aria-selected={active} ref={ref} role="none">
 			<div
 				{...otherProps}
 				className={classNames('dropdown-section', className, {
@@ -37,6 +38,6 @@ const ClayDropDownSection = React.forwardRef<HTMLLIElement, IProps>(
 	)
 );
 
-ClayDropDownSection.displayName = 'ClayDropDownSection';
+Section.displayName = 'ClayDropDownSection';
 
-export default ClayDropDownSection;
+export default Section;

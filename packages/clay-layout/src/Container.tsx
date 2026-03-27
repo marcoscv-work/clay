@@ -1,12 +1,13 @@
 /**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import classNames from 'classnames';
 import React from 'react';
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+
 	/**
 	 * Element or component to render for container
 	 */
@@ -26,7 +27,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	/**
 	 * Adds `.container-fluid-${size}` class to set max width on container.
 	 */
-	fluidSize?: 'sm' | 'md' | 'lg' | 'xl';
+	fluidSize?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 
 	/**
 	 * Adds the `.container-form-${formSize}` class to properly space
@@ -43,7 +44,7 @@ interface IProps extends React.HTMLAttributes<HTMLDivElement> {
 	view?: boolean;
 }
 
-const ClayContainer = React.forwardRef<HTMLElement, IProps>(
+const Container = React.forwardRef<HTMLElement, IProps>(
 	(
 		{
 			children,
@@ -61,7 +62,7 @@ const ClayContainer = React.forwardRef<HTMLElement, IProps>(
 			<ContainerElement
 				{...otherProps}
 				className={classNames(className, {
-					container: !fluid,
+					'container': !fluid,
 					'container-fluid': fluid,
 					[`container-form-${formSize}`]: formSize,
 					'container-view': view,
@@ -75,6 +76,6 @@ const ClayContainer = React.forwardRef<HTMLElement, IProps>(
 	}
 );
 
-ClayContainer.displayName = 'ClayContainer';
+Container.displayName = 'ClayContainer';
 
-export default ClayContainer;
+export default Container;

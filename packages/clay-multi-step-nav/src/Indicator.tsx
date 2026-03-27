@@ -1,18 +1,38 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayIcon from '@clayui/icon';
-import React from 'react';
+import classNames from 'classnames';
+import React, {useContext} from 'react';
 
-interface IProps {
+import {ItemContext} from './Item';
+
+type Props = {
+
+	/**
+	 * Component to render.
+	 */
+	as?: React.ElementType;
+
 	/**
 	 * Flag to indicate if step should show its been completed
+	 * @deprecated since v3.91.0 - this is no longer necessary.
 	 */
 	complete?: boolean;
 
-	innerRef?: React.Ref<HTMLButtonElement>;
+	/**
+	 * Flag to indicate if step should be disabled
+	 */
+	disabled?: boolean;
+
+	/**
+	 * HTML properties that are applied to the step element.
+	 */
+	elementProps?: React.HTMLAttributes<HTMLElement>;
+
+	innerRef?: React.Ref<HTMLElement>;
 
 	/**
 	 * Value to display above step icon
@@ -33,32 +53,63 @@ interface IProps {
 	 * Value to display below step icon
 	 */
 	subTitle?: React.ReactText;
-}
+};
 
-const ClayMultiStepNavIndicator = React.forwardRef<HTMLDivElement, IProps>(
+const MultiStepNavIndicator = React.forwardRef<HTMLDivElement, Props>(
 	(
-		{complete, innerRef, label, onClick, spritemap, subTitle}: IProps,
+		{
+			as,
+			complete,
+			disabled,
+			elementProps,
+			innerRef,
+			label,
+			onClick,
+			spritemap,
+			subTitle,
+		}: Props,
 		ref
-	) => (
-		<div className="multi-step-indicator" ref={ref}>
-			{subTitle && (
-				<div className="multi-step-indicator-label">{subTitle}</div>
-			)}
+	) => {
+		const {state} = useContext(ItemContext);
 
-			<button
-				className="multi-step-icon"
-				onClick={onClick}
-				ref={innerRef}
-				type="button"
+		const isComplete = complete ?? state === 'complete';
+		const Tag = as || (onClick ? 'button' : 'div');
+
+		return (
+			<div
+				className={classNames('multi-step-indicator', {
+					disabled,
+				})}
+				ref={ref}
 			>
-				{complete && <ClayIcon spritemap={spritemap} symbol="check" />}
+				{subTitle && (
+					<div className="multi-step-indicator-label">{subTitle}</div>
+				)}
 
-				{!complete && label}
-			</button>
-		</div>
-	)
+				<Tag
+					{...elementProps}
+					className={classNames(
+						'multi-step-icon',
+						elementProps?.className
+					)}
+					onClick={onClick || elementProps?.onClick}
+					ref={innerRef}
+					{...(Tag === 'button' && {
+						disabled,
+						type: 'button',
+					})}
+				>
+					{isComplete && (
+						<ClayIcon spritemap={spritemap} symbol="check" />
+					)}
+
+					{!isComplete && state !== 'error' && label}
+				</Tag>
+			</div>
+		);
+	}
 );
 
-ClayMultiStepNavIndicator.displayName = 'ClayMultiStepNavIndicator';
+MultiStepNavIndicator.displayName = 'ClayMultiStepNavIndicator';
 
-export default ClayMultiStepNavIndicator;
+export default MultiStepNavIndicator;

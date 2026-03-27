@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2018 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {Grid, PointOptions} from 'billboard.js';
@@ -10,10 +10,10 @@ import React from 'react';
 
 const DEFAULT_COLOR = {
 	range: {
-		max: '#0065e4',
-		min: '#b1d4ff',
+		max: '#006be6',
+		min: '#97c5ff',
 	},
-	selected: '#4b9bff',
+	selected: '#006eff',
 	value: 'pop_est',
 };
 
@@ -75,6 +75,9 @@ class GeomapBase {
 			.attr('fill', 'rgba(1, 1, 1, 0)')
 			.attr('width', w)
 			.attr('height', h)
+
+			// @ts-ignore
+
 			.on('click', this._handleClickHandler);
 
 		const bounds = this.svg.node()!.getBoundingClientRect();
@@ -123,7 +126,7 @@ class GeomapBase {
 	_fillFn(d: any) {
 		const value = d && d.properties ? d.properties[this._color.value] : 0;
 
-		return this.colorScale!(value);
+		return this.colorScale!(value || 0);
 	}
 
 	/**
@@ -142,11 +145,13 @@ class GeomapBase {
 	_handleClick(d: any) {
 		if (d && this._selected !== d) {
 			this._selected = d;
-		} else {
+		}
+		else {
 			this._selected = null;
 		}
 
 		// Highlight the clicked province
+
 		this.mapLayer!.selectAll('path').style('fill', (d: any) =>
 			this._selected && d === this._selected
 				? this._color.selected
@@ -157,18 +162,21 @@ class GeomapBase {
 	/**
 	 * Mouse over handler
 	 */
-	_handleMouseOver(feature: object, idx: number, selection: [any]) {
-		const node = selection[idx];
+	_handleMouseOver(_feature: object, index: number, selection: [any]) {
+		const node = selection[index];
 		d3.select(node).style('fill', this._color.selected);
 	}
 
 	/**
 	 * Mouse over handler
 	 */
-	_handleMouseOut(feature: object, idx: number, selection: [any]) {
-		const node = selection[idx];
+	_handleMouseOut(_feature: object, index: number, selection: [any]) {
+		const node = selection[index];
 
-		d3.select(node).style('fill', this._fillFn.bind(this));
+		d3.select(node).style(
+			'fill',
+			(value) => this._fillFn.bind(this)(value) || 0
+		);
 	}
 
 	/**
@@ -178,6 +186,7 @@ class GeomapBase {
 		const features = mapData.features;
 
 		// Calculate domain based on values received
+
 		const values = features.map(
 			(f: any) => f.properties[this._color.value]
 		);
@@ -196,10 +205,16 @@ class GeomapBase {
 			.append('path')
 			.attr('d', this.path as any)
 			.attr('vector-effect', 'non-scaling-stroke')
-			.attr('fill', this._fillFn.bind(this))
+			.attr('fill', (value) => this._fillFn.bind(this)(value) || 0)
+
+			// @ts-ignore
+
 			.on('click', this._handleClickHandler!)
 			.on(
 				'mouseout',
+
+				// @ts-ignore
+
 				this._handleMouseOut.bind(this) as d3.ValueFn<
 					SVGPathElement,
 					unknown,
@@ -208,6 +223,9 @@ class GeomapBase {
 			)
 			.on(
 				'mouseover',
+
+				// @ts-ignore
+
 				this._handleMouseOver.bind(this) as d3.ValueFn<
 					SVGPathElement,
 					unknown,
@@ -221,31 +239,26 @@ export interface IProps {
 	elementProps?: React.HTMLAttributes<HTMLDivElement>;
 	forwardRef: React.MutableRefObject<any>;
 	grid?: Grid;
-	predictionDate?: any;
 	point?: PointOptions;
 	pollingInterval?: number;
+	predictionDate?: any;
 	[key: string]: any;
 }
 
 /**
  * GeoMap Chart component.
  */
-const Geomap: React.FunctionComponent<IProps> = ({
-	data,
-	elementProps = {},
-	forwardRef,
-	...otherProps
-}: IProps) => {
+function Geomap({data, elementProps = {}, forwardRef, ...otherProps}: IProps) {
 	const elementRef = React.useRef<HTMLDivElement>(null);
-
 	React.useEffect(() => {
 		if (forwardRef) {
+
+			// eslint-disable-next-line react-compiler/react-compiler
 			forwardRef.current = new GeomapBase({
 				...otherProps,
 				data,
 				element: elementRef.current,
 			});
-
 			forwardRef.current.attached();
 		}
 
@@ -253,13 +266,12 @@ const Geomap: React.FunctionComponent<IProps> = ({
 			forwardRef.current.disposed();
 		};
 	}, []);
-
 	const {height = '100%', width = '100%'} = forwardRef.current
 		? forwardRef.current.getSize()
 		: {};
 
 	return <div style={{height, width}} {...elementProps} ref={elementRef} />;
-};
+}
 
 export default React.forwardRef<any, Omit<IProps, 'forwardRef'>>(
 	(props, ref) => (

@@ -1,101 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClayNav renders 1`] = `
-<div>
-  <ul
-    class="nav"
-  >
-    <div />
-  </ul>
-</div>
-`;
-
 exports[`ClayVerticalNav renders 1`] = `
 <div>
   <nav
+    aria-label="vertical navbar"
     class="menubar menubar-transparent menubar-vertical-expand-md"
   >
-    <button
-      class="menubar-toggler btn btn-unstyled"
-      type="button"
+    <ul
+      aria-orientation="vertical"
+      class="nav nav-nested"
+      role="menubar"
     >
-      <span
-        class="inline-item inline-item-before"
+      <li
+        class="nav-item"
+        role="none"
       >
-        Menu
-      </span>
-      <svg
-        class="lexicon-icon lexicon-icon-caret-bottom"
-        focusable="false"
-        role="presentation"
-      >
-        <use
-          xlink:href="/path/to#caret-bottom"
-        />
-      </svg>
-    </button>
-    <div
-      class="collapse menubar-collapse"
-    >
-      <ul
-        class="nav nav-nested"
-      >
-        <li
-          class="nav-item"
+        <button
+          aria-controls="clay-id-2"
+          aria-expanded="true"
+          class="nav-link collapse-icon btn btn-unstyled"
+          role="menuitem"
+          tabindex="0"
+          type="button"
         >
-          <button
-            class="nav-link collapse-icon btn btn-unstyled"
-            role="button"
-            type="button"
+          Home
+          <span
+            class="collapse-icon-closed"
           >
-            Home
-            <span
-              class="collapse-icon-closed"
+            <svg
+              class="lexicon-icon lexicon-icon-angle-right-small"
+              focusable="false"
+              role="presentation"
             >
-              <svg
-                class="lexicon-icon lexicon-icon-caret-right"
-                focusable="false"
-                role="presentation"
-              >
-                <use
-                  xlink:href="/path/to#caret-right"
-                />
-              </svg>
-            </span>
-            <span
-              class="collapse-icon-open"
+              <use
+                href="/path/to#angle-right-small"
+              />
+            </svg>
+          </span>
+          <span
+            class="collapse-icon-open"
+          >
+            <svg
+              class="lexicon-icon lexicon-icon-angle-down-small"
+              focusable="false"
+              role="presentation"
             >
-              <svg
-                class="lexicon-icon lexicon-icon-caret-bottom"
-                focusable="false"
-                role="presentation"
-              >
-                <use
-                  xlink:href="/path/to#caret-bottom"
-                />
-              </svg>
-            </span>
-          </button>
-          <div>
-            <ul
-              class="nav nav-stacked"
+              <use
+                href="/path/to#angle-down-small"
+              />
+            </svg>
+          </span>
+        </button>
+        <ul
+          class="nav nav-stacked"
+          id="clay-id-2"
+          role="menu"
+        >
+          <li
+            class="nav-item"
+            role="none"
+          >
+            <a
+              class="nav-link collapsed"
+              href="#nested1"
+              role="menuitem"
+              tabindex="-1"
             >
-              <li
-                class="nav-item"
-              >
-                <a
-                  class="nav-link"
-                  href="#nested1"
-                  role="button"
-                >
-                  Nested1
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+              Nested1
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 </div>
 `;

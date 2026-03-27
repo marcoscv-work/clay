@@ -1,27 +1,26 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayLink from '@clayui/link';
 import classNames from 'classnames';
 import React from 'react';
 
-type CardDescriptionDisplayType = 'text' | 'title' | 'subtitle';
-
-interface ICardDescriptionProps
+export interface ICardDescriptionProps
 	extends React.HTMLAttributes<
 		HTMLHeadingElement | HTMLDivElement | HTMLSpanElement
 	> {
-	/**
-	 * Type of description that can be applied for a text.
-	 */
-	displayType: CardDescriptionDisplayType;
 
 	/**
 	 * Flag to indicate if href will be disabled.
 	 */
 	disabled?: boolean;
+
+	/**
+	 * Type of description that can be applied for a text.
+	 */
+	displayType: 'text' | 'title' | 'subtitle';
 
 	/**
 	 * Path or URL
@@ -39,7 +38,7 @@ interface ICardDescriptionProps
 	truncate?: boolean;
 }
 
-const ClayCardDescription: React.FunctionComponent<ICardDescriptionProps> = ({
+function Description({
 	children,
 	className,
 	disabled,
@@ -48,7 +47,7 @@ const ClayCardDescription: React.FunctionComponent<ICardDescriptionProps> = ({
 	tag: Tag = 'p',
 	truncate = true,
 	...otherProps
-}: ICardDescriptionProps) => {
+}: ICardDescriptionProps) {
 	const InnerTag = href && !disabled ? ClayLink : 'span';
 
 	return (
@@ -71,6 +70,6 @@ const ClayCardDescription: React.FunctionComponent<ICardDescriptionProps> = ({
 			)}
 		</Tag>
 	);
-};
+}
 
-export default ClayCardDescription;
+export default Description;

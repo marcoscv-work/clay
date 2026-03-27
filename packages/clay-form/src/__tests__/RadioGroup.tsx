@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import {cleanup, fireEvent, render} from '@testing-library/react';
@@ -13,12 +13,11 @@ import ClayRadioGroup from '../RadioGroup';
 describe('Rendering', () => {
 	it('default', () => {
 		const testRenderer = TestRenderer.create(
-			<ClayRadioGroup
-				onSelectedValueChange={() => {}}
-				selectedValue={'one'}
-			>
+			<ClayRadioGroup defaultValue="one">
 				<ClayRadio label="One" value="one" />
+
 				<ClayRadio label="Two" value="two" />
+
 				<ClayRadio label="Three" value="three" />
 			</ClayRadioGroup>
 		);
@@ -36,10 +35,12 @@ describe('Interactions', () => {
 		const {getByLabelText} = render(
 			<ClayRadioGroup
 				onSelectedValueChange={handleSelectedChange}
-				selectedValue={'one'}
+				selectedValue="one"
 			>
 				<ClayRadio label="One" value="one" />
+
 				<ClayRadio label="Two" value="two" />
+
 				<ClayRadio label="Three" value="three" />
 			</ClayRadioGroup>
 		);
@@ -50,5 +51,48 @@ describe('Interactions', () => {
 
 		expect(handleSelectedChange).toHaveBeenCalledTimes(1);
 		expect(handleSelectedChange).toHaveBeenCalledWith('three');
+	});
+
+	it('selecting a radio element should fire the onChange prop with the new value', () => {
+		const onChange = jest.fn();
+
+		const {getByLabelText} = render(
+			<ClayRadioGroup onChange={onChange} value="one">
+				<ClayRadio label="One" value="one" />
+
+				<ClayRadio label="Two" value="two" />
+
+				<ClayRadio label="Three" value="three" />
+			</ClayRadioGroup>
+		);
+
+		const radioThree = getByLabelText('Three');
+
+		fireEvent.click(radioThree as HTMLButtonElement, {});
+
+		expect(onChange).toHaveBeenCalledTimes(1);
+		expect(onChange).toHaveBeenCalledWith('three');
+	});
+
+	it('select a radio element with the uncontrolled component', () => {
+		const {getByLabelText} = render(
+			<ClayRadioGroup defaultValue="one">
+				<ClayRadio label="One" value="one" />
+
+				<ClayRadio label="Two" value="two" />
+
+				<ClayRadio label="Three" value="three" />
+			</ClayRadioGroup>
+		);
+
+		const radioOne = getByLabelText('One') as HTMLInputElement;
+
+		expect(radioOne.checked).toBe(true);
+
+		const radioThree = getByLabelText('Three') as HTMLInputElement;
+
+		fireEvent.click(radioThree as HTMLButtonElement, {});
+
+		expect(radioThree.checked).toBe(true);
 	});
 });

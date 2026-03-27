@@ -1,6 +1,6 @@
 /**
- * SPDX-FileCopyrightText: © 2019 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-FileCopyrightText: (c) 2026 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
  */
 
 import ClayButton from '@clayui/button';
@@ -8,7 +8,10 @@ import classNames from 'classnames';
 import React from 'react';
 import tinycolor from 'tinycolor2';
 
+import {parseColor, toHexColorString} from './util';
+
 interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+
 	/**
 	 * Flag that indicates whether the splotch is the active one selected
 	 */
@@ -29,10 +32,10 @@ interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  * Renders component that displays a color
  */
 const ClayColorPickerSplotch = React.forwardRef<HTMLButtonElement, IProps>(
-	({active, className, size, value, ...otherProps}, ref) => {
-		const color = tinycolor(value);
+	({active, className, size, title, value, ...otherProps}, ref) => {
+		const color = parseColor(value);
 
-		const isHex = (color.getFormat() || '').match('hex');
+		const isHex = !!(color.getFormat() || '').match('hex');
 
 		const requireBorder =
 			!color.isValid() || tinycolor.readability('#FFF', value) < 1.1;
@@ -47,11 +50,13 @@ const ClayColorPickerSplotch = React.forwardRef<HTMLButtonElement, IProps>(
 				displayType={null}
 				ref={ref}
 				style={{
-					background: `${isHex ? '#' : ''}${value}`,
-					height: size,
-					width: size,
+					background:
+						otherProps?.style?.background ||
+						toHexColorString({isHex, value}),
+					height: otherProps?.style?.height || size,
+					width: otherProps?.style?.width || size,
 				}}
-				title={value}
+				title={title || toHexColorString({isHex, value})}
 			/>
 		);
 	}

@@ -2,6 +2,46 @@
 /// @group timelines
 ////
 
+$card-border-width: if(
+	variable-exists(card-border-width),
+	$card-border-width,
+	if(
+		variable-exists(cadmin-card-border-width),
+		$cadmin-card-border-width,
+		0px
+	)
+);
+
+$timeline-inner-spacing: if(
+	variable-exists(timeline-inner-spacing),
+	$timeline-inner-spacing,
+	if(
+		variable-exists(cadmin-timeline-inner-spacing),
+		$cadmin-timeline-inner-spacing,
+		0px
+	)
+);
+
+$timeline-border-width: if(
+	variable-exists(timeline-border-width),
+	$timeline-border-width,
+	if(
+		variable-exists(cadmin-timeline-border-width),
+		$cadmin-timeline-border-width,
+		1px
+	)
+);
+
+$timeline-border-modifier: if(
+	variable-exists(timeline-border-modifier),
+	$timeline-border-modifier,
+	if(
+		variable-exists(cadmin-timeline-border-modifier),
+		$cadmin-timeline-border-modifier,
+		0px
+	)
+);
+
 /// A mixin that places the `.timeline-item::before` element on the right side. This mixin is used in `.timeline-right`.
 /// @todo
 /// - Add @link to documentation
@@ -12,19 +52,21 @@
 
 	&:before {
 		left: auto;
-		right: -$timeline-border-width;
+		right: calc(#{$timeline-border-width} * -1);
 	}
 
 	.panel {
 		.timeline-increment {
 			margin-left: auto;
-			margin-right: -$card-border-width;
+			margin-right: calc(#{$card-border-width} * -1);
 		}
 	}
 
 	.timeline-increment {
 		left: auto;
-		right: -($timeline-inner-spacing + $timeline-border-modifier);
+		right: calc(
+			(#{$timeline-inner-spacing} + #{$timeline-border-modifier}) * -1
+		);
 		-ms-transform: translate(50%, -50%);
 		transform: translate(50%, -50%);
 	}
@@ -52,7 +94,7 @@
 
 			.timeline-item {
 				.timeline-item-label {
-					margin-left: -($inner-spacing * 2);
+					margin-left: calc(#{$inner-spacing} * -2);
 				}
 			}
 
@@ -60,12 +102,14 @@
 				padding-right: $inner-spacing;
 
 				.timeline-increment {
-					right: -($inner-spacing + $timeline-border-modifier);
+					right: calc(
+						(#{$inner-spacing} + #{$timeline-border-modifier}) * -1
+					);
 				}
 
 				.timeline-item-label {
 					margin-left: auto;
-					margin-right: -($inner-spacing * 2);
+					margin-right: calc(#{$inner-spacing} * -2);
 				}
 			}
 		}
@@ -77,12 +121,14 @@
 			padding-right: $inner-spacing;
 
 			.timeline-increment {
-				right: -($inner-spacing + $timeline-border-modifier);
+				right: calc(
+					(#{$inner-spacing} + #{$timeline-border-modifier}) * -1
+				);
 			}
 
 			.timeline-item-label {
 				margin-left: auto;
-				margin-right: -($inner-spacing * 2);
+				margin-right: calc(#{$inner-spacing} * -2);
 			}
 		}
 	}
@@ -94,7 +140,9 @@
 			padding-right: $inner-spacing;
 
 			.timeline-increment {
-				right: -($inner-spacing + $timeline-border-modifier);
+				right: calc(
+					(#{$inner-spacing} + #{$timeline-border-modifier}) * -1
+				);
 			}
 		}
 	}
@@ -110,7 +158,9 @@
 
 				.timeline-increment {
 					left: auto;
-					right: -($inner-spacing + $timeline-border-modifier);
+					right: calc(
+						(#{$inner-spacing} + #{$timeline-border-modifier}) * -1
+					);
 				}
 			}
 		}
@@ -122,7 +172,7 @@
 		padding-top: $item-padding-y;
 
 		.timeline-increment {
-			left: -($inner-spacing - $timeline-border-modifier);
+			left: calc((#{$inner-spacing} - #{$timeline-border-modifier}) * -1);
 		}
 	}
 }
