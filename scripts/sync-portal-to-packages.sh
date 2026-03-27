@@ -112,9 +112,17 @@ for dir in "$SOURCE_ROOT"/*; do
 	name="$(basename "$dir")"
 
 	if [[ "$name" == clay-* ]]; then
+		# Sync to packages/ for the monorepo build (turbo, yarn workspaces)
 		target_dir="$DEST_DIR/$name"
 		mkdir -p "$target_dir"
 		rsync "${RSYNC_ARGS[@]}" "$dir/" "$target_dir/"
+
+		# Also sync to root level so the www docs site can resolve MDX imports.
+		# data.ts uses baseDirectory: '../' with filePattern: 'clay-*/docs/**/*.mdx',
+		# which matches clay-* directories at the repo root — the same structure as
+		# liferay-portal where packages live alongside www/.
+		mkdir -p "$name"
+		rsync "${RSYNC_ARGS[@]}" "$dir/" "$name/"
 	elif [[ "$name" == "www" ]]; then
 		mkdir -p "www"
 		rsync "${RSYNC_ARGS[@]}" "$dir/" "www/"
