@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import type {FileSystemSource, Collection} from 'renoun/collections';
 import type {AllCollection, ComponentDocumentsSchema} from '@/data';
@@ -11,10 +12,16 @@ type Item = {
 	items: Array<{name: string; href: string}>;
 };
 
+type Group = {
+	name: string;
+	items: Array<string>;
+};
+
 type CollectionItem = {
 	name: string;
 	collection: Collection<ComponentDocumentsSchema | any>;
 	sort?: boolean;
+	groups?: Array<Group>;
 };
 
 type Props = {
@@ -49,6 +56,7 @@ export function Sidebar({collection, path, items}: Props) {
 						<ul>
 							<TreeCollection
 								collection={item.collection}
+								groups={item.groups}
 								path={path}
 								sort={item.sort}
 							/>
@@ -93,24 +101,64 @@ export function Sidebar({collection, path, items}: Props) {
 
 type TreeCollectionProps = {
 	collection: AllCollection | Collection<ComponentDocumentsSchema>;
+	groups?: Array<Group>;
 	path?: string;
 	sort?: boolean;
 };
 
-async function TreeCollection({collection, path, sort}: TreeCollectionProps) {
+async function TreeCollection({collection, groups, path, sort}: TreeCollectionProps) {
 	const items = await collection.getSources();
 	const entries = sort
 		? items.sort((a, b) => a.getTitle().localeCompare(b.getTitle()))
 		: items;
 
+	if (!groups || groups.length === 0) {
+		return (
+			<>
+				{entries.map((entry) => (
+					<ListNavigation
+						key={entry.getPath()}
+						entry={entry}
+						path={path}
+					/>
+				))}
+			</>
+		);
+	}
+
+	const grouped = new Set<string>();
+	const sections = groups.map((group) => {
+		const groupEntries = entries.filter((entry) =>
+			group.items.some(
+				(item) => item.toLowerCase() === entry.getTitle().toLowerCase()
+			)
+		);
+		groupEntries.forEach((entry) => grouped.add(entry.getPath()));
+		return {entries: groupEntries, title: group.name};
+	});
+
+	const ungrouped = entries.filter((entry) => !grouped.has(entry.getPath()));
+
 	return (
 		<>
-			{entries.map((entry) => (
+			{ungrouped.map((entry) => (
 				<ListNavigation
 					key={entry.getPath()}
 					entry={entry}
 					path={path}
 				/>
+			))}
+			{sections.map((section) => (
+				<React.Fragment key={section.title}>
+					<p className={styles.sidebar_group_title}>{section.title}</p>
+					{section.entries.map((entry) => (
+						<ListNavigation
+							key={entry.getPath()}
+							entry={entry}
+							path={path}
+						/>
+					))}
+				</React.Fragment>
 			))}
 		</>
 	);
