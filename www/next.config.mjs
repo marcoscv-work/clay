@@ -7,6 +7,7 @@ import {createRequire} from 'node:module';
 
 import {unwrapMdxBlockElements} from './plugins/remark-unwrap-paragraphs/index.mjs';
 import {buildIcons} from './plugins/scss/index.mjs';
+import {rehypeXlinkHref} from './plugins/rehype-xlink-href/index.mjs';
 
 const require = createRequire(import.meta.url);
 
@@ -19,7 +20,7 @@ const withMDX = createMDXPlugin({
 	extension: /\.mdx?$/,
 	options: {
 		remarkPlugins: [...remarkPlugins, unwrapMdxBlockElements],
-		rehypePlugins: [...rehypePlugins, rehypeMdxCodeProps],
+		rehypePlugins: [...rehypePlugins, rehypeMdxCodeProps, rehypeXlinkHref],
 	},
 });
 
